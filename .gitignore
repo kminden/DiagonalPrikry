@@ -1,0 +1,7 @@
+
+*.aux
+.DS_Store
+DiagonalPrikry.bbl
+DiagonalPrikry.blg
+DiagonalPrikry.log
+DiagonalPrikry.synctex.gz
