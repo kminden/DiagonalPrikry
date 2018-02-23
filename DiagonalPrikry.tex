@@ -116,7 +116,7 @@
 \DeclareMathOperator{\RAc}{\textup{\textsf{RA}}_{<\omega_1\textup{-closed}}}
 \DeclareMathOperator{\bfRAsc}{\textup{\textsf{\textbf{RA}}}_{\textit{sc}}}
 
-\newcommand{\SH}{\mathcal{S}\textit{k} \,}
+\newcommand{\SH}{\mathcal{H}\textit{ull} \,}
 \newcommand{\sk}[3]{\SH^{#1}( {#2} \cup {\ran(#3)} ) }
 \newcommand{\Sk}[3]{\SH^{#1}( {#2} \cup {#3} ) }
 
@@ -136,76 +136,68 @@
 \date{}     					
 
 \begin{abstract}
-
+It is shown that generalized Prikry forcing to add a countable sequence to each measurable in an infinite discrete set of measurable cardinals is subcomplete. To do this we show that a simplified version of generalized Prikry forcing which adds a point below each measurable cardinal in an infinite discrete set, which we call generalized diagonal Prikry forcing, is subcomplete. We also show that generalized diagonal Prikry forcing is subcomplete above $\mu$ where $\mu$ is a regular cardinal below the first limit point of the infinite discrete set of measurable cardinals used in the forcing.
 \end{abstract}
 \maketitle
 
 \section{Introduction}
+%Provide some motivation - advertisement for awesome techniques, and adding to the catalogue. Also say what subcomplete forcing is like.
+Subcomplete forcing is a class of forcing notions that we shall see do not add reals, but may potentially alter cofinalities to $\omega$. Examples of subcomplete forcing include Prikry forcing and Namba forcing (under $\CH$). This separates subcomplete forcings from proper forcings, that have countable covering and thus cannot change cofinalities to $\omega$. 
+
+Jensen \cite[Section 3.3]{Jensen:2012fr} shows that Prikry forcing and Namba forcing (under $\CH$) are subcomplete. Fuchs has shown that Magidor forcing \cite{Fuchs:2017Magidor} is subcomplete. Below we use an adaptation of Jensen's proof showing that Prikry forcing is subcomplete to see that those ``Prikry-like forcings" which we will call generalized Prikry forcing after Fuchs (\cite{Fuchs:2005kx}), are subcomplete.
 
 \section{Preliminaries}
-Jensen \cite[Section 3.3]{Jensen:2012fr} shows that Prikry forcing and Namba forcing (under $\CH$) are subcomplete. Below we use an adaptation of Jensen's proof showing that Prikry forcing is subcomplete to see that some kinds of generalized diagonal Prikry forcing, in particular those Prikry forcings that we refer to here as generalized diagonal Prikry forcing, studied by Fuchs \cite{Fuchs:2005kx}, are subcomplete.
-
-Before defining subcomplete forcing and showing consequences of it, some preliminary information is necessary. This can all be found in Jensen's lecture notes from the 2012 AII Summer School in Singapore. For the published version refer to \cite{Jensen:2012fr}. I will also refer to unpublished handwritten notes from Jensen's website.
+Before defining subcomplete forcing and generalized diagonal Prikry forcing, some preliminary information is necessary. This can all be found in Jensen's lecture notes from the 2012 AII Summer School in Singapore. For the published version refer to \cite{Jensen:2012fr}. I will also refer to unpublished handwritten notes from Jensen's website.
 
 First, a brief outline of some of the notation used in what follows:
 %Define what I mean by poset/partial order/forcing notion (like they need to be separative)?
-\begin{itemize}
-	\item Forcing notions $\P = \langle \P, \leq \rangle$ are taken to be partial orders that are separative and contain a ``top" element weaker than all elements of $\P$, denoted $\mathbbm 1$.
-	
-	\item We will be working with transitive models of $\ZFC^-$, the axioms of Zermelo-Fraenkel Set Theory without the axiom of \textsf{Powerset}, and with the axiom of \textsf{Collection} instead of \textsf{Replacement}. Usually we will name these models $N$, $M$, or $\N$. %Give some motivation for this.
+Forcing notions $\P = \langle \P, \leq \rangle$ are taken to be partial orders that are separative and contain a ``top" element weaker than all elements of $\P$, denoted $\mathbbm 1$.
+We will be working with transitive models of $\ZFC^-$, the axioms of Zermelo-Fraenkel Set Theory without the axiom of \textsf{Powerset}, and with the axiom of \textsf{Collection} instead of \textsf{Replacement}. Usually we will name these models $N$, $M$, or $\N$. %Give some motivation for this.
+I will follow Jensen to use the notation $\sigma: N \prec M$ for when $\sigma$ is an elementary embedding, but I will add some notation not used by Jensen, letting $N \preccurlyeq M$ denote and emphasize that $N$ is an elementary substructure of $M$. 
+Let $N$ be a transitive $\ZFC^-$ model. I write $\height(N)$ to mean $\Ord \cap N$. Let $\alpha$ be an ordinal. Then I write $\alpha^N$ for $\alpha \cap N$.
+%Let $A$ be a set of ordinals. Then $\lim(A)$ is the set of limit points in $A$.  
+Let $\theta$ be a cardinal. $H_\theta$ refers to the collection of sets hereditarily of size less than $\theta$. Relativizing the concept to a particular model of set theory, $M$, I write $H_\theta^M$ to mean the collection of sets in $M$ that are hereditarily of size less than $\theta$ in $M$. In this case, if $\theta$ is determined by some computation, I mean for that computation to take place in $M$.
+Let $\tau$ be a cardinal. With abuse of notation we write $L_\tau[A]$ to refer to the structure $\langle L_\tau[A]; \in, A \cap L_\tau[A] \rangle$. 
+We often make use of the following abbreviation: if a map $\sigma$ satisfies $\sigma(\overline a)=a$ and $\sigma(\overline b)=b$, we write $\sigma(\overline a,\overline b)=a,b$.
 
-	\item I will follow Jensen to use the notation $\sigma: N \prec M$ for when $\sigma$ is an elementary embedding, but I will add some notation not used by Jensen, letting $N \preccurlyeq M$ denote and emphasize that $N$ is an elementary substructure of $M$. 
 
-	\item Let $N$ be a transitive $\ZFC^-$ model. I write $\height(N)$ to mean $\Ord \cap N$. Let $\alpha$ be an ordinal. Then I write $\alpha^N$ for $\alpha \cap N$.
-	
-	\item Let $A$ be a set of ordinals. Then $\lim(A)$ is the set of limit points in $A$.  
+\subsection{The Weight of a Forcing Notion}
+\label{subsec:delta}
 
-	\item Let $\theta$ be a cardinal. $H_\theta$ refers to the collection of sets hereditarily of size less than $\theta$. Relativizing the concept to a particular model of set theory, $M$, I write $H_\theta^M$ to mean the collection of sets in $M$ that are hereditarily of size less than $\theta$ in $M$. In this case, if $\theta$ is determined by some computation, I mean for that computation to take place in $M$.
-	
-	\item Let $\tau$ be a cardinal. With abuse of notation we write $L_\tau[A]$ to refer to the structure $\langle L_\tau[A]; \in, A \cap L_\tau[A] \rangle$. 
-	
-	\item If $\Gamma$ is a class of forcings that preserve stationary subsets of $\omega_1$, then the $\Gamma$-forcing axiom ($\textsf{FA}_\Gamma$) posits that for all $\P \in \Gamma$, if $\mathcal D$ is a collection of $\omega_1$-many dense subsets of $\P$, then there is a $\mathcal D$-generic filter (a filter that intersects every element of $\mathcal D$ nontrivially). We write $\MA$ for Martin's Axiom, $\PFA$ for the Proper Forcing Axiom, and $\MM$ for Martin's Maximum, the forcing axiom for classes of forcing notions that preserve stationary subsets of $\omega_1$.
-	
-	\item We often make use of the following abbreviation: if a map $\sigma$ satisfies $\sigma(\overline a)=a$ and $\sigma(\overline b)=b$, we write $\sigma(\overline a,\overline b)=a,b$.
-\end{itemize}	
-
-\section{The Weight of a Forcing Notion}
-\label{sec:delta}
-
-\begin{definition} For a forcing notion $\P$, we write $\delta(\P)$ to denote the least cardinality of a dense subset in $\P$. This is sometimes referred to as the \textit{\textbf{weight}} of a poset. \end{definition}
+\begin{definition} For a forcing notion $\P$, we write $\delta(\P)$ to denote the least cardinality of a dense subset in $\P$. This is sometimes referred to as the \emph{weight} of a poset. \end{definition}
 
 Although Jensen defines $\delta(\P)$ for Boolean algebras, it's also relevant for posets. As Jensen states, for forcing notions $\P$, the weight can be replaced with the cardinality of $\P$, or even $\P$, for the purpose of defining subcompleteness. However, $\delta(\P)$ and $|\P|$ are not necessarily the same, since there could be a large set of points in the poset that all have a common strengthening. 
 
-More can be said about the weight of forcing notions, and I give some basic results below.
-
-\begin{lemma} Let $\P$ be a poset. Then maximal antichains in $\P$ have size at most $\delta(\P)$. \end{lemma}
-\begin{proof}
-Supposing $\P$ has a maximal antichain $A$ of size $\kappa$, any dense set $D$ (including one of smallest size) in $\P$ needs to have the property that for each element $a \in A$, there is an element $d \in D$ below $a$, satisfying $d \leq a$. Let's assume that $D$ has size $\delta(\P)$; then $D$ must have size at least $\kappa$ since $A$ is a maximal antichain; indeed we have a function $f:A \to D$, where $f(a)$ is an element of $D$ below $a$. It must be that $f$ is an injection, since otherwise there would be an element $d \in D$ below two distinct elements of $A$, contradicting the fact that $A$ is an antichain. Thus $\kappa =|A| \leq |D| = \delta(\P)$ as desired.
-\end{proof}
-
-Below we define a homomorphism between partial orders, following Schindler \cite[Definition 6.47]{schindler2014set}.
-
-\begin{definition}  Let $\langle \P, \leq_\P \rangle$ and $\langle \Q, \leq_\Q \rangle$ be posets. A map $\pi: \P \to \Q$ is a \textbf{\emph{homomorphism}} so long as it preserves order and incompatibility: \begin{enumerate}
-	\item For all $p,q \in \P$ we have that $p \leq_\P q \implies \pi(p) \leq_\Q \pi(q)$.
-	\item For all $p,q \in \P$ we have that $p \perp q \implies \pi(p) \perp \pi(q)$.
-\end{enumerate}
-
-A homomorphism $\pi:\P \to \Q$ is said to be \textbf{\emph{dense}} so long as for every $q \in \Q$ there is some $p \in \P$ such that $\pi(p) \leq q$, i.e., $\ran(\pi)$ is dense in $\Q$. \end{definition}
-
-We give some immediate remarks on our above definition. First of all, we claim property \textbf{1} automatically entails that for all $p,q \in \P$, if $\pi(p) \perp \pi(q)$ then $p \perp q$, since clearly if $p$ is compatible with $q$ we have that $\pi(p)$ is compatible with $\pi(q)$, which is the contrapositive of the claim. Furthermore, if $\P$ is separative (which indeed we assume of all of our forcing notions) then homomorphisms are automatically \textit{strong}, in that the implications of items \textbf{1} and \textbf{2} may both be reversed and we have the following:
-\begin{enumerate}
-	\item For all $p,q \in \P$ we have that $p \leq_\P q \iff \pi(p) \leq_\Q \pi(q)$.
-	\item For all $p,q \in \P$ we have that $p \perp q \iff \pi(p) \perp \pi(q)$.
-\end{enumerate}
-Item \textbf{1} holds since if otherwise, meaning if $\pi(p) \leq \pi(q)$ for $p,q \in \P$ and $p$ is not stronger than $q$, then there is a $p^*\leq p$ that is incompatible with $q$ by separativity, which means $\pi(p^*) \leq p$ and $\pi(p^*) \perp \pi(q)$, a contradiction. Thus, if $\P$ is a forcing notion, by property \textbf{1}, homomorphisms from $\P$ to $\Q$ are automatically embeddings.
-
-\begin{lemma} \label{lemma:deltasize} Let $\P$ and $\Q$ be forcing notions. If $\pi: \P \to \Q$ is a dense homomorphism (which means $\pi$ is a dense embedding, as explained above) then $\delta(\P)=\delta(\Q)$. \end{lemma} 
-\begin{proof}
-Suppose that $D \subseteq \P$ is dense and $|D|=\delta(\P)$. Then $\pi ``\P$ is dense in $\Q$ and $\pi``D$ is dense in $\pi``\P$, since $\pi$ is a homomorphism and preserves the partial order. This means that $\pi``D$ is dense in $\Q$. Any other dense set in $\Q$ has to have size at least $\delta(\Q)$, and thus $\delta(\Q) \leq |\pi``D| \leq |D| = \delta(\P)$ as desired. 
-
-We now use the remarks showing that our homomorphisms are strong to find a dense subset of $\P$ that has size at most $\delta(\Q)$. Let $\Delta \subseteq \Q$ be dense satisfying $|\Delta|=\delta(\Q)$. Since $\pi `` \P$ is dense in $\Q$, for each $q \in \Delta$ there is a $p_q \in \P$ such that $\pi(p_q) \leq q$. Let $D^*$ be the set of such $p_q$'s, where there is only one $p_q$ chosen for each $q \in \Delta$. To show that $D^*$ is dense, let $p \in \P$. Then as $\Delta$ is dense, there is $q \in \Delta$ satisfying $q \leq \pi(p)$. Thus there is $\pi(p_q) \leq q \leq \pi(p)$ where $p_q \in D^*$, so we have $p_q \leq p$ showing that $D^*$ is dense. This means that $\delta(\P) \leq \delta(\Q)$ as desired.
-\end{proof} 
-
+%More can be said about the weight of forcing notions, and I give some basic results below.
+%
+%\begin{lemma} Let $\P$ be a poset. Then maximal antichains in $\P$ have size at most $\delta(\P)$. \end{lemma}
+%\begin{proof}
+%Supposing $\P$ has a maximal antichain $A$ of size $\kappa$, any dense set $D$ (including one of smallest size) in $\P$ needs to have the property that for each element $a \in A$, there is an element $d \in D$ below $a$, satisfying $d \leq a$. Let's assume that $D$ has size $\delta(\P)$; then $D$ must have size at least $\kappa$ since $A$ is a maximal antichain; indeed we have a function $f:A \to D$, where $f(a)$ is an element of $D$ below $a$. It must be that $f$ is an injection, since otherwise there would be an element $d \in D$ below two distinct elements of $A$, contradicting the fact that $A$ is an antichain. Thus $\kappa =|A| \leq |D| = \delta(\P)$ as desired.
+%\end{proof}
+%
+%Below we define a homomorphism between partial orders, following Schindler \cite[Definition 6.47]{schindler2014set}.
+%
+%\begin{definition}  Let $\langle \P, \leq_\P \rangle$ and $\langle \Q, \leq_\Q \rangle$ be posets. A map $\pi: \P \to \Q$ is a \textbf{\emph{homomorphism}} so long as it preserves order and incompatibility: \begin{enumerate}
+%	\item For all $p,q \in \P$ we have that $p \leq_\P q \implies \pi(p) \leq_\Q \pi(q)$.
+%	\item For all $p,q \in \P$ we have that $p \perp q \implies \pi(p) \perp \pi(q)$.
+%\end{enumerate}
+%
+%A homomorphism $\pi:\P \to \Q$ is said to be \textbf{\emph{dense}} so long as for every $q \in \Q$ there is some $p \in \P$ such that $\pi(p) \leq q$, i.e., $\ran(\pi)$ is dense in $\Q$. \end{definition}
+%
+%We give some immediate remarks on our above definition. First of all, we claim property \textbf{1} automatically entails that for all $p,q \in \P$, if $\pi(p) \perp \pi(q)$ then $p \perp q$, since clearly if $p$ is compatible with $q$ we have that $\pi(p)$ is compatible with $\pi(q)$, which is the contrapositive of the claim. Furthermore, if $\P$ is separative (which indeed we assume of all of our forcing notions) then homomorphisms are automatically \textit{strong}, in that the implications of items \textbf{1} and \textbf{2} may both be reversed and we have the following:
+%\begin{enumerate}
+%	\item For all $p,q \in \P$ we have that $p \leq_\P q \iff \pi(p) \leq_\Q \pi(q)$.
+%	\item For all $p,q \in \P$ we have that $p \perp q \iff \pi(p) \perp \pi(q)$.
+%\end{enumerate}
+%Item \textbf{1} holds since if otherwise, meaning if $\pi(p) \leq \pi(q)$ for $p,q \in \P$ and $p$ is not stronger than $q$, then there is a $p^*\leq p$ that is incompatible with $q$ by separativity, which means $\pi(p^*) \leq p$ and $\pi(p^*) \perp \pi(q)$, a contradiction. Thus, if $\P$ is a forcing notion, by property \textbf{1}, homomorphisms from $\P$ to $\Q$ are automatically embeddings.
+%
+%\begin{lemma} \label{lemma:deltasize} Let $\P$ and $\Q$ be forcing notions. If $\pi: \P \to \Q$ is a dense homomorphism (which means $\pi$ is a dense embedding, as explained above) then $\delta(\P)=\delta(\Q)$. \end{lemma} 
+%\begin{proof}
+%Suppose that $D \subseteq \P$ is dense and $|D|=\delta(\P)$. Then $\pi ``\P$ is dense in $\Q$ and $\pi``D$ is dense in $\pi``\P$, since $\pi$ is a homomorphism and preserves the partial order. This means that $\pi``D$ is dense in $\Q$. Any other dense set in $\Q$ has to have size at least $\delta(\Q)$, and thus $\delta(\Q) \leq |\pi``D| \leq |D| = \delta(\P)$ as desired. 
+%
+%We now use the remarks showing that our homomorphisms are strong to find a dense subset of $\P$ that has size at most $\delta(\Q)$. Let $\Delta \subseteq \Q$ be dense satisfying $|\Delta|=\delta(\Q)$. Since $\pi `` \P$ is dense in $\Q$, for each $q \in \Delta$ there is a $p_q \in \P$ such that $\pi(p_q) \leq q$. Let $D^*$ be the set of such $p_q$'s, where there is only one $p_q$ chosen for each $q \in \Delta$. To show that $D^*$ is dense, let $p \in \P$. Then as $\Delta$ is dense, there is $q \in \Delta$ satisfying $q \leq \pi(p)$. Thus there is $\pi(p_q) \leq q \leq \pi(p)$ where $p_q \in D^*$, so we have $p_q \leq p$ showing that $D^*$ is dense. This means that $\delta(\P) \leq \delta(\Q)$ as desired.
+%\end{proof} 
+%
 If $\P$ is a dense subset of $\Q$, then, of course, $\delta(\P) = \delta(\Q)$.
 
 %\begin{lemma} If $\pi: \P \to \Q$ is a dense homomorphism between trees, then $\delta(\Q) = \delta(\P)$. \end{lemma}
@@ -225,20 +217,20 @@ If $\P$ is a dense subset of $\Q$, then, of course, $\delta(\P) = \delta(\Q)$.
 %\begin{lemma} If $\mathbb P \subseteq \mathbb Q$ are forcing notions and $\mathbb P$ is dense in $\mathbb Q$, it is possible for $\delta(\mathbb P) > \delta(\mathbb Q)$. \end{lemma} \begin{proof} Like if you have some huge set of conditions that are weaker than something but stronger than things too.
 
 
-\section{Fullness}
-\label{sec:fullness}
+\subsection{Fullness}
+\label{subsec:fullness}
 In the definition of subcompleteness, in lieu of working directly with $H_\theta$ and its well-order for ``large enough" cardinals $\theta$ as our standard setup (as is often done for proper forcing, for example), I will follow Jensen and work with models $N$ of the form: 
 	$$H_\theta \subseteq N = L_\tau[A] \models \ZFC^-,$$
 where $\tau>\theta$ is a cardinal that is not necessarily regular. Such $H_\theta$ will need to be large enough so that $N$ has the correct $\omega_1$ and $H_{\omega_1}$. One justification for working with these models is that such $N$ will naturally contain a well order of $H_\theta$, along with its Skolem functions and other useful bits of information we would like to have at our disposal. Additionally a benefit of working with models of the form $L_\tau[A]$ is that $L_\tau[A]$ is easily definable in $L_\tau[A][G]$, if $G$ is generic, using $A$.
 	
-In the standard fashion we will look at countable elementary substructures $X$ of the $N$ as above; $X \preccurlyeq N$. We then take the countable transitive collapse of such an $X$, and write $\N \cong X$. We will refer to these embeddings by writing 	$$\sigma: \N \cong X \preccurlyeq N.$$
-Often we will write $$\sigma: \N \prec N$$ to suppress mention of $X$, the range of $\sigma$.
+In the standard fashion we will look at countable elementary substructures $X$ of the $N$ as above; $X \preccurlyeq N$. We then take the countable transitive collapse of such an $X$, and write $\N \cong X$. We will refer to these embeddings by writing $\sigma: \N \cong X \preccurlyeq N.$
+Often we will write $\sigma: \N \prec N$ to suppress mention of $X$, the range of $\sigma$.
 	
-In fact, for our purposes it will not be quite enough for such an $\N$ to be transitive, we need a bit more, exactly given by the property of \textit{fullness}. Fullness of a model ensures that it is not pointwise definable, so that there can be many elementary maps between the smaller structure and the larger structure $N$ in our setup. Before defining fullness exactly, let us give some more of the concepts and definitions we will be working with.
+In fact, for our purposes it will not be quite enough for such an $\N$ to be transitive, we need a bit more, exactly given by the property of \textit{fullness}. Fullness of a model ensures that it is not pointwise definable, so that there can be many elementary maps between the smaller structure and the larger structure $N$ in our setup. Before defining fullness, there are more preliminary points to clarify.
 
-For the embeddings above that we will be working with, it is not hard to see what the critical point is. Given $\sigma: \N \prec N$ where $\N$ is countable and transitive, $\cp(\sigma)$ is exactly $\omega_1^{\N} = \sigma^{-1}(\omega_1^N)$, since $\N$ is countable.
+For the embeddings we are working with, it is not hard to see what the critical point is. Given $\sigma: \N \prec N$ where $\N$ is countable and transitive, $\cp(\sigma)$ is exactly $\omega_1^{\N} = \sigma^{-1}(\omega_1^N)$, since $\N$ is countable.
 
-\begin{fact} \label{fact:CPofourEmbeddings} Let $\N$, $N$ be transitive $\ZFC^-$ models, where $\N$ is countable and $H_{\omega_1} \subseteq N$, with $\sigma: \N \prec N$. Then $\cp(\sigma)=\omega_1^{\N}$ and $\sigma \rest (H_{\omega_1})^{\N} = \id$. \end{fact}
+\begin{remark} \label{remark:CPofourEmbeddings} Let $\N$, $N$ be transitive $\ZFC^-$ models, where $\N$ is countable and $H_{\omega_1} \subseteq N$, with $\sigma: \N \prec N$. Then $\cp(\sigma)=\omega_1^{\N}$ and $\sigma \rest (H_{\omega_1})^{\N} = \id$. \end{remark}
 \begin{proof}
 Let $\alpha = \cp(\sigma)$. Then $\alpha$ is a cardinal in $\N$, and $\alpha > \omega$ as both $\N$ and $N$ are models of $\ZFC^-$. 
 
@@ -248,26 +240,25 @@ It must be that $\alpha = \omega_1^\N$, since $\omega_1^\N$ is a countable ordin
 Every $x \in H_\alpha^\N=(H_{\omega_1})^\N$ may be coded as a subset of $\omega$ and thus as an ordinal less than $\omega_1$ by $\gamma=\TC{x}$, and $\sigma(\gamma)=\gamma$, and the desired result follows. 
 \end{proof}
 
-Let $N = L_\tau[A]$ for some cardinal $\tau$ and set $A$, be a transitive $\ZFC^-$ model, let $X$ be a set, and let $\delta$ be a cardinal. Our notation for the \textbf{\emph{Skolem hull}}, in $N$, closing under $\delta \cup X$, is the following: 
-	$$\Sk{N}{\delta}{X} = \text{the smallest } Y \preccurlyeq N \text{ satisfying } X \cup \delta \subseteq Y.$$
+Let $N = L_\tau[A]$ for some cardinal $\tau$ and set $A$, be a transitive $\ZFC^-$ model, let $X$ be a set, and let $\delta$ be a cardinal. Our notation for the \emph{Skolem hull}, in $N$, closing under $\delta \cup X$, is $\Sk{N}{\delta}{X}$. It is defined to be the smallest $Y \preccurlyeq N$ satisfying $X \cup \delta \subseteq Y$.
 	
 We gather two immediate, basic results that we will refer to later below.
 
-\begin{lemma} \label{lemma:subsethull}
+\begin{remark} \label{remark:subsethull}
 Let $N=L_\tau[A]$ be a transitive $\ZFC^-$ model, $\delta$ and $\gamma$ be cardinals, and $X$ a set. If $\delta \leq \gamma$ then $\Sk{N}{\delta}{X} \subseteq \Sk{N}{\gamma}{X}$. 
-\end{lemma}
+\end{remark}
 \begin{proof}
 This is trivial; if $t \in \Sk{N}{\delta}{X}$ then $t$ is $N$-definable from some $\xi < \delta \leq \gamma$ and $\vec x \in X$ so $t \in \Sk{N}{\gamma}{X}$ as well.
 \end{proof}
 
-\begin{lemma} \label{lemma:hullequality} Let $N$ be a transitive $\ZFC^-$ model, $\delta$ a cardinal, and $X$, $Y$ sets. If $\Sk{N}{\delta}{X} = \Sk{N}{\delta}{Y}$ then $\Sk{N}{\gamma}{X} = \Sk{N}{\gamma}{Y}$ for all $\gamma \geq \delta$. \end{lemma}
+\begin{remark} \label{remark:hullequality} Let $N$ be a transitive $\ZFC^-$ model, $\delta$ a cardinal, and $X$, $Y$ sets. If $\Sk{N}{\delta}{X} = \Sk{N}{\delta}{Y}$ then $\Sk{N}{\gamma}{X} = \Sk{N}{\gamma}{Y}$ for all $\gamma \geq \delta$. \end{remark}
 \begin{proof}
 	Let $t \in \Sk{N}{\gamma}{X}$. Then there is some formula $\varphi$ where $t$ unique such that $N \models \varphi(t, \xi, x)$ for $\xi < \gamma$, $x \in X$. But since then $x \in X \subseteq \Sk{N}{\delta}{X}= \Sk{N}{\delta}{Y} \subseteq \Sk{N}{\gamma}{Y}$, it must be the case that $t \in \Sk{N}{\gamma}{Y}$ as well. Likewise for the reverse inclusion.
 \end{proof}
 
-Before defining fullness, we need one more definition.
+Finally, still before defining fullness, we need one more definition.
 
-\begin{definition} We say that a transitive model $N$ is \emph{\textbf{regular}} in a transitive model $M$ so long as for all functions $f: x \To N$, where $x$ is an element of $N$ and $f \in M$, we have that $f``x \in N$. \end{definition}
+\begin{definition} We say that a transitive model $N$ is \emph{regular} in a transitive model $M$ so long as for all functions $f: x \To N$, where $x$ is an element of $N$ and $f \in M$, we have that $f``x \in N$. \end{definition}
 To elucidate the definition further, we immediately have the following lemma:
 
 \begin{lemma} \label{lemma:regularityequiv}
@@ -282,7 +273,7 @@ We have that $N \subseteq H_{\gamma}^M$ since $N$ is a transitive $\ZFC^-$ model
 
 We now define fullness.
 
-\begin{definition} A structure $M$ is \emph{\textbf{full}} so long as $M$ is transitive, $\omega \in M$, and there is a $\gamma$ such that $M$ is regular in $L_\gamma(M)$ where $L_\gamma(M) \models \ZFC^-$.
+\begin{definition} A structure $M$ is \emph{full} so long as $M$ is transitive, $\omega \in M$, and there is a $\gamma$ such that $M$ is regular in $L_\gamma(M)$ where $L_\gamma(M) \models \ZFC^-$.
 \end{definition}
 
 Perhaps this property seems rather mysterious, but the fullness of a countable structure guarantees that it is not pointwise definable, which we will see is a necessary property of some of the models that come up in the definition subcomplete forcing.
@@ -293,44 +284,44 @@ Perhaps this property seems rather mysterious, but the fullness of a countable s
 Let $N$ be a transitive $\ZFC^-$ model. Suppose $\N \cong X \preccurlyeq N$ where $X$ is countable and $\N$ is full. Then as we will find, there may possibly be more than one elementary embedding $\sigma: \N \prec N$. 
 If there was only one unique embedding, we would be able to define $\N$ pointwise, by elementarity of the unique map and since $\N$ is countable.
 
-The following lemma shows that fullness is in some sense not much harder than transitivity to satisfy.
-
-\begin{lemma} \label{lemma:fullclubs}
-Let $\theta>\omega_1$ satisfy $H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ with $\tau>\theta$ regular and $A \subseteq \tau$, and let $s \in N$. Then 
-$$ \set{ \omega_1^\N }{ \text{there is $\sigma$ such that $\sigma: \N \prec N$ where $\N$ is countable and full, and $s \in \ran(\sigma)$} } \subseteq \omega_1$$ contains a club.
-\end{lemma} 
-
-\begin{proof}
-Let $\tau'=(\tau^+)^{L[A]}$. Let $\sigma' : \overline{L_{\tau'}[A]} \cong X \preccurlyeq L_{\tau'}[A]$ where $X$ is countable and $L_{\overline{\tau'}}[\overline A]$ is the Mostowski collapse of $X$. Let $\overline \tau$ be the largest cardinal of $L_{\overline{\tau'}}[\overline A]$. We would like to show that $\N = L_{\overline{\tau}}[\overline A]$ is full, by showing it is regular in $L_{\overline{\tau'}}[\overline A] = L_{\overline{\tau'}}(\N)$.
-%We first claim that $N=L_\tau[A]$ is regular in $L_{\tau'}[A]$, and then shift the property down to the countable transitive collapse of these structures to show that they are full.
-\begin{claim} $\N$ is regular in $L_{\overline{\tau'}}[\overline A]$. \end{claim}
-\begin{proof}[Pf.] 
-Let $f:x \longrightarrow \overline N$, where $x \in \N$ and $f \in L_{\overline{\tau'}}[\overline A]$, and indeed $\ran(f)= f``x \in L_{\overline{\tau'}}[\overline A]$. Firstly, $f`` x \subseteq L_\gamma[\overline A]$, for some $\gamma < \overline \tau$, because $\overline \tau$ is a regular cardinal in $L_{\overline{\tau'}}[A]$. We inductively define a sequence of Skolem hulls in order to see that ultimately $f``x$ must be an element of $\N$.
-Let 
-	$$X_0 = \Sk{L_{\overline{\tau'}}[\overline A]}{\gamma}{\{f``x\}}.$$
-In $L_{\overline{\tau'}}[\overline A]$, $X_0$ has size $\gamma$, so in particular it has size less than $\overline \tau$. Also we have that $L_\gamma[\overline A] \subseteq X_0$. As an aside, we point out that one  might already want to take the transitive collapse of this structure to obtain something that looks like $L_{\overline{\overline{\tau'}}}[\overline{\overline A}]$. The $\overline{\overline A}$ arising from this is not very easy to work with; it is not necessarily true that in this case, $\overline{\overline A} = \overline A \cap {\overline{\overline{\tau'}}}$ as one would hope. To remedy this we will go on to define a hull whose transitive collapsed version of $\overline A$ is an initial segment of $\overline A$, ultimately making the collapsed structure definable in $L_{\overline \tau}[\overline A]$. To do this, inductively assume $X_n$ is defined with size less than $\overline \tau$, and set $\gamma_n = \sup(X_n) \cap \overline \tau$. We have that $|\gamma_n|<\overline \tau$, as $\overline \tau$ is regular in $L_{\overline{\tau'}}[\overline A]$. We let 
-	$$X_{n+1} = \Sk{L_{\overline{\tau'}}[\overline A]}{\gamma_n}{X_n}.$$
-This defines an elementary chain $\seq{X_n}{n<\omega}$ in $L_{\overline{\tau'}}[\overline A]$. So $X_\omega = \bigcup_{n<\omega}X_n$ is an elementary substructure of $L_{\overline{\tau'}}[\overline A]$. Additionally, let $\gamma_\omega:=X_\omega \cap \overline \tau = \sup_{n<\omega}{\gamma_n}$. 
-
-Let $k:\overline{L_{\overline{\tau'}}[\overline{A}]} \cong X_\omega \preccurlyeq L_{\overline{\tau'}}[\overline A]$. Then $\overline{L_{\overline{\tau'}}[\overline A]}=L_{\overline{\overline{\tau'}}}[\overline{\overline{A}}]$ and by construction, $k \rest \gamma_\omega = \id$.
-%and $k(\gamma_\omega)=\tau$. 
-Additionally we now have $$\overline{\overline{A}} = k^{-1}``\overline A = k^{-1}``(\overline A \cap \gamma_\omega)=\overline A \cap \gamma_\omega.$$ Since $L_\gamma[\overline A] \subseteq X_0$, we have that $k^{-1}(f``x)=f``x$. Thus $f``x \in L_{\overline{\overline{\tau'}}}[\overline A \cap \gamma_\omega] \in L_{\overline{\tau}}[\overline A] = \N$, since $\overline{\overline{\tau'}} <\tau$ and $\overline A \cap \gamma_\omega < \overline \tau$.
-%Take the transitive collapse $k:L_{\gamma}[A] \cong X$, where $\overline{\gamma} < \tau$. We have that $k^{-1}(f``x) = f``x$, since $f``x \subseteq L_\gamma[A]$ and $f``x \in X$. Thus $f``x \in L_{\overline{\gamma}}[A] \subseteq L_{\tau}[A]$ as desired, proving the \textit{Claim}. 
-Thus $\N$ is regular in $L_{\overline{\tau'}}[\overline A]$, proving the \textit{Claim}.
-\end{proof}
-Thus $\N$ is full. To show the claim, we need to show that there are club-many such $\N$s. But this is true because there are club-many relevant Skolem hulls from which the $\N$ arise.
-
-In particular, let
-\begin{align*} \Gamma = \Big\{ \N = L_{\overline \tau}[\overline A] \st & \text{ for some $\gamma<\omega_1$, } L_{\overline{\tau}'}[\overline A] \cong \Sk{L_{\tau'}[A]}{\gamma}{\{s\}} \preccurlyeq L_{\tau'}[A] \\
-	&\text{ where } \overline \tau \text{ is the largest cardinal in } L_{\overline{\tau'}}[\overline A]\Big\}.
-	\end{align*}
-
-Then $C = \set{ \omega_1^\N }{ \N \in \Gamma } \subseteq \omega_1$ is club. 
-
-Clearly $C$ is unbounded, since for any $\gamma < \omega_1$, there is $\sigma' : L_{\overline{\tau}'}[\overline A] \cong \Sk{L_{\tau'}[A]}{\gamma}{\{s\}} \preccurlyeq L_{\tau'}[A]$. Let $\sigma'(\overline s)=s$. Since $\overline \tau > \omega_1^\N$ by elementarity, we have that $\sigma=\sigma' \rest L_{\overline \tau}[\overline A]$ is an elementary embedding as well; $\sigma: \N \prec N$, and $\sigma(\overline s)=s$. Then the critical point of $\sigma$, namely $\omega_1^\N$, is above $\gamma$.
-
-To see that $C$ is closed, suppose we have an unbounded set of of ${\N} \in \Gamma$ and an associated sequence of $\alpha=\omega_1^{{\N}}$. As we saw above, each of these ${\N}$ can be thought of as the domain of some elementary $\sigma: \N \cong X \preccurlyeq N$, where $X$ is countable. Then we can take the union of these $X$ to obtain $X \preccurlyeq N$. To form $\sigma: \N \prec N$ take the Mostowski collapse. The critical point of $\sigma$ will be the supremum of all of the $\alpha$'s.
-\end{proof}
+%The following lemma shows that fullness is in some sense not much harder than transitivity to satisfy.
+%
+%\begin{lemma} \label{lemma:fullclubs}
+%Let $\theta>\omega_1$ satisfy $H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ with $\tau>\theta$ regular and $A \subseteq \tau$, and let $s \in N$. Then 
+%$$ \set{ \omega_1^\N }{ \text{there is $\sigma$ such that $\sigma: \N \prec N$ where $\N$ is countable and full, and $s \in \ran(\sigma)$} } \subseteq \omega_1$$ contains a club.
+%\end{lemma} 
+%
+%\begin{proof}
+%Let $\tau'=(\tau^+)^{L[A]}$. Let $\sigma' : \overline{L_{\tau'}[A]} \cong X \preccurlyeq L_{\tau'}[A]$ where $X$ is countable and $L_{\overline{\tau'}}[\overline A]$ is the Mostowski collapse of $X$. Let $\overline \tau$ be the largest cardinal of $L_{\overline{\tau'}}[\overline A]$. We would like to show that $\N = L_{\overline{\tau}}[\overline A]$ is full, by showing it is regular in $L_{\overline{\tau'}}[\overline A] = L_{\overline{\tau'}}(\N)$.
+%%We first claim that $N=L_\tau[A]$ is regular in $L_{\tau'}[A]$, and then shift the property down to the countable transitive collapse of these structures to show that they are full.
+%\begin{claim} $\N$ is regular in $L_{\overline{\tau'}}[\overline A]$. \end{claim}
+%\begin{proof}[Pf.] 
+%Let $f:x \longrightarrow \overline N$, where $x \in \N$ and $f \in L_{\overline{\tau'}}[\overline A]$, and indeed $\ran(f)= f``x \in L_{\overline{\tau'}}[\overline A]$. Firstly, $f`` x \subseteq L_\gamma[\overline A]$, for some $\gamma < \overline \tau$, because $\overline \tau$ is a regular cardinal in $L_{\overline{\tau'}}[A]$. We inductively define a sequence of Skolem hulls in order to see that ultimately $f``x$ must be an element of $\N$.
+%Let 
+%	$$X_0 = \Sk{L_{\overline{\tau'}}[\overline A]}{\gamma}{\{f``x\}}.$$
+%In $L_{\overline{\tau'}}[\overline A]$, $X_0$ has size $\gamma$, so in particular it has size less than $\overline \tau$. Also we have that $L_\gamma[\overline A] \subseteq X_0$. As an aside, we point out that one  might already want to take the transitive collapse of this structure to obtain something that looks like $L_{\overline{\overline{\tau'}}}[\overline{\overline A}]$. The $\overline{\overline A}$ arising from this is not very easy to work with; it is not necessarily true that in this case, $\overline{\overline A} = \overline A \cap {\overline{\overline{\tau'}}}$ as one would hope. To remedy this we will go on to define a hull whose transitive collapsed version of $\overline A$ is an initial segment of $\overline A$, ultimately making the collapsed structure definable in $L_{\overline \tau}[\overline A]$. To do this, inductively assume $X_n$ is defined with size less than $\overline \tau$, and set $\gamma_n = \sup(X_n) \cap \overline \tau$. We have that $|\gamma_n|<\overline \tau$, as $\overline \tau$ is regular in $L_{\overline{\tau'}}[\overline A]$. We let 
+%	$$X_{n+1} = \Sk{L_{\overline{\tau'}}[\overline A]}{\gamma_n}{X_n}.$$
+%This defines an elementary chain $\seq{X_n}{n<\omega}$ in $L_{\overline{\tau'}}[\overline A]$. So $X_\omega = \bigcup_{n<\omega}X_n$ is an elementary substructure of $L_{\overline{\tau'}}[\overline A]$. Additionally, let $\gamma_\omega:=X_\omega \cap \overline \tau = \sup_{n<\omega}{\gamma_n}$. 
+%
+%Let $k:\overline{L_{\overline{\tau'}}[\overline{A}]} \cong X_\omega \preccurlyeq L_{\overline{\tau'}}[\overline A]$. Then $\overline{L_{\overline{\tau'}}[\overline A]}=L_{\overline{\overline{\tau'}}}[\overline{\overline{A}}]$ and by construction, $k \rest \gamma_\omega = \id$.
+%%and $k(\gamma_\omega)=\tau$. 
+%Additionally we now have $$\overline{\overline{A}} = k^{-1}``\overline A = k^{-1}``(\overline A \cap \gamma_\omega)=\overline A \cap \gamma_\omega.$$ Since $L_\gamma[\overline A] \subseteq X_0$, we have that $k^{-1}(f``x)=f``x$. Thus $f``x \in L_{\overline{\overline{\tau'}}}[\overline A \cap \gamma_\omega] \in L_{\overline{\tau}}[\overline A] = \N$, since $\overline{\overline{\tau'}} <\tau$ and $\overline A \cap \gamma_\omega < \overline \tau$.
+%%Take the transitive collapse $k:L_{\gamma}[A] \cong X$, where $\overline{\gamma} < \tau$. We have that $k^{-1}(f``x) = f``x$, since $f``x \subseteq L_\gamma[A]$ and $f``x \in X$. Thus $f``x \in L_{\overline{\gamma}}[A] \subseteq L_{\tau}[A]$ as desired, proving the \textit{Claim}. 
+%Thus $\N$ is regular in $L_{\overline{\tau'}}[\overline A]$, proving the \textit{Claim}.
+%\end{proof}
+%Thus $\N$ is full. To show the claim, we need to show that there are club-many such $\N$s. But this is true because there are club-many relevant Skolem hulls from which the $\N$ arise.
+%
+%In particular, let
+%\begin{align*} \Gamma = \Big\{ \N = L_{\overline \tau}[\overline A] \st & \text{ for some $\gamma<\omega_1$, } L_{\overline{\tau}'}[\overline A] \cong \Sk{L_{\tau'}[A]}{\gamma}{\{s\}} \preccurlyeq L_{\tau'}[A] \\
+%	&\text{ where } \overline \tau \text{ is the largest cardinal in } L_{\overline{\tau'}}[\overline A]\Big\}.
+%	\end{align*}
+%
+%Then $C = \set{ \omega_1^\N }{ \N \in \Gamma } \subseteq \omega_1$ is club. 
+%
+%Clearly $C$ is unbounded, since for any $\gamma < \omega_1$, there is $\sigma' : L_{\overline{\tau}'}[\overline A] \cong \Sk{L_{\tau'}[A]}{\gamma}{\{s\}} \preccurlyeq L_{\tau'}[A]$. Let $\sigma'(\overline s)=s$. Since $\overline \tau > \omega_1^\N$ by elementarity, we have that $\sigma=\sigma' \rest L_{\overline \tau}[\overline A]$ is an elementary embedding as well; $\sigma: \N \prec N$, and $\sigma(\overline s)=s$. Then the critical point of $\sigma$, namely $\omega_1^\N$, is above $\gamma$.
+%
+%To see that $C$ is closed, suppose we have an unbounded set of of ${\N} \in \Gamma$ and an associated sequence of $\alpha=\omega_1^{{\N}}$. As we saw above, each of these ${\N}$ can be thought of as the domain of some elementary $\sigma: \N \cong X \preccurlyeq N$, where $X$ is countable. Then we can take the union of these $X$ to obtain $X \preccurlyeq N$. To form $\sigma: \N \prec N$ take the Mostowski collapse. The critical point of $\sigma$ will be the supremum of all of the $\alpha$'s.
+%\end{proof}
 
 The following lemma will prove useful when showing that various forcing notions are subcomplete, since subcompleteness requires certain ground-model Skolem hulls to match those in forcing extensions.
 
@@ -353,14 +344,131 @@ Thus
 so $x \in \sk{N}{\delta}{\sigma}$.
 \end{proof}
 
-\section{Barwise Theory}
-\label{sec:BarwiseTheory}
-In order to show that many posets are subcomplete, Jensen takes advantage of Barwise Theory and techniques using countable admissible structures to obtain transitive models of infinitary languages. Barwise creates an $M$-finite predicate logic, a first order theory in which arbitrary, but $M$-finite, disjunctions and conjunctions are allowed. The following is an outline of \cite[Chapter 1 \& 2]{Jensen:2012fr}. 
+\subsection{Subcomplete Forcing}
+Subcompleteness should be seen as a weakening of the class of complete (a.k.a. countably closed) forcing notions. We follow \cite[Chapter 3]{Jensen:2012fr} for the following definitions and the proofs that we cite as due to Jensen.
+ 
+\begin{definition} A forcing notion $\P$ is \emph{complete} so long as
+for sufficiently large $\theta$ we have; letting: \begin{itemize}
+	\item $\P \in H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ where $\tau>\theta$ and $A \subseteq \tau$
+	\item $\sigma: \N \cong X \preccurlyeq N$ where $X$ is countable and $\N$ is transitive
+	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$ for some $s \in N$;
+\end{itemize}
+if $\G$ is $\overline{\P}$-generic over $\N$ then there is a \emph{completeness condition} $p \in \P$ forcing that whenever $G \ni p$ is $\P$-generic, $\sigma ``\, \G \subseteq G$. 
 
-\begin{definition} Let $M$ be a transitive structure with potentially infinitely many predicates. A theory defined over $M$ is $M$-\textbf{\textit{finite}} so long as it is in $M$. A theory is $\Sigma_1(M)$, also known as \textbf{\textit{$M$-recursively enumerable}} or $M$-$re$, if the theory is $\Sigma_1$-definable, with parameters from $M$. \end{definition}
-Of course we can generalize this to the entire usual Levy hierarchy of formulae, but for our purposes we only need to know what  it means for a theory to be $\Sigma_1(M)$. If $\mathcal L$ is a $\Sigma_1$(M)-definable language or theory, the rough idea is that to check whether a sentence is in $\mathcal L$, one should imagine enumerating the formulae of $\mathcal L$ to find the sentence and a witness to it in the structure $M$. Below we elaborate on what models we are working with. %Such $M$ will need to satisfy more properties than transitivity to be useful in our context.
+In particular, below the condition $p$ we have that $\sigma$ lifts to an embedding $\sigma^*:\N[\G] \prec N[G]$.
+We say that such a $\theta$ as above \emph{verifies} the completeness of $\P$.
+\end{definition}
+The adjustment made to get subcomplete forcings is to not necessarily insist the the original embedding lifts in the forcing extension. Instead subcompleteness asks for there to be an embedding in the extension, an embedding that is sufficiently similar to the original embedding, that lifts. However, as discussed in Section \ref{subsec:fullness}, the domain of the embedding must be \emph{full} to ensure that there can even consistently be more than one embedding. The definition is given below.
 
-\begin{definition} A transitive structure $M$ is \textbf{\emph{admissible}} if it models the axioms of \textsf{Kripke-Platek Set Theory} (\textsf{KP}) which consists of the axioms of \textsf{Empty Set}, \textsf{Pairing}, \textsf{Union}, $\Sigma_0$-\textsf{Collection}, and $\Sigma_0$-\textsf{Separation}. \end{definition}
+\begin{definition} \label{definition:SC}
+A forcing notion $\P$ is \emph{subcomplete} so long as,
+for sufficiently large $\theta$ we have that whenever we are in a situation where: \begin{itemize}
+	\item $\P \in H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ where $\tau>\theta$ and $A \subseteq \tau$
+	\item $\sigma: \N \cong X \preccurlyeq N$ where $X$ is countable and $\N$ is full
+	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$ for some $s \in N$;
+\end{itemize}
+then we have that if $\G$ is  $\overline{\P}$-generic over $\N$ then there is a \emph{subcompleteness condition} $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
+	\item $\sigma': \N \prec N$
+	\item $\sigma'(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$
+	\item \label{item:skolemcompatibility} $\sk{N}{\delta(\P)}{\sigma'} = \Sk{N}{\delta(\P)}{X}$
+	\item \label{item:sigmaprimelifts} $\sigma'``\, \G \subseteq G$.
+\end{enumerate}
+In other words and in particular, the subcompleteness condition $p$ forces that there is an embedding $\sigma'$ in the extension $V[G]$ that lifts, by \ref{item:sigmaprimelifts}., to an embedding $\sigma'^*:\N[\G] \prec N[G]$ in $V[G]$.
+
+We say that such a $\theta$ as above \emph{verifies} the subcompleteness of $\P$.
+
+Often we write $\delta$ instead of $\delta(\P)$ for the weight of $\P$ when there should be no confusion as to which poset $\P$ we are working with.\footnote{See Section \ref{subsec:delta} for more on $\delta(\P)$.}
+\end{definition}
+Condition \ref{item:skolemcompatibility}.~ in the definition above ensures that subcomplete forcing notions may be iterated, and is rarely used in the following proofs. Thus we will tend to leave out of the discussion if we are showing properties of subcomplete posets.
+%
+%Immediately we obtain the following.
+%\begin{proposition}[Jensen]\label{proposition:noreals}
+%Subcomplete forcing does not add countable subsets of countable sets. In particular, subcomplete forcing does not add reals.
+%\end{proposition}
+%\begin{proof}
+%Let $\P$ be subcomplete. Suppose toward a contradiction that $\P$ adds a new real, let $p \in \P$ force that $\dot r: \check \omega \rightarrow \omega$ is new. Let $\theta$ be large enough and let $\sigma$, $\N$, and $N$ satisfy: \begin{itemize} 
+%	\item $\P \in H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ where $\tau>\theta$ and $A \subseteq \tau$
+%	\item $\sigma: \N \cong X \preccurlyeq N$ where $X$ is countable and $\overline N$ is full
+%	\item $\sigma(\overline \theta, \overline{\P}, \overline p, \overline{\dot r})=\theta, \P, p, \dot r.$
+%\end{itemize}
+%Let $\G \subseteq \overline{\P}$ be an $\N$-generic filter with $\overline p \in \G$. By the subcompleteness of $\P$, there is $q \in \P$ forcing that whenever $G \ni q$ is $\P$-generic, there is $\sigma' \in V[G]$ such that \begin{itemize}
+%	\item $\sigma': \N \prec N$
+%	\item $\sigma'(\overline \theta, \overline{\P}, \overline p, \overline{\dot r})=\theta, \P, p, \dot r$
+%	\item $\sigma'``\, \G \subseteq G$.
+%\end{itemize} 
+%Thus $\sigma'$ lifts to $\sigma':\N[\G] \prec N[G]$ in $V[G]$. Let $r = \dot r^G$, $\overline r = \overline{\dot r}^{\G}$. Then for each $n < \omega$ we have that 
+%	$$r(n) = \sigma'(\overline r(n)) = \overline r(n).$$ 
+%So $r=\overline r \in V$, contradicting our original assumption that $p \in G$ forces $\dot r$ to be new. %The point here is that $\sigma_0$ has to preserve natural numbers. If we had any other values being computed, this would simply not work.
+%%The point is that the critical point of all of these embeddings is $\omega_1^{\overline N}$.
+%\end{proof}
+%
+%\begin{proposition}
+%Subcomplete forcings are subproper.
+%\end{proposition}
+%\begin{proof}
+%Let $\delta(\P)=\delta$. If $\P$ is subcomplete, then to see that $\P$ is also subproper assume we are in the standard setup from the definition of subproperness: \begin{itemize}
+%	\item $\P \in H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ where $\tau>\theta$ and $A \subseteq \tau$
+%	\item $\sigma: \N \cong X \preccurlyeq N$ where $X$ is countable and $\overline N$ is full
+%	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$ for some $s \in N$.
+%\end{itemize}
+%Let $\overline q \in \overline{\P}$. Then $q = \sigma(\overline q) \in X$.
+%Let $\G$ be generic for $\overline{\P}$ over $\N$ such that $\overline q \in \G$. Then by subcompleteness of $\P$, we have that there is $p \in \P$ such that whenever $G$ is generic and $G$ contains $p$, then there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
+%	\item $\sigma': \N \prec N$
+%	\item $\sigma'(\overline \theta, \overline{\P}, \overline s, \overline q)=\theta, \P, s, q$
+%	\item $\sk{N}{\delta}{\sigma'} = \Sk{N}{\delta}{X}$
+%	\item $\sigma'``\, \G \subseteq G$.
+%\end{enumerate}
+%In particular, 
+%	$$q = \sigma(\overline q)=\sigma'(\overline q) \in G.$$ Thus $q$ is compatible with $p$, and so there is $r \in G$ satisfying $r \leq q$ and $r \leq p$. But then this $r$ verifies the subproperness of $\P$, since this $r$ is also below $p$.
+%\end{proof}
+%By \textbf{Theorem \ref{thm:SubproperMM}}, this means that subcomplete forcings also preserve stationary subsets of $\omega_1$. Thus the class of subcomplete forcing is not the same as the class of countably distributive forcing notions (those that don't add new reals). The following lemma tells us that the verification of subcompleteness is absolute to suitably large structures.
+%
+%\begin{lemma}[Jensen] \label{lemma:scabsolute} Suppose that $\P \in H_\theta$ and let $\eta>|H_\theta|$. 
+%
+%$\P$ is subcomplete as verified by $\theta$ $\iff$ $\P$ is subcomplete in $H_\eta$ as verified by $\theta$.  \end{lemma} 
+%\begin{proof}
+%If $\P$ is subcomplete in $H_\eta$ then $\P$ is subcomplete in $V$ because in the definition of subcompleteness, only $N=L_\tau[A] \in H_\eta$ need to be considered. To see why, assume that $\P$ is subcomplete as verified by $\theta$ in $H_\eta$.  Then we show that $\P$ actually is subcomplete as verified by $\theta$.
+%\begin{claim} Whenever we are in a situation where \begin{itemize}
+%	\item $\P \in H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ where $\tau>\theta$ and $A \subseteq \tau$
+%	\item $\sigma: \N \cong X \preccurlyeq N$ where $X$ is countable and $\N$ is full
+%	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$ for some $s \in N$;
+%\end{itemize}
+%then we have that if $\G$ is  $\overline{\P}$-generic over $\N$ then there is $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
+%	\item $\sigma': \N \prec N$
+%	\item $\sigma'(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$
+%	\item $\sk{N}{\delta}{\sigma'} = \Sk{N}{\delta}{X}$
+%	\item $\sigma'`` \G \subseteq G$.
+%\end{enumerate} \end{claim}
+%\begin{proof}[Pf.]
+%We find a suitable embedding, similar to $\sigma$, but in $H_\eta$. Let $ \pi: N_0 \cong \Sk{N}{H_\theta}{X \cup \delta \cup \{s\}} =Y \preccurlyeq N$. Then $N_0 \in H_\eta$. Since $X \subseteq Y$ and $X \preccurlyeq N$, we have that $X \preccurlyeq Y$. Thus, letting $X_0=\pi^{-1}``X$, we have that $X \cong X_0 \preccurlyeq N_0$. So taking the Mostowski collapse $\N_0$, we have that $\N_0=\N$. Thus we have:
+%\begin{itemize}
+%	\item $\sigma_0:\N \cong X_0 \preccurlyeq N_0$ in $H_\eta$ 
+%	\item $\sigma_0(\overline \theta, \overline{\P}, \overline s)=\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$. 
+%	\end{itemize}
+%So by the subcompleteness of $\P$ in $H_\eta$, we have that if $\G \subseteq \overline{\P}$ is generic over $\N$ then there is $p \in \P$ such that whenever $G_0 \ni p$ is $\P$-generic over $H_\eta$, there is $\sigma_0'\in H_\eta[G_0]=V^{H_\eta}[G_0]$ satisfying \begin{enumerate}
+%	\item $\sigma_0': \N \prec N_0$
+%	\item $\sigma_0'(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$
+%	\item $\sk{N_0}{\delta}{\sigma_0'} = \Sk{N_0}{\delta}{X_0}$
+%	\item $\sigma_0'`` \G \subseteq G_0$.
+%\end{enumerate}
+%If $G \ni p$ is $\P$-generic over $V$, then $G$ is also $\P$-generic over $H_\eta$. We thus have that items \textsl{\textbf{1}} and \textsl{\textbf{2}} of the \textit{Claim} hold, since letting $\sigma'=\sigma_0' \circ \pi \in V[G]$ we have $\sigma':\N \prec N$ and $\sigma'(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$.  Moreover item \textsl{\textbf{3}} holds since $\pi``\sk{N_0}{\delta}{\sigma_0'} = \sk{N}{\delta}{\sigma'}$ and $\pi``\Sk{N_0}{\delta}{X_0} = \Sk{N}{\delta}{X}$. For property \textbf{\textsl{4}}, the point is that $\pi \rest H_\theta = \id$, so $\pi \circ \sigma_0' `` \G = \sigma_0'``\G \subseteq G$. This finishes the proof of the \textit{Claim}.
+% \end{proof}
+%
+%Finally, if $\P$ is subcomplete in $V$ as verified by $H_\theta$, then $\P$ is subcomplete in $H_\eta$ since given $\sigma \in H_\eta$ where $\sigma: \N \prec N$, we have of course that $\N, N \in H_\eta$. Additionally $\sigma \in V$, and we may apply subcompleteness in $V$ to obtain a condition $p \in \P$ such that whenever $p \in G$, there is a $\sigma' \in V[G]$ having certain properties, namely \textbf{1} through \textbf{4} of the definition. Such generic filters over $V$ are also generic over $H_\eta$, and furthermore $\sigma' \in H_\eta[G] = V^{H_\eta}[G]$ since $\N$ and $N$ are in $H_\eta$. So the rest of the properties are also clear, and $\P$ is subcomolete in $H_\eta$ as desired.
+%\end{proof}
+
+\begin{remark}\label{remark:VerifyingSC} If $\P$ is subcomplete as verified by $\theta$, then $\P$ is subcomplete as verifed by $\theta' > \theta$ since $\P \in H_\theta$ obviously implies that $\P \in H_{\theta'}$. Thus if we are in a situation where $\P \in H_{\theta'} \subseteq N=L_\tau[A]$ for $\tau>\theta'$ then we may reduce down to the case where $\P \in H_{\theta} \subseteq N=L_\tau[A]$ and $\tau>\theta'>\theta$ using the same $\tau$ and apply subcompletenss. In particular, $\P$ is subcomplete as long as it is verified to be subcomplete by some $\theta$. So we may replace ``sufficiently large $\theta$" with ``some $\theta$" in the definition of subcompleteness.\footnote{See \cite[Section 3.1 Lemma 2.4]{Jensen:2012fr}.} \end{remark}
+
+
+
+\subsection{Barwise Theory}
+\label{subsec:BarwiseTheory}
+In order to show that many posets are subcomplete, Jensen exploits Barwise Theory and techniques using countable admissible structures to obtain transitive models of infinitary languages. Barwise creates an $M$-finite predicate logic, a first order theory in which arbitrary, but $M$-finite, disjunctions and conjunctions are allowed. The following is an outline of \cite[Chapter 1 \& 2]{Jensen:2012fr}. 
+
+\begin{definition} Let $M$ be a transitive structure with potentially infinitely many predicates. A theory defined over $M$ is $M$-\emph{finite} so long as it is in $M$. A theory is $\Sigma_1(M)$, also known as \emph{$M$-recursively enumerable} or $M$-$re$, if the theory is $\Sigma_1$-definable, with parameters from $M$. \end{definition}
+Of course we can generalize this to the entire usual Levy hierarchy of formulae, but for our purposes we only need to know what  it means for a theory to be $\Sigma_1(M)$. If $\mathcal L$ is a $\Sigma_1$(M)-definable language or theory, the rough idea is that to check whether a sentence is in $\mathcal L$, one should imagine enumerating the formulae of $\mathcal L$ to find a sentence and a witness to it in the structure $M$. Below we elaborate on what models we are working with. %Such $M$ will need to satisfy more properties than transitivity to be useful in our context.
+
+\begin{definition} A transitive structure $M$ is \emph{admissible} if it models the axioms of \textsf{Kripke-Platek Set Theory} (\textsf{KP}) which consists of the axioms of \textsf{Empty Set}, \textsf{Pairing}, \textsf{Union}, $\Sigma_0$-\textsf{Collection}, and $\Sigma_0$-\textsf{Separation}. \end{definition}
 
 Jensen also makes use of models of $\textsf{ZF}^-$ that are not necessarily well-founded.
 \begin{definition} Let $\mathfrak A = \langle A, \in_{\mathfrak A}, B_1, B_2, \dots \rangle$ be a (possibly) ill-founded model  of $\textsf{ZF}^-$, where $\mathfrak A$ is allowed to have predicates other than $\in$. The \textbf{\emph{well-founded core}} of $\mathfrak A$, denoted $\wfc(\mathfrak A)$, is the restriction of $\mathfrak A$ to the set of all $x \in A$ such that $\in_{\mathfrak A} \cap \mathcal C(x)^2$ is well founded, where $\mathcal C(x)$ is the closure of $\{x\}$ under $\in_{\mathfrak A}$. A model $\mathfrak A$ of $\textsf{ZF}^-$ is \textbf{\emph{solid}} so long as $\wfc(\mathfrak A)$ is transitive and $\in_{\wfc(\mathfrak A)}=\in \cap \wfc(\mathfrak A)^2$. \end{definition}
@@ -403,8 +511,8 @@ A useful technique when showing a particular forcing is subcomplete, once many d
 \begin{fact}[\textbf{\emph{Transfer}}]\label{fact:Transfer} Suppose that for $M$ admissible, $\mathcal L(M)$ is a $\Sigma_1(M)$ infinitary $\in$-theory. Let $N_1$ be almost full, and suppose that $k: N_1 \prec N_0$ cofinally. If both $\mathcal L(L_{\delta_{N_1}}(N_1))$ is $\Sigma_1$ over parameters $N_1, p_1, \dots, p_n \in N_1$ and $\mathcal L(L_{\delta_{N_0}}(N_0))$ is $\Sigma_1$ over parameters $N_0, k(p_1), \dots, k(p_n)$, then  
 if $\mathcal L(L_{\delta_{N_1}}(N_1))$ is consistent, it follows that $\mathcal L(L_{\delta_{N_0}}(N_0))$ is consistent as well. \end{fact} 
 
-\section{Liftups}
-\label{sec:Liftups}
+\subsection{Liftups}
+\label{subsec:Liftups}
 The following definitions are to describe a method to obtain emeddings, a technique that is ostensibly the ultrapower construction. These embeddings facilitate the use of Barwise theory to obtain the consistency of the existence of desirable embeddings. We follow \cite[Chapter 1]{Jensen:2012fr} here.
 %\begin{definition} A map $\pi: \overline{\mathfrak A} \to \mathfrak A$ is $\Sigma_n$-preserving ($\pi: \overline{\mathfrak A} \to_{\Sigma_0} \mathfrak A$) if and only if for all $\Sigma_n$-formulas and all $x_1, \dots x_n \in \overline{\mathfrak A}$, $$\overline{\mathfrak A} \models \varphi[x_1, \dots x_n] \iff \mathfrak A \models \varphi[\pi(x_1), \dots, \pi(x_n)].$$ \end{definition}
 
@@ -481,10 +589,10 @@ The extension relation on conditions in $\D$ is defined so that $( s, A ) \leq (
 If $G$ is a generic filter for $\D$, then its associated $\D$-generic sequence is \[S = S_G = \bigcup \set{ s }{ \exists A \ ( s, A ) \in G }.\qedhere\]
 \end{definition}
 
-Note that our definition of $\D(\U)$ differs from that as in Fuchs \cite{Fuchs:2005kx}. The main difference is that here we only add one point below each measurable cardinal $\kappa \in D$, which is done for simplicity's sake. It is not hard to see that the following theorem showing generalized diagonal Prikry forcing is subcomplete also shows that the forcing adding countably many points below each measurable cardinal in $D$ (where the conditions consist of finite stems) is subcomplete. Adding countably many points below each measurable cardinal in $D$ would collapse the cofinality of each $\kappa \in D$ to be $\omega$, as one expects of a Prikry-like forcing. %Maybe show this more rigorously
+Note that our definition of $\D(\U)$ differs from that as in Fuchs of generalized Prikry foricing \cite{Fuchs:2005kx}. The main difference is that here we only add one point below each measurable cardinal $\kappa \in D$, which is done for simplicity's sake. It is not hard to see that the following theorem showing generalized diagonal Prikry forcing is subcomplete also shows that the forcing adding countably many points below each measurable cardinal in $D$ (where the conditions consist of finite stems) is subcomplete. Adding countably many points below each measurable cardinal in $D$ would collapse the cofinality of each $\kappa \in D$ to be $\omega$, as one expects of a Prikry-like forcing. %Maybe show this more rigorously
 
-Also in the above definition we haven't enforced that the stem of our conditions only consist of ordinals that are wedged between successive measurables in $D$; ie. for $\kappa \in D$, we do not explicitly insist that $s(\kappa) \in [\sup(D\cap \kappa), \kappa)$. However, it is dense in $\D(\U)$ for the conditions to be that way, since we can always strengthen conditions by restricting their upper parts to a tail. Thus in the following characterization, we may freely add the condition to the following genericity condition on $\D(\U)$.
-Thie following is a genericity criterion on generalized diagonal Prikry forcing similar to the Mathias criterion for Prikry forcing. It was shown in \cite[Theorem 1]{Fuchs:2005kx}. 
+Also in the above definition we haven't enforced that the stem of our conditions only consist of ordinals that are wedged between successive measurables in $D$; ie. for $\kappa \in D$, we do not explicitly insist that $s(\kappa) \in [\sup(D\cap \kappa), \kappa)$. However, it is dense in $\D(\U)$ for the conditions to be that way, since we can always strengthen conditions by restricting their upper parts to a tail. Thus we may freely  add this restriction to the following genericity condition on $\D(\U)$.
+The following is a genericity criterion on generalized diagonal Prikry forcing similar to the Mathias criterion for Prikry forcing. It was shown in \cite[Theorem 1]{Fuchs:2005kx}. 
 
 \begin{fact}[Fuchs] \label{fact:diagprikrymathias} Let $D$ be an infinite discrete set of measurable cardinals, with $\U$ a corresponding list of measures $\langle U(\kappa) \;|\; \kappa \in D \rangle$. Then an increasing sequence of ordinals $S = \langle S(\kappa) \;|\; \kappa \in D \rangle$, where for each $\kappa \in D$ $$\sup(D \cap \kappa) < S(\kappa) < \kappa,$$ is a $\D(\U)$-generic  sequence if and only if for all $\mathcal X = \langle X_\kappa \in U(\kappa) \;|\; \kappa \in D \rangle$, the set $$\{ \kappa \in D \;|\; S(\kappa) \notin X_\kappa\} \text{ is finite.}$$
 \end{fact}
