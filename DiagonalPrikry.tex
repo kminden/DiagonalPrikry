@@ -335,11 +335,11 @@ Then
 First, we establish that $\sk{N}{\delta}{\sigma} \subseteq \sk{N[G]}{\delta}{\sigma^*} \cap N$. To see this, let $x \in \sk{N}{\delta}{\sigma}$. Then $x$ is $N$-definable from $\xi<\delta$ and $\sigma(\overline z)$ where $\overline z \in \N$. Since $\sigma^*$ extends $\sigma$, this means that $x \in N$ and that $x$ is $N[G]$-definable from $\xi$ and $\sigma^*(\overline z)$. This is because $N=L_\tau[A]$ is definable in $N[G]$ using $A$.
 
 For the other direction, let $x \in \sk{N[G]}{\delta}{\sigma^*} \cap N$. Then $x$ is $N[G]$-definable from $\xi < \delta$ and $\sigma^*(\overline z)$ where $\overline z \in \N[\G]$; and also $x \in N$. Letting $\dot{\overline z} \in \N^{\overline{\P}}$ such that $\overline z = \dot{\overline z}^{\G}$ we have $$\sigma^*(\overline{z}) = \sigma^*({\dot{\overline z}}^{\G})=\sigma(\dot{\overline{z}})^{G}$$ so we have that there is some formula $\varphi$ such that $x$ is the unique witness:
-	$$x = \text{that } y \text{ where } N[G] \models \varphi(y, \xi, \sigma(\dot{\overline z})^{G}).$$ 
+	$$x \text{ is that } y \text{ where } N[G] \models \varphi(y, \xi, \sigma(\dot{\overline z})^{G}).$$ 
 Take $f \in \N$ mapping $\overline \delta$ onto a dense subset of $\overline{\P}$. Then $\sigma(f)$ maps $\delta$ onto a dense subset of $\P$. Thus there is $\nu < \delta$ such that $\sigma(f)(\nu) \in G$ and 
 	$\sigma(f)(\nu) \forces \varphi(\check x, \check \xi, \sigma(\dot{\overline{z}})).$ 
 Thus 
-	$$x = \text{that } y \text{ where } \sigma(f)(\nu) \forces^N_{\P} \varphi(\check y, \check \xi, \sigma(\dot{\overline{z}}))$$ 
+	$$x \text{ is that } y \text{ where } \sigma(f)(\nu) \forces^N_{\P} \varphi(\check y, \check \xi, \sigma(\dot{\overline{z}}))$$ 
 so $x \in \sk{N}{\delta}{\sigma}$.
 \end{proof}
 
@@ -470,18 +470,20 @@ Of course this may be generalized to the entire usual Levy hierarchy of formulae
 \begin{definition} A transitive structure $M$ is \emph{admissible} if it models the axioms of \textsf{Kripke-Platek Set Theory} (\textsf{KP}) which consists of the axioms of \textsf{Empty Set}, \textsf{Pairing}, \textsf{Union}, $\Sigma_0$-\textsf{Collection}, and $\Sigma_0$-\textsf{Separation}. \end{definition}
 
 Jensen also makes use of models of $\textsf{ZF}^-$ that are not necessarily well-founded.
-\begin{definition} Let $\mathfrak A = \langle A, \in_{\mathfrak A}, B_1, B_2, \dots \rangle$ be a (possibly) ill-founded model  of $\textsf{ZF}^-$, where $\mathfrak A$ is allowed to have predicates other than $\in$. The \emph{well-founded core} of $\mathfrak A$, denoted $\wfc(\mathfrak A)$, is the restriction of $\mathfrak A$ to the set of all $x \in A$ such that $\in_{\mathfrak A} \cap \mathcal C(x)^2$ is well founded, where $\mathcal C(x)$ is the closure of $\{x\}$ under $\in_{\mathfrak A}$. A model $\mathfrak A$ of $\textsf{ZF}^-$ is \emph{solid} so long as $\wfc(\mathfrak A)$ is transitive and $\in_{\wfc(\mathfrak A)}=\in \cap \wfc(\mathfrak A)^2$. \end{definition}
+\begin{definition} Let $\mathfrak A = \langle A, \in_{\mathfrak A}, B_1, B_2, \dots \rangle$ be a (possibly) ill-founded model  of $\textsf{ZF}^-$, where $\mathfrak A$ is allowed to have predicates other than $\in$. The \emph{well-founded core} of $\mathfrak A$, denoted $\wfc(\mathfrak A)$, is the restriction of $\mathfrak A$ to the set of all $x \in A$ such that $\in_{\mathfrak A} \cap \ \mathcal C(x)^2$ is well founded, where $\mathcal C(x)$ is the closure of $\{x\}$ under $\in_{\mathfrak A}$. A model $\mathfrak A$ of $\textsf{ZF}^-$ is \emph{solid} so long as $\wfc(\mathfrak A)$ is transitive and $\in_{\wfc(\mathfrak A)}=\in \cap \wfc(\mathfrak A)^2$. \end{definition}
 
 Jensen \cite[Section 1.2]{Jensen:2012fr} notes that every consistent set of sentences in $\textsf{ZF}^-$ has a solid model, and if $\mathfrak A$ is solid, then $\omega \subseteq \wfc(\mathfrak A)$. In addition,
 
 \begin{fact}[Jensen] If $\mathfrak A \models \textsf{\textup{ZF}}^-$ is solid, then $\wfc(\mathfrak A)$ is admissible. \end{fact}
 
-\begin{definition} \label{def:InTheoriesAndBasicAxioms} Let $M$ be admissible, and let $\mathcal L = \mathcal L(M)$ be an infinitary, axiomatized theory in $M$-finitary logic, called an \textit{$\in$-theory} over $M$, with a fixed predicate $\dot \in$ and \emph{special constants} denoted $\underline x$ for elements $x \in M$. The underlying axioms for these $\in$-theories will always involve $\ZFC^-$ and some basic axioms ensuring that $\dot \in$ behaves nicely; 
+\begin{definition} \label{def:InTheoriesAndBasicAxioms} Let $M$ be admissible. An infinitary axiomatized theory in $M$-finitary logic $\mathcal L = \mathcal L(M)$ is called an \textit{$\in$-theory} over $M$, with a fixed predicate $\dot \in$ and \emph{special constants} denoted $\underline x$ for elements $x \in M$. The underlying axioms for these $\in$-theories will always involve $\ZFC^-$ and some basic axioms ensuring that $\dot \in$ behaves nicely; 
 the \textsf{Basic Axioms} are: \begin{itemize}
 	\item \textsf{Extensionality}
 	\item A statement positing the extensionality of $\dot \in$, which is a scheme of formulae defined for each member of $M$. For each $x \in M$, include an $M$-$re$ sentence (meaning it quantifies over $M$-finite sentence): 
 	$$\forall v \left( v \ \dot \in\, \underline x \iff \bigdoublevee_{z \in x} v= \underline z \right).$$
 \end{itemize} Here $\displaystyle\bigdoublevee$ denotes an infinite disjunction in the language.\end{definition}
+
+In the above definition, it should be clarified that it is possible to consider the same $\in$-theory defined over different admissible structures; if $M, M'$ are both admissible, then it is possible to have that $\mathcal L(M)$ and $\mathcal L(M')$: the distinction is only as to where the special constants come from. 
 
 An important fact ensured by our \textsf{Basic Axioms} is that the interpretations of these special constants in any solid model of the theory are the same as in $M$:
 
@@ -507,7 +509,11 @@ Clearly if $N$ is full, then $N$ is almost full.
 A useful technique when showing a particular forcing is subcomplete, once many different embeddings can be constructed that approximate the embedding required for subcompleteness, is to be able to transfer the consistency of $\in$-theories over one admissible structure to another. 
 \begin{definition} If $N$ is a transitive $\ZFC^-$ model, let $\delta_N$ be the least $\delta$ such that $L_\delta(N)$ is admissible. \end{definition}
 
-\begin{fact}[\emph{The Transfer Lemma}]\label{fact:Transfer} Let $N_1$ be almost full, and suppose that $k: N_1 \prec N_0$ cofinally. If the $\in$-theory $\mathcal L(L_{\delta_{N_1}}(N_1))$ is $\Sigma_1$ over parameters $N_1, p_1, \dots, p_n \in N_1$ and the same $\in$-theory over $L_{\delta_{N_0}}(N_0)$, namely $\mathcal L(L_{\delta_{N_0}}(N_0))$, is $\Sigma_1$ over parameters $N_0, k(p_1), \dots, k(p_n)$, then  
+\begin{fact}[\emph{The Transfer Lemma}]\label{fact:Transfer} Let $N_1$ be almost full, and suppose that $k: N_1 \prec N_0$ cofinally, for some $N_0$. Suppose that we have an $\Sigma_1(\langle N_1, p_1, \dots, p_n\rangle)$  $\in$-theory $\mathcal L(L_{\delta_{N_1}}(N_1))$ for $p_1, \dots, p_n \in N_1$.
+
+Moreover, suppose $\mathcal L(L_{\delta_{N_0}}(N_0))$ is $\Sigma_1(\langle N_1, k(p_1), \dots, k(p_n)\rangle)$. 
+
+Then, 
 if $\mathcal L(L_{\delta_{N_1}}(N_1))$ is consistent, it follows that $\mathcal L(L_{\delta_{N_0}}(N_0))$ is consistent as well. \end{fact} 
 
 \subsection{Liftups}
@@ -562,7 +568,7 @@ The following lemma states that transitive liftups of full models are almost ful
 
 \begin{lemma}[Jensen]\label{lemma:liftupfull} Let $N =L_\tau[A] \models \ZFC^-$ and $\sigma: \N \prec N$ where $\N$ is full. Suppose that $\langle N_*, \sigma_* \rangle$ is a transitive liftup of $\langle \N, \overline \sigma \rangle$. Then $N_*$ is almost full. \end{lemma}
 \begin{proof}
-	Let $L_\gamma(\N)$ witness the fullness of $\N$. We will now apply Interpolation (\emph{Fact} \ref{fact:Interpolation}) to $\mathfrak A= L_\gamma(\N)$, which makes sense since certainly $\mathfrak A$ is a transitive model $\ZFC^-$. Additionally, by Lemma \ref{lemma:regularityequiv} we have that $\N = H_\tau^{\mathfrak A}$, where $\tau = \height(\N)$. Since $\langle N_*, \sigma_* \rangle$ is a transitive liftup, we have that $$\sigma_*: H_\tau^{\mathfrak A} \prec N_* \text{ cofinally,}$$ where $N_*$ is transitive. Thus since $\mathfrak A$ is transitive, $\langle \mathfrak A, \sigma_* \rangle$ has a liftup $\langle \mathfrak A_*, {\sigma_*}_* \rangle$, where $\mathfrak A_* \models \ZFC^-$ since $\mathfrak A$ does, $\mathfrak A_*$ is solid, where $${\sigma_*}_* : \mathfrak A \prec \mathfrak A_* \text{ $\tau$-cofinally.}$$ 
+	Let $L_\gamma(\N)$ witness the fullness of $\N$. We will now apply Interpolation (Fact \ref{fact:Interpolation}) to $\mathfrak A= L_\gamma(\N)$, which makes sense since certainly $\mathfrak A$ is a transitive model $\ZFC^-$. Additionally, by Lemma \ref{lemma:regularityequiv} we have that $\N = H_\tau^{\mathfrak A}$, where $\tau = \height(\N)$. Since $\langle N_*, \sigma_* \rangle$ is a transitive liftup, we have that $$\sigma_*: H_\tau^{\mathfrak A} \prec N_* \text{ cofinally,}$$ where $N_*$ is transitive. Thus since $\mathfrak A$ is transitive, $\langle \mathfrak A, \sigma_* \rangle$ has a liftup $\langle \mathfrak A_*, {\sigma_*}_* \rangle$, where $\mathfrak A_* \models \ZFC^-$ since $\mathfrak A$ does, $\mathfrak A_*$ is solid, where $${\sigma_*}_* : \mathfrak A \prec \mathfrak A_* \text{ $\tau$-cofinally.}$$ 
 	We have that  $N_* \subseteq \wfc({\mathfrak A}_*)$ and $\tau_*= {\sigma_*}_*(\tau)=\height(N_*)$ is regular since $\tau$ is. Furthermore, we will show that $N_* = H_{\tau_*}^{\mathfrak A_*}$, completing the proof:
 	
 	Certainly it is the case that $N_* \subseteq H_{\tau_*}^{\mathfrak A^*}$. 
@@ -670,7 +676,7 @@ $\in$-theory, $\mathcal T$, which posits the existence of such a $\sigma'$, is c
 Once we have such a suitable $V[S]$, we will use Barwise theory to find an appropriate admissible structure in $V[S]$ for which the theory $\mathcal T$, positing the existence of such a suitable $\sigma'$, defined below, has a model.
 
 \begin{samepage}
-For an admissible structure $M$ with $S, \overline S, \sigma, N, \theta, \D, \U, c \in M$ let the $\in$-theory $\mathcal T(M)$ be defined over $M$ as follows: 
+For an admissible structure $M$ with $S, \overline S, \sigma, N, \theta, \D, \U, c \in M$ let the $\in$-theory $\mathcal T(M)$ be defined as follows: 
 \begin{description}
 	\item[predicates] $\in$ 
 	\item[constants] $\dot{\sigma}, \underline x$ for $x \in M$
@@ -683,9 +689,9 @@ For an admissible structure $M$ with $S, \overline S, \sigma, N, \theta, \D, \U,
 \end{description}
 \end{samepage}
 
-The $\in$-theory is $\Sigma_1(M)$, since all of the axioms are $M$-finite except for the \textsf{Basic Axioms}, which altogether are $M$-$re$ as each of them are $M$-finite.
+The $\in$-theory is $\Sigma_1(M)$, since all of the axioms are $M$-finite except for the \textsf{Basic Axioms}, which altogether are $M$-$re$.
 
-We need to find an appropriate $\D$-generic sequence $S$ and a suitable admissible structure $M$ containing $S$ so that $\mathcal T(M)$ is consistent. To do this we use transitive liftups and Barwise theory. Transitive liftups will give us the consistency of certain embeddings that approximate the one we are looking for, and we will rely on Barwise Completeness (\textit{Fact} \ref{fact:completeness}) to obtain the existence of a model with our desired properties. 
+We need to find an appropriate $\D$-generic sequence $S$ and a suitable admissible structure $M$ containing $S$ so that $\mathcal T(M)$ is consistent. To do this we use transitive liftups and Barwise theory. Transitive liftups will give us the consistency of certain embeddings that approximate the one we are looking for, and we will rely on Barwise Completeness (Fact \ref{fact:completeness}) to obtain the existence of a model with our desired properties. 
 
 Toward this end, let's take what will turn out to be our first transitive liftup, which is in some sense ensuring the consistency of (\ref{item:MainClaimC=Sk}) of our main claim.
 
@@ -706,7 +712,7 @@ Thus $x \in k_0^{-1}(\sigma(u))=\sigma_0(u)$ with $|u| < \overline \nu$ in $\N$,
 Since $X \cup \delta \subseteq C$, the Skolem hull in $N$, we know that $\sigma``H_{\overline \nu}^{\N} \subseteq C$. Thus $k_0^{-1} \upharpoonright \sigma``H_{\overline \nu}^{\overline N} = \text{id}$. Therefore $\sigma_0 \rest H_{\overline \nu}^{\N}=\sigma \rest H_{\overline \nu}^{\overline N}$, finishing the proof of the claim.
 \end{proof}
 
-Since $\overline \nu$ is regular in $\N$, in $N_0$ so is $\nu_0=\sigma_0(\overline \nu)=\sup \sigma_0``\overline \nu$. By Interpolation (\textit{Fact} \ref{fact:Interpolation}), we may say that $k_0$ is defined by 
+Since $\overline \nu$ is regular in $\N$, in $N_0$ so is $\nu_0=\sigma_0(\overline \nu)=\sup \sigma_0``\overline \nu$. By Interpolation (Fact \ref{fact:Interpolation}), we may say that $k_0$ is defined by 
 	$$k_0: N_0 \prec N \text{ where } k_0 \circ \sigma_0=\sigma \text{ and } k_0 \rest \nu_0 = \id.$$
 In particular, $\nu_0$ is the critical point of $k_0$, which is continuous below $\nu_0$. Thus we are in a situation that we will represent with the following  diagram:
 \begin{center}
@@ -761,7 +767,7 @@ In particular, $\nu_0$ is the critical point of $k_0$, which is continuous below
 
 Already, we can say that $\sigma_0$ looks like it has one nice property: $\sk{N_0}{\delta}{\sigma_0}= C$, which somewhat looks like (\ref{item:MainClaimC=Sk}) of the main claim. However, we have not yet performed forcing, $\sigma_0$ is definable in $V$, and we still need to find a way to extend the generic sequence $\S$ to a $\D$-generic sequence over $N$. We still have a lot more work to do before finding $\sigma'$.
 
-We shall define another $\in$-theory, $\mathcal L_*$. This will assist us in obtaining the diagonal Prikry extension $V[S]$ we need to satisfy our main claim. In order to do this, we will take another transitive liftup and apply Transfer (\textit{Fact} \ref{fact:Transfer}), in order to see that this new $\in$-theory is consistent over an admissible structure on $N_0$. 
+We shall define another $\in$-theory, $\mathcal L_*$. This will assist us in obtaining the diagonal Prikry extension $V[S]$ we need to satisfy our main claim. In order to do this, we will take another transitive liftup and apply Transfer (Fact \ref{fact:Transfer}), in order to see that this new $\in$-theory is consistent over an admissible structure on $N_0$. 
 
 Since we will be referring to the same $\in$-theory over two different transitive liftups, I would like to think of $``*"$ as a kind of placeholder for a transitive liftup in the following definition.
 
@@ -788,9 +794,9 @@ We claim that the theory is consistent.
 \begin{claimno} $\mathcal L_0=\mathcal L(N_0, \sigma_0)$ is consistent. \end{claimno}
 \begin{proof}[Pf] Of course, it is not the case that $\sigma_0$ is $\overline \kappa(0)$-cofinal - all we know is that it is $\overline \nu$-cofinal. However, we know how to find an elementary embedding that is $\overline \kappa(0)$ cofinal: by taking a suitable transitive liftup.
 
-Let $\langle N_1, \sigma_1 \rangle$ be the transitive liftup of $\langle \N, \sigma \rest H^{\N}_{\overline \kappa(0)} \rangle$, which exists by Interpolation (\textit{Fact} \ref{fact:Interpolation}). So we have that $\sigma_1 \rest H^\N_{\overline \kappa(0)} = \sigma \rest H^\N_{\overline \kappa(0)}$. Let $$\sigma_1(\overline \theta, \overline{\D}, \overline{\U}, \overline c) = \theta_1, \D_1, \U_1, c_1.$$ 
+Let $\langle N_1, \sigma_1 \rangle$ be the transitive liftup of $\langle \N, \sigma \rest H^{\N}_{\overline \kappa(0)} \rangle$, which exists by Interpolation (Fact \ref{fact:Interpolation}). So we have that $\sigma_1 \rest H^\N_{\overline \kappa(0)} = \sigma \rest H^\N_{\overline \kappa(0)}$. Let $$\sigma_1(\overline \theta, \overline{\D}, \overline{\U}, \overline c) = \theta_1, \D_1, \U_1, c_1.$$ 
 %Then from $\U_1$ we can define its associated discrete set of measures in $N_1$, call it $D_1$, with $\otp(D_1)=\lambda_1$. Furthermore, by elementarity we have $\kappa_1= \sigma_1(\overline \kappa') > \lambda_1$, where there are finitely many measurables of $D_1$ below $\kappa_1'$. 
-Since $\sigma_1 \rest H^\N_{\overline \kappa(0)} = \sigma \rest H^\N_{\overline \kappa(0)} = \sigma_0 \rest H^\N_{\overline \kappa(0)}$, we also have a unique $$ \text{$k_1: N_1 \prec N_0$ where $k_1\circ \sigma_1 = \sigma_0$ and $k_1 \rest \kappa_1(0) = \text{id}$ where $k_1(0)=k_1(\kappa(0))$.}$$ 
+Since $\sigma_1 \rest H^\N_{\overline \kappa(0)} = \sigma \rest H^\N_{\overline \kappa(0)} = \sigma_0 \rest H^\N_{\overline \kappa(0)}$, we also have a unique $k_1$ satisfying $$ \text{$k_1: N_1 \prec N_0$ where $k_1\circ \sigma_1 = \sigma_0$ and $k_1 \rest \kappa_1(0) = \text{id}$ where $k_1(0)=k_1(\kappa(0))$.}$$ 
 
 Indeed $k_1$ is continuous below $\kappa_1(0)$. We illustrate the final picture below, with $\sigma$ and all of the relevant transitive liftups.
 \begin{center}
@@ -858,9 +864,9 @@ First, force with $\D_1$, which is diagonal Prikry over $N_1$, to obtain a diago
 $$S_1(\kappa) = \begin{cases} S_1'(\kappa) &\text{ if } \kappa \in D_1 \setminus \sigma_1``\overline D \\
 					\sigma_1(\overline S(\overline \kappa)) &\text{ if } \kappa = \sigma_1(\overline \kappa) \in \sigma_1``\overline D. \end{cases}$$
 
-\begin{claim} The sequence $S_1$ is a $\D_1$-generic sequence over $N_1$. \end{claim}
+\begin{claimno} The sequence $S_1$ is a $\D_1$-generic sequence over $N_1$. \end{claimno}
 \begin{proof}[Pf.]
-We will show that $S_1$ satisfies the generalized diagonal Prikry genericity criterion (\textit{Fact} \ref{fact:diagprikrymathias}) over $N_1$. To do this, let $\mathcal X = \seq{ X_\kappa \in U_1(\kappa) }{ \kappa \in D_1 }$, with $\mathcal X \in N_1$, be a sequence of measure-one sets in the sequence of measures $\U_1$.
+We will show that $S_1$ satisfies the generalized diagonal Prikry genericity criterion (Fact \ref{fact:diagprikrymathias}) over $N_1$. To do this, let $\mathcal X = \seq{ X_\kappa \in U_1(\kappa) }{ \kappa \in D_1 }$, with $\mathcal X \in N_1$, be a sequence of measure-one sets in the sequence of measures $\U_1$.
 
 Note first that $S_1'$ is a generic sequence, it already satisfies the generalized diagonal Prikry genericity criterion, namely:
 $$\set{ \kappa \in D_1}{ S_1'(\kappa) \notin X_\kappa } \text{ is finite.}$$
@@ -911,7 +917,7 @@ as is desired, completing the proof of our claim.
 %
 %\begin{claim} $\sigma_1``\overline S$ is a $\D_1^+$-generic sequence over $N_1$. \end{claim}
 %\begin{proof}[Pf.] Recall that $\overline S = \langle \overline S(\overline \kappa) \;|\; \overline \kappa \in \overline D \rangle$, so $\sigma_1``\overline S = \langle \sigma_1(\overline S(\overline \kappa)) \;|\; \overline \kappa \in \overline D \rangle$.
-%We show that $\sigma_1``\overline S$ satisfies the generalized diagonal Prikry genericity criterion (\textit{Fact} \ref{fact:diagprikrymathias}) over $N_1$.
+%We show that $\sigma_1``\overline S$ satisfies the generalized diagonal Prikry genericity criterion (Fact \ref{fact:diagprikrymathias}) over $N_1$.
 %%$$\{ \kappa \in D \;|\; S(\kappa) \notin X_\kappa\} \text{ is finite.}$$
 %
 %Let $\mathcal X = \langle X_\kappa \in U_1(\kappa) \;|\; \kappa \in \sigma_1``\overline D \rangle$, with $\mathcal X \in N_1$, be a sequence of measure one sets in the sequence of measures $\U_1$ with only coordinates coming from $\sigma_1``\overline D$.
@@ -930,13 +936,13 @@ as is desired, completing the proof of our claim.
 %So we have that $\sigma_1``\overline S$ is generic for $\D_1^+$. Now force over $N_1[\sigma_1``\overline S]$ with $\D_1^-$, obtaining $N_1[\sigma``\overline S][g]$, where $g$ is generic for $\D_1^-$ over $N_1[\sigma_1``\overline S]$. Letting $G_1=\sigma_1``\overline S \times g$, and letting $S_1$ be its associated diagonal Prikry sequence, we certainly have that $\sigma_1``\overline S \subseteq S_1$. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Moreover we have now shown that $\mathcal L(N_1, \sigma_1) = \mathcal L_1$ is consistent by Barwise Correctness (\textit{Fact} \ref{fact:correctness}), since we have just shown that $\langle H_{\delta}; \sigma_1, S_1 \rangle$ is a model of $\mathcal L_1$.
+Moreover we have now shown that $\mathcal L(N_1, \sigma_1) = \mathcal L_1$ is consistent by Barwise Correctness (Fact \ref{fact:correctness}), since we have just shown that $\langle H_{\delta}; \sigma_1, S_1 \rangle$ is a model of $\mathcal L_1$.
 
-Let's check that we may now apply Transfer (\textit{Fact} \ref{fact:Transfer}) to the embedding $k_1:N_1 \prec N_0$. By \textbf{Lemma \ref{lemma:liftupfull}} we have that $N_1$ is almost full. We also have that $\mathcal L_1 = \mathcal L(L_{\delta_{N_1}}(N_1))$ is $\Sigma_1$ over parameters $$\text{$N_1$ and $\overline \theta, \overline{\D}, \overline{\U}, \overline c, \theta_1, \D_1, \U_1, c_1 \in N_1$}$$ while $\mathcal L_0=\mathcal L(L_{\delta_{N_0}}(N_0))$ is $\Sigma_1$ over parameters 
+Let's check that we may now apply the Transfer Lemma (Fact \ref{fact:Transfer}) to the embedding $k_1:N_1 \prec N_0$. By Lemma \ref{lemma:liftupfull} we have that $N_1$ is almost full. We also have that $\mathcal L_1 = \mathcal L(L_{\delta_{N_1}}(N_1))$ is $\Sigma_1$ over parameters $$\text{$N_1$ and $\overline \theta, \overline{\D}, \overline{\U}, \overline c, \theta_1, \D_1, \U_1, c_1 \in N_1$}$$ while $\mathcal L_0=\mathcal L(L_{\delta_{N_0}}(N_0))$ is $\Sigma_1$ over parameters 
 	$$\text{$N_0$ and $k_1(\overline \theta, \overline{\D}, \overline{\U}, \overline c, \theta_1, \D_1, \U_1, c_1) \in N_0$.}$$ 
 Furthermore $k_1$ is cofinal, since for each element $x \in N_0$, as $\sigma_0$ is cofinal, there is $u \in \N$ such that $x \in \sigma_0(u)$. Thus $\sigma_1(u) \in N_1$, and moreover $x \in k_1(\sigma_1(u))=\sigma_0(u)$. Therefore, we have that since $\mathcal L_1$ is consistent, $\mathcal L_0$ is consistent as desired. This completes the proof of \textit{Claim} 2. \end{proof}
 
-From the consistency of $\mathcal L_0$, we would now like to use Barwise Completeness (\textit{Fact} \ref{fact:completeness}) to obtain a model of $\mathcal L_0$. To do this, we need the admissible structure the theory is defined over to be countable. So let's work in $V[F]$, a generic extension that collapses $L_{\delta_{N_0}}(N_0)$ to be countable. Then by Barwise Completeness, $\mathcal L_0$ has a solid model 
+From the consistency of $\mathcal L_0$, we would now like to use Barwise Completeness (Fact \ref{fact:completeness}) to obtain a model of $\mathcal L_0$. To do this, we need the admissible structure the theory is defined over to be countable. So let's work in $V[F]$, a generic extension that collapses $L_{\delta_{N_0}}(N_0)$ to be countable. Then by Barwise Completeness, $\mathcal L_0$ has a solid model 
 	$$\mathfrak A = \langle \mathfrak A; \mathring{S}^{\mathfrak A}, \mathring{\sigma}^{\mathfrak A} \rangle$$ such that $$\Ord \cap \wfc(\mathfrak A) = \Ord \cap L_{\delta_{N_0}}(N_0).$$ 
 Thus we have that $\mathring \sigma^{\mathfrak A}: \overline{\underline N}^{\mathfrak A} \prec \underline{N_0}^{\mathfrak A}$. By the \textsf{Basic Axioms} we have that $\overline{\underline N}^{\mathfrak A}=\N$ and $N_0=\underline{N_0}^{\mathfrak A}$. Thus we may say that  $\mathring \sigma^{\mathfrak A}: \N \prec N_0$. 
 
@@ -1020,7 +1026,7 @@ We have satisfied the main claim, so we are done, we have shown that $\D$ is sub
 Some slight modifications to the above proof give the following two corollaries.
 
 The first point is that the above proof also shows that generalized diagonal Prikry forcing that adds a countable sequence to each measurable cardinal is subcomplete. Before stating the corolloary let's define the forcing. Again let $D$ be an infinite discrete set of measurable cardinals. Let $\U = \seq{ U(\kappa) }{ \kappa \in D }$ be a list of measures associated to $D$. 
-Let $\D^*(\U) = \D^*$ be defined the same as $\D(\U)$ except the stem of a condition, $s$, in $\D^*(\U)$ is a function with domain in $[D]^{<\omega}$ taking each measurable cardinal $\kappa \in \dom(s)$ to finitely many ordinals $s(\kappa) \subseteq \kappa$. The upper part and extension relation is defined in the same way; the only slight modification is that again we have $(s, A) \leq (t, B)$ so long as points in $s$ not in $t$ come from $B$, which in the case means that for $\kappa \in \dom(s)$ we have that each element of $s(\kappa)$ not in $t(\kappa)$ is in $B(\kappa)$. We may again form a $\D^*$-generic sequence $S = S_G$ for a generic $G \subseteq \D^*$, and we may write $S = \seq{ S(\kappa) }{ \kappa \in D }$ where $S(\kappa)$ is a countable sequence of ordinals less than $\kappa$. The genericity criterion for generic diagonal Prikry sequences is as that for $\D$, which is given in  \cite[Theorem 1]{Fuchs:2005kx}, as stated in \textbf{\emph{Fact} \ref{fact:diagprikrymathias}}, with the modification that $S$ is $\D^*$ generic if and only if for all $\mathcal X$, the set $\set{ \alpha }{ \exists \kappa \in D \ \alpha \in S(\kappa) \setminus X_\kappa }$ is finite.
+Let $\D^*(\U) = \D^*$ be defined the same as $\D(\U)$ except the stem of a condition, $s$, in $\D^*(\U)$ is a function with domain in $[D]^{<\omega}$ taking each measurable cardinal $\kappa \in \dom(s)$ to finitely many ordinals $s(\kappa) \subseteq \kappa$. The upper part and extension relation is defined in the same way; the only slight modification is that again we have $(s, A) \leq (t, B)$ so long as points in $s$ not in $t$ come from $B$, which in the case means that for $\kappa \in \dom(s)$ we have that each element of $s(\kappa)$ not in $t(\kappa)$ is in $B(\kappa)$. We may again form a $\D^*$-generic sequence $S = S_G$ for a generic $G \subseteq \D^*$, and we may write $S = \seq{ S(\kappa) }{ \kappa \in D }$ where $S(\kappa)$ is a countable sequence of ordinals less than $\kappa$. The genericity criterion for generic diagonal Prikry sequences is as that for $\D$, which is given in  \cite[Theorem 1]{Fuchs:2005kx}, as stated in \textbf{Fact \ref{fact:diagprikrymathias}}, with the modification that $S$ is $\D^*$ generic if and only if for all $\mathcal X$, the set $\set{ \alpha }{ \exists \kappa \in D \ \alpha \in S(\kappa) \setminus X_\kappa }$ is finite.
 
 \begin{corollary} 
 Let $D$ be an infinite discrete set of measurable cardinals. Let $\U = \seq{ U(\kappa) }{ \kappa \in D }$ be a list of measures associated to $D$. Then $\D^*(\U)$ is subcomplete.
@@ -1050,8 +1056,8 @@ as is desired, completing the proof of the claim.
 
 One might consider a forcing like $\D$ and $\D^*$ that adds one point below each measurable cardinal sometimes, and other times adds a cofinal $\omega$-sequence below the measurable cardinal. This forcing is clearly subcomplete as well.
 
-Below we refer to the concept of subcompleteness above $\mu$, which was introduced in \ref{subsec:LevelsofSubcompleteness}.
-
+Below we refer to the concept of subcompleteness above $\mu$.
+%Insert definition of that here
 
 \begin{corollary} Let $D$ be an infinite discrete set of measurable cardinals. Let $\U = \seq{ U(\kappa) }{ \kappa \in D }$ be a list of measures associated to $D$. 
 
