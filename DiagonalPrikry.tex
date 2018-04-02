@@ -1,7 +1,7 @@
 \documentclass{amsart}
 \usepackage{amssymb}
-\usepackage{geometry}
-\geometry{letterpaper}
+%\usepackage{geometry}
+%\geometry{letterpaper}
 \usepackage{amssymb,amsbsy}
 \usepackage{epstopdf}
 \usepackage{float}
@@ -147,20 +147,20 @@ It is shown that generalized Prikry forcing to add a countable sequence to each 
 %Provide some motivation - advertisement for awesome techniques, and adding to the catalogue. Also say what subcomplete forcing is like.
 Subcomplete forcing is a class of forcing notions that do not add reals, but may potentially alter cofinalities to $\omega$. Examples of subcomplete forcing include Prikry forcing and Namba forcing (under $\CH$). This separates subcomplete forcings from proper forcings, that have countable covering and thus cannot change cofinalities to $\omega$. 
 
-Jensen \cite[Section 3.3]{Jensen:2012fr} shows that Prikry forcing and Namba forcing (under $\CH$) are subcomplete. Fuchs has shown that Magidor forcing \cite{Fuchs:2017Magidor} is subcomplete. Here an adaptation of Jensen's proof showing that Prikry forcing is subcomplete is employed to see that many ``Prikry-like forcings," which are referred to as generalized diagonal Prikry forcing after Fuchs (\cite{Fuchs:2005kx}), are subcomplete.
+Jensen \cite[Section 3.3]{Jensen:2012fr} shows that Prikry forcing and Namba forcing (under $\CH$) are subcomplete. Fuchs has shown that Magidor forcing \cite{Fuchs:2017Magidor} is subcomplete. Here an adaptation of Jensen's proof showing that Prikry forcing is subcomplete is employed to see that many ``Prikry-like forcings," which are referred to here as generalized diagonal Prikry forcing after Fuchs (\cite{Fuchs:2005kx}), are subcomplete.
 
-\section{Preliminaries}
-Before defining subcomplete forcing and generalized diagonal Prikry forcing, some preliminary information is necessary. 
-%This can all be found in Jensen's lecture notes from the 2012 AII Summer School in Singapore. For the published version refer to \cite{Jensen:2012fr}. 
+In section \ref{sec:preliminaries}, some preliminary topics are introduced that may be found in Jensen's lecture notes from the 2012 AII Summer School in Singapore. For the published version refer to \cite{Jensen:2012fr}. First the notation used for the paper is outlined. The notion of the weight of a forcing and fullness of a structure are then introduced, which lead to the definition of subcompleteness given in \ref{subsec:subcomplete} and subcompleteness above $\mu$ in \ref{subsec:subcompleteabovemu}. Important techniques of Barwise theory are introduced in \ref{subsec:BarwiseTheory}, and the ultrapower-like notion of a liftup to obtain full structures are introduced in \ref{subsec:Liftups}.
 
-First, a brief outline of some of the notation used in what follows:
+\section{Preliminaries} \label{sec:preliminaries}
+Before defining subcomplete forcing and generalized diagonal Prikry forcing, some preliminary information is necessary.
+
+First, below is a brief outline of some of the notation used in what follows.
 Forcing notions $\P = \langle \P, \leq \rangle$ are taken to be partial orders that are separative and contain a ``top" element weaker than all elements of $\P$, denoted $\mathbbm 1$.
-Write $N$, $M$, or $\N$ to denote models of $\ZFC^-$, the axioms of Zermelo-Fraenkel Set Theory without the axiom of \textsf{Powerset}, and with the axiom of \textsf{Collection} instead of \textsf{Replacement}. Usually we will name these models. For $\sigma$ an elementary embedding, write $\sigma: N \prec M$ and write $N \preccurlyeq M$ to denote and emphasize that $N$ is an elementary substructure of $M$. 
-Let $N$ be a transitive $\ZFC^-$ model. Write $\height(N)$ to mean $\Ord \cap N$. Let $\alpha$ be an ordinal. Then write $\alpha^N$ for $\alpha \cap N$.
-%Let $A$ be a set of ordinals. Then $\lim(A)$ is the set of limit points in $A$.  
-Let $\theta$ be a cardinal. The collection of sets hereditarily of size less than $\theta$ will be referred to as $H_\theta$. Relativizing the concept to a particular model of set theory, $M$, write $H_\theta^M$ to mean the collection of sets in $M$ that are hereditarily of size less than $\theta$ in $M$. In this case, if $\theta$ is determined by some computation, the computation is meant to take place in $M$.
-Let $\tau$ be a cardinal. With abuse of notation, write $L_\tau[A]$ to refer to the structure $\langle L_\tau[A]; \in, A \cap L_\tau[A] \rangle$. 
-If a map $\sigma$ satisfies $\sigma(\overline a)=a$ and $\sigma(\overline b)=b$, this will be abbreviated as $\sigma(\overline a,\overline b)=a,b$.
+Write $N$, $M$, or $\N$ to denote models of $\ZFC^-$, the axioms of Zermelo-Fraenkel Set Theory without the axiom of \textsf{Powerset}, and with the axiom of \textsf{Collection} instead of \textsf{Replacement}. For $\sigma$ an elementary embedding from $N$ to $M$, write $\sigma: N \prec M$ and in case $N \subseteq M$ as well write $N \preccurlyeq M$ to denote and emphasize that $N$ is an elementary substructure of $M$. If a map $\sigma$ satisfies $\sigma(\overline a)=a$ and $\sigma(\overline b)=b$, this will be abbreviated as $\sigma(\overline a,\overline b)=a,b$.
+For $N$ transitive, write $\height(N)$ to mean $\Ord \cap N$ and $\alpha^N$ for $\alpha \cap N$ for ordinal $\alpha$.
+Let $A$ be a set of ordinals. Then $\lim(A)$ is the set of limit points in $A$.  
+For $\theta$ a cardinal, the collection of sets hereditarily of size less than $\theta$ will be referred to as $H_\theta$. Relativizing the concept to a particular model of set theory, $M$, write $H_\theta^M$ to mean the collection of sets in $M$ that are hereditarily of size less than $\theta$ in $M$. In this case, if $\theta$ is determined by some computation, the computation is meant to take place in $M$.
+For a cardinal $\tau$, with abuse of notation, write $L_\tau[A]$ to refer to the structure $\langle L_\tau[A]; \in, A \cap L_\tau[A] \rangle$. 
 
 
 \subsection{The Weight of a Forcing Notion}
@@ -343,7 +343,7 @@ Thus
 so $x \in \sk{N}{\delta}{\sigma}$.
 \end{proof}
 
-\subsection{Subcomplete Forcing}
+\subsection{Subcomplete Forcing} \label{subsec:subcomplete}
 Subcompleteness should be seen as a weakening of the class of complete (a.k.a. countably closed) forcing notions. The following definitions and proofs are due to Jensen \cite[Chapter 3]{Jensen:2012fr}.
  
 \begin{definition} A forcing notion $\P$ is \emph{complete} so long as
@@ -357,7 +357,7 @@ then we have that if $\G$ is $\overline{\P}$-generic over $\N$ then there is a \
 In particular, below the condition $p$ we have that $\sigma$ lifts to an embedding $\sigma^*:\N[\G] \prec N[G]$.
 We say that such a $\theta$ as above \emph{verifies} the completeness of $\P$.
 \end{definition}
-The adjustment made to get subcomplete forcings is to not necessarily insist the the original embedding lifts in the forcing extension. Instead subcompleteness asks for there to be an embedding in the extension, an embedding that is sufficiently similar to the original embedding, that lifts. However, as discussed in Section \ref{subsec:fullness}, the domain of the embedding must be \emph{full} to ensure that there can even consistently be more than one embedding. The definition is given below.
+The adjustment made to get subcomplete forcings is to not necessarily insist the the original embedding lifts in the forcing extension. Instead subcompleteness asks for there to be an embedding that lifts in the extension, and potentially only exists there, an embedding that is sufficiently similar to the original embedding. However, as discussed in Section \ref{subsec:fullness}, the domain of the embedding must be \emph{full} to ensure that there can even consistently be more than one embedding. The definition is given below.
 
 \begin{definition} \label{definition:SC}
 A forcing notion $\P$ is \emph{subcomplete} so long as,
@@ -458,7 +458,7 @@ Often we write $\delta$ instead of $\delta(\P)$ for the weight of $\P$ when ther
 
 \begin{remark}\label{remark:VerifyingSC} If $\P$ is subcomplete as verified by $\theta$, then $\P$ is subcomplete as verifed by $\theta' > \theta$ since $\P \in H_\theta$ obviously implies that $\P \in H_{\theta'}$. Thus a standard setup such as $\P \in H_{\theta'} \subseteq N=L_\tau[A]$ for $\tau>\theta'$ may be reduced down to the case where $\P \in H_{\theta} \subseteq N=L_\tau[A]$ and $\tau>\theta'>\theta$ using the same $\tau$. In particular, $\P$ is subcomplete as long as it is verified to be subcomplete by some $\theta$. So ``sufficiently large $\theta$" may be replaced with ``some $\theta$" in the definition of subcompleteness.\footnote{See \cite[Section 3.1 Lemma 2.4]{Jensen:2012fr}.} \end{remark}
 
-\subsection{Subcomplete above $\mu$}
+\subsection{Subcomplete above $\mu$} \label{subsec:subcompleteabovemu}
 The notion of subcompleteness above $\mu$ is an attempt to measure where exactly subcompleteness kicks in; in some sense it gives a level as to where forcing fails to be complete. The following definition is from Jensen \cite[Chapter 2 p.\ 47]{Jensen:2009fe}.
 \begin{definition} 
 Let $\mu$ be a cardinal. We say that a forcing notion $\P$ is \emph{subcomplete above $\mu$} so long as for sufficiently large $\theta > \mu$, whenever we are in the standard setup (as in the definition of subcomplete forcing),
@@ -474,7 +474,7 @@ The meaning of subcompleteness above $\mu$ is somewhat given by the following th
 \begin{theorem} If $\P$ is subcomplete above $\mu$ then $\P$ does not add new countable subsets of $\mu$. \end{theorem}
 \begin{proof}
 Suppose not. Let $\P$ be subcomplete above $\mu$. Let $\dot B \subseteq \mu$ be countable with 
-	$$p \forces \dot f: \check \omega \cong \dot B \ \land\ \dot f \notin V.$$ 
+	$$p \forces \left( \dot f: \check \omega \cong \dot B \ \land\ \dot f \notin V \right).$$ 
 Take $\theta > \mu$ large enough to verify the subcompleteness of $\P$. \begin{itemize}
 	\item $\P \in H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ where $\tau>\theta$ and $A \subseteq \tau$
 	\item $\sigma: \N \cong X \preccurlyeq N$ where $\N$ is countable and full
