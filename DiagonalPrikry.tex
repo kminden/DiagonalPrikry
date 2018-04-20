@@ -359,7 +359,7 @@ so $x \in \sk{N}{\delta}{\sigma}$.
 \end{proof}
 
 \subsection{Subcomplete Forcing} \label{subsec:subcomplete}
-Subcompleteness should be seen as a weakening of the class of complete (a.k.a. countably closed) forcing notions. The following definitions and proofs are due to Jensen \cite[Chapter 3]{Jensen:2012fr}.
+Subcompleteness should be seen as a weakening of the class of complete (that is, countably closed) forcing notions. The following definitions and proofs are due to Jensen \cite[Chapter 3]{Jensen:2012fr}.
  
 \begin{definition} A forcing notion $\P$ is \emph{complete} so long as
 for sufficiently large $\theta$ we have that once we are in the following situation: \begin{itemize}
@@ -367,12 +367,14 @@ for sufficiently large $\theta$ we have that once we are in the following situat
 	\item $\sigma: \N \cong X \preccurlyeq N$ where $X$ is countable and $\N$ is transitive
 	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$ for some $s \in N$;
 \end{itemize}
-then we have that if $\G$ is $\overline{\P}$-generic over $\N$ then there is a \emph{completeness condition} $p \in \P$ forcing that whenever $G \ni p$ is $\P$-generic, $\sigma ``\, \G \subseteq G$. 
+and $\G$ is $\overline{\P}$-generic over $\N$ then there is a \emph{completeness condition} $p \in \P$ forcing that whenever $G \ni p$ is $\P$-generic, $\sigma ``\, \G \subseteq G$. 
 
 In particular, below the condition $p$ we have that $\sigma$ lifts to an embedding $\sigma^*:\N[\G] \prec N[G]$.
-We say that such a $\theta$ as above \emph{verifies} the completeness of $\P$.
+We say that a $\theta$ as above \emph{verifies} the completeness of $\P$.
 \end{definition}
-The adjustment made to get subcomplete forcings is to not necessarily insist the the original embedding lifts in the forcing extension. Instead subcompleteness asks for there to be an embedding that lifts in the extension, and potentially only exists there, an embedding that is sufficiently similar to the original embedding. However, as discussed in Section \ref{subsec:fullness}, the domain of the embedding must be \emph{full} to ensure that there can even consistently be more than one embedding. The definition is given below.
+The adjustment made to get subcomplete forcings is to not necessarily insist the the original embedding lifts in the forcing extension. Instead subcompleteness asks for an embedding, sufficiently similar
+to the original one, which lifts to the extension, but may itself only exist in the extension.
+However, as discussed in Section~\ref{subsec:fullness}, the domain of the embedding should be \emph{full} to ensure that there can even consistently be more than one embedding. The definition is given below.
 
 \begin{definition} \label{definition:SC}
 A forcing notion $\P$ is \emph{subcomplete} so long as,
@@ -381,7 +383,7 @@ for sufficiently large $\theta$ we have that whenever we are in the \emph{standa
 	\item $\sigma: \N \cong X \preccurlyeq N$ where $X$ is countable and $\N$ is full
 	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$ for some $s \in N$;
 \end{itemize}
-then we have that if $\G$ is  $\overline{\P}$-generic over $\N$ then there is a \emph{subcompleteness condition} $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
+and $\G$ is  $\overline{\P}$-generic over $\N$ then there is a \emph{subcompleteness condition} $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
 	\item $\sigma': \N \prec N$
 	\item $\sigma'(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$
 	\item \label{item:skolemcompatibility} $\sk{N}{\delta(\P)}{\sigma'} = \Sk{N}{\delta(\P)}{X}$
@@ -389,7 +391,7 @@ then we have that if $\G$ is  $\overline{\P}$-generic over $\N$ then there is a 
 \end{enumerate}
 In other words and in particular, the subcompleteness condition $p$ forces that there is an embedding $\sigma'$ in the extension $V[G]$ that lifts, by (\ref{item:sigmaprimelifts}), to an embedding $\sigma'^*:\N[\G] \prec N[G]$ in $V[G]$.
 
-We say that such a $\theta$ as above \emph{verifies} the subcompleteness of $\P$.
+We say that a $\theta$ as above \emph{verifies} the subcompleteness of $\P$.
 
 Often we write $\delta$ instead of $\delta(\P)$ for the weight of $\P$ when there should be no confusion as to which poset $\P$ we are working with.\footnote{See Section \ref{subsec:delta} for more on $\delta(\P)$.}
 \end{definition}
@@ -471,7 +473,9 @@ Often we write $\delta$ instead of $\delta(\P)$ for the weight of $\P$ when ther
 %Finally, if $\P$ is subcomplete in $V$ as verified by $H_\theta$, then $\P$ is subcomplete in $H_\eta$ since given $\sigma \in H_\eta$ where $\sigma: \N \prec N$, we have of course that $\N, N \in H_\eta$. Additionally $\sigma \in V$, and we may apply subcompleteness in $V$ to obtain a condition $p \in \P$ such that whenever $p \in G$, there is a $\sigma' \in V[G]$ having certain properties, namely \textbf{1} through \textbf{4} of the definition. Such generic filters over $V$ are also generic over $H_\eta$, and furthermore $\sigma' \in H_\eta[G] = V^{H_\eta}[G]$ since $\N$ and $N$ are in $H_\eta$. So the rest of the properties are also clear, and $\P$ is subcomolete in $H_\eta$ as desired.
 %\end{proof}
 
-\begin{remark}\label{remark:VerifyingSC} If $\P$ is subcomplete as verified by $\theta$, then $\P$ is subcomplete as verifed by $\theta' > \theta$ since $\P \in H_\theta$ obviously implies that $\P \in H_{\theta'}$. Thus a standard setup such as $\P \in H_{\theta'} \subseteq N=L_\tau[A]$ for $\tau>\theta'$ may be reduced down to the case where $\P \in H_{\theta} \subseteq N=L_\tau[A]$ and $\tau>\theta'>\theta$ using the same $\tau$. In particular, $\P$ is subcomplete as long as it is verified to be subcomplete by some $\theta$. So ``sufficiently large $\theta$" may be replaced with ``some $\theta$" in the definition of subcompleteness.\footnote{See \cite[Section 3.1 Lemma 2.4]{Jensen:2012fr}.} \end{remark}
+\begin{remark}\label{remark:VerifyingSC} If $\P$ is subcomplete as verified by $\theta$, then $\P$ is subcomplete as verifed by $\theta' > \theta$ since $\P \in H_\theta$ obviously implies that $\P \in H_{\theta'}$. Thus a standard setup such as $\P \in H_{\theta'} \subseteq N=L_\tau[A]$ for $\tau>\theta'$ may be reduced down to the case where $\P \in H_{\theta} \subseteq N=L_\tau[A]$ and $\tau>\theta'>\theta$ using the same $\tau$. 
+%%%M I feel like there is a better way of saying this.	
+In particular, $\P$ is subcomplete as long as it is verified to be subcomplete by some $\theta$. So ``sufficiently large $\theta$" may be replaced with ``some $\theta$" in the definition of subcompleteness.\footnote{See \cite[Section 3.1 Lemma 2.4]{Jensen:2012fr}.} \end{remark}
 
 \subsection{Subcomplete above $\mu$} \label{subsec:subcompleteabovemu}
 The notion of subcompleteness above $\mu$ is an attempt to measure where exactly subcompleteness kicks in; in some sense it gives a level as to where forcing fails to be complete. The following definition is from Jensen \cite[Chapter 2 p.\ 47]{Jensen:2009fe}.
