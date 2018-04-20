@@ -478,35 +478,42 @@ Often we write $\delta$ instead of $\delta(\P)$ for the weight of $\P$ when ther
 In particular, $\P$ is subcomplete as long as it is verified to be subcomplete by some $\theta$. So ``sufficiently large $\theta$" may be replaced with ``some $\theta$" in the definition of subcompleteness.\footnote{See \cite[Section 3.1 Lemma 2.4]{Jensen:2012fr}.} \end{remark}
 
 \subsection{Subcomplete above $\mu$} \label{subsec:subcompleteabovemu}
-The notion of subcompleteness above $\mu$ is an attempt to measure where exactly subcompleteness kicks in; in some sense it gives a level as to where forcing fails to be complete. The following definition is from Jensen \cite[Chapter 2 p.\ 47]{Jensen:2009fe}.
+The notion of subcompleteness above $\mu$ is an attempt to measure where exactly subcompleteness kicks in; in some sense it gives a level as to where forcing fails to be complete. 
+%%%M Complete? Or subcomplete?
+The following definition is from Jensen \cite[Chapter 2 p.\ 47]{Jensen:2009fe}.
 \begin{definition} 
 Let $\mu$ be a cardinal. We say that a forcing notion $\P$ is \emph{subcomplete above $\mu$} so long as for sufficiently large $\theta > \mu$, whenever we are in the standard setup (as in the definition of subcomplete forcing),
 then, for any $\G \subseteq \overline{\P}$, there is a subcompleteness condition $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, then there is $\sigma' \in V[G]$ satisfying in addition that $\sigma' \rest H_{\overline \mu}^{\N} = \sigma \rest H_{\overline \mu}^{\N}$.
 
-As usual, this means that in particular below the condition $p$ there is an embedding $\sigma'$ that lifts by (4) to an embedding $\sigma'^*:\N[\G] \prec N[G]$ in $V[G]$. As usual we say that such $\theta$ as above \textit{verifies the subcompleteness above $\mu$ of $\P$}, and we may say that $\P$ is subcomplete if there is a $\theta$ that verifies its subcompleteness above $\mu$.
+As usual, this means that in particular below the condition $p$ there is an embedding $\sigma'$ that lifts by (4) to an embedding $\sigma'^*:\N[\G] \prec N[G]$ in $V[G]$. We say that a $\theta$ as above \textit{verifies the subcompleteness above $\mu$ of $\P$}, and we may say that $\P$ is subcomplete above \(\mu\) if there is a $\theta$ that verifies its subcompleteness above $\mu$.
 \end{definition}
 
 \begin{remark} If $\P$ is subcomplete, then $\P$ is subcomplete above $\omega_1^{\N}$. \end{remark}
+%%%M This is weirdly stated. First of all, Nbar varies, so there isn't one single thing that P is
+% subcomplete above to which you could refer as omega_1^Nbar.
+% Secondly, you only define subcomplete above mu for cardinals mu. omega_1^Nbar is definitely
+% not a cardinal in V. 
 \begin{proof} By Remark \ref{remark:CPofourEmbeddings}, we have that for any elementary embedding such as $\sigma$ or $\sigma'$ from countable $\N$ to $N$, $\sigma' \rest H_{\overline{\omega_1}}^{\N} = \sigma \rest H_{\overline{\omega_1}}^{\N} = \text{id}$. \end{proof}
 
-The meaning of subcompleteness above $\mu$ is somewhat given by the following theorem.
+The following is a key property of posets that are subcomplete above \(\mu\).
 \begin{theorem} If $\P$ is subcomplete above $\mu$ then $\P$ does not add new countable subsets of $\mu$. \end{theorem}
 \begin{proof}
-Suppose not. Let $\P$ be subcomplete above $\mu$. Let $\dot B \subseteq \mu$ be countable with 
-	$$p \forces \left( \dot f: \check \omega \cong \dot B \ \land\ \dot f \notin V \right).$$ 
+Suppose not. Let $\P$ be subcomplete above $\mu$. 
+Fix a condition \(p\in\P\) and let $\dot{f}$ be a name such that
+	$$p \forces \left( \dot f: \check \omega \to \check{\mu} \right).$$ 
 Take $\theta > \mu$ large enough to verify the subcompleteness of $\P$. \begin{itemize}
 	\item $\P \in H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ where $\tau>\theta$ and $A \subseteq \tau$
 	\item $\sigma: \N \cong X \preccurlyeq N$ where $\N$ is countable and full
-	\item $\sigma(\overline \theta, \overline \mu, \overline{\P}, \overline p, \overline{\dot B}, \overline{\dot f})=\theta, \mu, \P, p, \dot B, \dot f$.
+	\item $\sigma(\overline \theta, \overline \mu, \overline{\P}, \overline p, \overline{\dot f})=\theta, \mu, \P, p, \dot f$.
 \end{itemize}
-Let $\G$ be $\overline{\P}$-generic over $\N$ with $\overline p \in \overline G$. By the subcompleteness of $\P$ above $\mu$ there is $p \in \P$ such that whenever $p \in G$ where $G$ is $\P$-generic, there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
+Let $\G$ be $\overline{\P}$-generic over $\N$ with $\overline p \in \overline G$. By the subcompleteness of $\P$ above $\mu$ there is $q \in \P$ such that whenever $q \in G$ where $G$ is $\P$-generic, there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
 	\item $\sigma': \N \prec N$
-	\item $\sigma'(\overline \theta, \overline \mu, \overline{\P}, \overline p, \overline{\dot B}, \overline{\dot f})=\theta, \mu, \P, p, \dot B, \dot f$
+	\item $\sigma'(\overline \theta, \overline \mu, \overline{\P}, \overline p, \overline{\dot f})=\theta, \mu, \P, p, \dot f$
 	\item $\sk{N}{\delta}{\sigma'} = \Sk{N}{\delta}{X}$
 	\item $\sigma'``\G \subseteq G$
 	\item $\sigma' \rest \overline \mu = \sigma \rest \overline \mu$.
 \end{enumerate}
-Let $\overline f = \overline{\dot f}^{\G}$ and $f = \dot f^G$. By (4) and (5), for each $n$, $$f(n)=\sigma'(\overline f(n)) = \sigma(\overline f(n)),$$ meaning that $f \in V$ since $\sigma \in V$, which is a contradiction.
+Let $\overline f = \overline{\dot f}^{\G}$ and $f = \dot f^G$. By (4) and (5), for each $n$, $$f(n)=\sigma'(\overline f(n)) = \sigma(\overline f(n)),$$ meaning that $f \in V$ since $\sigma,\overline{f} \in V$.
 \end{proof}
 Thus if $\P$ is subcomplete above $\mu$, then $\mu$'s cardinality, and even its cofinality, cannot be altered to be $\omega$ via $\P$.
 
