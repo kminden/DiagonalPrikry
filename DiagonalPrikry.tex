@@ -581,6 +581,7 @@ The following definitions are meant to describe a method used to obtain useful e
 %\begin{definition} A map $\pi: \overline{\mathfrak A} \to \mathfrak A$ is $\Sigma_n$-preserving ($\pi: \overline{\mathfrak A} \to_{\Sigma_0} \mathfrak A$) if and only if for all $\Sigma_n$-formulas and all $x_1, \dots x_n \in \overline{\mathfrak A}$, $$\overline{\mathfrak A} \models \varphi[x_1, \dots x_n] \iff \mathfrak A \models \varphi[\pi(x_1), \dots, \pi(x_n)].$$ \end{definition}
 
 \begin{definition} Let $\N$ and $N$ be transitive $\ZFC^-$ models. We say that an elementary embedding $\sigma: \N \prec N$ is \emph{cofinal} so long as for each $x \in N$ there is some $u \in \N$ such that $x \in \sigma(u)$. 
+%%%M You already used the word cofinal in the fact above. Is this the same; does something need to be moved?
 
 Let $\alpha \in \N$. We say that $\sigma$ is \emph{$\alpha$-cofinal} so long as every such $u$ has size less than $\alpha$ as computed in $\N$. \end{definition}
 	
@@ -603,7 +604,7 @@ For the first direction, let $x \in N$, and take $u \in \overline N$ with $x \in
 For the backward direction, let $x=\sigma(f)(\beta)$ be an element of $N$, for $f:\gamma \to \overline N$ where $\gamma < \alpha$ in $\overline N$ and $\beta < \sigma(\gamma)$. Define $u = f``\gamma$. Then in $\overline N$ we have that $|u|<\alpha$. In addition we have that $x \in \sigma(u)$, since $\sigma(u)$ is in the range of $\sigma(f)$, where $x$ lies.
 \end{proof}
 
-Furthermore, Jensen shows that transitive liftups exist so long as an embedding already exists, using an ultrapower-like construction, and have a uniqueness property.
+Furthermore, Jensen shows that transitive liftups exist, provided that some extension of the original embedding exists, and have a uniqueness property.
 
 \begin{fact}[\emph{Interpolation}]\label{fact:Interpolation} Let $\sigma:\N \prec N$ with $\N \models \ZFC^-$ transitive, and let $\alpha \in \N$ be a regular cardinal. Then: \begin{enumerate}
 	\item The transitive liftup $\langle N_*, \sigma_* \rangle$ of $\langle \N, \sigma \rest H^{\N}_\alpha \rangle$ exists.
@@ -627,7 +628,9 @@ The following lemma states that transitive liftups of full models are almost ful
 
 \begin{lemma}[Jensen]\label{lemma:liftupfull} Let $N =L_\tau[A] \models \ZFC^-$ and $\sigma: \N \prec N$ where $\N$ is full. Suppose that $\langle N_*, \sigma_* \rangle$ is a transitive liftup of $\langle \N, \overline \sigma \rangle$. Then $N_*$ is almost full. \end{lemma}
 \begin{proof}
-	Let $L_\gamma(\N)$ witness the fullness of $\N$. We will now apply Interpolation (Fact \ref{fact:Interpolation}) to $\mathfrak A= L_\gamma(\N)$, which makes sense since certainly $\mathfrak A$ is a transitive model $\ZFC^-$. Additionally, by Lemma \ref{lemma:regularityequiv} we have that $\N = H_\tau^{\mathfrak A}$, where $\tau = \height(\N)$. Since $\langle N_*, \sigma_* \rangle$ is a transitive liftup, we have that $$\sigma_*: H_\tau^{\mathfrak A} \prec N_* \text{ cofinally,}$$ where $N_*$ is transitive. Thus since $\mathfrak A$ is transitive, $\langle \mathfrak A, \sigma_* \rangle$ has a liftup $\langle \mathfrak A_*, {\sigma_*}_* \rangle$, where $\mathfrak A_* \models \ZFC^-$ since $\mathfrak A$ does, $\mathfrak A_*$ is solid, where $${\sigma_*}_* : \mathfrak A \prec \mathfrak A_* \text{ $\tau$-cofinally.}$$ 
+	Let $L_\gamma(\N)$ witness the fullness of $\N$. We will now apply Interpolation (Fact \ref{fact:Interpolation}) to $\mathfrak A= L_\gamma(\N)$, which makes sense since certainly $\mathfrak A$ is a transitive model of $\ZFC^-$. Additionally, by Lemma \ref{lemma:regularityequiv} we have that $\N = H_\tau^{\mathfrak A}$, where $\tau = \height(\N)$. 
+	%%%M I think you used tau for two different things?
+	Since $\langle N_*, \sigma_* \rangle$ is a transitive liftup, we have that $$\sigma_*: H_\tau^{\mathfrak A} \prec N_* \text{ cofinally,}$$ where $N_*$ is transitive. Thus since $\mathfrak A$ is transitive, $\langle \mathfrak A, \sigma_* \rangle$ has a liftup $\langle \mathfrak A_*, {\sigma_*}_* \rangle$, where $\mathfrak A_* \models \ZFC^-$ since $\mathfrak A$ does, $\mathfrak A_*$ is solid, where $${\sigma_*}_* : \mathfrak A \prec \mathfrak A_* \text{ $\tau$-cofinally.}$$ 
 	We have that  $N_* \subseteq \wfc({\mathfrak A}_*)$ and $\tau_*= {\sigma_*}_*(\tau)=\height(N_*)$ is regular since $\tau$ is. Furthermore, we will show that $N_* = H_{\tau_*}^{\mathfrak A_*}$, completing the proof:
 	
 	Certainly it is the case that $N_* \subseteq H_{\tau_*}^{\mathfrak A^*}$. 
