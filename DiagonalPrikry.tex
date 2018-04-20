@@ -653,20 +653,23 @@ $( s, A )$ satisfying the following:
 The extension relation on conditions in $\D$ is defined so that $( s, A ) \leq ( t, B )$ so long as 
 \begin{itemize}
 	\item $s \supseteq t$.
+	%%%M I think you want end-extension here.
 	\item The points in $s$ not in $t$ come from $B$, i.e., for all $\kappa \in \dom(s) \setminus \dom(t)$, $s(\kappa) \in B(\kappa)$.
-	\item For all $\kappa \in \dom(A)$, $A(\kappa) \subseteq B(\kappa)$.
+	\item For all $\kappa \in \dom(t)$, $A(\kappa) \subseteq B(\kappa)$.
 \end{itemize}
 If $G$ is a generic filter for $\D$, then its associated $\D$-generic sequence is \[S = S_G = \bigcup \set{ s }{ \exists A \ ( s, A ) \in G }.\qedhere\]
 \end{definition}
 
-Here the definition of $\D(\U)$ differs from that as in Fuchs of generalized Prikry foricing \cite{Fuchs:2005kx}. The main difference is that here only one point is added below each measurable cardinal $\kappa \in D$, which is done for simplicity's sake. It is not hard to see that the following theorem also shows that the forcing adding countably many points below each measurable cardinal in $D$ is subcomplete. Adding countably many points below each measurable cardinal in $D$ would collapse the cofinality of each $\kappa \in D$ to be $\omega$, as one expects of a Prikry-like forcing. %Maybe show this more rigorously
+Here the definition of $\D(\U)$ differs from that of generalized Prikry foricing as given by Fuchs~\cite{Fuchs:2005kx}. The main difference is that here only one point is added below each measurable cardinal $\kappa \in D$, which is done for simplicity's sake. It is not hard to see that the following theorem also shows that the forcing adding countably many points below each measurable cardinal in $D$ is subcomplete. Adding countably many points below each measurable cardinal in $D$ would collapse the cofinality of each $\kappa \in D$ to be $\omega$, as one expects of a Prikry-like forcing. %Maybe show this more rigorously
 
-Also in the above definition it hasn't been enforced that the stem a condition consists only of ordinals that are wedged between successive measurables in $D$; ie. for $\kappa \in D$, it is not explicitly insisted that $s(\kappa) \in [\sup(D\cap \kappa), \kappa)$. However, it is dense in $\D(\U)$ for the conditions to be that way, since conditions may be strengthened by restricting their upper parts to a tail. Thus such a restriction may be freely added to the following genericity condition on $\D(\U)$.
+Also in the above definition it hasn't been enforced that the stem a condition consists only of ordinals that are wedged between successive measurables in $D$; ie. for $\kappa \in D$, it is not explicitly insisted that $s(\kappa) \in [\sup(D\cap \kappa), \kappa)$. However, it is dense in $\D(\U)$ for the conditions to be that way, since conditions may be strengthened by restricting their upper parts to a tail. 
+%%%M I don't know, what if a condition already made a mistake. But it will be true on a tail of the generic sequence.
+Thus such a restriction may be freely added to the following genericity condition on $\D(\U)$.
 
-\begin{fact}[Fuchs] \label{fact:diagprikrymathias} Let $D$ be an infinite discrete set of measurable cardinals, with $\U$ a corresponding list of measures $\langle U(\kappa) \;|\; \kappa \in D \rangle$. Then an increasing sequence of ordinals $S = \langle S(\kappa) \;|\; \kappa \in D \rangle$, where for each $\kappa \in D$, we have that $$\sup(D \cap \kappa) < S(\kappa) < \kappa,$$ is a $\D(\U)$-generic  sequence if and only if for all $\mathcal X = \langle X_\kappa \in U(\kappa) \;|\; \kappa \in D \rangle$, the set $$\{ \kappa \in D \;|\; S(\kappa) \notin X_\kappa\}$$ is finite.
+\begin{fact}[Fuchs~\cite{Fuchs:2005kx}] \label{fact:diagprikrymathias} Let $D$ be an infinite discrete set of measurable cardinals, with $\U$ a corresponding list of measures $\langle U(\kappa) \;|\; \kappa \in D \rangle$. Then an increasing sequence of ordinals $S = \langle S(\kappa) \;|\; \kappa \in D \rangle$, where for each $\kappa \in D$, we have that $$\sup(D \cap \kappa) < S(\kappa) < \kappa,$$ is a $\D(\U)$-generic  sequence if and only if for all $\mathcal X = \langle X_\kappa \in U(\kappa) \;|\; \kappa \in D \rangle$, the set $$\{ \kappa \in D \;|\; S(\kappa) \notin X_\kappa\}$$ is finite.
 \end{fact}
 
-The above genericity criterion on generalized diagonal Prikry forcing is similar to the Mathias criterion for Prikry forcing. It was shown in \cite[Theorem 1]{Fuchs:2005kx}. 
+The above genericity criterion on generalized diagonal Prikry forcing is similar to the Mathias genericity criterion for Prikry forcing.
 
 \begin{theorem} Let $D$ be an infinite discrete set of measurable cardinals. %, such that $\otp(D)$ is less than the first limit point of $D$. 
 Let $\U = \langle U(\kappa) \;|\; \kappa \in D \rangle$ be a list of measures associated to $D$. The generalized diagonal Prikry forcing $\D=\D(\U)$ is subcomplete. \end{theorem}
