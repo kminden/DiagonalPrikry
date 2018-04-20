@@ -529,7 +529,7 @@ Of course this may be generalized to the entire usual Levy hierarchy of formulae
 \begin{definition} A transitive structure $M$ is \emph{admissible} if it models the axioms of \textsf{Kripke-Platek Set Theory} (\textsf{KP}) which consists of the axioms of \textsf{Empty Set}, \textsf{Pairing}, \textsf{Union}, $\Sigma_0$-\textsf{Collection}, and $\Sigma_0$-\textsf{Separation}. \end{definition}
 
 Jensen also makes use of models of $\textsf{ZF}^-$ that are not necessarily well-founded.
-\begin{definition} Let $\mathfrak A = \langle A, \in_{\mathfrak A}, B_1, B_2, \dots \rangle$ be a (possibly) ill-founded model  of $\textsf{ZF}^-$, where $\mathfrak A$ is allowed to have predicates other than $\in$. The \emph{well-founded core} of $\mathfrak A$, denoted $\wfc(\mathfrak A)$, is the restriction of $\mathfrak A$ to the set of all $x \in A$ such that $\in_{\mathfrak A} \cap \ \mathcal C(x)^2$ is well founded, where $\mathcal C(x)$ is the closure of $\{x\}$ under $\in_{\mathfrak A}$. A model $\mathfrak A$ of $\textsf{ZF}^-$ is \emph{solid} so long as $\wfc(\mathfrak A)$ is transitive and $\in_{\wfc(\mathfrak A)}=\in \cap \wfc(\mathfrak A)^2$. \end{definition}
+\begin{definition} Let $\mathfrak A = \langle A, \in_{\mathfrak A}, B_1, B_2, \dots \rangle$ be a (possibly ill-founded) model  of $\textsf{ZF}^-$, where $\mathfrak A$ is allowed to have predicates other than $\in$. The \emph{well-founded core} of $\mathfrak A$, denoted $\wfc(\mathfrak A)$, is the restriction of $\mathfrak A$ to the set of all $x \in A$ such that $\in_{\mathfrak A} \cap \ \mathcal C(x)^2$ is well founded, where $\mathcal C(x)$ is the closure of $\{x\}$ under $\in_{\mathfrak A}$. A model $\mathfrak A$ of $\textsf{ZF}^-$ is \emph{solid} so long as $\wfc(\mathfrak A)$ is transitive and $\in_{\wfc(\mathfrak A)}=\in \cap \wfc(\mathfrak A)^2$. \end{definition}
 
 Jensen \cite[Section 1.2]{Jensen:2012fr} notes that every consistent set of sentences in $\textsf{ZF}^-$ has a solid model, and if $\mathfrak A$ is solid, then $\omega \subseteq \wfc(\mathfrak A)$. In addition,
 
@@ -549,7 +549,7 @@ An important fact ensured by our \textsf{Basic Axioms} is that the interpretatio
 \begin{fact}[Jensen] Let $M$ be as in the above definition. Let $\mathfrak A$ be a solid model of the $\in$-theory $\mathcal L$. Then for all $x \in M$, we have that $\underline{x}^{\mathfrak A} = x \in \wfc(\mathfrak A)$. \end{fact}
 %\begin{proof}[Pf.] Shown by $\in$-induction. \end{proof}
 
-Jensen uses the techniques of Barwise to come up with a proof system in this context, in which consistency of $\in$-theories can be discussed. In particular, $\in$-theories are correct: if there is a model of such a theory, then the theory is consistent. 
+Jensen uses the techniques of Barwise to come up with a proof system in this context, in which consistency of $\in$-theories can be discussed. In particular, the semantics is sound for this syntax: if there is a model of an \(\in\)-theory, then the theory is consistent. 
 \begin{fact}[\emph{Barwise Correctness}] \label{fact:correctness} 
 Let $\mathcal L$ be an $\in$-theory. If $A$ is a set of $\mathcal L$-statements and $\mathfrak A \models A$, then $A$ is consistent. \end{fact}
 
