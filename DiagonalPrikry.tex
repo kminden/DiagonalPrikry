@@ -1245,12 +1245,14 @@ Then $\D=\D(\U)$ is subcomplete above $\mu$. \end{corollary}
 \end{tikzpicture}
 \end{center} 
 
-Here we replace $\kappa(0)$ with some $\kappa' \in D$ such that $\lambda < \kappa' $, where there are finitely many measurables of $D$ below $\kappa'$. So in particular, we let $\langle N_1, \sigma_1 \rangle$ be the liftup of $\langle \N, \sigma \rest H_{\overline{\kappa'}}^\N\rangle$ in Claim \ref{claim:N0isliftupofN}. In order to show the that we have a generic sequence over $\D_1$ as in Claim \ref{Claim:S_1isPrikryoverN_1}, we follow the same argument as follows:
+Here we replace $\kappa(0)$ with some $\kappa' \in D$ such that $\lambda < \kappa' $, where there are finitely many measurables of $D$ below $\kappa'$. 
+%%%M What? What if there are no kappa' in D above lambda? And regardless, if kappa' is above lambda then there must definitely be infinitely many elements of D below kappa'.
+So in particular, we let $\langle N_1, \sigma_1 \rangle$ be the liftup of $\langle \N, \sigma \rest H_{\overline{\kappa'}}^\N\rangle$ in Claim \ref{claim:N0isliftupofN}. In order to show the that we have a generic sequence over $\D_1$ as in Claim \ref{Claim:S_1isPrikryoverN_1}, we follow the same argument as follows:
 
 Let $\mathcal X = \seq{ X_\kappa \in U_1(\kappa) }{ \kappa \in \sigma_1``\overline D }$, with $\mathcal X \in N_1$, be a sequence of measure one sets in the sequence of measures $\U_1$ with only coordinates coming from $\sigma_1``\overline D$.
 We need to see that 
 $$\set{ \overline \kappa \in \overline D}{\sigma_1(\S(\overline \kappa)) \notin X_{\sigma_1(\overline \kappa)} }  \text{ is finite.}$$
-By the $\overline{\kappa}'$-cofinality of $\sigma_1$, there is some $w \in \N$ such that $\mathcal X \in \sigma_1(w)$, where $|w| < \overline{\kappa}'$ in $\N$. Thus in $N_1$, $|\sigma_1(w)| < \kappa_1'$. For each $\kappa \in \sigma_1``\overline D$, we have that $X_\kappa \in \sigma_1(w)_\kappa = \set{\sigma_1(f)(\overline \kappa) }{ f \in \prod_{\overline \kappa \in \overline D} \overline U(\overline \kappa) \ \land \ f \in w }$ and also $$|\sigma_1(w)|<\kappa_1'.$$ So for all but finitely many $\kappa \in \sigma_1``\overline D$, namely for $\kappa \geq \kappa_1'$, by the $\kappa$-completeness of $U_1(\kappa)$, we have that $$\cap \, \sigma_1(w)=W_\kappa \in U_1(\kappa).$$
+By the $\overline{\kappa}'$-cofinality of $\sigma_1$, there is some $w \in \N$ such that $\mathcal X \in \sigma_1(w)$, where $|w| < \overline{\kappa}'$ in $\N$. Thus in $N_1$, $|\sigma_1(w)| < \kappa_1'$. For each $\kappa \in \sigma_1``\overline D$, we have that $X_\kappa \in \sigma_1(w)_\kappa = \set{\sigma_1(f)(\overline \kappa) }{ f \in \prod_{\overline \kappa \in \overline D} \overline U(\overline \kappa) \ \land \ f \in w }$ and also $$|\sigma_1(w)|<\kappa_1'.$$ So for all but finitely many $\kappa \in \sigma_1``\overline D$, namely for $\kappa \geq \kappa_1'$, by the $\kappa$-completeness of $U_1(\kappa)$, we have that $$\bigcap \sigma_1(w)=W_\kappa \in U_1(\kappa).$$
 
 So we have established that $\mathcal W$, the sequence of $W_\kappa$ for $\kappa>\kappa_1'$, is also a sequence of measure-one sets in $N_1$. Note in addition that for $\kappa \in \sigma_1``\overline D$, $\kappa> \kappa_1'$, we have that $W_\kappa \subseteq X_\kappa$. 
 
@@ -1261,7 +1263,9 @@ Thus by elementarity,
 
 Additionally the $\in$-theories $\mathcal L$ and $\mathcal T$ would have to be defined so as to include as an axiom that $\mathring \sigma \rest \overline{\underline{\mu}} = \underline{\sigma} \rest \overline{\underline \mu}$ and $\dot \sigma \rest \overline{\underline{\mu}} = \underline{\sigma} \rest \overline{\underline \mu}$ respectively. 
 We would then need to show that $\overset{*}\sigma \rest \overline{\mu} = \sigma \rest \overline{\mu}$, but this would follow since $k_0$ is the identity on $\nu_0$. 
-Furthermore, it would need to be shown that $\sigma' \rest \overline{\mu} = \sigma \rest \overline{\mu}$, but this would follow from the requirement that $\dot \sigma^{\tilde{\mathfrak A}} \rest \overline{\mu} = \underline{\sigma}^{\tilde{\mathfrak A}} \rest \overline{\mu}$, and since ordinals are computed properly by $\tilde{\mathfrak A}$. \end{proof}
+Furthermore, it would need to be shown that $\sigma' \rest \overline{\mu} = \sigma \rest \overline{\mu}$, but this would follow from the requirement that $\dot \sigma^{\tilde{\mathfrak A}} \rest \overline{\mu} = \underline{\sigma}^{\tilde{\mathfrak A}} \rest \overline{\mu}$, and the fact that ordinals are computed properly by $\tilde{\mathfrak A}$. 
+%%%M Which ordinals? Below mu?
+\end{proof}
 
 
 \bibliographystyle{abbrv}
