@@ -1131,38 +1131,42 @@ This completes the proof of the main claim.
 We have satisfied the main claim, which finishes the proof that $\D$ is subcomplete.
 \end{proof}
 
-Some slight modifications to the above proof give the following two corollaries.
+We now describe some minor modifications of the proof that give further results.
 
 The first point is that the above proof also shows that generalized diagonal Prikry forcing that adds a countable sequence to each measurable cardinal is subcomplete. Before stating the corolloary let's define the forcing. Again let $D$ be an infinite discrete set of measurable cardinals. Let $\U = \seq{ U(\kappa) }{ \kappa \in D }$ be a list of measures associated to $D$. 
-Let $\D^*(\U) = \D^*$ be defined the same as $\D(\U)$ except the stem of a condition, $s$, in $\D^*(\U)$ is a function with domain in $[D]^{<\omega}$ taking each measurable cardinal $\kappa \in \dom(s)$ to finitely many ordinals $s(\kappa) \subseteq \kappa$. The upper part and extension relation is defined in the same way; the only slight modification is that again we have $(s, A) \leq (t, B)$ so long as points in $s$ not in $t$ come from $B$, which in the case means that for $\kappa \in \dom(s)$ we have that each element of $s(\kappa)$ not in $t(\kappa)$ is in $B(\kappa)$. We may again form a $\D^*$-generic sequence $S = S_G$ for a generic $G \subseteq \D^*$, and we may write $S = \seq{ S(\kappa) }{ \kappa \in D }$ where $S(\kappa)$ is a countable sequence of ordinals less than $\kappa$. The genericity criterion for generic diagonal Prikry sequences is as that for $\D$, which is given in  \cite[Theorem 1]{Fuchs:2005kx}, as stated in Fact \ref{fact:diagprikrymathias}, with the modification that $S$ is $\D^*$ generic if and only if for all $\mathcal X$, the set $\set{ \alpha }{ \exists \kappa \in D \ \alpha \in S(\kappa) \setminus X_\kappa }$ is finite.
+Let $\D^*(\U) = \D^*$ be defined in the same way as $\D(\U)$ except the stem of a condition, $s$, in $\D^*(\U)$ is a function with domain in $[D]^{<\omega}$ taking each measurable cardinal $\kappa \in \dom(s)$ to finitely many ordinals $s(\kappa) \subseteq \kappa$. The upper part and extension relation is defined in the same way; the only slight modification is that again we have $(s, A) \leq (t, B)$ so long as points in $s$ not in $t$ come from $B$, which in the case means that for $\kappa \in \dom(s)$ we have that each element of $s(\kappa)$ not in $t(\kappa)$ is in $B(\kappa)$. 
+%%%M Again, probably end-extension is important.
+We may again form a $\D^*$-generic sequence $S = S_G$ for a generic $G \subseteq \D^*$, and we may write $S = \seq{ S(\kappa) }{ \kappa \in D }$ where $S(\kappa)$ is a countable sequence of ordinals less than $\kappa$. The genericity criterion for generic diagonal Prikry sequences is as that for $\D$, stated in Fact \ref{fact:diagprikrymathias} (or see~\cite[Theorem 1]{Fuchs:2005kx}), with the modification that $S$ is $\D^*$ generic if and only if for all $\mathcal X$, the set $\set{ \alpha }{ \exists \kappa \in D \ \alpha \in S(\kappa) \setminus X_\kappa }$ is finite.
 
 \begin{corollary} 
 Let $D$ be an infinite discrete set of measurable cardinals. Let $\U = \seq{ U(\kappa) }{ \kappa \in D }$ be a list of measures associated to $D$. Then $\D^*(\U)$ is subcomplete.
 \end{corollary}
 \begin{proof}[Proof Sketch.]
-The modifications are mostly notational, and the main one that needs to be made is to adjust the proof of Claim \ref{Claim:S_1isPrikryoverN_1}. Here we have $\D^*_1$, the generalized diagonal Prikry forcing as computed in $N_1$, as well as $\overline{\D}$ of $\N$, and $S_1$, which we would like to show is a $\D_1^*$-generic sequence over $N_1$ in this case. $S_1$ is defined as $\sigma_1 ``\overline S$, using a diagonal Prikry sequence $S_1'$ to fill in the missing coordinates, where $S_1'$ is obtained by forcing with $\D_1$ over $V$.
+The modifications are mostly notational, and the main one that needs to be made is to adjust the proof of Claim \ref{Claim:S_1isPrikryoverN_1}. Here we have $\D^*_1$, the generalized diagonal Prikry forcing as computed in $N_1$, as well as $\overline{\D}$ of $\N$, 
+%%%M Missing a star?
+and $S_1$, which we would like to show is a $\D_1^*$-generic sequence over $N_1$ in this case. $S_1$ is defined as $\sigma_1 ``\overline S$, using a diagonal Prikry sequence $S_1'$ to fill in the missing coordinates, where $S_1'$ is obtained by forcing with $\D_1$ over $V$.
 
 We will show that $S_1$ satisfies the generalized diagonal Prikry genericity criterion over $N_1$ and follow the above proof. To do this, let $\mathcal X = \seq{ X_\kappa \in U_1(\kappa) }{ \kappa \in D_1 }$, with $\mathcal X \in N_1$, be a sequence of measure-one sets in the sequence of measures $\U_1$.
 
-Note first that $S_1'$ is a generic sequence, it already satisfies the generalized diagonal Prikry genericity criterion, namely:
+Note first that $S_1'$ is a generic sequence, so it already satisfies the generalized diagonal Prikry genericity criterion, namely:
 %%%%%$$\set{ \kappa \in D_1}{ S_1'(\kappa) \notin X_\kappa } \text{ is finite.}$$
 $\set{ \alpha }{ \exists \kappa \in D_1 \ \alpha \in S_1'(\kappa) \setminus X_\kappa }$ is finite.
 Recall that $\S = \seq{ \S(\overline \kappa) }{ \overline \kappa \in \overline D }$ is a $\overline{\D}$-generic sequence over $\N$ as well.
 We need to see that in addition, $\set{ \alpha }{ \exists \overline \kappa \in \overline D \ \alpha \in \sigma_1(\S(\overline \kappa)) \setminus X_{\sigma_1(\overline \kappa)} }$ is finite.
 
 By the $\overline{\kappa}(0)$-cofinality of $\sigma_1$, there is some $w \in \N$ such that $\mathcal X \in \sigma_1(w)$, where $|w| < \overline{\kappa}(0)$ in $\N$. Thus in $N_1$, $|\sigma_1(w)| < \kappa_1(0)$. 
-For each $\kappa \in \sigma_1``\overline D$, we have that $X_\kappa \in \sigma_1(w)_\kappa = \set{\sigma_1(f)(\overline \kappa) }{ f \in \prod_{\overline \kappa \in \overline D} \overline U(\overline \kappa) \ \land \ f \in w }$ and also $|\sigma_1(w)_\kappa|<\kappa_1(0).$ All $\kappa \in \sigma_1``\overline D$ of course satisfy $\kappa \geq \kappa_1(0)$ so by the $\kappa$-completeness of $U_1(\kappa)$, we have that $W_\kappa := \cap \, \sigma_1(w)_\kappa \in U_1(\kappa)$ since $X_\kappa \in \sigma_1(w)_\kappa$.
+For each $\kappa \in \sigma_1``\overline D$, we have that $X_\kappa \in \sigma_1(w)_\kappa = \set{\sigma_1(f)(\overline \kappa) }{ f \in \prod_{\overline \kappa \in \overline D} \overline U(\overline \kappa) \ \land \ f \in w }$ and also $|\sigma_1(w)_\kappa|<\kappa_1(0).$ All $\kappa \in \sigma_1``\overline D$ of course satisfy $\kappa \geq \kappa_1(0)$ so by the $\kappa$-completeness of $U_1(\kappa)$, we have that $W_\kappa := \bigcap \sigma_1(w)_\kappa \in U_1(\kappa)$ since $X_\kappa \in \sigma_1(w)_\kappa$.
 So we have established that $\mathcal W$, the sequence of $W_\kappa$ for $\kappa \geq \kappa_1(0)$, is also a sequence of measure-one sets in $N_1$. Note in addition that for $\kappa \in \sigma_1``\overline D$, we have that $W_\kappa \subseteq X_\kappa$. 
 
-By elementarity, for each $\overline \kappa \in \overline D$, we have $\overline W_{\overline \kappa} = \cap \set{f(\overline \kappa) }{ f \in \prod_{\overline \kappa \in \overline D} \overline U(\overline \kappa) \ \land \ f \in w }$ is a measure-one set in $\overline U(\overline \kappa)$ and we also have that $\sigma_1(\overline W_{\overline \kappa}) = W_{\sigma_1(\overline \kappa)}$. Moreover, 
-$$\set{ \alpha }{ \exists \overline \kappa \in \D \ \alpha \in \overline S(\overline \kappa) \setminus \overline W_{\overline \kappa} } \text{ is finite}$$ by the generalized diagonal Prikry genericity criterion for $\overline{\D}$, which must be satisfied by $\overline S$.
+For each $\overline \kappa \in \overline D$, we have that $\overline W_{\overline \kappa} = \bigcap \set{f(\overline \kappa) }{ f \in \prod_{\overline \kappa \in \overline D} \overline U(\overline \kappa) \ \land \ f \in w }$ is a measure-one set in $\overline U(\overline \kappa)$ and also that $\sigma_1(\overline W_{\overline \kappa}) = W_{\sigma_1(\overline \kappa)}$, all by elementarity. Moreover, 
+$$\set{ \alpha }{ \exists \overline \kappa \in \D \ \alpha \in \overline S(\overline \kappa) \setminus \overline W_{\overline \kappa} } \text{ is finite}$$ by the generalized diagonal Prikry genericity criterion for $\overline{\D}$, which is satisfied by $\overline S$.
 Thus by elementarity,
 $$\set{ \alpha }{ \exists \overline \kappa \in \D \ \sigma_1(\S(\overline \kappa)) \setminus W_{\sigma_1(\overline \kappa)} } \supseteq \set{ \alpha }{ \exists \overline \kappa \in \D \ \sigma_1(\S(\overline \kappa)) \setminus X_{\sigma_1(\overline \kappa)}} \text{ is finite,}$$
 as is desired, completing the proof of the claim. 
 %Any other modifications are similarly notational, as verifying the genericity criterion is basically the same for $\D^*$.
 \end{proof}
 
-One might consider a forcing like $\D$ and $\D^*$ that adds one point below each measurable cardinal sometimes, and other times adds a cofinal $\omega$-sequence below the measurable cardinal. This forcing is clearly subcomplete as well.
+One might consider a mixed version of $\D$ and $\D^*$, a poset that adds a single point below some measurable cardinals, and a cofinal $\omega$-sequence below others. This forcing is clearly subcomplete as well.
 %
 %Below we refer to the concept of subcompleteness above $\mu$.
 %Insert definition of that here
