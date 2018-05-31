@@ -217,7 +217,7 @@ replacement scheme.
 Let $N, M \models \ZFC^-$ be transitive. $N$ is regular in $M$ iff $N = H_\gamma^M$, where $\gamma = \height(N)$ is a regular cardinal in $M$. 
 \end{lemma}
 \begin{proof}
-For the backward direction, suppose that $N=H_\gamma^M$ where $\gamma = \height(N)$ is a regular cardinal in $M$. Then for all $f: x \longrightarrow N$, with $x \in N$ and $f \in M$, certainly $f``x \in N$ as well.
+For the backward direction, suppose that $N=H_\gamma^M$ where $\gamma = \height(N)$ is a regular cardinal in $M$. Then for all $f: x \To N$, with $x \in N$ and $f \in M$, certainly $f``x \in N$ as well.
 
 For the forward direction, indeed $\gamma$ has to be regular in $M$ since otherwise $M$ would contain a cofinal function $f: \alpha \To \gamma$ where $\alpha < \gamma$. By the transitivity of $N$, this implies that $\alpha \in N$. Thus $\cup f``\alpha$ is in $N \models \ZFC^-$ by regularity, so $\gamma \in N$, a contradiction.
 We have that $N \subseteq H_{\gamma}^M$ since $N$ is a transitive $\ZFC^-$ model, so the transitive closure of elements of $N$ may be computed in $N$ and thus have size less than $\gamma$, so they are in $H_\gamma^M$ as $\gamma \in M$. To show that $H_{\gamma}^M \subseteq N$, let $x \in H_{\gamma}^M$. We assume by $\in$-induction that $x \subseteq N$. Then there is a surjection $f: \alpha \twoheadrightarrow x$ where $\alpha < \gamma$, in $M$. Hence by regularity, $x = f``\alpha \in N$ as desired.
@@ -230,11 +230,9 @@ Perhaps the property of fullness seems rather mysterious at first, but the fulln
 of a large variety of elementary embeddings we alluded to above.
 
 \begin{lemma} If $M$ is countable and full, then $M$ is not pointwise definable. \end{lemma}
-\begin{proof} Suppose toward a contradiction that $M$ is countable, full, and pointwise definable. By fullness there is some $L_\gamma(M) \models \ZFC^-$ such that $M$ is regular in $L_\gamma(M)$. By pointwise definability, for each element $x \in M$, we have attached to it some formula $\varphi(x)$ such that $M \models \varphi(x)$ uniquely, meaning that $\varphi(y)$ fails for every other element $y \in M$. Thus in $L_\gamma(M)$ we may define a function $f: \omega \cong M$, that takes the $n$th formula in the language of set theory to its unique witness in $M$. In particular we have that $L_\gamma(M)$ witnesses that $M$ is countable. However, this would allow $M$ to witness its own countability, since $M$ must contain $f$ as well by regularity. \end{proof} 
+\begin{proof} Suppose toward a contradiction that $M$ is countable, full, and pointwise definable. By fullness there is some $L_\gamma(M) \models \ZFC^-$ such that $M$ is regular in $L_\gamma(M)$. By pointwise definability, for each element $m \in M$, we have attached to it some formula $\varphi(x)$ such that $M \models \varphi(m)$ uniquely, meaning that $\varphi(y)$ fails for every other element $y \in M$. Thus in $L_\gamma(M)$ we may define a function $f: \omega \cong M$, that takes the $n$th formula in the language of set theory to its unique witness in $M$. In particular we have that $L_\gamma(M)$ witnesses that $M$ is countable. However, this would allow $M$ to witness its own countability, since $M$ must contain $f$ as well by regularity. \end{proof} 
 
-Let $N$ be a transitive $\ZFC^-$ model. Suppose $\N \cong X \preccurlyeq N$ where $X$ is countable and $\N$ is full. Then there may possibly be more than one elementary embedding $\sigma: \N \prec N$. 
-Indeed, suppose otherwise, that there is one unique such embedding. Then $\N$ may be defined pointwise, by elementarity of the unique map, and since $\N$ is countable. This contradicts the previous lemma.
-%%%M What? I don't understand this paragraph.
+Let $N$ be a transitive $\ZFC^-$ model. Suppose $\N \cong X \preccurlyeq N$ where $X$ is countable and $\N$ is full. Then, since $\N$ is not pointwise definable, it is at least it is clear that there is not necessarily one elementary embedding between $\N$ and $N$, which there would have to be if $\N$ was pointwise definable. 
 
 The following lemma will prove useful when showing that various forcing notions are subcomplete, since subcompleteness requires certain ground-model Skolem hulls to match those in forcing extensions.
 
@@ -292,85 +290,8 @@ We say that a $\theta$ as above \emph{verifies} the subcompleteness of $\P$.
 
 Often we write $\delta$ instead of $\delta(\P)$ for the weight of $\P$ when there should be no confusion as to which poset $\P$ we are working with.\footnote{See Section \ref{subsec:delta} for more on $\delta(\P)$.}
 \end{definition}
-%Condition \ref{item:skolemcompatibility}.~ in the definition above ensures that subcomplete forcing notions may be iterated, and is rarely used in the following proofs. Thus the condition will tend to be left out of the discussion when properties of subcomplete posets are shown.
-%
-%Immediately we obtain the following.
-%\begin{proposition}[Jensen]\label{proposition:noreals}
-%Subcomplete forcing does not add countable subsets of countable sets. In particular, subcomplete forcing does not add reals.
-%\end{proposition}
-%\begin{proof}
-%Let $\P$ be subcomplete. Suppose toward a contradiction that $\P$ adds a new real, let $p \in \P$ force that $\dot r: \check \omega \rightarrow \omega$ is new. Let $\theta$ be large enough and let $\sigma$, $\N$, and $N$ satisfy: \begin{itemize} 
-%	\item $\P \in H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ where $\tau>\theta$ and $A \subseteq \tau$
-%	\item $\sigma: \N \cong X \preccurlyeq N$ where $X$ is countable and $\overline N$ is full
-%	\item $\sigma(\overline \theta, \overline{\P}, \overline p, \overline{\dot r})=\theta, \P, p, \dot r.$
-%\end{itemize}
-%Let $\G \subseteq \overline{\P}$ be an $\N$-generic filter with $\overline p \in \G$. By the subcompleteness of $\P$, there is $q \in \P$ forcing that whenever $G \ni q$ is $\P$-generic, there is $\sigma' \in V[G]$ such that \begin{itemize}
-%	\item $\sigma': \N \prec N$
-%	\item $\sigma'(\overline \theta, \overline{\P}, \overline p, \overline{\dot r})=\theta, \P, p, \dot r$
-%	\item $\sigma'``\, \G \subseteq G$.
-%\end{itemize} 
-%Thus $\sigma'$ lifts to $\sigma':\N[\G] \prec N[G]$ in $V[G]$. Let $r = \dot r^G$, $\overline r = \overline{\dot r}^{\G}$. Then for each $n < \omega$ we have that 
-%	$$r(n) = \sigma'(\overline r(n)) = \overline r(n).$$ 
-%So $r=\overline r \in V$, contradicting our original assumption that $p \in G$ forces $\dot r$ to be new. %The point here is that $\sigma_0$ has to preserve natural numbers. If we had any other values being computed, this would simply not work.
-%%The point is that the critical point of all of these embeddings is $\omega_1^{\overline N}$.
-%\end{proof}
-%
-%\begin{proposition}
-%Subcomplete forcings are subproper.
-%\end{proposition}
-%\begin{proof}
-%Let $\delta(\P)=\delta$. If $\P$ is subcomplete, then to see that $\P$ is also subproper assume we are in the standard setup from the definition of subproperness: \begin{itemize}
-%	\item $\P \in H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ where $\tau>\theta$ and $A \subseteq \tau$
-%	\item $\sigma: \N \cong X \preccurlyeq N$ where $X$ is countable and $\overline N$ is full
-%	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$ for some $s \in N$.
-%\end{itemize}
-%Let $\overline q \in \overline{\P}$. Then $q = \sigma(\overline q) \in X$.
-%Let $\G$ be generic for $\overline{\P}$ over $\N$ such that $\overline q \in \G$. Then by subcompleteness of $\P$, we have that there is $p \in \P$ such that whenever $G$ is generic and $G$ contains $p$, then there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
-%	\item $\sigma': \N \prec N$
-%	\item $\sigma'(\overline \theta, \overline{\P}, \overline s, \overline q)=\theta, \P, s, q$
-%	\item $\sk{N}{\delta}{\sigma'} = \Sk{N}{\delta}{X}$
-%	\item $\sigma'``\, \G \subseteq G$.
-%\end{enumerate}
-%In particular, 
-%	$$q = \sigma(\overline q)=\sigma'(\overline q) \in G.$$ Thus $q$ is compatible with $p$, and so there is $r \in G$ satisfying $r \leq q$ and $r \leq p$. But then this $r$ verifies the subproperness of $\P$, since this $r$ is also below $p$.
-%\end{proof}
-%By \textbf{Theorem \ref{thm:SubproperMM}}, this means that subcomplete forcings also preserve stationary subsets of $\omega_1$. Thus the class of subcomplete forcing is not the same as the class of countably distributive forcing notions (those that don't add new reals). The following lemma tells us that the verification of subcompleteness is absolute to suitably large structures.
-%
-%\begin{lemma}[Jensen] \label{lemma:scabsolute} Suppose that $\P \in H_\theta$ and let $\eta>|H_\theta|$. 
-%
-%$\P$ is subcomplete as verified by $\theta$ $\iff$ $\P$ is subcomplete in $H_\eta$ as verified by $\theta$.  \end{lemma} 
-%\begin{proof}
-%If $\P$ is subcomplete in $H_\eta$ then $\P$ is subcomplete in $V$ because in the definition of subcompleteness, only $N=L_\tau[A] \in H_\eta$ need to be considered. To see why, assume that $\P$ is subcomplete as verified by $\theta$ in $H_\eta$.  Then we show that $\P$ actually is subcomplete as verified by $\theta$.
-%\begin{claim} Whenever we are in a situation where \begin{itemize}
-%	\item $\P \in H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ where $\tau>\theta$ and $A \subseteq \tau$
-%	\item $\sigma: \N \cong X \preccurlyeq N$ where $X$ is countable and $\N$ is full
-%	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$ for some $s \in N$;
-%\end{itemize}
-%then we have that if $\G$ is  $\overline{\P}$-generic over $\N$ then there is $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
-%	\item $\sigma': \N \prec N$
-%	\item $\sigma'(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$
-%	\item $\sk{N}{\delta}{\sigma'} = \Sk{N}{\delta}{X}$
-%	\item $\sigma'`` \G \subseteq G$.
-%\end{enumerate} \end{claim}
-%\begin{proof}[Pf.]
-%We find a suitable embedding, similar to $\sigma$, but in $H_\eta$. Let $ \pi: N_0 \cong \Sk{N}{H_\theta}{X \cup \delta \cup \{s\}} =Y \preccurlyeq N$. Then $N_0 \in H_\eta$. Since $X \subseteq Y$ and $X \preccurlyeq N$, we have that $X \preccurlyeq Y$. Thus, letting $X_0=\pi^{-1}``X$, we have that $X \cong X_0 \preccurlyeq N_0$. So taking the Mostowski collapse $\N_0$, we have that $\N_0=\N$. Thus we have:
-%\begin{itemize}
-%	\item $\sigma_0:\N \cong X_0 \preccurlyeq N_0$ in $H_\eta$ 
-%	\item $\sigma_0(\overline \theta, \overline{\P}, \overline s)=\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$. 
-%	\end{itemize}
-%So by the subcompleteness of $\P$ in $H_\eta$, we have that if $\G \subseteq \overline{\P}$ is generic over $\N$ then there is $p \in \P$ such that whenever $G_0 \ni p$ is $\P$-generic over $H_\eta$, there is $\sigma_0'\in H_\eta[G_0]=V^{H_\eta}[G_0]$ satisfying \begin{enumerate}
-%	\item $\sigma_0': \N \prec N_0$
-%	\item $\sigma_0'(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$
-%	\item $\sk{N_0}{\delta}{\sigma_0'} = \Sk{N_0}{\delta}{X_0}$
-%	\item $\sigma_0'`` \G \subseteq G_0$.
-%\end{enumerate}
-%If $G \ni p$ is $\P$-generic over $V$, then $G$ is also $\P$-generic over $H_\eta$. We thus have that items \textsl{\textbf{1}} and \textsl{\textbf{2}} of the \textit{Claim} hold, since letting $\sigma'=\sigma_0' \circ \pi \in V[G]$ we have $\sigma':\N \prec N$ and $\sigma'(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$.  Moreover item \textsl{\textbf{3}} holds since $\pi``\sk{N_0}{\delta}{\sigma_0'} = \sk{N}{\delta}{\sigma'}$ and $\pi``\Sk{N_0}{\delta}{X_0} = \Sk{N}{\delta}{X}$. For property \textbf{\textsl{4}}, the point is that $\pi \rest H_\theta = \id$, so $\pi \circ \sigma_0' `` \G = \sigma_0'``\G \subseteq G$. This finishes the proof of the \textit{Claim}.
-% \end{proof}
-%
-%Finally, if $\P$ is subcomplete in $V$ as verified by $H_\theta$, then $\P$ is subcomplete in $H_\eta$ since given $\sigma \in H_\eta$ where $\sigma: \N \prec N$, we have of course that $\N, N \in H_\eta$. Additionally $\sigma \in V$, and we may apply subcompleteness in $V$ to obtain a condition $p \in \P$ such that whenever $p \in G$, there is a $\sigma' \in V[G]$ having certain properties, namely \textbf{1} through \textbf{4} of the definition. Such generic filters over $V$ are also generic over $H_\eta$, and furthermore $\sigma' \in H_\eta[G] = V^{H_\eta}[G]$ since $\N$ and $N$ are in $H_\eta$. So the rest of the properties are also clear, and $\P$ is subcomolete in $H_\eta$ as desired.
-%\end{proof}
 
-\begin{remark}\label{remark:VerifyingSC} If $\P$ is subcomplete as verified by $\theta$, then $\P$ is subcomplete as verifed by $\theta' > \theta$ since $\P \in H_\theta$ obviously implies that $\P \in H_{\theta'}$. Thus a standard setup such as $\P \in H_{\theta'} \subseteq N=L_\tau[A]$ for $\tau>\theta'$ may be reduced down to the case where $\P \in H_{\theta} \subseteq N=L_\tau[A]$ and $\tau>\theta'>\theta$ using the same $\tau$. 
+\begin{remark}\label{remark:VerifyingSC} If $\P$ is subcomplete as verified by $\theta$, then $\P$ is subcomplete as verifed by $\theta' > \theta$ since $\P \in H_\theta$ obviously implies that $\P \in H_{\theta'}$. Thus a standard setup such as $\P \in H_{\theta'} \subseteq N=L_\tau[A]$ for $\tau>\theta'$ may be reduced down to the case where $\P \in H_{\theta} \subseteq N=L_\tau[A]$ and $\tau>\theta'>\theta$, using the same $\tau$. 
 %%%M I feel like there is a better way of saying this.	
 In particular, $\P$ is subcomplete as long as it is verified to be subcomplete by some $\theta$. So ``sufficiently large $\theta$" may be replaced with ``some $\theta$" in the definition of subcompleteness.\footnote{See \cite[Section 3.1 Lemma 2.4]{Jensen:2012fr}.} \end{remark}
 
@@ -443,7 +364,6 @@ In the above definition, it should be clarified that it is possible to consider 
 An important fact ensured by our \textsf{Basic Axioms} is that the interpretations of these special constants in any solid model of the theory are the same as in $M$:
 
 \begin{fact}[Jensen] Let $M$ be as in the above definition. Let $\mathfrak A$ be a solid model of the $\in$-theory $\mathcal L$. Then for all $x \in M$, we have that $\underline{x}^{\mathfrak A} = x \in \wfc(\mathfrak A)$. \end{fact}
-%\begin{proof}[Pf.] Shown by $\in$-induction. \end{proof}
 
 Jensen uses the techniques of Barwise to come up with a proof system in this context, in which consistency of $\in$-theories can be discussed. In particular, the semantics is sound for this syntax: if there is a model of an \(\in\)-theory, then the theory is consistent. 
 \begin{fact}[\emph{Barwise Correctness}] \label{fact:correctness} 
@@ -453,10 +373,6 @@ Furthermore, compactness and completeness are shown, relativized to the $M$-fini
 
 \begin{fact}[\emph{Barwise Completeness}] \label{fact:completeness} Let $M$ be a countable admissible structure. Let $\mathcal L$ be a consistent $\Sigma_1(M)$ $\in$-theory such that $\mathcal L \vdash \textsf{\textup{ZF}}^-$. Then $\mathcal L$ has a solid model $\mathfrak A$ such that $$\Ord \cap \wfc(\mathfrak A) = \Ord \cap M.$$ \end{fact}
 
-%\begin{fact}[\textbf{\emph{Barwise Compactness}}] \label{fact:compactness} 
-%Let $M$ be countable. Let $\mathcal T = \langle \mathcal L, A \rangle$ be an axiomatized $\in$-theory where $\mathcal L$ is a language and $A$ is a set of $\mathcal L$-statements. Let $\mathcal L$ be $\mathbf{\Delta}_1$ and $A$ be $\mathbf{\Sigma}_1$. If every $M$-finite subset of $A$ has a model, then so does $A$.
-%\end{fact}
-
 The following definition generalizes the concept of fullness.
 \begin{definition} A transitive $\ZFC^-$ model $N$ is \emph{almost full} so long as $\omega \in N$ and there is a solid $\mathfrak A \models \ZFC^-$ with $N \in \wfc(\mathfrak A)$ and $N$ is regular in $\mathfrak A$. \end{definition}
 Clearly if $N$ is full, then $N$ is almost full.
@@ -464,10 +380,10 @@ Clearly if $N$ is full, then $N$ is almost full.
 A useful technique when showing a particular forcing is subcomplete, once many different embeddings can be constructed that approximate the embedding required for subcompleteness, is to be able to transfer the consistency of $\in$-theories over one admissible structure to another. 
 \begin{definition} If $N$ is a transitive $\ZFC^-$ model, let $\delta_N$ be the least $\delta$ such that $L_\delta(N)$ is admissible. \end{definition}
 
-\begin{definition} Let $\N$ and $N$ be transitive $\ZFC^-$ models. We say that an elementary embedding $\sigma: \N \prec N$ is \emph{cofinal} so long as for each $x \in N$ there is some $u \in \N$ such that $x \in \sigma(u)$. 
-%%%M You already used the word cofinal in the fact above. Is this the same; does something need to be moved?
-
-Let $\alpha \in \N$. We say that $\sigma$ is \emph{$\alpha$-cofinal} so long as every such $u$ has size less than $\alpha$ as computed in $\N$. \end{definition}
+%\begin{definition} Let $\N$ and $N$ be transitive $\ZFC^-$ models. We say that an elementary embedding $\sigma: \N \prec N$ is \emph{cofinal} so long as for each $x \in N$ there is some $u \in \N$ such that $x \in \sigma(u)$. 
+%%%%M You already used the word cofinal in the fact above. Is this the same; does something need to be moved?
+%
+%Let $\alpha \in \N$. We say that $\sigma$ is \emph{$\alpha$-cofinal} so long as every such $u$ has size less than $\alpha$ as computed in $\N$. \end{definition}
 
 \begin{fact}[\emph{The Transfer Lemma}]\label{fact:Transfer} Let $N_1$ be almost full, and suppose that $k: N_1 \prec N_0$ cofinally, for some $N_0$. Suppose that we have an $\Sigma_1(\langle N_1; \, p_1, \dots, p_n\rangle)$  $\in$-theory $\mathcal L(L_{\delta_{N_1}}(N_1))$ for $p_1, \dots, p_n \in N_1$.
 
