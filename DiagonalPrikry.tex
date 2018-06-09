@@ -255,12 +255,14 @@ so $x \in \sk{N}{\delta}{\sigma}$.
 
 \subsection{Subcomplete Forcing} \label{subsec:subcomplete}
 Subcompleteness should be seen as a weakening of the class of complete (that is, countably closed) forcing notions. The following definitions and proofs are due to Jensen \cite[Chapter 3]{Jensen:2012fr}.
+
+Let $\P$ be a forcing notion and $s$ be a set, and $\P,s \in H_\theta$, where $\theta$ is sufficiently large. Instead of just working with $H_\theta$ and its well order, like in proper forcing, the models used in the definition of completeness and subcompleteness will have the form $L_\tau[A] \supseteq H_\theta$ where $L_\tau[A] \models \ZFC^-$, $\tau>\theta$, and $A \subseteq \tau$. Typically, set $N=L_\tau[A]$ for brevity. Rather than spell this out every time, write \emph{\textbf{$N$ is a suitable model for $\P,s$ above $\theta$}}.
  
 \begin{definition} A forcing notion $\P$ is \emph{complete} so long as
-for sufficiently large $\theta$ we have that once we are in the following situation: \begin{itemize}
-	\item $\P \in H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ where $\tau>\theta$ and $A \subseteq \tau$
+for any set $s$ and sufficiently large $\theta$ we have that once we are in the following situation: \begin{itemize}
+	\item $N$ is a suitable model for $\P,s$ above $\theta$
 	\item $\sigma: \N \cong X \preccurlyeq N$ where $X$ is countable and $\N$ is transitive
-	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$ for some $s \in N$;
+	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$
 \end{itemize}
 and $\G$ is $\overline{\P}$-generic over $\N$ then there is a \emph{completeness condition} $p \in \P$ forcing that whenever $G \ni p$ is $\P$-generic, $\sigma ``\, \G \subseteq G$. 
 
@@ -269,43 +271,66 @@ We say that a $\theta$ as above \emph{verifies} the completeness of $\P$.
 \end{definition}
 The adjustment made to get subcomplete forcings is to not necessarily insist the the original embedding lifts in the forcing extension. Instead subcompleteness asks for an embedding, sufficiently similar
 to the original one, which lifts to the extension, but may itself only exist in the extension.
-However, as discussed in Section~\ref{subsec:fullness}, the domain of the embedding should be \emph{full} to ensure that there can even consistently be more than one embedding. The definition is given below.
+However, as discussed in Section~\ref{subsec:fullness}, the domain of the embedding should be \emph{full} so as to not consistently rule out the possibility of the existence of such an embedding. 
 
 \begin{definition} \label{definition:SC}
-A forcing notion $\P$ is \emph{subcomplete} so long as,
-for sufficiently large $\theta$ we have that whenever we are in the \emph{standard setup}, i.e., \begin{itemize}
-	\item $\P \in H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ where $\tau>\theta$ and $A \subseteq \tau$
+A forcing notion $\P$ is \emph{\textbf{subcomplete}} so long as, for any set $s$ and 
+for sufficiently large $\theta$ we have that whenever we are in \emph{the standard setup} i.e.: \begin{itemize}
+	\item $N$ is a suitable model for $\P,s$ above $\theta$
 	\item $\sigma: \N \cong X \preccurlyeq N$ where $X$ is countable and $\N$ is full
-	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$ for some $s \in N$;
+	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$
 \end{itemize}
-and $\G$ is  $\overline{\P}$-generic over $\N$ then there is a \emph{subcompleteness condition} $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
+then we have that if $\G$ is  $\overline{\P}$-generic over $\N$ then there is a \emph{subcompleteness condition} $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
 	\item $\sigma': \N \prec N$
 	\item $\sigma'(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$
 	\item \label{item:skolemcompatibility} $\sk{N}{\delta(\P)}{\sigma'} = \Sk{N}{\delta(\P)}{X}$
-	\item \label{item:sigmaprimelifts} $\sigma'``\, \G \subseteq G$.
+	\item  \label{item:sigmaprimelifts}$\sigma'``\, \G \subseteq G$.
 \end{enumerate}
-In other words and in particular, the subcompleteness condition $p$ forces that there is an embedding $\sigma'$ in the extension $V[G]$ that lifts, by (\ref{item:sigmaprimelifts}), to an embedding $\sigma'^*:\N[\G] \prec N[G]$ in $V[G]$.
+In other words and in particular, the subcompleteness condition $p$ forces that there is an embedding $\sigma'$ in the extension $V[G]$ which lifts, by (4), to an embedding $\sigma'^*:\N[\G] \prec N[G]$ in $V[G]$.
 
-We say that a $\theta$ as above \emph{verifies} the subcompleteness of $\P$.
+We say that such a $\theta$ as above \textit{verifies the subcompleteness} of $\P$.
 
 Often we write $\delta$ instead of $\delta(\P)$ for the weight of $\P$ when there should be no confusion as to which poset $\P$ we are working with.\footnote{See Section \ref{subsec:delta} for more on $\delta(\P)$.}
 \end{definition}
 
-\begin{remark}\label{remark:VerifyingSC} If $\P$ is subcomplete as verified by $\theta$, then $\P$ is subcomplete as verifed by $\theta' > \theta$ since $\P \in H_\theta$ obviously implies that $\P \in H_{\theta'}$. Thus a standard setup such as $\P \in H_{\theta'} \subseteq N=L_\tau[A]$ for $\tau>\theta'$ may be reduced down to the case where $\P \in H_{\theta} \subseteq N=L_\tau[A]$ and $\tau>\theta'>\theta$, using the same $\tau$. 
-%%%M I feel like there is a better way of saying this.	
-In particular, $\P$ is subcomplete as long as it is verified to be subcomplete by some $\theta$. So ``sufficiently large $\theta$" may be replaced with ``some $\theta$" in the definition of subcompleteness.\footnote{See \cite[Section 3.1 Lemma 2.4]{Jensen:2012fr}.} \end{remark}
+%
+%\begin{definition} \label{definition:SC}
+%A forcing notion $\P$ is \emph{subcomplete} so long as,
+%for sufficiently large $\theta$ we have that whenever we are in the \emph{standard setup}, i.e., \begin{itemize}
+%	\item $\P \in H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ where $\tau>\theta$ and $A \subseteq \tau$
+%	\item $\sigma: \N \cong X \preccurlyeq N$ where $X$ is countable and $\N$ is full
+%	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$ for some $s \in N$;
+%\end{itemize}
+%and $\G$ is  $\overline{\P}$-generic over $\N$ then there is a \emph{subcompleteness condition} $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
+%	\item $\sigma': \N \prec N$
+%	\item $\sigma'(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$
+%	\item \label{item:skolemcompatibility} $\sk{N}{\delta(\P)}{\sigma'} = \Sk{N}{\delta(\P)}{X}$
+%	\item \label{item:sigmaprimelifts} $\sigma'``\, \G \subseteq G$.
+%\end{enumerate}
+%In other words and in particular, the subcompleteness condition $p$ forces that there is an embedding $\sigma'$ in the extension $V[G]$ that lifts, by (\ref{item:sigmaprimelifts}), to an embedding $\sigma'^*:\N[\G] \prec N[G]$ in $V[G]$.
+%
+%We say that a $\theta$ as above \emph{verifies} the subcompleteness of $\P$.
+%
+%Often we write $\delta$ instead of $\delta(\P)$ for the weight of $\P$ when there should be no confusion as to which poset $\P$ we are working with.\footnote{See Section \ref{subsec:delta} for more on $\delta(\P)$.}
+%\end{definition}
+
+\begin{remark}\label{remark:VerifyingSC}Let $\P$ be subcomplete as verified by $\theta$ and let $\theta'>\theta$. Then if $N$ is a suitable model for $\P$ above $\theta'$, it is not hard to see that the very same $N$ is a suitable model for $\P$ above $\theta$ as well. Thus $\P$ is subcomplete as verified by every $\theta' > \theta$. This tells us that $\P$ is subcomplete as long as it is verified by some $\theta$. So ``sufficiently large $\theta$" may be replaced with ``some $\theta$" in the definition of subcompleteness.\footnote{See \cite[Section 3.1 Lemma 2.4]{Jensen:2012fr}.} \end{remark}
 
 \subsection{Subcomplete above $\mu$} \label{subsec:subcompleteabovemu}
 The notion of subcompleteness above $\mu$ is an attempt to measure where exactly subcompleteness kicks in; in some sense it gives a level as to where forcing fails to be subcomplete. 
 The following definition is from Jensen \cite[Chapter 2 p.\ 47]{Jensen:2009fe}.
 \begin{definition} 
-Let $\mu$ be an ordinal. We say that a forcing notion $\P$ is \emph{subcomplete above $\mu$} so long as for sufficiently large $\theta > \mu$, whenever we are in the standard setup (as in the definition of subcomplete forcing),
-then, for any $\G \subseteq \overline{\P}$, there is a subcompleteness condition $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, then there is $\sigma' \in V[G]$ satisfying in addition that $\sigma' \rest H_{\overline \mu}^{\N} = \sigma \rest H_{\overline \mu}^{\N}$.
+Let $\mu$ be a cardinal. We say that a forcing notion $\P$ is \emph{subcomplete above $\mu$} so long as for every set $s$ and sufficiently large $\theta > \mu$, whenever we are in the standard setup (as in the definition of subcomplete forcing) in which \begin{itemize}
+	\item $N$ is a suitable model for $\P, s$ above $\theta$
+	\item $\sigma:\N \cong X \preccurlyeq N$ where $X$ is countable and $\N$ is full
+	\item $\sigma(\overline{\theta}, \overline{\mu}, \overline{\P}, \overline s)=\theta, \mu, \P, s$
+\end{itemize}	
+then, for any $\G \subseteq \overline{\P}$, there is a subcompleteness condition $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, then there is $\sigma' \in V[G]$ satisfying in additional constrant that $\sigma' \rest H_{\overline \mu}^{\N} = \sigma \rest H_{\overline \mu}^{\N}$.
 
 As usual, this means that in particular below the condition $p$ there is an embedding $\sigma'$ that lifts by (4) to an embedding $\sigma'^*:\N[\G] \prec N[G]$ in $V[G]$. We say that a $\theta$ as above \textit{verifies the subcompleteness above $\mu$ of $\P$}, and we may say that $\P$ is subcomplete above \(\mu\) if there is a $\theta$ that verifies its subcompleteness above $\mu$.
 \end{definition}
 
-\begin{remark} If $\P$ is subcomplete, then $\P$ is subcomplete above $\omega_1^{\N}$. \end{remark}
+\begin{remark} If $\P$ is subcomplete, $N$ is a suitable model for $\P$, and $\sigma:\N \To N$ where $\N$ is countable and full, then $\P$ is subcomplete above $\omega_1$. \end{remark}
 %%%M This is weirdly stated. First of all, Nbar varies, so there isn't one single thing that P is
 % subcomplete above to which you could refer as omega_1^Nbar.
 % Secondly, you only define subcomplete above mu for cardinals mu. omega_1^Nbar is definitely
@@ -318,8 +343,8 @@ The following is a key property of posets that are subcomplete above \(\mu\).
 Suppose not. Let $\P$ be subcomplete above $\mu$. 
 Fix a condition \(p\in\P\) and let $\dot{f}$ be a name such that
 	$$p \forces \left( \dot f: \check \omega \to \check{\mu} \right).$$ 
-Take $\theta > \mu$ large enough to verify the subcompleteness of $\P$. \begin{itemize}
-	\item $\P \in H_\theta \subseteq N = L_\tau[A] \models \ZFC^-$ where $\tau>\theta$ and $A \subseteq \tau$
+Take $\theta > \mu$ large enough to verify the subcompleteness of $\P$, and let $N$ be a suitable model for $\P, \dot f$ above $\theta$. Moreover assume we are in the standard setup.
+\begin{itemize}
 	\item $\sigma: \N \cong X \preccurlyeq N$ where $\N$ is countable and full
 	\item $\sigma(\overline \theta, \overline \mu, \overline{\P}, \overline p, \overline{\dot f})=\theta, \mu, \P, p, \dot f$.
 \end{itemize}
@@ -440,19 +465,19 @@ The following lemma states that transitive liftups of full models are almost ful
 
 \begin{lemma}[Jensen]\label{lemma:liftupfull} Let $N =L_\tau[A] \models \ZFC^-$ and $\sigma: \N \prec N$ where $\N$ is full. Suppose that $\langle N_*, \sigma_* \rangle$ is a transitive liftup of $\langle \N, \overline \sigma \rangle$. Then $N_*$ is almost full. \end{lemma}
 \begin{proof}
-	Let $L_\gamma(\N)$ witness the fullness of $\N$. We will now apply Interpolation (Fact \ref{fact:Interpolation}) to $\mathfrak A= L_\gamma(\N)$, which makes sense since certainly $\mathfrak A$ is a transitive model of $\ZFC^-$. Additionally, by Lemma \ref{lemma:regularityequiv} we have that $\N = H_\tau^{\mathfrak A}$, where $\tau = \height(\N)$. 
+	Let $L_\gamma(\N)$ witness the fullness of $\N$. We will now apply Interpolation (Fact \ref{fact:Interpolation}) to $\mathfrak A= L_\gamma(\N)$, which makes sense since certainly $\mathfrak A$ is a transitive model of $\ZFC^-$. Additionally, by Lemma \ref{lemma:regularityequiv} we have that $\N = H_\eta^{\mathfrak A}$, where $\eta = \height(\N)$. 
 	%%%M I think you used tau for two different things?
-	Since $\langle N_*, \sigma_* \rangle$ is a transitive liftup, we have that $$\sigma_*: H_\tau^{\mathfrak A} \prec N_* \text{ cofinally,}$$ where $N_*$ is transitive. Thus since $\mathfrak A$ is transitive, $\langle \mathfrak A, \sigma_* \rangle$ has a liftup $\langle \mathfrak A_*, {\sigma_*}_* \rangle$, where $\mathfrak A_* \models \ZFC^-$ since $\mathfrak A$ does, $\mathfrak A_*$ is solid, where $${\sigma_*}_* : \mathfrak A \prec \mathfrak A_* \text{ $\tau$-cofinally.}$$ 
-	We have that  $N_* \subseteq \wfc({\mathfrak A}_*)$ and $\tau_*= {\sigma_*}_*(\tau)=\height(N_*)$ is regular since $\tau$ is. Furthermore, we will show that $N_* = H_{\tau_*}^{\mathfrak A_*}$, completing the proof:
+	Since $\langle N_*, \sigma_* \rangle$ is a transitive liftup, we have that $$\sigma_*: H_\eta^{\mathfrak A} \prec N_* \text{ cofinally,}$$ where $N_*$ is transitive. Thus since $\mathfrak A$ is transitive, $\langle \mathfrak A, \sigma_* \rangle$ has a liftup $\langle \mathfrak A_*, {\sigma_*}_* \rangle$, where $\mathfrak A_* \models \ZFC^-$ since $\mathfrak A$ does, $\mathfrak A_*$ is solid, where $${\sigma_*}_* : \mathfrak A \prec \mathfrak A_* \text{ $\eta$-cofinally.}$$ 
+	We have that  $N_* \subseteq \wfc({\mathfrak A}_*)$ and $\eta_*= {\sigma_*}_*(\eta)=\height(N_*)$ is regular since $\eta$ is. Furthermore, we will show that $N_* = H_{\eta_*}^{\mathfrak A_*}$, completing the proof:
 	
-	Certainly it is the case that $N_* \subseteq H_{\tau_*}^{\mathfrak A^*}$. 
-	But if $x \in H_{\tau_*}$ in $\mathfrak A_*$, then by regularity we have that $x \in {\sigma_*}_*(u)$ in $\mathfrak A_*$, where $u \in \mathfrak A$, and $|u| < \tau$ in $\mathfrak A$. Let $v=u \cap H_\tau$ in $\mathfrak A$. Then $v \in \N$, since $\N$ is regular in $\mathfrak A$. But then $x \in \sigma_*(v) \in N_*$. So $x \in N_*$.
+	Certainly it is the case that $N_* \subseteq H_{\eta_*}^{\mathfrak A^*}$. 
+	But if $x \in H_{\eta_*}$ in $\mathfrak A_*$, then by regularity we have that $x \in {\sigma_*}_*(u)$ in $\mathfrak A_*$, where $u \in \mathfrak A$, and $|u| < \eta$ in $\mathfrak A$. Let $v=u \cap H_\eta$ in $\mathfrak A$. Then $v \in \N$, since $\N$ is regular in $\mathfrak A$. But then $x \in \sigma_*(v) \in N_*$. So $x \in N_*$.
 \end{proof}
 
 
 \section{Generalized Diagonal Prikry Forcing}
 \label{sec:GenDiagonalPrikryForcing}
-Generalized diagonal Prikry forcing is designed to add a point below every measurable cardinal in an infinite discrete set of measurable cardinals. In this section it is shown that such forcings are subcomplete.
+Generalized diagonal Prikry forcing is designed to add a point below every measurable cardinal in an infinite discrete set of measurable cardinals. In this section it is shown that such forcing notions are subcomplete.
 \begin{definition}
 Let $D$ be an infinite discrete set of measurable cardinals, meaning a set of measurable cardinals that does not contain any of its limit points. For $\kappa \in D$ let $U(\kappa)$ be a normal measure on $\kappa$, and let $\U$ denote the sequence of the $U(\kappa)$'s.
 
@@ -464,8 +489,7 @@ $( s, A )$ satisfying the following:
 \end{itemize}
 The extension relation on conditions in $\D$ is defined so that $( s, A ) \leq ( t, B )$ so long as 
 \begin{itemize}
-	\item $s \supseteq t$.
-	%%%M I think you want end-extension here.
+	\item $s \sqsupseteq t$, i.e., $s$ is an end extension of $t$.
 	\item The points in $s$ not in $t$ come from $B$, i.e., for all $\kappa \in \dom(s) \setminus \dom(t)$, $s(\kappa) \in B(\kappa)$.
 	\item For all $\kappa \in \dom(t)$, $A(\kappa) \subseteq B(\kappa)$.
 \end{itemize}
@@ -474,8 +498,7 @@ If $G$ is a generic filter for $\D$, then its associated $\D$-generic sequence i
 
 Here the definition of $\D(\U)$ differs from that of generalized Prikry foricing as given by Fuchs~\cite{Fuchs:2005kx}. The main difference is that here only one point is added below each measurable cardinal $\kappa \in D$, which is done for simplicity's sake. It is not hard to see that the following theorem also shows that the forcing adding countably many points below each measurable cardinal in $D$ is subcomplete. Adding countably many points below each measurable cardinal in $D$ would collapse the cofinality of each $\kappa \in D$ to be $\omega$, as one expects of a Prikry-like forcing. %Maybe show this more rigorously
 
-Also in the above definition it hasn't been enforced that the stem a condition consists only of ordinals that are wedged between successive measurables in $D$; ie. for $\kappa \in D$, it is not explicitly insisted that $s(\kappa) \in [\sup(D\cap \kappa), \kappa)$. However, it is dense in $\D(\U)$ for the conditions to be that way, since conditions may be strengthened by restricting their upper parts to a tail. 
-%%%M I don't know, what if a condition already made a mistake. But it will be true on a tail of the generic sequence.
+Also in the above definition it hasn't been enforced that the stem a condition consists only of ordinals that are wedged between successive measurables in $D$; ie. for $\kappa \in D$, it is not explicitly insisted that $s(\kappa) \in [\sup(D\cap \kappa), \kappa)$. However, it is dense on a tail of the generic filter of $\D(\U)$ for the conditions to be that way, since conditions may be strengthened by restricting their upper parts to a tail. 
 Thus such a restriction may be freely added to the following genericity condition on $\D(\U)$.
 
 \begin{fact}[Fuchs~\cite{Fuchs:2005kx}] \label{fact:diagprikrymathias} Let $D$ be an infinite discrete set of measurable cardinals, with $\U$ a corresponding list of measures $\langle U(\kappa) \;|\; \kappa \in D \rangle$. Then an increasing sequence of ordinals $S = \langle S(\kappa) \;|\; \kappa \in D \rangle$, where for each $\kappa \in D$, we have that $$\sup(D \cap \kappa) < S(\kappa) < \kappa,$$ is a $\D(\U)$-generic  sequence if and only if for all $\mathcal X = \langle X_\kappa \in U(\kappa) \;|\; \kappa \in D \rangle$, the set $$\{ \kappa \in D \;|\; S(\kappa) \notin X_\kappa\}$$ is finite.
@@ -556,7 +579,7 @@ Once we have such a suitable $V[S]$, we will use Barwise theory to find an appro
 
 \begin{samepage}
 For an admissible structure $M$ with $S, \overline S, \sigma, N, \theta, \D, \U, c \in M$ let the $\in$-theory $\mathcal T(M)$ be defined as follows: 
-%%%M I think maybe you need to throw in Nbar explicitly.
+%%%M I think maybe you need to throw in Nbar explicitly. But we have $\sigma$?
 \begin{description}
 	\item[predicate] $\in$ 
 	\item[constants] $\dot{\sigma}, \underline x$ for $x \in M$
