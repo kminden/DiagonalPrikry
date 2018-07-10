@@ -796,12 +796,10 @@ is finite as well, completing the proof as desired.
 
 By the $\overline{\kappa}(0)$-cofinality of $\sigma_1$, there is some $w \in \N$ such that $\mathcal X \in \sigma_1(w)$, where $|w| < \overline{\kappa}(0)$ in $\N$. Thus in $N_1$, we have that $|\sigma_1(w)| < \kappa_1(0)$. 
 We may assume that $w$ consists of functions $f \in \prod_{\overline \kappa \in \overline D} \overline U(\overline \kappa)$.
-So for each $\kappa \in \sigma_1``\overline D$, we have that $X_\kappa \in \sigma_1(w)_\kappa =
-%%%M I think it should be sigma_1(f)(kappa)?
-\set{\sigma_1(f)(\overline \kappa) }{ f \in \prod_{\overline \kappa \in \overline D} \overline U(\overline \kappa) \ \land \ f \in w }$ and also $|\sigma_1(w)_\kappa|<\kappa_1(0).$ So all $\kappa \in \sigma_1``\overline D$ of course satisfy $\kappa \geq \kappa_1(0)$ and thus by the $\kappa$-completeness of $U_1(\kappa)$, we have that $W_\kappa := \bigcap \sigma_1(w)_\kappa \in  U_1(\kappa).$
+So for each $\kappa \in \sigma_1``\overline D$, we have that $X_\kappa \in \sigma_1(w)_\kappa = \set{\sigma_1(f)(\kappa) }{ f \in \prod_{i \in \overline D} \overline U(i) \ \land \ f \in w }$ and also $|\sigma_1(w)_\kappa|<\kappa_1(0).$ So all $\kappa \in \sigma_1``\overline D$ of course satisfy $\kappa \geq \kappa_1(0)$ and thus by the $\kappa$-completeness of $U_1(\kappa)$, we have that $W_\kappa := \bigcap \sigma_1(w)_\kappa \in  U_1(\kappa).$
 So we have established that $\mathcal W$, the sequence of $W_\kappa$ for $\kappa \geq \kappa_1(0)$, is also a sequence of measure-one sets in $N_1$. Note in addition that for $\kappa \in \sigma_1``\overline D$, we have that $W_\kappa \subseteq X_\kappa$. 
 
-For each $\overline \kappa \in \overline D$, we have that $\overline W_{\overline \kappa} = \bigcap \set{f(\overline \kappa) }{ f \in \prod_{\overline \kappa \in \overline D} \overline U(\overline \kappa) \ \land \ f \in w }$ is a measure-one set in $\overline U(\overline \kappa)$ and we also have that $\sigma_1(\overline W_{\overline \kappa}) = W_{\sigma_1(\overline \kappa)}$, all by elementarity. Moreover, 
+For each $\overline \kappa \in \overline D$, we have that $\overline W_{\overline \kappa} = \bigcap \set{f(\overline \kappa) }{ f \in \prod_{i \in \overline D} \overline U(i) \ \land \ f \in w }$ is a measure-one set in $\overline U(\overline \kappa)$ and we also have that $\sigma_1(\overline W_{\overline \kappa}) = W_{\sigma_1(\overline \kappa)}$, all by elementarity. Moreover, 
 $\set{\overline \kappa \in \overline D}{\overline S(\overline \kappa) \notin \overline W_{\overline \kappa}} \text{ is finite}$ by the generalized diagonal Prikry genericity criterion applied to $\overline S$.
 Thus by elementarity,
 $$\set{ \overline \kappa \in \overline D }{ \sigma_1(\S(\overline \kappa)) \notin W_{\sigma_1(\overline \kappa)} } \supseteq \set{ \overline \kappa \in \overline D }{ \sigma_1(\S(\overline \kappa)) \notin X_{\sigma_1(\overline \kappa)}} \text{ is finite,}$$
@@ -849,7 +847,7 @@ as is desired, completing the proof of our claim.
 %So we have that $\sigma_1``\overline S$ is generic for $\D_1^+$. Now force over $N_1[\sigma_1``\overline S]$ with $\D_1^-$, obtaining $N_1[\sigma``\overline S][g]$, where $g$ is generic for $\D_1^-$ over $N_1[\sigma_1``\overline S]$. Letting $G_1=\sigma_1``\overline S \times g$, and letting $S_1$ be its associated diagonal Prikry sequence, we certainly have that $\sigma_1``\overline S \subseteq S_1$. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Moreover we have now shown that $\mathcal L(N_1, \sigma_1) = \mathcal L_1$ is consistent, by Barwise Correctness (Fact \ref{fact:correctness}), since we have just shown that $\langle H_{\delta}; \, \sigma_1, S_1 \rangle$ is a model of $\mathcal L_1$.
+Moreover we have now shown that $\mathcal L_1$ is consistent, by Barwise Correctness (Fact \ref{fact:correctness}), since we have just shown that $\langle H_{\delta}; \, \sigma_1, S_1 \rangle$ is a model of $\mathcal L_1$.
 
 Let's check that we may now apply the Transfer Lemma (Fact \ref{fact:Transfer}) to the embedding $k_1:N_1 \prec N_0$. By Lemma \ref{lemma:liftupfull} we have that $N_1$ is almost full. We also have that $\mathcal L_1 = \mathcal L(L_{\delta_{N_1}}(N_1))$ is 
 	$\text{$\Sigma_1(\langle N_1; \, \overline \theta, \overline{\D}, \overline{\U}, \overline c, \theta_1, \D_1, \U_1, c_1 \rangle)$}$ while $\mathcal L_0=\mathcal L(L_{\delta_{N_0}}(N_0))$ is 
@@ -951,7 +949,7 @@ To see item (\ref{item:mainclaimlifts}), note that $\overline{\underline S}^{\ti
 
 This completes the proof of the main claim.
 \end{proof}
-We have satisfied the main claim, which finishes the proof that $\D$ is subcomplete.
+We have satisfied the Main Claim, which finishes the proof that $\D$ is subcomplete.
 \end{proof}
 
 We now describe some minor modifications of the proof that give further results.
@@ -1065,7 +1063,7 @@ Then $\D=\D(\U)$ is subcomplete above $\mu$. \end{corollary}
 \end{tikzpicture}
 \end{center} 
 
-Here we replace $\kappa(0)$ with some $\kappa' \in D$ such that $\lambda > \kappa' $, where there are finitely many measurables of $D$ below $\kappa'$. 
+Here we replace $\kappa(0)$ with some $\kappa' \in D$ such that $\lambda < \kappa' $, where there are finitely many measurables of $D$ below $\kappa'$. 
 %%%M What? What if there are no kappa' in D above lambda? And regardless, if kappa' is above lambda then there must definitely be infinitely many elements of D below kappa'.
 So in particular, we let $\langle N_1, \sigma_1 \rangle$ be the liftup of $\langle \N, \sigma \rest H_{\overline{\kappa'}}^\N\rangle$ in Claim \ref{claim:N0isliftupofN}. In order to show the that we have a generic sequence over $\D_1$ as in Claim \ref{Claim:S_1isPrikryoverN_1}, we follow the same argument as follows:
 
@@ -1073,11 +1071,11 @@ Let $\mathcal X = \seq{ X_\kappa \in U_1(\kappa) }{ \kappa \in \sigma_1``\overli
 We need to see that 
 $\set{ \overline \kappa \in \overline D}{\sigma_1(\S(\overline \kappa)) \notin X_{\sigma_1(\overline \kappa)} }  \text{ is finite.}$
 By the $\overline{\kappa}'$-cofinality of $\sigma_1$, there is some $w \in \N$ such that $\mathcal X \in \sigma_1(w)$, where $|w| < \overline{\kappa}'$ in $\N$. Thus in $N_1$, $|\sigma_1(w)| < \kappa_1'$. 
-For each $\kappa \in \sigma_1``\overline D$, we have $$X_\kappa \in \sigma_1(w)_\kappa = \set{\sigma_1(f)(\overline \kappa) }{ f \in \prod_{\overline \kappa \in \overline D} \overline U(\overline \kappa) \ \land \ f \in w }$$ and also $|\sigma_1(w)|<\kappa_1'.$ So for all but finitely many $\kappa \in \sigma_1``\overline D$, namely for $\kappa \geq \kappa_1'$, by the $\kappa$-completeness of $U_1(\kappa)$, we have that $\bigcap \sigma_1(w)=W_\kappa \in U_1(\kappa).$
+For each $\kappa \in \sigma_1``\overline D$, we have $$X_\kappa \in \sigma_1(w)_\kappa = \set{\sigma_1(f)(\kappa) }{ f \in \prod_{i \in \overline D} \overline U(i) \ \land \ f \in w }$$ and also $|\sigma_1(w)|<\kappa_1'.$ So for all but finitely many $\kappa \in \sigma_1``\overline D$, namely for $\kappa \geq \kappa_1'$, by the $\kappa$-completeness of $U_1(\kappa)$, we have that $\bigcap \sigma_1(w)=W_\kappa \in U_1(\kappa).$
 
 So we have established that $\mathcal W$, the sequence of $W_\kappa$ for $\kappa>\kappa_1'$, is also a sequence of measure-one sets in $N_1$. Note in addition that for $\kappa \in \sigma_1``\overline D$, $\kappa> \kappa_1'$, we have that $W_\kappa \subseteq X_\kappa$. 
 
-By elementarity, for each $\overline \kappa \in \overline D$, where $\overline \kappa > \overline \kappa'$, we have $$\overline W_{\overline \kappa} =\cap \set{f(\overline \kappa) }{ f \in \textstyle\prod_{\overline \kappa \in \overline D} \overline U(\overline \kappa) \ \land \ f \in w }$$ is a measure-one set in $\overline U(\overline \kappa)$ and we also have that $\sigma_1(\overline W_{\overline \kappa}) = W_{\sigma_1(\overline \kappa)}$. Moreover, 
+By elementarity, for each $\overline \kappa \in \overline D$, where $\overline \kappa > \overline \kappa'$, we have $$\overline W_{\overline \kappa} =\cap \set{f(\overline \kappa) }{ f \in \textstyle\prod_{i \in \overline D} \overline U(i) \ \land \ f \in w }$$ is a measure-one set in $\overline U(\overline \kappa)$ and we also have that $\sigma_1(\overline W_{\overline \kappa}) = W_{\sigma_1(\overline \kappa)}$. Moreover, 
 	$\set{\overline \kappa \in \overline D}{\overline S(\overline \kappa) \notin \overline W_{\overline \kappa}} \text{ is finite}$ by the generalized diagonal Prikry genericity criterion for $\overline{\D}$, which must be satisfied by $\overline S$, and since there are only finitely many measurables in $\overline D$ less than $\overline \kappa'$ in $\N$.
 Thus by elementarity,
 	$$\set{ \overline \kappa \in \overline D }{ \sigma_1(\overline S(\overline \kappa)) \notin W_{\sigma_1(\overline \kappa)} } \supseteq \set{ \overline \kappa \in \overline D }{ \sigma_1(\overline S(\overline \kappa) \notin X_{\sigma_1(\overline \kappa)}} \text{ is finite.}$$
