@@ -409,10 +409,9 @@ Clearly if $N$ is full, then $N$ is almost full.
 A useful technique when showing a particular forcing is subcomplete, once many different embeddings can be constructed that approximate the embedding required for subcompleteness, is to be able to transfer the consistency of $\in$-theories over one admissible structure to another. 
 \begin{definition} If $N$ is a transitive $\ZFC^-$ model, let $\delta_N$ be the least $\delta$ such that $L_\delta(N)$ is admissible. \end{definition}
 
-%\begin{definition} Let $\N$ and $N$ be transitive $\ZFC^-$ models. We say that an elementary embedding $\sigma: \N \prec N$ is \emph{cofinal} so long as for each $x \in N$ there is some $u \in \N$ such that $x \in \sigma(u)$. 
-%%%%M You already used the word cofinal in the fact above. Is this the same; does something need to be moved?
-%
-%Let $\alpha \in \N$. We say that $\sigma$ is \emph{$\alpha$-cofinal} so long as every such $u$ has size less than $\alpha$ as computed in $\N$. \end{definition}
+\begin{definition} Let $M$ and $N$ be transitive $\ZFC^-$ models. We say that an elementary embedding $\sigma: M \prec N$ is \emph{cofinal} so long as for each $x \in N$ there is some $u \in M$ such that $x \in \sigma(u)$. 
+
+Let $\alpha \in M$. We say that $\sigma$ is \emph{$\alpha$-cofinal} so long as every such $u$ has size less than $\alpha$ as computed in $M$. \end{definition}
 
 \begin{fact}[\emph{The Transfer Lemma}]\label{fact:Transfer} Let $N_1$ be almost full and $k: N_1 \prec N_0$ cofinally, for some structure $N_0$. Suppose that we have a $\Sigma_1(\langle N_1; \, p_1, \dots, p_n\rangle)$  $\in$-theory $\mathcal L=\mathcal L(L_{\delta_{N_1}}(N_1))$  for $p_1, \dots, p_n \in N_1$.
 
@@ -529,9 +528,9 @@ In order to show that $\D$ is subcomplete, let $c$ be a set and suppose we are i
 \end{itemize}
 By our requirement on $\theta$ being large enough, we've ensured that $N$ is closed under countable sequences of ordinals less than $\delta$.
 
-In what follows, we will be taking a few different transitive liftups of restrictions of $\sigma$, and it will useful to keep track of embeddings between $\N$ and $N$ pictorially. The following figure shows the situation we are currently in.
+In what follows, we will be taking a few different transitive liftups of restrictions of $\sigma$, and it will useful to keep track of embeddings between $\N$ and $N$ pictorially. Figure \ref{figure:N} shows the situation we are currently in.
 
-\begin{center}
+\begin{figure}[h!] \label{figure:N} \caption{Diagram depicting $\sigma$.}
 \begin{tikzpicture}
 \draw (-1,0)--(-1,3);
 \node [below] at (-1,0) {$\N$};
@@ -562,10 +561,9 @@ In what follows, we will be taking a few different transitive liftups of restric
 \draw [->, thick] (-.7,-0.3)--(.7,-0.3);
 \node [above] at (0,-0.3) {$\sigma$};
 \end{tikzpicture}
-\end{center}
+\end{figure}
 
 Here we place bars on everything that is relevant on the $\N$ side of the embedding. In particular, $\sigma(\overline \delta)=\delta$, $\overline \nu = {\overline \delta^+}^{\N}$, $\overline D$ is the discrete set of measurables in $\N$ that each measure in $\overline \U$ comes from, and $\overline \kappa(0)$ is the first measurable in $\overline D$, in the sense of $\N$. %$\overline \lambda = \otp(\overline D)$, and where there is some $\overline \kappa'$ such that $\overline \lambda < \overline \kappa'$ and $\overline \kappa'$ has finitely many measurables below it in $\overline D$.
-
 
 Toward showing that $\D$ is subcomplete, we are additionally given some $\G \subseteq \overline{\D}$ that is generic over $\N$. Rather than working with $\G$, we will work with $\S = \seq{ \S(\overline \kappa) }{ \overline \kappa \in \overline D }$, its associated $\overline \D$-generic sequence. We must show the following, where $C=\Sk{N}{\delta}{X}$:
 
@@ -579,8 +577,7 @@ Toward showing that $\D$ is subcomplete, we are additionally given some $\G \sub
 $\in$-theory, $\mathcal T$, which posits the existence of such a $\sigma'$, is consistent. Such an embedding $\sigma'$ could only possibly exist in a suitable generic extension (otherwise the forcing $\D$ would be countably closed, which we know is not the case), $V[S]$, where $S$ is $\D$-generic sequence that we will find later.
 Once we have such a suitable $V[S]$, we will find an appropriate admissible structure in $V[S]$ for which the $\in$-theory $\mathcal T$, defined below, has a model.
 
-\begin{samepage}
-For an admissible structure $M$ with $S, \overline S, \sigma, \N, N, \theta, \D, \U, c \in M$ we define the $\in$-theory $\mathcal T(M)$ as follows.
+\begin{definition}[$\mathcal T$] For an admissible structure $M$ with $S, \overline S, \sigma, \N, N, \theta, \D, \U, c \in M$ we define the $\in$-theory $\mathcal T(M)$ as follows.
 \begin{description}
 	\item[predicate] $\in$.
 	\item[constants] $\dot{\sigma}, \underline x$ for $x \in M$.
@@ -591,9 +588,9 @@ For an admissible structure $M$ with $S, \overline S, \sigma, \N, N, \theta, \D,
 		\item $\dot \sigma ``\overline{\underline S} \subseteq \underline S$.
 	\end{itemize}
 \end{description}
-\end{samepage}
+\end{definition}
 
-The $\in$-theory is $\Sigma_1(M)$, since all of the axioms are $M$-finite except for the \textsf{Basic Axioms}, which altogether are $M$-$re$. Recall that by Fact \ref{fact:solidliftup}, the basic axioms make sure that any model $\mathfrak A$ of $\mathcal T(M)$ will have the property that for any $x \in M$, $\underline x^{\mathfrak A}=x$. In this and other $\in$-theories to come, we will make explicit what our extra constants are (with $\mathcal T$ we just have one extra constant, which we denote $\dot \sigma$).
+The $\in$-theory $\mathcal T$ is $\Sigma_1(M)$, since all of the axioms are $M$-finite except for the \textsf{Basic Axioms}, which altogether are $M$-$re$. Recall that by Fact \ref{fact:solidliftup}, the basic axioms make sure that any model $\mathfrak A$ of $\mathcal T(M)$ will have the property that for any $x \in M$, $\underline x^{\mathfrak A}=x$. In this and other $\in$-theories to come, we will make explicit what our extra constants are (with $\mathcal T$ we just have one extra constant, which we denote $\dot \sigma$).
 
 We need to find an appropriate $\D$-generic sequence $S$ and a suitable admissible structure $M$ containing $S$ so that $\mathcal T(M)$ is consistent. To do this we use transitive liftups and Barwise theory. Transitive liftups will provide approximations to the embedding we are looking for, and we will rely on Barwise Completeness (Fact \ref{fact:completeness}) to obtain the existence of a model with our desired properties. 
 
@@ -614,17 +611,15 @@ Furthermore, $|u| \leq \overline \delta < \overline \nu$ since every $w \in u$ c
 Thus $x \in k_0^{-1}(\sigma(u))=\sigma_0(u)$ with $|u| < \overline \nu$ in $\N$. So $\sigma_0$ is $\overline \nu$-cofinal as desired. 
 
 For the second part of the claim, recall that $X=\sigma``\N$ is the range of $\sigma$, and make the simple observation that $\sigma``H_{\overline \nu}^{\N} \subseteq X \cup \delta \subseteq C$. Thus $k_0^{-1} \upharpoonright \sigma``H_{\overline \nu}^{\overline N} = \text{id}$.
-Therefore $\sigma_0 \rest H_{\overline \nu}^{\N}=\sigma \rest H_{\overline \nu}^{\overline N}$, finishing the proof of the claim.
+Therefore $\sigma_0 \rest H_{\overline \nu}^{\N}=\sigma \rest H_{\overline \nu}^{\overline N}$, finishing the proof of Claim \ref{claim:N0isliftupofN}.
 \end{proof}
 
-Since $\overline \nu$ is regular in $\N$, so is $\nu_0=\sigma_0(\overline \nu)=\sup \sigma_0``\overline \nu$ in $N_0$. 
-%%%M Is this obvious that you get the sup? 
-%%%%%%K I would say yes, by regularity
+Since $\overline \nu$ is regular in $\N$, so is $\nu_0=\sigma_0(\overline \nu)=\sup \sigma_0``\overline \nu$ in $N_0$, where the last equality follows since $\sigma_0$ is $\overline \nu$-cofinal.
 By Interpolation (Fact \ref{fact:Interpolation}), we may say that the transitive collapse embedding $k_0$ may be defined by 
 	$k_0: N_0 \prec N \text{ where } k_0 \circ \sigma_0=\sigma \text{ and } k_0 \rest \nu_0 = \id.$
-In particular, $\nu_0$ is the critical point of the embedding $k_0$. We illustrate the situation up to this point with the following diagram. 
+In particular, $\nu_0$ is the critical point of the embedding $k_0$. We illustrate the situation up to this point with Figure \ref{figure:N0N}. 
 
-\begin{center}
+\begin{figure}[h!] \label{figure:N0N} \caption{Diagram depicting the liftup $\langle N_0, \sigma_0\rangle$.}
 \begin{tikzpicture}
 \draw (-3,0)--(-3,3);
 \node [below] at (-3,0) {$\N$};
@@ -672,7 +667,7 @@ In particular, $\nu_0$ is the critical point of the embedding $k_0$. We illustra
 \node [above] at (2,-0.3) {$k_0$};
 \draw[->,thick] (-2.75,-0.4) to [out = -30, in =-150] node[above]{$\sigma$} (2.9, -0.5);
 \end{tikzpicture}
-\end{center}
+\end{figure}
 
 The embedding $\sigma_0$ has a nice property: $\sk{N}{\delta}{\sigma_0}=\Sk{N}{X}{\delta}= C.$ This is reminiscent of (\ref{item:MainClaimC=Sk}) in the Main Claim. 
 Importantly, we still need to find a way to extend the generic sequence $\S$ to a $\D$-generic sequence over $N$. 
@@ -681,10 +676,12 @@ We will now define another $\in$-theory, which we will call $\mathcal L_*$.
 This will assist us in obtaining the diagonal Prikry extension $V[S]$ we need to satisfy our main claim. In order to do this, we will take another transitive liftup and apply the Transfer Lemma (Fact \ref{fact:Transfer}), in order to see that this new $\in$-theory is consistent over an admissible structure on $N_0$. 
 
 We give a general definition of the $\in$-theory we will work with. It should be noted that since we will be referring to basically the same $\in$-theory two different transitive liftups, the reader should think of $``*"$ in the subscript as a kind of placeholder for some transitive liftup, since it would work for any suitable transitive liftup of $\N$.
-Let $\langle N_*, \sigma_* \rangle$ be a transitive liftup of $\N$ along with some reasonable restriction of $\sigma$, ie. the liftup of $\langle \N, \sigma \rest H_{\alpha}^{\N} \rangle$, where $\alpha \geq \overline \kappa(0)$ is regular in $\N$, and say $\sigma_*(\overline \theta, \overline{\D}, \overline{\U}, \overline c) = \theta_*, \D_*, \U_*, c_*.$
 
-Define the infinitary $\in$-theory $\mathcal L(L_{\delta_{N_*}}(N_*))=\mathcal L_*$ as follows: 
 
+
+\begin{definition}[$\mathcal L$] Let $\langle N_*, \sigma_* \rangle$ be a transitive liftup of $\N$ along with some reasonable restriction of $\sigma$, ie. the liftup of $\langle \N, \sigma \rest H_{\alpha}^{\N} \rangle$, where $\alpha \geq \overline \kappa(0)$ is regular in $\N$, and say $\sigma_*(\overline \theta, \overline{\D}, \overline{\U}, \overline c) = \theta_*, \D_*, \U_*, c_*.$ 
+
+Define the infinitary $\in$-theory $\mathcal L(L_{\delta_{N_*}}(N_*))=\mathcal L_*$ as follows. 
 \begin{description}
 	\item[predicate] $\in$.
 	\item[constants] $\mathring{\sigma}, \mathring S, \underline x$ for $x \in L_{\delta_{N_*}}(N_*)$.\footnote{Recall that $\delta_{N_*}$ is the least ordinal for which $L_{\delta_{N_*}}(N_*)$ is admissible.}
@@ -696,20 +693,21 @@ Define the infinitary $\in$-theory $\mathcal L(L_{\delta_{N_*}}(N_*))=\mathcal L
 		\item $\mathring \sigma ``\overline{\underline S} \subseteq \mathring S$.
 	\end{itemize}
 \end{description} 
+\end{definition}
 
 As defined, we have that $\mathcal L_*$ is a $\Sigma_1(L_{\delta_{N_*}}(N_*))$-theory, since altogether the \textsf{Basic Axioms} are $\Sigma_1(L_{\delta_{N_*}}(N_*))$.
 
-We claim that the theory over the transitive liftup $\langle N_0, \sigma_0\rangle$ is consistent.
+We claim that the theory $\mathcal L$ over the transitive liftup $\langle N_0, \sigma_0\rangle$ is consistent.
 
-\begin{claimno} $\mathcal L_0=\mathcal L(L_{\delta_{N_0}}(N_0))$ is consistent. \end{claimno}
+\begin{claimno} \label{claim:ConL0} $\mathcal L_0=\mathcal L(L_{\delta_{N_0}}(N_0))$ is consistent. \end{claimno}
 \begin{proof}[Pf] Of course, it is not the case that $\sigma_0$ is $\overline \kappa(0)$-cofinal - all we know is that it is $\overline \nu$-cofinal. However, we know how to find an elementary embedding that is $\overline \kappa(0)$ cofinal: by taking a suitable transitive liftup.
 
 Let $\langle N_1, \sigma_1 \rangle$ be the transitive liftup of $\langle \N, \sigma \rest H^{\N}_{\overline \kappa(0)} \rangle$, which exists by Interpolation (Fact \ref{fact:Interpolation}). So we have that $\sigma_1 \rest H^\N_{\overline \kappa(0)} = \sigma \rest H^\N_{\overline \kappa(0)}$. Let $\sigma_1(\overline \theta, \overline{\D}, \overline{\U}, \overline c) = \theta_1, \D_1, \U_1, c_1.$ 
 %Then from $\U_1$ we can define its associated discrete set of measures in $N_1$, call it $D_1$, with $\otp(D_1)=\lambda_1$. Furthermore, by elementarity we have $\kappa_1= \sigma_1(\overline \kappa') > \lambda_1$, where there are finitely many measurables of $D_1$ below $\kappa_1'$. 
 Since $\sigma_1 \rest H^\N_{\overline \kappa(0)} = \sigma \rest H^\N_{\overline \kappa(0)} = \sigma_0 \rest H^\N_{\overline \kappa(0)}$, we also have a unique $k_1$ satisfying $ \text{$k_1: N_1 \prec N_0$ where $k_1\circ \sigma_1 = \sigma_0$ and $k_1 \rest \kappa_1(0) = \text{id}$ where $\kappa_1(0)=k_1(\kappa(0))$.}$ 
 
-Below is a picture of all of the relevant transitive liftups.
-\begin{center}
+Figure \ref{figure:N1N0N} is a picture of all of the relevant transitive liftups.
+\begin{figure}[h!] \label{figure:N1N0N} \caption{Diagram depicting the liftups $\langle N_0, \sigma_0\rangle$ and $\langle N_1, \sigma_1\rangle$.}
 \begin{tikzpicture}
 \draw (-3,0)--(-3,3);
 \node [below] at (-3,0) {$\overline N$};
@@ -766,11 +764,10 @@ Below is a picture of all of the relevant transitive liftups.
 \node [above] at (0.75,-0.3) {$k_1$};
 \node [above] at (2.25, -0.3) {$k_0$};
 \end{tikzpicture}
-\end{center} 
+\end{figure} 
 We first show that $\mathcal L_1=\mathcal L(L_{\delta_{N_1}}(N_1))$ is consistent, by seeing that it has a model. To do this, we will find a sequence extending $\sigma_1``\S$ that is $\D_1$-generic over $N_1$. Then we will use the Transfer Lemma to see that this transfers to the consistency of $\mathcal L_0$. %To do this, we will need to look at what happens to our diagonal Prikry sequence $\overline S$ when $\sigma_1$ is applied to it. 
 
-First, force with $\D_1 = \D_1(\mathcal U_1)$, which is a generalized diagonal Prikry forcing over $\mathcal U_1$, to obtain a diagonal Prikry sequence $S_1'$. 
-%%%M If I understand correctly D_1 is a fake Prikry forcing, right? The stuff in U_1 will not be real measures and so on? But it doesn't matter, you just force with it over V...
+First, force over $V$ with $\D_1 = \D_1(\mathcal U_1)$, which is a generalized diagonal Prikry forcing over $\mathcal U_1$, to obtain a diagonal Prikry sequence $S_1'$. 
 Define, in $V[S_1']$, a new sequence $S_1$ as follows:
 
 $$S_1(\kappa) = \begin{cases} S_1'(\kappa) &\text{ if } \kappa \in D_1 \setminus \sigma_1``\overline D; \\
@@ -803,7 +800,7 @@ For each $\overline \kappa \in \overline D$, we have that $\overline W_{\overlin
 $\set{\overline \kappa \in \overline D}{\overline S(\overline \kappa) \notin \overline W_{\overline \kappa}} \text{ is finite}$ by the generalized diagonal Prikry genericity criterion applied to $\overline S$.
 Thus by elementarity,
 $$\set{ \overline \kappa \in \overline D }{ \sigma_1(\S(\overline \kappa)) \notin W_{\sigma_1(\overline \kappa)} } \supseteq \set{ \overline \kappa \in \overline D }{ \sigma_1(\S(\overline \kappa)) \notin X_{\sigma_1(\overline \kappa)}} \text{ is finite,}$$
-as is desired, completing the proof of our claim.
+as is desired, completing the proof of Claim \ref{Claim:S_1isPrikryoverN_1}.
 \end{proof}
 
 %%%%%%%%%%%Liftups:
@@ -854,7 +851,7 @@ Let's check that we may now apply the Transfer Lemma (Fact \ref{fact:Transfer}) 
 	$\text{$\Sigma_1(\langle N_0;\,k_1(\overline \theta, \overline{\D}, \overline{\U}, \overline c, \theta_1, \D_1, \U_1, c_1)\rangle)$.}$
 Furthermore $k_1$ is cofinal, since for each element $x \in N_0$, as $\sigma_0$ is cofinal, there is $u \in \N$ such that $x \in \sigma_0(u)$. Thus $\sigma_1(u) \in N_1$, and moreover $x \in k_1(\sigma_1(u))=\sigma_0(u)$. 
 
-Therefore, we have that since $\mathcal L_1$ is consistent, $\mathcal L_0$ is consistent as desired. This completes the proof of \textit{Claim} 2. \end{proof}
+Therefore, we have that since $\mathcal L_1$ is consistent, $\mathcal L_0$ is consistent as desired. This completes the proof of Claim \ref{claim:ConL0}. \end{proof}
 
 %%%M I think you should comment somewhere about how the consistency of these things is absolute between forcing extensions. Because right now you know that L_0 is consistent in V[S_1'], but you want it consistent in V. It is also important in the next paragraph, because you want to work in V[F] and not in V[S_1'][F].
 
@@ -947,7 +944,7 @@ So we may find $\tilde \xi < \tilde \delta$ such that $\tilde x = \pi^{-1}(x)$ i
 
 To see item (\ref{item:mainclaimlifts}), note that $\overline{\underline S}^{\tilde{\mathfrak A}} = \overline S$ since $\overline S \subseteq \overline N$. So we have already by the definition of $\mathcal T$  that $\dot{\sigma}^{\tilde{\mathfrak A}}``\overline S \subseteq \underline S^{\tilde{\mathfrak A}}$. Thus $\pi \circ \dot{\sigma}^{\tilde{\mathfrak A}}``\overline S \subseteq \pi `` \underline S^{\tilde{\mathfrak A}} \subseteq S$ as desired. %Thus $\sigma'``\overline S = \langle \sigma'(\overline \xi_i) \;|\; i<\overline \lambda \rangle = \langle \pi (\dot{\sigma}^{\tilde{\mathfrak A}}(\overline \xi_i)) \;|\; i<\overline \lambda \rangle$. 
 
-This completes the proof of the main claim.
+This completes the proof of the Main Claim.
 \end{proof}
 We have satisfied the Main Claim, which finishes the proof that $\D$ is subcomplete.
 \end{proof}
