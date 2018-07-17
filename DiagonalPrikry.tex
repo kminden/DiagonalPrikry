@@ -148,7 +148,7 @@ Let \(D\) be an infinite discrete set of measurable cardinals. It is shown that 
 %Provide some motivation - advertisement for awesome techniques, and adding to the catalogue. Maybe refer to Gunter?
 Subcomplete forcing notions form a class of forcing notions that do not add reals, but may potentially alter cofinalities to $\omega$. 
 Clearly subcomplete forcing notions differ from proper forcing notions, which satisfy a countable covering property and thus cannot change cofinalities to $\omega$. 
-Examples of subcomplete forcing include Prikry forcing and Namba forcing (under $\CH$), as shown by Jensen~\cite[Section 3.3]{Jensen:2012fr}. 
+Examples of subcomplete forcing include Prikry forcing and Namba forcing (under $\CH$), as shown by Jensen~\cite[Section 3.3]{Jensen:2014}. 
 In a similar vein, Fuchs~\cite{Fuchs:2017Magidor} has shown that Magidor forcing is subcomplete. Here an adaptation of Jensen's proof showing that Prikry forcing is subcomplete is employed to see that many Prikry-like forcings, in particular those which will be referred to here as generalized diagonal Prikry forcing, following Fuchs~\cite{Fuchs:2005kx}, are subcomplete.
 
 In section~\ref{sec:preliminaries}, some preliminary topics are introduced that may be found in Jensen's lecture notes from the 2012 AII Summer School in Singapore (for the published version refer to \cite{Jensen:2014}, here the online version posted on Jensen's website is referenced). The notion of the weight of a forcing and fullness of a structure are then introduced, which lead to the definition of subcompleteness given in section~\ref{subsec:subcomplete} and subcompleteness above $\mu$ in section~\ref{subsec:subcompleteabovemu}. Important techniques of Barwise theory are introduced in section~\ref{subsec:BarwiseTheory}, and the ultrapower-like notion of a liftup, to obtain full structures, is introduced in section~\ref{subsec:Liftups}. In section~\ref{sec:GenDiagonalPrikryForcing} the definition of generalized diagonal Prikry foring is given, and it is shown that such forcing notions are subcomplete. Moreover, it is shown that diagonal Prikry forcing is subcomplete above $\mu$ where $\mu$ is a regular cardinal below the first limit point of the infinite discrete set of measurable cardinals used in the forcing.
@@ -182,7 +182,7 @@ If $\P$ is a dense subset of $\Q$, then, of course, $\delta(\P) = \delta(\Q)$.
 \label{subsec:fullness}
 %Now that fullness has been defined, some terminology should be established. Suppose that $\P$ is a forcing notion and $s$ be a set, and $\P,s \in H_\theta$, where $\theta$ is sufficiently large. As stated in the beginning of the section, instead of just working with $H_\theta$ and its well order, like in proper forcing, the models used in the definition of subcompleteness will have the form $L_\tau[A] \supseteq H_\theta$ where $L_\tau[A] \models \ZFC^-$, $\tau>\theta$, and $A \subseteq \tau$. Typically, the convention is to set $N=L_\tau[A]$ for brevity. Rather than spell this out every time, write \emph{\textbf{$N$ is a suitable model for $\P,s$ above $\theta$}}.
 Suppose that $\P$ is a forcing notion and $s$ is a set, with $\P, s \in H_\theta$, where $\theta$ is sufficiently large. Instead of just working with $H_\theta$ and its well order (as is done for the definition of proper forcing), the models used for defining subcompleteness will have the form $L_\tau[A] \supseteq H_\theta$ where $L_\tau[A] \models \ZFC^-$, $\tau>\theta$ is a (possibly singular) cardinal, and $A \subseteq \tau$. Typically, the convention is to set $N=L_\tau[A]$ for brevity. Rather than spell this out every time, write \emph{\textbf{$N$ is a suitable model for $\P,s$ above $\theta$}}.
-Such $H_\theta$ will need to be large enough so that $N$ has the correct $\omega_1$ and $H_{\omega_1}$. One justification for working with these models is that such $N$ will naturally contain a well order of $H_\theta$, along with its Skolem functions and other useful bits of information. Additionally a benefit of working with such models is that $L_\tau[A]$ is easily definable in $L_\tau[A][G]$, if $G$ is generic, using $A$.
+Such $H_\theta$ will need to be large enough so that $N$ has the correct $\omega_1$ and $H_{\omega_1}$. One justification for working with these models is that such $N$ will naturally contain a well order of $H_\theta$, along with its Skolem functions. Additionally a benefit of working with such models is that $L_\tau[A]$ is easily definable in $L_\tau[A][G]$, if $G$ is generic, using $A$.
 In the standard fashion, if $X \preccurlyeq N$ is a countable elementary substructure, we can take its transitive collapse and write $\N \cong X$. This gives rise to an elementary embedding 
 $\sigma: \N \cong X \preccurlyeq N.$
 Often, to suppress the mention of range of $\sigma$, or $X$ in the above, all that will be written is $\sigma: \N \prec N$.
@@ -474,7 +474,7 @@ The following lemma states that transitive liftups of full models are almost ful
 \begin{lemma}[{\cite[Lemma 2.1]{Jensen:2014}}] \label{lemma:liftupfull} Let $N =L_\tau[A] \models \ZFC^-$ and $\sigma: \N \prec N$ where $\N$ is full. Suppose that $\langle N_*, \sigma_* \rangle$ is a transitive liftup of $\langle \N, \overline \sigma \rangle$. Then $N_*$ is almost full. \end{lemma}
 \begin{proof}
 	Let $L_\gamma(\N)$ witness the fullness of $\N$. We will now apply Interpolation (Fact \ref{fact:Interpolation}) to $\mathfrak A= L_\gamma(\N)$, which makes sense since certainly $\mathfrak A$ is a transitive model of $\ZFC^-$. Additionally, by Lemma \ref{lemma:regularityequiv} we have that $\N = H_\eta^{\mathfrak A}$, where $\eta = \height(\N)$. 
-	Since $\langle N_*, \sigma_* \rangle$ is a transitive liftup, we have that $$\sigma_*: H_\eta^{\mathfrak A} \prec N_* \text{ cofinally,}$$ where $N_*$ is transitive. Thus since $\mathfrak A$ is transitive, $\langle \mathfrak A, \sigma_* \rangle$ has a liftup $\langle \mathfrak A_*, {\sigma_*}_* \rangle$, where $\mathfrak A_* \models \ZFC^-$ since $\mathfrak A$ does, $\mathfrak A_*$ is solid, where $${\sigma_*}_* : \mathfrak A \prec \mathfrak A_* \text{ $\eta$-cofinally.}$$ 
+	Since $\langle N_*, \sigma_* \rangle$ is a transitive liftup, we have that $\sigma_*: H_\eta^{\mathfrak A} \prec N_* \text{ cofinally,}$ where $N_*$ is transitive. Thus since $\mathfrak A$ is transitive, $\langle \mathfrak A, \sigma_* \rangle$ has a liftup $\langle \mathfrak A_*, {\sigma_*}_* \rangle$, where $\mathfrak A_* \models \ZFC^-$ since $\mathfrak A$ does, $\mathfrak A_*$ is solid, where ${\sigma_*}_* : \mathfrak A \prec \mathfrak A_* \text{ $\eta$-cofinally.}$ 
 	We have that  $N_* \subseteq \wfc({\mathfrak A}_*)$ and $\eta_*= {\sigma_*}_*(\eta)=\height(N_*)$ is regular since $\eta$ is. Furthermore, we will show that $N_* = H_{\eta_*}^{\mathfrak A_*}$, completing the proof:
 	
 	Certainly it is the case that $N_* \subseteq H_{\eta_*}^{\mathfrak A^*}$. 
@@ -535,7 +535,7 @@ By our requirement on $\theta$ being large enough, we've ensured that $N$ is clo
 
 In what follows, we will be taking a few different transitive liftups of restrictions of $\sigma$, and it will useful to keep track of embeddings between $\N$ and $N$ pictorially. Figure \ref{figure:N} shows the situation we are currently in.
 
-\begin{figure}[h!] \label{figure:N} 
+\begin{figure}[h!] 
 \begin{tikzpicture}
 \draw (-1,0)--(-1,3);
 \node [below] at (-1,0) {$\N$};
@@ -566,7 +566,7 @@ In what follows, we will be taking a few different transitive liftups of restric
 \draw [->, thick] (-.7,-0.3)--(.7,-0.3);
 \node [above] at (0,-0.3) {$\sigma$};
 \end{tikzpicture}
-\caption{Diagram depicting $\sigma$.}
+\caption{Diagram depicting $\sigma$.}\label{figure:N} 
 \end{figure}
 
 Here we place bars on everything that is relevant on the $\N$ side of the embedding. In particular, $\sigma(\overline \delta)=\delta$, $\overline \nu = {\overline \delta^+}^{\N}$, $\overline D$ is the discrete set of measurables in $\N$ that each measure in $\overline \U$ comes from, and $\overline \kappa(0)$ is the first measurable in $\overline D$, in the sense of $\N$. %$\overline \lambda = \otp(\overline D)$, and where there is some $\overline \kappa'$ such that $\overline \lambda < \overline \kappa'$ and $\overline \kappa'$ has finitely many measurables below it in $\overline D$.
@@ -627,7 +627,7 @@ By Interpolation (Fact \ref{fact:Interpolation}), we may say that the transitive
 	$k_0: N_0 \prec N \text{ where } k_0 \circ \sigma_0=\sigma \text{ and } k_0 \rest \nu_0 = \id.$
 In particular, $\nu_0$ is the critical point of the embedding $k_0$. We illustrate the situation up to this point with Figure \ref{figure:N0N}. 
 
-\begin{figure}[h!] \label{figure:N0N}
+\begin{figure}[h!]
 \begin{tikzpicture}
 \draw (-3,0)--(-3,3);
 \node [below] at (-3,0) {$\N$};
@@ -675,7 +675,7 @@ In particular, $\nu_0$ is the critical point of the embedding $k_0$. We illustra
 \node [above] at (2,-0.3) {$k_0$};
 \draw[->,thick] (-2.75,-0.4) to [out = -30, in =-150] node[above]{$\sigma$} (2.9, -0.5);
 \end{tikzpicture}
- \caption{Diagram depicting the liftup $\langle N_0, \sigma_0\rangle$.}
+ \caption{Diagram depicting the liftup $\langle N_0, \sigma_0\rangle$.} \label{figure:N0N}
 \end{figure}
 
 The embedding $\sigma_0$ has a nice property: $\sk{N}{\delta}{\sigma_0}=\Sk{N}{X}{\delta}= C.$ This is reminiscent of (\ref{item:MainClaimC=Sk}) in the Main Claim. 
@@ -718,7 +718,7 @@ Figure \ref{figure:N1N0N} is a picture of all of the relevant transitive liftups
 \begin{figure}[h!] 
 \begin{tikzpicture}
 \draw (-3,0)--(-3,3);
-\node [below] at (-3,0) {$\overline N$};
+\node [below] at (-3,0) {$\N$};
 \node at (-3,2.95) {$\frown$};
 
 \node [left] at (-3,0.4) {$\overline \kappa(0) \in \overline D$};
@@ -1002,7 +1002,7 @@ Then $\D=\D(\U)$ is subcomplete above $\mu$. \end{corollary}
 
 \begin{proof}[Proof Sketch] The idea is to follow the same exact proof as in Theorem \ref{theorem:main}, except we achieve Figure \ref{figure:SCaboveMu}.
 
-\begin{figure}[h!] \label{figure:SCaboveMu}
+\begin{figure}[h!] 
 \begin{tikzpicture}
 \draw (-3,-1)--(-3,3);
 \node [below] at (-3,-1) {$\N$};
@@ -1067,7 +1067,7 @@ Then $\D=\D(\U)$ is subcomplete above $\mu$. \end{corollary}
 \node [above] at (0.75,-1.3) {$k_1$};
 \node [above] at (2.25, -1.3) {$k_0$};
 \end{tikzpicture}
-\caption{Diagram depicting the liftups involved with Corollary \ref{corollary:SCaboveMu}.}
+\caption{Diagram depicting the liftups involved with Corollary \ref{corollary:SCaboveMu}.}\label{figure:SCaboveMu}
 \end{figure} 
 
 Here we replace $\kappa(0)$ with some $\kappa' \in D$ such that $\mu < \kappa' $, where there are finitely many measurables of $D$ below $\kappa'$. 
