@@ -146,10 +146,10 @@ Let \(D\) be an infinite discrete set of measurable cardinals. It is shown that 
 
 \section{Introduction}
 %Provide some motivation - advertisement for awesome techniques, and adding to the catalogue. Maybe refer to Gunter?
-%Subcomplete forcing notions form a class of forcing notions that do not add reals, but may potentially alter cofinalities to $\omega$. 
-%Clearly subcomplete forcing notions differ from proper forcing notions, which satisfy a countable covering property and thus cannot change cofinalities to $\omega$. 
-Examples of subcomplete forcing include Prikry forcing and Namba forcing (under $\CH$), as shown by Jensen~\cite[Section 3.3]{Jensen:2014}. 
-In a similar vein, Fuchs~\cite{Fuchs:2017Magidor} has shown that Magidor forcing is subcomplete. Here an adaptation of Jensen's proof showing that Prikry forcing is subcomplete is employed to see that many Prikry-like forcing notions, in particular those which will be referred to here as generalized diagonal Prikry forcing, following Fuchs~\cite{Fuchs:2005kx}, are subcomplete.
+
+
+Examples of subcomplete forcing include all countably closed forcing, Prikry forcing, and Namba forcing (under $\CH$), as shown by Jensen~\cite[Section 3.3]{Jensen:2014}. Clearly subcomplete forcing notions differ from proper forcing notions, as proper forcing notions all satisfy a countable covering property and thus cannot change cofinalities to $\omega$. Like countably closed forcing, no subcomplete forcing can add new reals, and indeed, $ccc$ forcing notions are not subcomplete \cite{Minden:2017fr}.
+Recently, Fuchs~\cite{Fuchs:2017Magidor} has shown that Magidor forcing is also subcomplete. Here an adaptation of Jensen's proof showing that Prikry forcing is subcomplete is employed to see that many Prikry-like forcing notions, in particular those which will be referred to here as generalized diagonal Prikry forcing, following Fuchs~\cite{Fuchs:2005kx}, are subcomplete.
 
 In section~\ref{sec:preliminaries}, some preliminary topics are introduced that may be found in Jensen's lecture notes from the 2012 AII Summer School in Singapore (for the published version refer to \cite{Jensen:2014}, here the version posted on Jensen's website is what is referenced). The notion of the weight of a forcing and fullness of a structure are then introduced, which lead to the definition of subcompleteness given in section~\ref{subsec:subcomplete} and subcompleteness above $\mu$ in section~\ref{subsec:subcompleteabovemu}. Important techniques of Barwise theory are introduced in section~\ref{subsec:BarwiseTheory}, and the ultrapower-like notion of a liftup, to obtain full structures, is introduced in section~\ref{subsec:Liftups}. In section~\ref{sec:GenDiagonalPrikryForcing} the definition of generalized diagonal Prikry foring is given, and it is shown that such forcing notions are subcomplete. Moreover, it is shown that diagonal Prikry forcing is subcomplete above $\mu$ where $\mu$ is a regular cardinal below the first limit point of the infinite discrete set of measurable cardinals used in the forcing.
 
@@ -193,7 +193,7 @@ Before defining fullness, there are more preliminary points to clarify.
 
 Note that, given $\sigma: \N \prec N$ where $\N$ is countable and transitive, the critical point $\cp(\sigma)$ is exactly $\omega_1^{\N} = \sigma^{-1}(\omega_1)$.
 
-\begin{fact} \label{fact:CPofourEmbeddings} Suppose $\sigma: \N \prec N$ with $\N$ countable and $H_{\omega_1} \subseteq N$. Then $\cp(\sigma)=\omega_1^{\N}$ and $\sigma \rest (H_{\omega_1})^{\N} = \id$. \end{fact}
+\begin{fact} \label{fact:CPofourEmbeddings} Suppose $\sigma: \N \prec N$ with $\N$ countable and $H_{\omega_1} \subseteq N$. Then $\cp(\sigma)=\omega_1^{\N}$ and $\sigma \rest H_{\omega_1}^{\N} = \id$. \end{fact}
 
 Let $N = L_\tau[A]$, for some cardinal $\tau$ and set $A$, let $X$ be a set, and let $\delta$ be a cardinal. Our notation for the \emph{Skolem hull} of $\delta \cup X$ in $N$ is $\Sk{N}{\delta}{X}$. It is defined to be the smallest $Y \preccurlyeq N$ satisfying $X \cup \delta \subseteq Y$.
 	
@@ -313,11 +313,11 @@ Often we write $\delta$ instead of $\delta(\P)$ for the weight of $\P$ when ther
 %Often we write $\delta$ instead of $\delta(\P)$ for the weight of $\P$ when there should be no confusion as to which poset $\P$ we are working with.\footnote{See Section \ref{subsec:delta} for more on $\delta(\P)$.}
 %\end{definition}
 
-\begin{remark}\label{remark:VerifyingSC}Let $\P$ be subcomplete as verified by $\theta$ and let $\theta'>\theta$. Then if $N$ is a suitable model for $\P$ above $\theta'$, it is not hard to see that the very same $N$ is a suitable model for $\P$ above $\theta$ as well. Thus $\P$ is subcomplete as verified by every $\theta' > \theta$. This tells us that $\P$ is subcomplete as long as it is verified by some $\theta$. So ``sufficiently large $\theta$" may be replaced with ``some $\theta$" in the definition of subcompleteness.\footnote{See \cite[Section 3.1 Lemma 2.4]{Jensen:2012fr}.} \end{remark}
+\begin{remark}\label{remark:VerifyingSC}Let $\P$ be subcomplete as verified by $\theta$ and let $\theta'>\theta$. Then if $N$ is a suitable model for $\P$ above $\theta'$, it is not hard to see that the very same $N$ is a suitable model for $\P$ above $\theta$ as well. Thus $\P$ is subcomplete as verified by every $\theta' > \theta$. This tells us that $\P$ is subcomplete as long as it is verified by some $\theta$. So ``sufficiently large $\theta$" may be replaced with ``some $\theta$" in the definition of subcompleteness.\footnote{See \cite[Section 3.1 Lemma 2.4]{Jensen:2014}.} \end{remark}
 
 \subsection{Subcomplete above $\mu$} \label{subsec:subcompleteabovemu}
 The notion of subcompleteness above $\mu$ is an attempt to measure where exactly subcompleteness kicks in; in some sense it gives a level as to where forcing fails to be subcomplete. 
-The following definition is from Jensen \cite[Chapter 2 p.\ 47]{Jensen:2009fe}.
+The following definition is from Jensen \cite[Ch.~2 p.\ 47]{Jensen:2009fe}.
 \begin{definition} 
 Let $\mu$ be a cardinal. We say that a forcing notion $\P$ is \emph{subcomplete above $\mu$} so long as for every set $s$ and sufficiently large $\theta > \mu$, whenever we are in the standard setup (as in the definition of subcomplete forcing) in which \begin{itemize}
 	\item $N$ is a suitable model for $\P, s$ above $\theta$;
@@ -341,7 +341,7 @@ The following is a key property of posets that are subcomplete above \(\mu\).
 \begin{proof}
 Suppose not. Let $\P$ be subcomplete above $\mu$. 
 Fix a condition \(p\in\P\) and let $\dot{f}$ be a name such that
-	$$p \forces \left( \dot f: \check \omega \to \check{\mu} \right).$$ 
+	$p \forces \left( \dot f: \check \omega \to \check{\mu} \right).$
 Take $\theta > \mu$ large enough to verify the subcompleteness of $\P$, and let $N$ be a suitable model for $\P, \dot f$ above $\theta$. Moreover assume we are in the standard setup.
 \begin{itemize}
 	\item $\sigma: \N \cong X \preccurlyeq N$ where $\N$ is countable and full
@@ -354,7 +354,7 @@ Let $\G$ be $\overline{\P}$-generic over $\N$ with $\overline p \in \overline G$
 	\item $\sigma'``\G \subseteq G$;
 	\item $\sigma' \rest \overline \mu = \sigma \rest \overline \mu$.
 \end{enumerate}
-Let $\overline f = \overline{\dot f}^{\G}$ and $f = \dot f^G$. By (4) and (5), for each $n$, $$f(n)=\sigma'(\overline f(n)) = \sigma(\overline f(n)),$$ meaning that $f \in V$ since $\sigma,\overline{f} \in V$.
+Let $\overline f = \overline{\dot f}^{\G}$ and $f = \dot f^G$. By (4) and (5), for each $n$, $f(n)=\sigma'(\overline f(n)) = \sigma(\overline f(n)),$ meaning that $f \in V$ since $\sigma,\overline{f} \in V$.
 \end{proof}
 Thus if $\P$ is subcomplete above $\mu$, then $\mu$'s cardinality, and even its cofinality, cannot be altered to be $\omega$ via $\P$.
 
