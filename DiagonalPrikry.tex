@@ -327,15 +327,11 @@ then, for any $\G \subseteq \overline{\P}$, there is a subcompleteness condition
 As usual, this means that in particular below the condition $p$ there is an embedding $\sigma'$ that lifts by (4) to an embedding $\sigma'^*:\N[\G] \prec N[G]$ in $V[G]$. We say that a $\theta$ as above \textit{verifies the subcompleteness above $\mu$ of $\P$}, and we may say that $\P$ is subcomplete above \(\mu\) if there is a $\theta$ that verifies its subcompleteness above $\mu$.
 \end{definition}
 
-\begin{remark} If $\P$ is subcomplete, $N$ is a suitable model for $\P$, and $\sigma:\N \To N$ where $\N$ is countable and full, then $\P$ is subcomplete above $\omega_1$. \end{remark}
-%%%M This is weirdly stated. First of all, Nbar varies, so there isn't one single thing that P is
-% subcomplete above to which you could refer as omega_1^Nbar.
-% Secondly, you only define subcomplete above mu for cardinals mu. omega_1^Nbar is definitely
-% not a cardinal in V. 
+\begin{remark} \label{remark:scaboveomega1} If $\P$ is subcomplete then $\P$ is subcomplete above $\omega_1$. \end{remark}
 \begin{proof} By Fact \ref{fact:CPofourEmbeddings}, we have that for any elementary embedding such as $\sigma$ or $\sigma'$ from countable $\N$ to $N$, $\sigma' \rest H_{\overline{\omega_1}}^{\N} = \sigma \rest H_{\overline{\omega_1}}^{\N} = \text{id}$. \end{proof}
 
 The following is a key property of posets that are subcomplete above \(\mu\).
-\begin{theorem} If $\P$ is subcomplete above $\mu$ then $\P$ does not add new countable subsets of $\mu$. \end{theorem}
+\begin{theorem} \label{thm:nonewctblesubsetsofmu} If $\P$ is subcomplete above $\mu$ then $\P$ does not add new countable subsets of $\mu$. \end{theorem}
 \begin{proof}
 Suppose not. Let $\P$ be subcomplete above $\mu$. 
 Fix a condition \(p\in\P\) and let $\dot{f}$ be a name such that
@@ -356,6 +352,8 @@ Let $\overline f = \overline{\dot f}^{\G}$ and $f = \dot f^G$. By (4) and (5), f
 \end{proof}
 Thus if $\P$ is subcomplete above $\mu$, then $\mu$'s cardinality, and even its cofinality, cannot be altered to be $\omega$ via $\P$.
 
+It follows from Remark \ref{remark:scaboveomega1} and Theorem \ref{thm:nonewctblesubsetsofmu} that subcomplete forcing does not add new reals.
+
 
 
 \subsection{Barwise Theory}
@@ -369,7 +367,7 @@ Jensen also makes use of models of $\textsf{ZF}^-$ that are not necessarily well
 
 Jensen \cite[Section 1.2]{Jensen:2014} notes that every consistent set of sentences in $\textsf{ZF}^-$ has a solid model, and if $\mathfrak A$ is solid, then $\omega \subseteq \wfc(\mathfrak A)$. In addition,
 
-\begin{fact}[{\cite[Ch.~1, Lemma 21]{Jensen:2014}}] If a model $\mathfrak A$ of $\textsf{\textup{ZF}}^-$ is solid, then $\wfc(\mathfrak A)$ is admissible. \end{fact}
+\begin{fact}[{\cite[Ch.~1 Lemma 21]{Jensen:2014}}] If a model $\mathfrak A$ of $\textsf{\textup{ZF}}^-$ is solid, then $\wfc(\mathfrak A)$ is admissible. \end{fact}
 
 Barwise creates an $\M$-finite predicate logic, a first order theory in which arbitrary, but $\M$-finite, disjunctions and conjunctions are allowed.
 \begin{definition} Let $\M$ be a transitive structure with potentially infinitely many predicates. A theory defined over $\M$ is $\M$-\emph{finite} so long as it is in $\M$. A theory is $\Sigma_1(\M)$, also known as \emph{$\M$-recursively enumerable} or $\M$-$re$, if the theory is $\Sigma_1$-definable, with parameters from $\M$. \end{definition}
@@ -378,9 +376,9 @@ Of course this may be generalized to the entire usual Levy hierarchy of formulae
 \begin{definition} \label{def:InTheoriesAndBasicAxioms} Let $\M$ be admissible. An infinitary axiomatized theory in $\M$-finitary logic $\mathcal L=\mathcal L(\M)$, with a fixed predicate $\dot \in$ and \emph{special constants} denoted $\underline x$ for elements $x \in \M$, is called an \textit{$\in$-theory} over $\M$. The underlying axioms for these $\in$-theories will always involve $\ZFC^-$ and some basic axioms ensuring that $\dot \in$ behaves nicely; 
 the \textsf{Basic Axioms} are: \begin{itemize}
 	\item \textsf{Extensionality}
-	\item A statement positing the extensionality of $\dot \in$, which is a scheme of formulae defined for each member of $M$. For each $x \in M$, include an $M$-$re$ sentence (meaning it quantifies over $M$-finite sentence): 
-	$$\forall v \left( v \ \dot \in\, \underline x \iff \bigdoublevee_{z \in x} v= \underline z \right).$$
-\end{itemize} Here $\displaystyle\bigdoublevee$ denotes an infinite disjunction in the language.\end{definition}
+	\item A statement positing the extensionality of $\dot \in$, which is a scheme of formulae defined for each member of $M$. For each $x \in M$,
+	$\forall v \left( v \ \dot \in\, \underline x \iff \bigdoublevee_{z \in x} v= \underline z \right).$
+\end{itemize} Here $\bigdoublevee$ denotes an infinite disjunction in the language.\end{definition}
 
 In the above definition, it should be clarified that it is possible to consider the same $\in$-theory defined over different admissible structures; if $\M, \M'$ are both admissible, then we can consider both $\mathcal L(\M)$ and $\mathcal L(\M')$. The distinction is only as to where the special constants come from. 
 
@@ -414,7 +412,7 @@ The following is a fairly straightforward exercise that sheds light on some of t
 Let $\sigma:M \prec N$ $\delta$-cofinally, where $\delta \in M$ is a cardinal in $M$. Let $\nu \geq \delta$ be a regular cardinal in $M$. Then $\sigma(\nu)=\sup \sigma``\nu$ and $H_{\sigma(\nu)}^N=\bigcup_{u \in H_\nu^M}\sigma(u)$.
 \end{observation}
 
-The Transfer Lemma is a kind of downward absoluteness statement, transferring the consistency of a $\Sigma_1$ $\in$-theory over an almost full model downward, via cofinal elementary embeddings. 
+The Transfer Lemma is an upward absoluteness statement, transferring the consistency of a $\Sigma_1$ $\in$-theory over an almost full model upward, via cofinal elementary embeddings. 
 
 \begin{fact}[\emph{The Transfer Lemma} {\cite[Lemma 4.5]{Jensen:2014}}]\label{fact:Transfer} Let $N_1$ be almost full and $k: N_1 \prec N_0$ cofinally, for some structure $N_0$. Suppose that we have a $\Sigma_1(\langle N_1; \, p_1, \dots, p_n\rangle)$  $\in$-theory $\mathcal L=\mathcal L(L_{\delta_{N_1}}(N_1))$  for $p_1, \dots, p_n \in N_1$.
 
@@ -506,7 +504,7 @@ Here the definition of $\D(\U)$ differs from that of generalized Prikry foricing
 Also in the above definition it hasn't been enforced that the stem a condition consists only of ordinals that are wedged between successive measurables in $D$; ie. for $\kappa \in D$, it is not explicitly insisted that $s(\kappa) \in \left[\sup(D\cap \kappa), \kappa\right)$. However, it is dense on a tail of the generic filter of $\D(\U)$ for the conditions to be that way, since conditions may be strengthened by restricting their upper parts to a tail. 
 Thus such a restriction may be freely added to the following genericity condition on $\D(\U)$.
 
-\begin{fact}[Fuchs~\cite{Fuchs:2005kx}] \label{fact:diagprikrymathias} Let $D$ be an infinite discrete set of measurable cardinals, with $\U$ a corresponding list of measures $\langle U(\kappa) \;|\; \kappa \in D \rangle$. Then an increasing sequence of ordinals $S = \langle S(\kappa) \;|\; \kappa \in D \rangle$, where for each $\kappa \in D$, we have that $$\sup(D \cap \kappa) < S(\kappa) < \kappa,$$ is a $\D(\U)$-generic  sequence if and only if for all $\mathcal X = \seq{ X_\kappa \in U(\kappa) }{ \kappa \in D }$, the set $\set{ \kappa \in D }{ S(\kappa) \notin X_\kappa }$ is finite.
+\begin{fact}[Fuchs~{\cite[Thm.~1]{Fuchs:2005kx}}] \label{fact:diagprikrymathias} Let $D$ be an infinite discrete set of measurable cardinals in $M$, with $\U$ a corresponding list of measures $\langle U(\kappa) \;|\; \kappa \in D \rangle$. Then an increasing sequence of ordinals $S = \seq{ S(\kappa) }{ \kappa \in D }$ in $V$, where for each $\kappa \in D$, we have that $$\sup(D \cap \kappa) < S(\kappa) < \kappa,$$ is a $\D(\U)$-generic  sequence if and only if for all $\mathcal X = \seq{ X_\kappa \in U(\kappa) }{ \kappa \in D } \in M$, the set $\set{ \kappa \in D }{ S(\kappa) \notin X_\kappa }$ is finite.
 \end{fact}
 
 The above genericity criterion on generalized diagonal Prikry forcing is similar to the Mathias genericity criterion for Prikry forcing.
@@ -907,48 +905,48 @@ Let $\lambda$ be regular in $V[S]$ with $N \in H_\lambda^{V[S]}$. Then
 
 In order to satisfy our Main Claim, we need a model of $\mathcal L'(\M)$ in $V[S]$. By Claim \ref{claim:starsigmaisgood}, we have that $\langle \M , \overset{*} {\sigma}\rangle$ is a model of $\mathcal L'(\M)$ in $V[F]$. Thus by Barwise Correctness (Fact \ref{fact:correctness}), $\mathcal L'(\M)$ is consistent.
 Let 
-	$\pi: \tilde \M \prec \M \text{ where $\tilde \M$ is countable and transitive.}$
-Note that $\tilde \M \in H_{\omega_1}^{V[S]}=H_{\omega_1}^V$ since diagonal Prikry forcing does not add bounded subsets to  $\kappa(0) > \omega_1$.\footnote{As Fuchs \cite[p.~966]{Fuchs:2005kx} points out, this result is a modification to the proof that generalized diagonal Prikry forcing preserves cardinalities.} 
-We also have that $\overline{\underline N}^{\tilde{\mathfrak A}} = \N$, since $\M$ sees that $\N$ is countable so $\tilde{\M}$ sees that $\pi^{-1}(\N)$ is, and it follows that $\pi^{-1}(\N)=\N$.
-Moreover, $\mathcal L'(\tilde \M)$ is consistent in $V[F]$ and thus $V$, since any inconsistency could be pushed up via $\pi$ to one in $\mathcal L'(\M)$, contradicting the consistency of this latter theory that we showed in $V[F]$.
+	$\pi: \widetilde \M \prec \M$ where $\widetilde \M$ is countable and transitive.
+Note that $\widetilde \M \in H_{\omega_1}^{V[S]}=H_{\omega_1}^V$ since diagonal Prikry forcing does not add bounded subsets to  $\kappa(0) > \omega_1$.\footnote{As Fuchs \cite[p.~966]{Fuchs:2005kx} points out, this result is a modification to the proof that generalized diagonal Prikry forcing preserves cardinalities.} 
+We also have that $\overline{\underline N}^{\widetilde{\mathfrak A}} = \N$, since $\M$ sees that $\N$ is countable so $\widetilde{\M}$ sees that $\pi^{-1}(\N)$ is, and it follows that $\pi^{-1}(\N)=\N$.
+Moreover, $\mathcal L'(\widetilde \M)$ is consistent in $V[F]$ and thus $V$, since any inconsistency could be pushed up via $\pi$ to one in $\mathcal L'(\M)$, contradicting the consistency of this latter theory that we showed in $V[F]$.
 
-So by Barwise Completeness (Fact \ref{fact:completeness}) we have $\mathcal L'(\tilde \M)$ has a solid model $\tilde{\mathfrak A} = \langle \tilde{\mathfrak A}; \dot{\sigma}^{\tilde{\mathfrak A}} \rangle$ such that $\Ord \cap \text{wfc}(\tilde{\mathfrak A}) = \Ord \cap \tilde \M.$
+So by Barwise Completeness (Fact \ref{fact:completeness}) we have $\mathcal L'(\widetilde \M)$ has a solid model $\widetilde{\mathfrak A} = \langle \widetilde{\mathfrak A}; \dot{\sigma}^{\widetilde{\mathfrak A}} \rangle$ such that $\Ord \cap \text{wfc}(\widetilde{\mathfrak A}) = \Ord \cap \widetilde \M.$
 
-Letting $\tilde \sigma' = \dot{\sigma}^{\tilde{\mathfrak A}}$ and $\sigma'=\pi \circ \tilde \sigma'$, the Main Claim is now satisfied with $\sigma'$ and our $\D$-generic sequence $S$.
+Letting $\widetilde \sigma' = \dot{\sigma}^{\widetilde{\mathfrak A}}$ and $\sigma'=\pi \circ \widetilde \sigma'$, the Main Claim is now satisfied with $\sigma'$ and our $\D$-generic sequence $S$.
 
-Indeed let us verify each of the properties of $\sigma'$ required by the Main Claim. The verification of these properties shall use the agreement between $\tilde{\mathfrak A}$ and $\tilde \M$ on the special constants of $\tilde \M$ and on the ordinals. The fact that $\pi$ fixes $\N$ will be greatly taken advantage of.
+Indeed let us verify each of the properties of $\sigma'$ required by the Main Claim. The verification of these properties shall use the agreement between $\widetilde{\mathfrak A}$ and $\widetilde \M$ on the special constants of $\widetilde \M$ and on the ordinals. The fact that $\pi$ fixes $\N$ will be greatly taken advantage of.
 
-First we show (\ref{item:mainclaimsigma'elem}) of the Main Claim. Let's say that $\varphi[\sigma'(\overline a)]$ holds in $N$. So $\varphi[\pi(\tilde \sigma'(\overline a))]^N$ holds in $\M$. Thus $\varphi[\tilde \sigma'(\overline a)]^{\pi^{-1}(N)}$ holds in $\tilde \M$, and thus also in $\tilde{\mathfrak A}$. Indeed we know that $\underline{\N}^{\tilde{\mathfrak A}} = \N$.
+First we show (\ref{item:mainclaimsigma'elem}) of the Main Claim. Let's say that $\varphi[\sigma'(\overline a)]$ holds in $N$. So $\varphi[\pi(\widetilde \sigma'(\overline a))]^N$ holds in $\M$. Thus $\varphi[\widetilde \sigma'(\overline a)]^{\pi^{-1}(N)}$ holds in $\widetilde \M$, and thus also in $\widetilde{\mathfrak A}$. Indeed we know that $\underline{\N}^{\widetilde{\mathfrak A}} = \N$.
 This means that $\varphi[\overline a]$ holds in $\N$, as desired.
 
-To see (\ref{item:mainclaim2}), we have $\sigma'(\overline \theta, \overline{\D}, \overline{\U}, \overline c)= \pi(\underline{\theta}^{\tilde{\mathfrak A}}, \underline{\D}^{\tilde{\mathfrak A}}, \underline{\U}^{\tilde{\mathfrak A}}, \underline{c}^{\tilde{\mathfrak A}})=\theta, \D, \U, c$.
+To see (\ref{item:mainclaim2}), we have $\sigma'(\overline \theta, \overline{\D}, \overline{\U}, \overline c)= \pi(\underline{\theta}^{\widetilde{\mathfrak A}}, \underline{\D}^{\widetilde{\mathfrak A}}, \underline{\U}^{\widetilde{\mathfrak A}}, \underline{c}^{\widetilde{\mathfrak A}})=\theta, \D, \U, c$.
 
-For item (\ref{item:MainClaimC=Sk}), let $\tilde N = \underline N^{\tilde{\mathfrak A}}$, $\tilde \sigma = \underline \sigma^{\tilde{\mathfrak A}}$ and $\tilde \delta = \underline{\delta}^{\tilde{\mathfrak A}}$. So $\pi(\tilde \delta)= \delta$, $\pi(\tilde N)=N$, and $\pi(\tilde \sigma)=\sigma$. Because of the way the $\in$-theory $\mathcal L'$ was defined, we already have: 
-\begin{equation} \tag{$\star$} \label{eqn:SkDotSigma=SkTildeSigma} \sk{\tilde N}{\tilde \delta}{\tilde \sigma'} = \sk{\tilde N}{\tilde \delta}{\tilde \sigma}. \end{equation} To see the inclusion from left to right, note that by (\ref{eqn:SkDotSigma=SkTildeSigma}) $\ran{\tilde \sigma'} \subseteq \sk{\tilde N}{\tilde \delta}{\tilde \sigma}$. Thus 
-	$\ran(\pi \circ \tilde \sigma') \subseteq \sk{\pi(\tilde N)}{\pi(\tilde \delta)}{\pi(\tilde\sigma)}.$
+For item (\ref{item:MainClaimC=Sk}), let $\widetilde N = \underline N^{\widetilde{\mathfrak A}}$, $\widetilde \sigma = \underline \sigma^{\widetilde{\mathfrak A}}$ and $\widetilde \delta = \underline{\delta}^{\widetilde{\mathfrak A}}$. So $\pi(\widetilde \delta)= \delta$, $\pi(\widetilde N)=N$, and $\pi(\widetilde \sigma)=\sigma$. Because of the way the $\in$-theory $\mathcal L'$ was defined, we already have: 
+\begin{equation} \tag{$\star$} \label{eqn:SkDotSigma=SkTildeSigma} \sk{\widetilde N}{\widetilde \delta}{\widetilde \sigma'} = \sk{\widetilde N}{\widetilde \delta}{\widetilde \sigma}. \end{equation} To see the inclusion from left to right, note that by (\ref{eqn:SkDotSigma=SkTildeSigma}) $\ran{\widetilde \sigma'} \subseteq \sk{\widetilde N}{\widetilde \delta}{\widetilde \sigma}$. Thus 
+	$\ran(\pi \circ \widetilde \sigma') \subseteq \sk{\pi(\widetilde N)}{\pi(\widetilde \delta)}{\pi(\widetilde\sigma)}.$
 Making the same observation for the other direction, it follows that
 $\sk{N}{\delta}{\sigma'} = \sk{N}{\delta}{\sigma}$ as desired.
-%\begin{equation} \tag{$\star$} \label{eqn:SkDotSigma=SkTildeSigma} \sk{\tilde N}{\tilde \delta}{\tilde \sigma'} = \sk{\tilde N}{\tilde \delta}{\tilde \sigma}. \end{equation}
-%%let $x \in \sk{N}{\delta}{\sigma'}$. Then we have that $N$ sees that there are some formula $\varphi$, $\overline z \in \N$, and $\xi < \delta$ so that $x$ uniquely satisfies $\varphi(x, \pi(\tilde \sigma'(\overline z)), \xi)$. In particular, $x$ is in the range of $\pi$. 
+%\begin{equation} \tag{$\star$} \label{eqn:SkDotSigma=SkTildeSigma} \sk{\widetilde N}{\widetilde \delta}{\widetilde \sigma'} = \sk{\widetilde N}{\widetilde \delta}{\widetilde \sigma}. \end{equation}
+%%let $x \in \sk{N}{\delta}{\sigma'}$. Then we have that $N$ sees that there are some formula $\varphi$, $\overline z \in \N$, and $\xi < \delta$ so that $x$ uniquely satisfies $\varphi(x, \pi(\widetilde \sigma'(\overline z)), \xi)$. In particular, $x$ is in the range of $\pi$. 
 %%%%%M Why is this?
-%%Thus $\tilde x = \pi^{-1}(x) \in \tilde N$ and there is some $\tilde \xi < \tilde \delta$ such that $\varphi(\tilde x, \tilde \sigma'(\overline z), \tilde \xi)$ holds. Thus by (\ref{eqn:SkDotSigma=SkTildeSigma}), we have that $\tilde x$ is unique such that 
-%%$\varphi(\tilde x, \tilde \sigma(\overline y), \tilde \zeta)$ for some $\overline y \in \N$ and $\tilde \zeta < \tilde \delta$. Thus pushing back up through $\pi$, letting $\zeta = \pi(\tilde \zeta)$, we have that $x = \pi(\tilde x)$ is unique such that $\varphi(x, \sigma(\overline y), \zeta)$ holds, so $x \in \Sk{N}{\delta}{X}$.
+%%Thus $\widetilde x = \pi^{-1}(x) \in \widetilde N$ and there is some $\widetilde \xi < \widetilde \delta$ such that $\varphi(\widetilde x, \widetilde \sigma'(\overline z), \widetilde \xi)$ holds. Thus by (\ref{eqn:SkDotSigma=SkTildeSigma}), we have that $\widetilde x$ is unique such that 
+%%$\varphi(\widetilde x, \widetilde \sigma(\overline y), \widetilde \zeta)$ for some $\overline y \in \N$ and $\widetilde \zeta < \widetilde \delta$. Thus pushing back up through $\pi$, letting $\zeta = \pi(\widetilde \zeta)$, we have that $x = \pi(\widetilde x)$ is unique such that $\varphi(x, \sigma(\overline y), \zeta)$ holds, so $x \in \Sk{N}{\delta}{X}$.
 %%
-%Showing $\Sk{N}{\delta}{X} \subseteq \sk{N}{\delta}{\sigma'}$ works similarly. Again by (\ref{eqn:SkDotSigma=SkTildeSigma}) we have $\ran{\tilde \sigma} \subseteq \sk{\tilde N}{\tilde \delta}{\tilde \sigma'}$.
+%Showing $\Sk{N}{\delta}{X} \subseteq \sk{N}{\delta}{\sigma'}$ works similarly. Again by (\ref{eqn:SkDotSigma=SkTildeSigma}) we have $\ran{\widetilde \sigma} \subseteq \sk{\widetilde N}{\widetilde \delta}{\widetilde \sigma'}$.
 %%Let $x \in \Sk{N}{\delta}{X}$. Then there are $\overline z \in \N$ and $\xi < \delta$ such that $\varphi(x, \sigma(\overline z), \xi)$ holds. So in particular, $x$ is in the range of $\pi$. 
 %%%%%M Range? Also, again, why?	
-%%So we may find $\tilde \xi < \tilde \delta$ such that $\tilde x = \pi^{-1}(x)$ is unique such that $\varphi(\tilde x, \tilde \sigma(\overline z), \tilde \xi)$. So by (\ref{eqn:SkDotSigma=SkTildeSigma}), we have that there is $\overline y \in \N$ and $\tilde \zeta < \tilde \delta$ such that $\tilde x$ is unique satisfying $\varphi(\tilde x, \dot{\sigma}^{\mathfrak A}(\overline y), \tilde \zeta)$. Finally, by pushing back up through $\pi$, letting $\pi(\tilde \zeta) = \zeta$, we have that $x = \pi(\tilde x)$ is unique such that $\varphi(x, \sigma'(\overline y), \zeta)$, so $x \in \sk{N}{\delta}{\sigma'}$ as desired.
+%%So we may find $\widetilde \xi < \widetilde \delta$ such that $\widetilde x = \pi^{-1}(x)$ is unique such that $\varphi(\widetilde x, \widetilde \sigma(\overline z), \widetilde \xi)$. So by (\ref{eqn:SkDotSigma=SkTildeSigma}), we have that there is $\overline y \in \N$ and $\widetilde \zeta < \widetilde \delta$ such that $\widetilde x$ is unique satisfying $\varphi(\widetilde x, \dot{\sigma}^{\mathfrak A}(\overline y), \widetilde \zeta)$. Finally, by pushing back up through $\pi$, letting $\pi(\widetilde \zeta) = \zeta$, we have that $x = \pi(\widetilde x)$ is unique such that $\varphi(x, \sigma'(\overline y), \zeta)$, so $x \in \sk{N}{\delta}{\sigma'}$ as desired.
 
 %\begin{eqnarray*}
 %	x \in \sk{N}{\delta}{\sigma'} 
-%	&\iff& N \models \left( x = \text{that } y \text{ such that } \varphi(y, \pi(\tilde \sigma'(\overline z)), \xi) \right) \text{ where } \overline z \in \overline N, \xi<\delta \\
-%	&\iff& \tilde N \models \left( \pi^{-1}(x) = \text{that } y \text{ such that } \varphi(y, \tilde \sigma'(\overline z), \tilde \xi) \right) \text{ where } \overline z \in \overline N, \tilde \xi< \tilde \delta \\
-%	&\iff& \tilde N \models \left( \pi^{-1}(x) = \text{that } y \text{ such that } \varphi(y, \tilde \sigma(\overline z), \tilde \xi) \right) \text{ where } \overline z \in \overline N, \tilde \xi<\tilde \delta\\
+%	&\iff& N \models \left( x = \text{that } y \text{ such that } \varphi(y, \pi(\widetilde \sigma'(\overline z)), \xi) \right) \text{ where } \overline z \in \overline N, \xi<\delta \\
+%	&\iff& \widetilde N \models \left( \pi^{-1}(x) = \text{that } y \text{ such that } \varphi(y, \widetilde \sigma'(\overline z), \widetilde \xi) \right) \text{ where } \overline z \in \overline N, \widetilde \xi< \widetilde \delta \\
+%	&\iff& \widetilde N \models \left( \pi^{-1}(x) = \text{that } y \text{ such that } \varphi(y, \widetilde \sigma(\overline z), \widetilde \xi) \right) \text{ where } \overline z \in \overline N, \widetilde \xi<\widetilde \delta\\
 %	&\iff& N \models \left( x = \text{that } y \text{ such that } \varphi(y, \sigma(\overline z), \xi) \right) \text{ where } \overline z \in \overline N, \xi<\delta\\
 %	&\iff& x \in \Sk{N}{\delta}{X}.
 %\end{eqnarray*}
 
-To see item (\ref{item:mainclaimlifts}), note that $\overline{\underline S}^{\tilde{\mathfrak A}} = \overline S$ since $\overline S \subseteq \overline N$. So we have already by the definition of $\mathcal L'$  that $\dot{\sigma}^{\tilde{\mathfrak A}}``\overline S \subseteq \underline S^{\tilde{\mathfrak A}}$. Thus $\pi \circ \dot{\sigma}^{\tilde{\mathfrak A}}``\overline S \subseteq \pi `` \underline S^{\tilde{\mathfrak A}} \subseteq S$ as desired. %Thus $\sigma'``\overline S = \langle \sigma'(\overline \xi_i) \;|\; i<\overline \lambda \rangle = \langle \pi (\dot{\sigma}^{\tilde{\mathfrak A}}(\overline \xi_i)) \;|\; i<\overline \lambda \rangle$. 
+To see item (\ref{item:mainclaimlifts}), note that $\overline{\underline S}^{\widetilde{\mathfrak A}} = \overline S$ since $\overline S \subseteq \overline N$. So we have already by the definition of $\mathcal L'$  that $\dot{\sigma}^{\widetilde{\mathfrak A}}``\overline S \subseteq \underline S^{\widetilde{\mathfrak A}}$. Thus $\pi \circ \dot{\sigma}^{\widetilde{\mathfrak A}}``\overline S \subseteq \pi `` \underline S^{\widetilde{\mathfrak A}} \subseteq S$ as desired. %Thus $\sigma'``\overline S = \langle \sigma'(\overline \xi_i) \;|\; i<\overline \lambda \rangle = \langle \pi (\dot{\sigma}^{\widetilde{\mathfrak A}}(\overline \xi_i)) \;|\; i<\overline \lambda \rangle$. 
 
 This completes the proof of the Main Claim.
 \end{proof}
@@ -1008,7 +1006,7 @@ Then $\D=\D(\U)$ is subcomplete above $\mu$. \end{corollary}
 
 \node [left] at (-3,-0.4) {$\overline \mu$};
 \node at (-3,-0.4) {-};
-\node [left] at (-3,0) {$\overline \kappa' \in \overline D$};
+\node [left] at (-3,0) {$\overline D \ni\overline \kappa' $};
 \node at (-3,0) {-};
 \node [left] at (-3,0.6) {$\overline \lambda$};
 \node at (-3,0.6) {-};
@@ -1086,7 +1084,7 @@ Thus by elementarity,
 
 Additionally the $\in$-theories $\mathcal L$ and $\mathcal L'$ would have to be defined so as to include as an axiom that $\mathring \sigma \rest \overline{\underline{\mu}} = \underline{\sigma} \rest \overline{\underline \mu}$ and $\dot \sigma \rest \overline{\underline{\mu}} = \underline{\sigma} \rest \overline{\underline \mu}$ respectively. 
 We would then need to show that $\overset{*}\sigma \rest \overline{\mu} = \sigma \rest \overline{\mu}$, but this would follow since $k_0$ is the identity on $\nu_0$. 
-Furthermore, it would need to be shown that $\sigma' \rest \overline{\mu} = \sigma \rest \overline{\mu}$, but this would follow from the requirement that $\tilde \sigma' \rest \overline{\mu} = \underline{\sigma}^{\tilde{\mathfrak A}} \rest \overline{\mu}$, and the fact that such ordinals are computed properly by $\tilde{\mathfrak A}$. 
+Furthermore, it would need to be shown that $\sigma' \rest \overline{\mu} = \sigma \rest \overline{\mu}$, but this would follow from the requirement that $\widetilde \sigma' \rest \overline{\mu} = \underline{\sigma}^{\widetilde{\mathfrak A}} \rest \overline{\mu}$, and the fact that such ordinals are computed properly by $\widetilde{\mathfrak A}$. 
 \end{proof}
 
 
