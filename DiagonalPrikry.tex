@@ -139,7 +139,7 @@
 \thanks{The material presented here is based on the author's doctoral thesis \cite{Minden:2017fr}, written at the Graduate Center of CUNY under the supervision of Gunter Fuchs.}
 
 \begin{abstract}
-Let \(D\) be an infinite discrete set of measurable cardinals. It is shown that generalized Prikry forcing to add a countable sequence to each cardinal in \(D\) is subcomplete. To do this it is shown that a simplified version of generalized Prikry forcing which adds a point below each cardinal in \(D\), called generalized diagonal Prikry forcing, is subcomplete. It is also shown that the generalized diagonal Prikry forcing associated to \(D\) is subcomplete above $\mu$, where $\mu$ is any regular cardinal below the first limit point of \(D\).
+Let \(D\) be an infinite discrete set of measurable cardinals. It is shown that generalized Prikry forcing to add a countable sequence to each cardinal in \(D\) is subcomplete. To do this it is shown that a simplified version of generalized Prikry forcing which adds a point below each cardinal in \(D\), called generalized diagonal Prikry forcing, is subcomplete. Moreover, the generalized diagonal Prikry forcing associated to \(D\) is subcomplete above $\mu$, where $\mu$ is any regular cardinal below the first limit point of \(D\).
 \end{abstract}
 \maketitle
 \section{Introduction}
@@ -153,7 +153,7 @@ Recently, Fuchs~\cite{Fuchs:2017Magidor} has shown that Magidor forcing is also 
 In section~\ref{sec:preliminaries}, some preliminary topics are introduced that may be found in Jensen's lecture notes from the 2012 AII Summer School in Singapore (for the published version refer to \cite{Jensen:2014}, here the version posted on Jensen's website is what is referenced). The notion of the weight of a forcing and fullness of a structure are then introduced, which lead to the definition of subcompleteness given in section~\ref{subsec:subcomplete} and subcompleteness above $\mu$ in section~\ref{subsec:subcompleteabovemu}. Important techniques of Barwise theory are introduced in section~\ref{subsec:BarwiseTheory}, and the ultrapower-like notion of a liftup, to obtain full structures, is introduced in section~\ref{subsec:Liftups}. In section~\ref{sec:GenDiagonalPrikryForcing} the definition of generalized diagonal Prikry foring is given, and it is shown that such forcing notions are subcomplete. Moreover, it is shown that diagonal Prikry forcing is subcomplete above $\mu$ where $\mu$ is a regular cardinal below the first limit point of the infinite discrete set of measurable cardinals used in the forcing.
 
 \section{Preliminaries} \label{sec:preliminaries}
-Before defining subcomplete forcing and generalized diagonal Prikry forcing, some preliminary information is necessary.
+Before defining subcompleteness and generalized diagonal Prikry forcing, some preliminary information is necessary.
 
 Forcing notions $\P = \langle \P, \leq \rangle$ are taken to be partially ordered sets that are separative and contain a ``top" element weaker than all elements of $\P$, denoted $\mathbbm 1$.
 Use $N$, M, $\N$ to always denote transitive models of $\ZFC^-$, the axioms of Zermelo-Fraenkel Set Theory without the axiom of \textsf{Powerset}, and with the axiom of \textsf{Collection} instead of \textsf{Replacement}. For $\sigma$ an elementary embedding from $M$ to $N$, write $\sigma: M \prec N$ and in case $\sigma$ is the identity, write $M \preccurlyeq N$ to denote and emphasize that $M$ is an elementary substructure of $N$. 
@@ -181,14 +181,13 @@ As Jensen states, for forcing notions $\P$, the weight can be replaced with the 
 \label{subsec:fullness}
 %Now that fullness has been defined, some terminology should be established. Suppose that $\P$ is a forcing notion and $s$ be a set, and $\P,s \in H_\theta$, where $\theta$ is sufficiently large. As stated in the beginning of the section, instead of just working with $H_\theta$ and its well order, like in proper forcing, the models used in the definition of subcompleteness will have the form $L_\tau[A] \supseteq H_\theta$ where $L_\tau[A] \models \ZFC^-$, $\tau>\theta$, and $A \subseteq \tau$. Typically, the convention is to set $N=L_\tau[A]$ for brevity. Rather than spell this out every time, write \emph{\textbf{$N$ is a suitable model for $\P,s$ above $\theta$}}.
 Suppose that $\P$ is a forcing notion and $s$ is a set, with $\P, s \in H_\theta$, where $\theta$ is sufficiently large. Instead of just working with $H_\theta$ and its well order (as is done for the definition of proper forcing), the models used for defining subcompleteness will have the form $L_\tau[A] \supseteq H_\theta$ where $L_\tau[A] \models \ZFC^-$ such that $\tau>\theta$ is a (possibly singular) cardinal, and $A \subseteq \tau$. Typically, the convention is to set $N=L_\tau[A]$ for brevity. Rather than spell this out every time, write $N$ is a \emph{\textbf{suitable model}} for $\P,s$ above $\theta$.
-Such $H_\theta$ will need to be large enough so that $N$ has the correct $\omega_1$ and $H_{\omega_1}$. One justification for working with these models is that such $N$ will naturally contain a well order of $H_\theta$, along with its Skolem functions. Additionally a benefit of working with such models is that $L_\tau[A]$ is easily definable in $L_\tau[A][G]$, if $G$ is generic, using $A$.
+Such $H_\theta$ will need to be large enough so that $N$ has the correct $\omega_1$ and $H_{\omega_1}$. One reason for working with these models is that such $N$ will naturally contain a well order of $H_\theta$, along with its Skolem functions. Additionally a benefit of working with such models is that $L_\tau[A]$ is easily definable in $L_\tau[A][G]$, if $G$ is generic, using $A$.
 In the standard fashion, if $X \preccurlyeq N$ is a countable elementary substructure, we can take its transitive collapse and write $\N \cong X$. This gives rise to an elementary embedding 
 $\sigma: \N \cong X \preccurlyeq N.$
-Often, to suppress the mention of range of $\sigma$, or $X$ in the above, all that will be written is $\sigma: \N \prec N$.
+Often we suppress the mention of the range of $\sigma$ in the above and just write $\sigma: \N \prec N$.
 In fact, it will not be quite enough for such an $\N$ to be transitive. We will want to be in a
 situation where there is more than one elementary embedding of \(\N\) into \(N\).
 This will be end up being possible if we require that the model \(\N\) is \emph{full}.
-Before defining fullness, there are more preliminary points to clarify.
 
 Note that, given $\sigma: \N \prec N$ where $\N$ is countable and transitive, the critical point $\cp(\sigma)$ is exactly $\omega_1^{\N} = \sigma^{-1}(\omega_1)$.
 
@@ -252,7 +251,7 @@ of more than one embedding from $\N$ to $N$.
 %\end{proof}
 
 \subsection{Subcomplete Forcing} \label{subsec:subcomplete}
-Subcompleteness should be seen as a weakening of the class of complete (that is, countably closed) forcing notions. The following definitions and proofs are due to Jensen \cite[Ch.~3]{Jensen:2014}.
+Subcompleteness is a weakening of the notion of completeness (that is, countable closure) of forcing notions. The following definitions and proofs are due to Jensen \cite[Ch.~3]{Jensen:2014}.
 
 
  
@@ -267,9 +266,9 @@ and $\G$ is $\overline{\P}$-generic over $\N$ then there is a \emph{completeness
 In particular, below the condition $p$ we have that $\sigma$ lifts to an embedding $\sigma^*:\N[\G] \prec N[G]$.
 We say that a $\theta$ as above \emph{verifies} the completeness of $\P$.
 \end{definition}
-The adjustment made to get subcomplete forcings is to not necessarily insist the the original embedding lifts in the forcing extension. Instead subcompleteness asks for an embedding, sufficiently similar
+The adjustment made to get subcomplete forcings is to not insist the the original embedding lifts in the forcing extension. Instead subcompleteness asks for an embedding, sufficiently similar
 to the original one, which lifts to the extension, but may itself only exist in the extension.
-However, as discussed in Section~\ref{subsec:fullness}, the domain of the embedding should be \emph{full} so as to not consistently rule out the possibility of the existence of such an embedding. 
+As discussed in Section~\ref{subsec:fullness}, the domain of the embedding should be \emph{full} so as to not consistently rule out the possibility of the existence of multiple embeddings like this.
 
 \begin{definition} \label{definition:SC}
 A forcing notion $\P$ is \emph{\textbf{subcomplete}} so long as, for any set $s$ and 
@@ -315,7 +314,7 @@ Often we write $\delta$ instead of $\delta(\P)$ for the weight of $\P$ when ther
 \begin{remark}\label{remark:VerifyingSC}Let $\P$ be subcomplete as verified by $\theta$ and let $\theta'>\theta$. Then if $N$ is a suitable model for $\P$ above $\theta'$, it is not hard to see that the very same $N$ is a suitable model for $\P$ above $\theta$ as well. Thus $\P$ is subcomplete as verified by every $\theta' > \theta$. This tells us that $\P$ is subcomplete as long as it is verified by some $\theta$. So ``sufficiently large $\theta$" may be replaced with ``some $\theta$" in the definition of subcompleteness.\footnote{See \cite[Section 3.1 Lemma 2.4]{Jensen:2014}.} \end{remark}
 
 \subsection{Subcomplete above $\mu$} \label{subsec:subcompleteabovemu}
-The notion of subcompleteness above $\mu$ is an attempt to measure where exactly subcompleteness kicks in; in some sense it gives a level as to where forcing fails to be subcomplete. 
+The notion of subcompleteness above $\mu$ is an attempt to measure where exactly subcompleteness kicks in; in some sense it gives a level as to where the forcing fails to be subcomplete. 
 The following definition is from Jensen \cite[Ch.~2 p.\ 47]{Jensen:2009fe}.
 \begin{definition} 
 Let $\mu$ be a cardinal. We say that a forcing notion $\P$ is \emph{subcomplete above $\mu$} so long as for every set $s$ and sufficiently large $\theta > \mu$, whenever we are in the standard setup (as in the definition of subcomplete forcing) in which \begin{itemize}
@@ -376,14 +375,14 @@ Barwise creates an $\M$-finite predicate logic, a first order theory in which ar
 \begin{definition} Let $\M$ be a transitive structure with potentially infinitely many predicates. A theory defined over $\M$ is $\M$-\emph{finite} so long as it is in $\M$. A theory is $\Sigma_1(\M)$, also known as \emph{$\M$-recursively enumerable} or $\M$-$re$, if the theory is $\Sigma_1$-definable, with parameters from $\M$. \end{definition}
 Of course this may be generalized to the entire usual Levy hierarchy of formulae, but only $\Sigma_1(\M)$ is needed in this paper. If $\mathcal L$ is a $\Sigma_1(\M)$-definable language or theory, the rough idea is that to check whether a sentence is in $\mathcal L$, one should imagine enumerating the formulae of $\mathcal L$ to find a sentence and a witness to it in the structure $\M$.
 
-\begin{definition} \label{def:InTheoriesAndBasicAxioms} Let $\M$ be admissible. An infinitary axiomatized theory in $\M$-finitary logic $\mathcal L=\mathcal L(\M)$ is called an \textit{$\in$-theory} over $\M$, with a fixed predicate $\dot \in$ and \emph{special constants} denoted $\underline x$ for elements $x \in \M$. The underlying axioms for these $\in$-theories will always involve $\ZFC^-$ and some basic axioms ensuring that $\dot \in$ behaves nicely; 
+\begin{definition} \label{def:InTheoriesAndBasicAxioms} Let $\M$ be admissible. An infinitary axiomatized theory in $\M$-finitary logic $\mathcal L=\mathcal L(\M)$, with a fixed predicate $\dot \in$ and \emph{special constants} denoted $\underline x$ for elements $x \in \M$, is called an \textit{$\in$-theory} over $\M$. The underlying axioms for these $\in$-theories will always involve $\ZFC^-$ and some basic axioms ensuring that $\dot \in$ behaves nicely; 
 the \textsf{Basic Axioms} are: \begin{itemize}
 	\item \textsf{Extensionality}
 	\item A statement positing the extensionality of $\dot \in$, which is a scheme of formulae defined for each member of $M$. For each $x \in M$, include an $M$-$re$ sentence (meaning it quantifies over $M$-finite sentence): 
 	$$\forall v \left( v \ \dot \in\, \underline x \iff \bigdoublevee_{z \in x} v= \underline z \right).$$
 \end{itemize} Here $\displaystyle\bigdoublevee$ denotes an infinite disjunction in the language.\end{definition}
 
-In the above definition, it should be clarified that it is possible to consider the same $\in$-theory defined over different admissible structures; if $\M, \M'$ are both admissible, then it is possible to have that $\mathcal L(\M)$ and $\mathcal L(\M')$ are $\in$-theories. The distinction is only as to where the special constants come from. 
+In the above definition, it should be clarified that it is possible to consider the same $\in$-theory defined over different admissible structures; if $\M, \M'$ are both admissible, then we can consider both $\mathcal L(\M)$ and $\mathcal L(\M')$. The distinction is only as to where the special constants come from. 
 
 An important fact ensured by our \textsf{Basic Axioms} is that the interpretations of these special constants in any solid model of the theory are the same as in $\M$:
 
@@ -393,7 +392,7 @@ Jensen uses the techniques of Barwise to come up with a proof system in this con
 \begin{fact}[\emph{Barwise Correctness}] \label{fact:correctness} 
 Let $\mathcal L$ be an $\in$-theory. If $X$ is a set of $\mathcal L$-statements and $\mathfrak A \models X$, then $X$ is consistent. \end{fact}
 
-Furthermore, the proof system is absolute enough that consistency statements are downward absolute. In particular, it will be useful to know that if a theory is consistent in a forcing extension, then it is consistent in a ground model. Compactness and completeness are also shown, relativized to the $\M$-finite predicate logics that are used here; solid models of consistent $\Sigma_1(\M)$ $\in$-theories are produced for countable admissible structures $\M$. 
+Furthermore, the proof system is absolute enough that consistency statements are downward absolute. In particular, it will be useful to know that if a theory is consistent in a forcing extension, then it is consistent in the ground model. Compactness and completeness are also shown, relativized to the $\M$-finite predicate logics that are used here; solid models of consistent $\Sigma_1(\M)$ $\in$-theories are produced for countable admissible structures $\M$. 
 
 \begin{fact}[\emph{Barwise Completeness}] \label{fact:completeness} Let $\M$ be a countable admissible structure. Let $\mathcal L$ be a consistent $\Sigma_1(\M)$ $\in$-theory with $\mathcal L \vdash \textsf{\textup{ZF}}^-$. Then $\mathcal L$ has a solid model $\mathfrak A$ such that $\Ord \cap \wfc(\mathfrak A) = \Ord \cap \M.$ \end{fact}
 
@@ -401,7 +400,7 @@ The following definition generalizes the concept of fullness.
 \begin{definition} We say that $M$ is \emph{almost full} so long as $\omega \in M$ and there is a solid $\mathfrak A \models \ZFC^-$ with $M \in \wfc(\mathfrak A)$ and $M$ is regular in $\mathfrak A$. \end{definition}
 Clearly if $M$ is full, then $M$ is almost full.
 
-A useful technique when showing a particular forcing is subcomplete, once many different embeddings can be constructed that approximate the embedding required for subcompleteness, is to be able to transfer the consistency of $\in$-theories over one admissible structure to another. First we define what it means for an embedding to be cofinal.
+A useful technique when showing a particular forcing is subcomplete is to be able to transfer the consistency of $\in$-theories over one admissible structure to another. First we define what it means for an embedding to be cofinal.
 
 \begin{definition} Let $\delta_N$ be the least $\delta$ such that $L_\delta(N)$ is admissible. \end{definition}
 
@@ -438,7 +437,7 @@ The following definitions are meant to describe a method used to obtain useful e
 \end{itemize}	
 \end{definition}
 
-Jensen \cite[Lemma 3.1]{Jensen:2014} shows  that transitive liftups, if they exist, are determined up to isomorphism. To do this he uses the fact that reminiscent of ultrapowers, transitive liftups can be characterized in the following way:
+Jensen \cite[Lemma 3.1]{Jensen:2014} shows  that transitive liftups, if they exist, are determined up to isomorphism. To do this he uses the following characterization of transitive liftups:
 \begin{lemma}\label{lemma:liftupchar} Let $\sigma: \N \prec N$. Then,
 $\sigma$ is $\alpha$-cofinal if and only if elements of $N$ are of the form $\sigma(f)(\beta)$ for some $f: \gamma \to \overline N$ where $\gamma < \alpha$ and $\beta < \sigma(\gamma)$. \end{lemma} 
 \begin{proof} We show each direction of the equivalence separately.
@@ -448,7 +447,7 @@ For the forward direction, let $x \in N$, and take $u \in \overline N$ with $x \
 For the backward direction, let $x=\sigma(f)(\beta)$ be an element of $N$, for $f:\gamma \to \overline N$ where $\gamma < \alpha$ in $\overline N$ and $\beta < \sigma(\gamma)$. Define $u = f``\gamma$. Then in $\overline N$ we have that $|u|<\alpha$. In addition we have that $x \in \sigma(u)$, since $\sigma(u)$ is in the range of $\sigma(f)$, where $x$ lies.
 \end{proof}
 
-Furthermore, Jensen shows that transitive liftups exist, provided that some extension of the original embedding exists, and have a uniqueness property.
+Furthermore, Jensen shows that transitive liftups exist, provided that some extension of the original embedding exists, and have a nice factorization property.
 
 \begin{fact}[\emph{Interpolation} {\cite[Lemma 5.1]{Jensen:2014}}]\label{fact:Interpolation} Let $\sigma:\N \prec N$ and let $\alpha \in \N$ be a regular cardinal. Then: \begin{enumerate}
 	\item The transitive liftup $\langle N_*, \sigma_* \rangle$ of $\langle \N, \sigma \rest H^{\N}_\alpha \rangle$ exists.
@@ -572,7 +571,7 @@ Here we place bars on everything that is relevant on the $\N$ side of the embedd
 
 Toward showing that $\D$ is subcomplete, we are additionally given some $\G \subseteq \overline{\D}$ that is generic over $\N$. Rather than working with $\G$, we will work with $\S = \seq{ \S(\overline \kappa) }{ \overline \kappa \in \overline D }$, its associated $\overline \D$-generic sequence. 
 
-Letting $C=\Sk{N}{\delta}{X}$, in order to show that $\D$ is subcomplete, we are done if we can show the following Main Claim is satisfied.
+Letting $C=\Sk{N}{\delta}{X}$, in order to show that $\D$ is subcomplete, we will be done if we can show the following Main Claim is satisfied.
 
 \begin{claim} There is a $\D$-generic sequence $S$ and a map $\sigma' \in V[S]$ such that: \begin{enumerate}
 	\item \label{item:mainclaimsigma'elem} $\sigma': \N \prec N$;
@@ -581,7 +580,7 @@ Letting $C=\Sk{N}{\delta}{X}$, in order to show that $\D$ is subcomplete, we are
 	\item \label{item:mainclaimlifts} $\sigma' `` \S \subseteq S$.
 \end{enumerate} \end{claim}
 \begin{proof}[Pf.]  Ultimately this proof amounts to showing that a certain 
-$\in$-theory, $\mathcal L'$, which posits the existence of such a $\sigma'$, is consistent. Such an embedding $\sigma'$ could only possibly exist in a suitable generic extension (otherwise the forcing $\D$ would be countably closed, which we know is not the case), $V[S]$, where $S$ is $\D$-generic sequence that we will find later.
+$\in$-theory, $\mathcal L'$, which posits the existence of such a $\sigma'$, is consistent. Such an embedding $\sigma'$ cannot exist in $V$ (otherwise the forcing $\D$ would be countably closed, which we know is not the case), but it will exist in an extension of the form $V[S]$, where $S$ is $\D$-generic sequence that we will find later.
 Once we have such a suitable $V[S]$, we will find an appropriate admissible structure in $V[S]$ for which the $\in$-theory $\mathcal L'$, defined below, has a model.
 
 \begin{definition}[$\mathcal L'$] \label{definition:T} Let $S$ be a $\D$-generic sequence. For an admissible structure $\M$ with $S, \overline S, \sigma, \N, N, \theta, \D, \U, c \in \M$ we define the $\in$-theory $\mathcal L'(\M)$ as follows.
@@ -601,12 +600,12 @@ The $\in$-theory $\mathcal L'$ is $\Sigma_1(\M)$, since all of the axioms are $\
 
 We need to find an appropriate $\D$-generic sequence $S$ and a suitable admissible structure $\M$ containing $S$ so that $\mathcal L'(\M)$ is consistent. To do this we use transitive liftups and Barwise theory. Transitive liftups will provide approximations to the embedding we are looking for, and we will rely on Barwise Completeness (Fact \ref{fact:completeness}) to obtain the existence of a model with our desired properties. 
 
-Toward this end, let's take what will turn out to be our first transitive liftup, which is in some sense ensuring the consistency of (\ref{item:MainClaimC=Sk}) of our main claim.
+Toward this end, let's take what will turn out to be our first transitive liftup, which is in some sense ensuring (\ref{item:MainClaimC=Sk}) of our main claim.
 
 Let $k_0 : N_0 \cong C$ where $N_0$ is transitive, and set $\sigma_0 = k_0^{-1} \circ \sigma$ and $\sigma_0(\overline \theta, \overline{\D}, \overline{\U}, \overline c) = \theta_0, \D_0, \U_0, c_0.$
 Since $\delta \subseteq C$ and $N_0$ is transitive, $\sigma_0(\overline \delta)=\delta$. 
 
-Indeed $N_0$ is actually a transitive liftup.\footnote{As Jensen {\cite[Lemma 5.3]{Jensen:2014}} explains, exactly why the third requirement of subcompleteness involves this type of Skolem hull - these liftups can be recovered.}
+Indeed $N_0$ is actually a transitive liftup.\footnote{As Jensen {\cite[Lemma 5.3]{Jensen:2014}} explains, this is exactly why the third requirement of subcompleteness involves this type of Skolem hull - these liftups can be recovered.}
 
 \begin{claimno} \label{claim:N0isliftupofN} $\langle N_0, \sigma_0 \rangle$ is the transitive liftup of $\langle \N, \sigma \upharpoonright H_{\overline \nu}^{\N} \rangle$. \end{claimno}
 \begin{proof}[Pf.] Recall that $\nu=\delta^+$, and $\overline \nu={\overline \delta^+}^{\N}$. It must be shown that the embedding $\sigma_0: \overline N \prec N_0$ is $\overline \nu$-cofinal and that $\sigma_0 \upharpoonright H_{\overline \nu}^{\N}=\sigma \upharpoonright H_{\overline \nu}^{\overline N}$. 
@@ -683,7 +682,7 @@ Importantly, we still need to find a way to extend the generic sequence $\S$ to 
 We will now define another $\in$-theory, which we will call $\mathcal L_*$. 
 This will assist us in obtaining the diagonal Prikry extension $V[S]$ we need to satisfy our main claim. In order to do this, we will take another transitive liftup and apply the Transfer Lemma (Fact \ref{fact:Transfer}), in order to see that this new $\in$-theory is consistent over an admissible structure on $N_0$. 
 
-We give a general definition of the $\in$-theory we will work with. It should be noted that since we will be referring to basically the same $\in$-theory two different transitive liftups, the reader should think of $``*"$ in the subscript as a kind of placeholder for some transitive liftup, since it would work for any suitable transitive liftup of $\N$.
+We give a general definition of the $\in$-theory we will work with. Since we will be referring to basically the same $\in$-theory over two different transitive liftups, the reader should think of $``*"$ in the subscript as a kind of placeholder for some transitive liftup.
 
 
 
@@ -852,18 +851,18 @@ as is desired, completing the proof of Claim \ref{Claim:S_1isPrikryoverN_1}.
 %So we have that $\sigma_1``\overline S$ is generic for $\D_1^+$. Now force over $N_1[\sigma_1``\overline S]$ with $\D_1^-$, obtaining $N_1[\sigma``\overline S][g]$, where $g$ is generic for $\D_1^-$ over $N_1[\sigma_1``\overline S]$. Letting $G_1=\sigma_1``\overline S \times g$, and letting $S_1$ be its associated diagonal Prikry sequence, we certainly have that $\sigma_1``\overline S \subseteq S_1$. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Moreover we have now shown that $\mathcal L_1$ is consistent, by Barwise Correctness (Fact \ref{fact:correctness}), since we have just shown that $\langle H_{\delta}; \, \sigma_1, S_1 \rangle$ is a model of $\mathcal L_1$.
+We have shown that $\mathcal L_1$ is consistent, by Barwise Correctness (Fact \ref{fact:correctness}), since we have just shown that $\langle H_{\delta}; \, \sigma_1, S_1 \rangle$ is a model of $\mathcal L_1$.
 
 Let's check that we may now apply the Transfer Lemma (Fact \ref{fact:Transfer}) to the embedding $k_1:N_1 \prec N_0$. By Lemma \ref{lemma:liftupfull} we have that $N_1$ is almost full. We also have that $\mathcal L_1 = \mathcal L(L_{\delta_{N_1}}(N_1))$ is 
 	$\text{$\Sigma_1(\langle N_1; \, \overline \theta, \overline{\D}, \overline{\U}, \overline c, \theta_1, \D_1, \U_1, c_1 \rangle)$}$ while $\mathcal L_0=\mathcal L(L_{\delta_{N_0}}(N_0))$ is 
 	$\text{$\Sigma_1(\langle N_0;\,k_1(\overline \theta, \overline{\D}, \overline{\U}, \overline c, \theta_1, \D_1, \U_1, c_1)\rangle)$.}$
 Furthermore $k_1$ is cofinal, since for each element $x \in N_0$, as $\sigma_0$ is cofinal, there is $u \in \N$ such that $x \in \sigma_0(u)$. Thus $\sigma_1(u) \in N_1$, and moreover $x \in k_1(\sigma_1(u))=\sigma_0(u)$. 
 
-Therefore, we have that since $\mathcal L_1$ is consistent, $\mathcal L_0$ is consistent as desired. This completes the proof of Claim \ref{claim:ConL0}. \end{proof}
+Therefore, we have that $\mathcal L_0$ is consistent, since $\mathcal L_1$ is consistent. This completes the proof of Claim \ref{claim:ConL0}. \end{proof}
 
 From the consistency of $\mathcal L_0$ (recall that $\mathcal L_0$ is defined in Definition \ref{definition:L}), we would now like to use Barwise Completeness (Fact \ref{fact:completeness}) to obtain a model of $\mathcal L_0$. To do this, we need the admissible structure the theory is defined over to be countable. So let's work in $V[F]$, a generic extension that collapses $L_{\delta_{N_0}}(N_0)$ to be countable. Then by Barwise Completeness, $\mathcal L_0$ has a solid model 
 	$\mathfrak A = \langle \mathfrak A; \mathring{S}^{\mathfrak A}, \mathring{\sigma}^{\mathfrak A} \rangle$ such that $\Ord \cap \wfc(\mathfrak A) = \Ord \cap L_{\delta_{N_0}}(N_0).$
-Thus we have that $\mathring \sigma^{\mathfrak A}: \overline{\underline N}^{\mathfrak A} \prec \underline{N_0}^{\mathfrak A}$. By Fact \ref{fact:PointofBasicAxioms} we have that $\overline{\underline N}^{\mathfrak A}=\N$ and $N_0=\underline{N_0}^{\mathfrak A}$. Thus we may say that  $\mathring \sigma^{\mathfrak A}: \N \prec N_0$. 
+We also have that $\mathring \sigma^{\mathfrak A}: \overline{\underline N}^{\mathfrak A} \prec \underline{N_0}^{\mathfrak A}$. By Fact \ref{fact:PointofBasicAxioms} we have that $\overline{\underline N}^{\mathfrak A}=\N$ and $N_0=\underline{N_0}^{\mathfrak A}$. Thus we may say that  $\mathring \sigma^{\mathfrak A}: \N \prec N_0$. 
 
 Let $S = \mathring{S}^{\mathfrak A}$ and $\overset{*} {\sigma}=k_0 \circ \mathring{\sigma}^{\mathfrak A}$. 
 
@@ -958,7 +957,7 @@ We have satisfied the Main Claim, which finishes the proof that $\D$ is subcompl
 
 We now describe some minor modifications of the proof that give further results.
 
-The first point is that the above proof also shows that generalized diagonal Prikry forcing that adds a countable sequence to each measurable cardinal is subcomplete. Before stating the corolloary let's define the forcing. Again let $D$ be an infinite discrete set of measurable cardinals. Let $\U = \seq{ U(\kappa) }{ \kappa \in D }$ be a list of measures associated to $D$. 
+The first point is that the above proof also shows that generalized diagonal Prikry forcing that adds a countable sequence to each measurable cardinal is subcomplete. Before stating the corollary let's define the forcing. Again let $D$ be an infinite discrete set of measurable cardinals. Let $\U = \seq{ U(\kappa) }{ \kappa \in D }$ be a list of measures associated to $D$. 
 Let $\D^*(\U) = \D^*$ be defined in the same way as $\D(\U)$ except the stem of a condition, $s$, in $\D^*(\U)$ is a function with domain in $[D]^{<\omega}$ taking each measurable cardinal $\kappa \in \dom(s)$ to finitely many ordinals $s(\kappa) \subseteq \kappa$. The upper part and extension relation is defined in the same way; the only slight modification is that again we have $(s, A) \leq (t, B)$ so long as $(s, A)$ end-extends $(t, B)$ and points in $s$ not in $t$ come from $B$, which in the case means that for $\kappa \in \dom(s)$ we have that each element of $s(\kappa)$ not in $t(\kappa)$ is in $B(\kappa)$. 
 
 We may again form a $\D^*$-generic sequence $S = S_G$ for a generic $G \subseteq \D^*$, and we may write $S = \seq{ S(\kappa) }{ \kappa \in D }$ where $S(\kappa)$ is a countable sequence of ordinals less than $\kappa$. The genericity criterion for generic diagonal Prikry sequences is as that for $\D$, stated in Fact \ref{fact:diagprikrymathias} (or see~\cite[Thm.~1]{Fuchs:2005kx}), with the modification that $S$ is $\D^*$ generic if and only if for all $\mathcal X$, the set $\set{ \alpha }{ \exists \kappa \in D \ \alpha \in S(\kappa) \setminus X_\kappa }$ is finite.
