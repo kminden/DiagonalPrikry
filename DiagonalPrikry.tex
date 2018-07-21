@@ -51,7 +51,6 @@
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\M}{\mathcal{M}}
-%\newcommand{\Namba}{\mathbb{N}}
 \newcommand{\D}{\mathbb{D}}
 \newcommand{\N}{{\overline{N}}}
 \renewcommand{\H}{\overline{H}}
@@ -59,8 +58,6 @@
 \renewcommand{\S}{{\overline{S}}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\pmb{\mathcal C}}
-%\newcommand{\C}{\leftexp{<\omega}{2}}
-%\newcommand{\B}{\mathbb{B}_\mathcal{N}}
 \newcommand{\B}{\mathbb{B}}
 \newcommand{\U}{\mathcal{U}}
 \renewcommand{\c}{\mathfrak{c}}
@@ -98,27 +95,11 @@
 \newcommand{\set}[2]{\left\{#1\st #2 \right\}}
 \newcommand{\seq}[2]{\langle #1 \st #2 \rangle}
 
-\newcommand{\Ptail}{\P_{\mathrm{tail}}}
-\newcommand{\Gtail}{G_{\mathrm{tail}}}
-
-\newcommand{\leftexp}[2]{{\vphantom{#2}}^{#1}{#2}}
-\newcommand{\funcs}[2]{\leftexp{#1}{#2}}
-
 \newcommand{\forces}{\Vdash}
 \newcommand{\proves}{\vdash}
 \newcommand{\rest}{\mathbin{\upharpoonright}}
 \newcommand{\meet}{\wedge}
 \newcommand{\Meet}{\bigwedge}
-
-\DeclareMathOperator{\MPsc}{\textup{\textsf{MP}}_{\textit{sc}}}
-\DeclareMathOperator{\MPc}{\textup{\textsf{MP}}_{<\omega_1\textup{-closed}}}
-\newcommand{\lMPsc}{ \textup{\textsf{MP}}^{H_{\omega_2}}_{\textit{sc}}(H_{\omega_2}) }
-\newcommand{\lflMPsc}{ \textup{\textsf{MP}}^{H_{\omega_2}}_{\textit{sc}}(\emptyset) }
-\newcommand{\lMPc}{ \textup{\textsf{MP}}^{H_{\omega_2}}_{<\omega_1\textup{-closed}}(\emptyset) }
-\newcommand{\bflMPc}{ \textup{\textsf{MP}}^{H_{\omega_2}}_{<\omega_1\textup{-closed}}(H_{\omega_2}) }
-\DeclareMathOperator{\RAsc}{\textup{\textsf{RA}}_{\textit{sc}}}
-\DeclareMathOperator{\RAc}{\textup{\textsf{RA}}_{<\omega_1\textup{-closed}}}
-\DeclareMathOperator{\bfRAsc}{\textup{\textsf{\textbf{RA}}}_{\textit{sc}}}
 
 \newcommand{\SH}{\mathcal{H}\textit{ull} \,}
 \newcommand{\sk}[3]{\SH^{#1}( {#2} \cup {\ran(#3)} ) }
@@ -143,10 +124,7 @@ Let \(D\) be an infinite discrete set of measurable cardinals. It is shown that 
 \end{abstract}
 \maketitle
 \section{Introduction}
-%Provide some motivation - advertisement for awesome techniques, and adding to the catalogue. Maybe refer to Gunter?
-Subcomplete forcing notions are a family of forcing notion that do not add reals and may be iterated using revised countable support. Examples of subcomplete forcing include all countably closed forcing, Prikry forcing, and Namba forcing (under $\CH$), as shown by Jensen~\cite[Section 3.3]{Jensen:2014}. It is clear from these examples that not all subcomplete forcing notions are proper,
-%differ from proper forcing notions, as proper forcing notions all satisfy a countable covering property and thus cannot change cofinalities to $\omega$. 
-and, conversely, nontrivial $ccc$ forcing notions are never subcomplete \cite{Minden:2017fr}. For more on subcomplete forcing and its characteristics, refer to Jensen (primarily \cite{Jensen:2014} and \cite{Jensen:2009fe}), and the author's doctoral thesis \cite{Minden:2017fr}.
+Subcomplete forcing notions are a family of forcing notion that do not add reals and may be iterated using revised countable support. Examples of subcomplete forcing include all countably closed forcing, Prikry forcing, and Namba forcing (under $\CH$), as shown by Jensen~\cite[Section 3.3]{Jensen:2014}. It is clear from these examples that not all subcomplete forcing notions are proper, and, conversely, nontrivial $ccc$ forcing notions are never subcomplete \cite{Minden:2017fr}. For more on subcomplete forcing and its characteristics, refer to Jensen (primarily \cite{Jensen:2014} and \cite{Jensen:2009fe}), and the author's doctoral thesis \cite{Minden:2017fr}.
 
 Recently, Fuchs~\cite{Fuchs:2017Magidor} has shown that Magidor forcing is also subcomplete. Here an adaptation of Jensen's proof showing that Prikry forcing is subcomplete is employed to see that many Prikry-like forcing notions, in particular those which will be referred to here as generalized diagonal Prikry forcing, following Fuchs~\cite{Fuchs:2005kx}, are subcomplete.
 
@@ -957,8 +935,8 @@ We now describe some minor modifications of the proof that give further results.
 
 The first point is that the above proof also shows that generalized diagonal Prikry forcing that adds a countable sequence to each measurable cardinal is subcomplete. Before stating the corollary let's define the forcing. Again let $D$ be an infinite discrete set of measurable cardinals. Let $\U = \seq{ U(\kappa) }{ \kappa \in D }$ be a list of measures associated to $D$. 
 Let $\D^*(\U) = \D^*$ be defined in the same way as $\D(\U)$ except the stem of a condition, $s$, in $\D^*(\U)$ is a function with domain in $[D]^{<\omega}$ taking each measurable cardinal $\kappa \in \dom(s)$ to a finite set of ordinals $s(\kappa) \subseteq \kappa$. 
-%The upper parts are now defined for each $\kappa\in D$, and the extension relation is defined in the same way, where a condition is strengthened by end-extending the stems on each coordinate, as well as the whole sequence of stems, and shrinking the upper parts.
-The upper part and extension relation is defined in the same way; the only slight modification is that again we have $(s, A) \leq (t, B)$ so long as $(s, A)$ end-extends $(t, B)$ and points in $s$ not in $t$ come from $B$, which in the case means that for $\kappa \in \dom(s)$ we have that each element of $s(\kappa)$ not in $t(\kappa)$ is in $B(\kappa)$. 
+The upper parts are defined for each $\kappa\in D$, and the extension relation is defined in the same way, now a condition is strengthened by end-extending the stems on each coordinate, as well as the whole sequence of stems, and shrinking the upper parts.
+%The upper part and extension relation is defined in the same way; the only slight modification is that again we have $(s, A) \leq (t, B)$ so long as $(s, A)$ end-extends $(t, B)$ and points in $s$ not in $t$ come from $B$, which in the case means that for $\kappa \in \dom(s)$ we have that each element of $s(\kappa)$ not in $t(\kappa)$ is in $B(\kappa)$. 
 
 We may again form a $\D^*$-generic sequence $S = S_G$ for a generic $G \subseteq \D^*$, and we may write $S = \seq{ S(\kappa) }{ \kappa \in D }$ where $S(\kappa)$ is a countable sequence of ordinals less than $\kappa$. The genericity criterion for generic diagonal Prikry sequences is as that for $\D$, stated in Fact \ref{fact:diagprikrymathias} (or see~\cite[Thm.~1]{Fuchs:2005kx}), with the modification that $S$ is $\D^*$ generic if and only if for all $\mathcal X$, the set $\set{ \alpha }{ \exists \kappa \in D \ \alpha \in S(\kappa) \setminus X_\kappa }$ is finite.
 
