@@ -1,0 +1,365 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%ASL 2019
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[utf8x,xcolor=svgnames,8pt]{beamer}
+
+\usepackage{tikz} \usetikzlibrary{matrix} \usetikzlibrary{patterns}
+\usepackage{bbm}
+
+\usepackage{appendixnumberbeamer}
+% Add total frame count to slides, optional. From Stefan,
+% http://www.latex-community.org/forum/viewtopic.php?f=4&t=2173
+%\expandafter\def\expandafter\insertshorttitle\expandafter{%
+ % \insertshorttitle\hfill\insertframenumber\,/\,\inserttotalframenumber}
+
+
+%\addtolength{\textwidth}{1.5em}
+%\addtolength{\oddsidemargin}{-0.75em}
+
+%\renewcommand{\labelenumi}{\textbf{\arabic{enumi}.}}
+%\renewcommand{\baselinestretch}{1.2}
+\renewcommand{\bar}{\overline}
+%\renewcommand{\labelenumi}{\arabic{enumi}.}%\renewcommand{\labelenumi}{\textbf{\arabic{enumi}.}}
+%\renewcommand{\baselinestretch}{1.2}
+
+%\setlist[description]{leftmargin=5.5em,labelindent=\parindent}
+
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}}
+%\newcommand{\M}{\mathbb{M}}
+\newcommand{\Namba}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\N}{{\overline{N}}}
+\renewcommand{\H}{\overline{H}}
+\renewcommand{\G}{\overline{G}}
+\renewcommand{\S}{{\overline{S}}}
+\newcommand{\R}{\mathbb{R}}
+%\newcommand{\C}{\pmb{\mathcal C}}
+%\newcommand{\C}{\leftexp{<\omega}{2}}
+%\newcommand{\B}{\mathbb{B}_\mathcal{N}}
+\newcommand{\B}{\mathbb{B}}
+\renewcommand{\U}{\mathcal{U}}
+\renewcommand{\c}{\mathfrak{c}}
+
+\newcommand{\PFA}{\textup{\ensuremath{\textsf{PFA}}}}
+\newcommand{\MA}{\textup{\ensuremath{\textsf{MA}}}}
+\newcommand{\MM}{\textup{\ensuremath{\textsf{MM}}}}
+\newcommand{\SPFA}{\textup{\ensuremath{\textsf{SPFA}}}}
+\newcommand{\ZFC}{\textup{\ensuremath{\textsf{ZFC}}}}
+\newcommand{\SCFA}{\textup{\ensuremath{\textsf{SCFA}}}}
+\newcommand{\BSCFA}{\textup{\ensuremath{\textsf{BSCFA}}}}
+\newcommand{\BPFA}{\textup{\ensuremath{\textsf{BPFA}}}}
+\newcommand{\CH}{\textup{\textsf{CH}}}
+\newcommand{\GCH}{\textup{\ensuremath{\textsf{GCH}}}}
+\newcommand{\Ord}{\textup{\ensuremath{\text{Ord}}}}
+\newcommand{\id}{\textup{\ensuremath{\text{id}}}}
+\newcommand{\MP}{\textup{\ensuremath{\textsf{MP}}}}
+\newcommand{\bfMP}{\textup{\ensuremath{\textsf{\textbf{MP}}}}}
+\newcommand{\RA}{\textup{\ensuremath{\textsf{RA}}}}
+\newcommand{\bfRA}{\textup{\ensuremath{\textsf{\textbf{RA}}}}}
+\newcommand{\BFA}{\textup{\ensuremath{\textsf{BFA}}}}
+\newcommand{\HC}{\textup{\ensuremath{H_{\omega_1}}}}
+
+\DeclareMathOperator{\cof}{cof}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\ran}{range}
+\DeclareMathOperator{\otp}{otp}
+\DeclareMathOperator{\cp}{cp}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\Succ}{succ}
+\DeclareMathOperator{\wfc}{wfc}
+\DeclareMathOperator{\BA}{BA}
+\DeclareMathOperator{\Add}{\mathcal A\textit{dd}\,}
+\DeclareMathOperator{\Coll}{\mathcal C\textit{oll}\,}
+\DeclareMathOperator*{\bigdoublevee}{\bigvee\mkern-15mu\bigvee}
+
+\newcommand{\To}{\longrightarrow}
+\newcommand{\st}{\; | \;}
+\newcommand{\set}[2]{\left\{#1\st #2 \right\}}
+\newcommand{\seq}[2]{\langle #1 \st #2 \rangle}
+
+\newcommand{\Ptail}{\P_{\mathrm{tail}}}
+\newcommand{\Gtail}{G_{\mathrm{tail}}}
+
+\newcommand{\leftexp}[2]{{\vphantom{#2}}^{#1}{#2}}
+\newcommand{\funcs}[2]{\leftexp{#1}{#2}}
+
+\newcommand{\forces}{\Vdash}
+\newcommand{\proves}{\vdash}
+\newcommand{\rest}{\mathbin{\upharpoonright}}
+\newcommand{\meet}{\wedge}
+\newcommand{\Meet}{\bigwedge}
+
+\DeclareMathOperator{\MPsc}{ \textup{\textsf{MP}}_{\textit{sc}}}
+\newcommand{\bfMPsc}{\textbf{\textup{\textsf{MP}}}_{\textit{sc}}}
+\DeclareMathOperator{\MPc}{\textup{\textsf{MP}}_{\textit{c}}}
+\newcommand{\bfMPc}{\textbf{\textup{\textsf{MP}}}_{\textit{c}}}
+\DeclareMathOperator{\MPp}{\textup{\textsf{MP}}_{\textit{p}}}
+\newcommand{\bfMPp}{\textbf{\textup{\textsf{MP}}}_{\textit{p}}}
+\DeclareMathOperator{\MPccc}{\textup{\textsf{MP}}_{\textit{ccc}}}
+\newcommand{\bfMPccc}{\textbf{\textup{\textsf{MP}}}_{\textit{ccc}}}
+\DeclareMathOperator{\MPsp}{ \textup{\textsf{MP}}_{\textit{sp}}}
+\newcommand{\bfMPsp}{\textbf{\textup{\textsf{MP}}}_{\textit{sp}}}
+\DeclareMathOperator{\MPsemi}{ \textup{\textsf{MP}}_{\textit{semi}}}
+\newcommand{\bfMPsemi}{\textbf{\textup{\textsf{MP}}}_{\textit{semi}}}
+
+\newcommand{\bflMPsc}{ \textup{\textsf{\textbf{LMP}}}_{\textit{sc}} }
+\newcommand{\bflMPc}{ \textup{\textsf{\textbf{LMP}}}_{\textit{c}} }
+\newcommand{\bflMPccc}{ \textup{\textsf{\textbf{LMP}}}_{\textit{ccc}} }
+\newcommand{\bflMPp}{ \textup{\textsf{\textbf{LMP}}}_{\textit{p}} }
+\newcommand{\bflMPsemi}{ \textup{\textsf{\textbf{LMP}}}_{\textit{semi}} }
+\newcommand{\bflMPsp}{ \textup{\textsf{\textbf{LMP}}}_{\textit{sp}} }
+
+\newcommand{\lMP}[2]{ \textup{\textsf{MP}}^{H_{#2}}_{#1} (H_{#2}) }
+
+\newcommand{\bflMP}{ \textup{\textsf{\textbf{LMP}}} }
+
+
+
+\DeclareMathOperator{\RAsc}{\textup{\textsf{RA}}_{\textit{sc}}}
+\DeclareMathOperator{\RAc}{\textup{\textsf{RA}}_{\textit{c}}}
+\DeclareMathOperator{\RAp}{\textup{\textsf{RA}}_{\textit{p}}}
+\DeclareMathOperator{\RAccc}{\textup{\textsf{RA}}_{\textit{ccc}}}
+\DeclareMathOperator{\RAsp}{\textup{\textsf{RA}}_{\textit{sp}}}
+\DeclareMathOperator{\RAsemi}{\textup{\textsf{RA}}_{\textit{semi}}}
+\DeclareMathOperator{\bfRAsc}{\textup{\textsf{\textbf{RA}}}_{\textit{sc}}}
+\DeclareMathOperator{\bfRAc}{\textup{\textsf{\textbf{RA}}}_{\textit{c}}}
+\DeclareMathOperator{\bfRAccc}{\textup{\textsf{\textbf{RA}}}_{\textit{ccc}}}
+\DeclareMathOperator{\bfRAp}{\textup{\textsf{\textbf{RA}}}_{\textit{p}}}
+\DeclareMathOperator{\bfRAsp}{\textup{\textsf{\textbf{RA}}}_{\textit{sp}}}
+\DeclareMathOperator{\bfRAsemi}{\textup{\textsf{\textbf{RA}}}_{\textit{semi}}}
+
+
+\newcommand{\SH}{\mathcal{S}\textit{k} \,}
+\newcommand{\sk}[3]{\SH^{#1}( {#2} \cup {\ran(#3)} ) }
+\newcommand{\Sk}[3]{\SH^{#1}( {#2} \cup {#3} ) }
+
+\newcommand{\TC}[1]{\mathrm{TC}(\{ #1 \})}
+
+
+\mode<presentation>
+\setbeamertemplate{navigation symbols}{}
+\usetheme{Boadilla}
+\usecolortheme[named={ForestGreen}]{structure}
+
+\makeatother
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.45\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+  	\usebeamerfont{date in head/foot}\insertshortdate\hspace*{3em}
+    \insertframenumber{} / \inserttotalframenumber%\hspace*{1ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatletter
+
+%\useoutertheme{split}
+
+%\renewcommand{\emph}{\textit}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{question}{Question}
+
+
+\title{The subcompleteness of diagonal Prikry forcing}
+\author{Kaethe Minden}
+\institute[Marlboro]{\includegraphics[scale=0.16]{mc-logo.png} \\ Vermont, USA}
+\date[ASL 2019]{North American ASL Meeting \\ 20 May 2019}
+
+\begin{document}
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\section{Diagonal Prikry Forcing}
+\subsection{Generalized Diagonal Prikry Forcing is Subcomplete}
+
+\section{Introduction}
+\begin{frame}
+%\frametitle{Subcomplete forcing} 
+Subcomplete forcing is a class of forcing notions defined by Ronald B. Jensen. Subcomplete forcing does not add reals, but may potentially alter cofinalities to $\omega$. %Defined at some point before 2012.
+\begin{block}{Examples of subcomplete forcing}
+\begin{itemize}
+	\item \textbf{Countably closed forcing}.
+	\item \textit{\textbf{Namba forcing}}, denoted by $\Namba$, a forcing notion consisting of subtrees $T \neq \emptyset$ of $\omega_2^{<\omega}$ ordered by inclusion, such that $T$ is downward closed in $\omega_2^{<\omega}$ and where each node in $T$ has $\omega_2$-many eventual successors in $T$. 
+Each condition in $\Namba$ has size $\omega_2$. Namba forcing adds a cofinal sequence $S: \omega \To \omega_2^V$ to the extension, a cofinal branch through $\omega_2^{<\omega}$.
+Under $\CH$, Namba forcing adds no new reals and is subcomplete \cite[Section 3.3]{Jensen:2012fr}. 
+	\item \textbf{Prikry forcing}, which forces a measurable cardinal to have cofinality $\omega$ while preserving cardinalities.
+%	\item Certain kinds of \textbf{generalized diagonal Prikry forcing} which force a sequence of measurables to have cofinality $\omega$.
+%	\item The forcing $\mathbb P_{\textbf{A}}$, which shoots a closed set of order type $\omega_1$ through a stationary set $A \subseteq \kappa$ of $\omega$-cofinal ordinals, and is used to force $\neg \Box_\kappa$.
+	\item \color{Green} \textbf{Generalized diagonal Prikry forcing}
+\end{itemize}
+\end{block}
+\begin{itemize}
+	\item Revised countable support ($rcs$) iterations of subcomplete forcing notions.
+	\item \color{Green} Lottery sums of subcomplete forcing notions.
+	\item \color{Green} If $\P$ is subcomplete and $\pi: \P \To \Q$ is a dense embedding, then $\Q$ is subcomplete. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+How subcompleteness fits in with other forcing classes which preserve stationary subsets of $\omega_1$:
+\begin{center}
+\begin{figure}[h!]
+    \begin{tikzpicture}
+      \draw (0:0cm) circle (3.4cm);
+      \node at (90:2.5cm) {Subproper};
+      \draw (90:0cm) circle (1cm) node [text=black] { Complete};
+      \node at (90:-0.4cm){ ($\sigma$-cl.)};
+      \node at (80:-1.4cm){?};
+      \draw (180:1cm) circle (2cm);
+      \node at (180:2cm) { Proper};
+      \draw (330:1cm) circle (2cm);
+      \node at (340:2cm){ Subcomplete};
+       \draw[color=ForestGreen] (150:1.8cm) circle (.4cm) node [text=ForestGreen] {\footnotesize $ccc$};
+    \end{tikzpicture}
+\end{figure} 
+\end{center}
+\end{frame}
+
+\begin{frame}{The Standard Setup}
+Suppose that $\P$ is a forcing notion and $s$ is a set, with $\P, s \in H_\theta$, where $\theta$ is sufficiently large. Instead of just working with $H_\theta$ and its well order (as is done for the definition of proper forcing), the models used for defining subcompleteness will have the form $L_\tau[A] \supseteq H_\theta$ where $L_\tau[A] \models \ZFC^-$ such that $\tau>\theta$ is a (possibly singular) cardinal, and $A \subseteq \tau$. Typically, the convention is to set $N=L_\tau[A]$ for brevity. Rather than spell this out every time, write $N$ is a \emph{\textbf{suitable model}} for $\P,s$ above $\theta$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Definition of Subcompleteness}
+\begin{definition} \label{definition:SC}
+A forcing notion $\P$ is \emph{\textbf{subcomplete}} so long as, for any set $s$ and 
+for sufficiently large $\theta$ we have that whenever we are in \emph{the standard setup} i.e.: \begin{itemize}
+	\item $N$ is a suitable model for $\P,s$ above $\theta$;
+	\item $\sigma: \N \cong X \preccurlyeq N$ where $X$ is countable and $\N$ is full;
+	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$;
+\end{itemize}
+then we have that if $\G$ is  $\overline{\P}$-generic over $\N$ then there is a \emph{subcompleteness condition} $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
+	\item $\sigma': \N \prec N$;
+	\item $\sigma'(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$;
+	\item \label{item:skolemcompatibility} $\sk{N}{\delta(\P)}{\sigma'} = \Sk{N}{\delta(\P)}{X}$;
+	\item  \label{item:sigmaprimelifts}$\sigma'``\, \G \subseteq G$.
+\end{enumerate}
+In other words and in particular, the subcompleteness condition $p$ forces that there is an embedding $\sigma'$ in the extension $V[G]$ which lifts, by (4), to an embedding $\sigma'^*:\N[\G] \prec N[G]$ in $V[G]$.
+
+We say that such a $\theta$ as above \textit{verifies the subcompleteness} of $\P$.
+
+Often we write $\delta$ instead of $\delta(\P)$ for the weight of $\P$ when there should be no confusion as to which poset $\P$ we are working with.%\footnote{See Section \ref{subsec:delta} for more on $\delta(\P)$.}
+\end{definition}
+\end{frame}
+
+\begin{frame}
+\frametitle{Generalized Diagonal Prikry Forcing}
+\begin{definition}
+Let $D$ be an infinite discrete set of measurable cardinals, meaning a set of measurable cardinals which does not contain any of its limit points. For $\kappa \in D$ let $U(\kappa)$ be a normal measure on $\kappa$, and let $\U$ denote the sequence of the $U(\kappa)$'s.
+
+Define $\D=\D(\U)$, \emph{\textbf{generalized diagonal Prikry forcing}} from the list of measures $\U$, by taking conditions of the form  
+$( s, A )$ satisfying the following:
+\begin{itemize}
+	\item The \textit{stem} of the condition, $s$, is a function with domain $[D]^{<\omega}$ taking each measurable cardinal $\kappa \in \dom(s)$ to some ordinal $s(\kappa) < \kappa$.
+	\item The \textit{upper part} of the condition, $A$, is a function with domain $D \setminus {\dom(s)}$ taking each measurable cardinal $\kappa \in \dom(A)$ to some measure-one set $A(\kappa) \in U(\kappa)$.
+\end{itemize}
+The extension relation on conditions in $\D$ is defined so that $( s, A ) \leq ( t, B )$ so long as 
+\begin{itemize}
+	\item $s \supseteq t$.
+	\item The points in $s$ not in $t$ come from $B$, i.e., for all $\kappa \in \dom(s) \setminus \dom(t)$, $s(\kappa) \in B(\kappa)$.
+	\item For all $\kappa \in \dom(A)$, $A(\kappa) \subseteq B(\kappa)$.
+\end{itemize}
+If $G$ is a generic filter for $\D$, then its associated $\D$-generic sequence is \[S = S_G = \bigcup \set{ s }{ \exists A \ ( s, A ) \in G }.\qedhere\]
+\end{definition}
+\end{frame}
+
+\begin{frame}
+\frametitle{Preliminaries}
+\begin{block}{Genericity Criterion (Fuchs \cite{Fuchs:2005kx})} \label{fact:diagprikrymathias} Let $D$ be an infinite discrete set of measurable cardinals, with $\U$ a corresponding list of measures $\langle U(\kappa) \;|\; \kappa \in D \rangle$. Then an increasing sequence of ordinals $S = \langle S(\kappa) \;|\; \kappa \in D \rangle$ is a $\D(\U)$-generic  sequence if and only if for all $\mathcal X = \langle X_\kappa \in U(\kappa) \;|\; \kappa \in D \rangle$, the set $\{ \kappa \in D \;|\; S(\kappa) \notin X_\kappa\} \text{ is finite.}$
+\end{block}
+%\begin{definition} Let $\N$ and $N$ be transitive $\ZFC^-$ models. We say that an elementary embedding $\sigma: \N \prec N$ is \emph{\textbf{cofinal}} so long as for each $x \in N$ there is some $u \in \N$ such that $x \in \sigma(u)$. 
+%
+%Let $\alpha \in \N$. We say that $\sigma$ is \emph{\textbf{$\alpha$-cofinal}} so long as every such $u$ has size less than $\alpha$ as computed in $\N$. \end{definition}
+
+\begin{block}{Cofinal Embeddings} \label{lem:liftupchar} Suppose we have an elementary embedding $\sigma: \N \To N$. \begin{itemize}
+	\item We may say that $\sigma$ is \textbf{cofinal} so long as elements of $N$ are of the form $\sigma(f)(\beta)$ for some $f: \gamma \To \N$ where $\beta < \sigma(\gamma)$.
+	\item We say that $\sigma$ is \textbf{$\alpha$-cofinal} so long as every such $\gamma$ as above satisfy $\gamma < \alpha$. 
+\end{itemize}
+\end{block}
+
+\begin{block}{Transfer Lemma (Jensen)} \label{fact:Transfer} Suppose that for $M$ admissible, $\mathcal L(M)$ is a $\Sigma_1(M)$ infinitary $\in$-theory. Let $N_1$ be almost full\footnote{A transitive $\ZFC^-$ model $N$ is \emph{\textbf{almost full}} so long as $\omega \in N$ and there is a solid $\mathfrak A \models \ZFC^-$ with $N \in \wfc(\mathfrak A)$ and $N$ is regular in $\mathfrak A$.}, and suppose that $k: N_1 \To N_0$ is a cofinal elementary embedding. So long as $\mathcal L(L_{\delta_{N_1}}(N_1))$\footnote{We say that $\delta_N$ is the least $\delta$ such that $L_\delta(N)$ is admissible.} is $\Sigma_1$ over parameters $N_1, p_1, \dots, p_n \in N_1$ and $\mathcal L(L_{\delta_{N_0}}(N_0))$ is $\Sigma_1$ over parameters $N_0, k(p_1), \dots, k(p_n)$, we have that  
+if $\mathcal L(L_{\delta_{N_1}}(N_1))$ is consistent, then $\mathcal L(L_{\delta_{N_0}}(N_0))$ is consistent as well. \end{block} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Generalized Diagonal Prikry Forcing is Subcomplete}
+%Maybe try to give a sketch of this argument?
+\begin{theorem} Let $D$ be an infinite discrete set of measurable cardinals. %, such that $\otp(D)$ is less than the first limit point of $D$. 
+Let $\U = \langle U(\kappa) \;|\; \kappa \in D \rangle$ be a list of measures associated to $D$. Then $\D=\D(\U)$ is subcomplete. \end{theorem}
+\begin{block}{Proof sketch.}
+In order to show that $\D$ is subcomplete, suppose we are in the standard setup: \begin{itemize}
+	\item $\D \in H_\theta \subseteq N$
+	\item $\sigma: \N \cong X \prec N$ where $X$ is countable and $\N$ is full
+	\item $\sigma(\overline \theta, \overline{\D}, \overline{\U}, \overline c)=\theta, \D, \U, c$ for some $c \in N$.
+\end{itemize}
+Let $\S \subseteq \overline{\D}$ be generic over $\N$. We need to argue that there is a $\D$-generic sequence $S$ and $\sigma' \in V[S]$ such that: \begin{enumerate}
+	\item $\sigma': \N \To N$ elementarily
+	\item $\sigma'(\overline \theta, \overline{\D}, \overline{\U}, \overline c)=\theta, \D, \U, c$
+	\item $\sk{N}{\delta(\D)}{\sigma'} = \Sk{N}{\delta(\D)}{X}$	
+	\item $\sigma' `` \S \subseteq S$
+\end{enumerate}
+The proof amounts to showing that a certain infinitary $\in$-theory, $\mathcal T$, positing the existence of such an embedding $\sigma'$ is consistent.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Proof sketch continued.}
+\begin{enumerate}
+	\item Let $k_0 : N_0 \cong \Sk{N}{\delta(\D)}{X}$ where $N_0$ is transitive, and set $\sigma_0 = k_0^{-1} \circ \sigma$. The embedding $\sigma_0: \N \To N_0$ is $\overline \nu$-cofinal, where $\nu=\delta^+$.
+	\item Define the infinitary $\in$-theory $\mathcal L_*$ as follows: \begin{description}
+	\item[predicates] $\in$ 
+	\item[constants] $\mathring{\sigma}, \mathring S, \underline x$ for $x \in L_{\delta_{N_*}}(N_*)$
+	%\item[parameters] $N_*$ and $\theta_*, \mu_*, \D_*, \U_*, \lambda_*, D_*, c_* \in N_*$
+	\item[axioms] \begin{itemize} \item $\ZFC^-$ and \textsf{Basic Axioms}
+		\item $\mathring \sigma : \underline \N \To \underline{N_*}$ is a $\underline{\overline \kappa(0)}$--cofinal embedding
+		\item $\mathring{\sigma}(\overline{\underline{\theta}}, \overline{\underline{\D}}, \overline{\underline{\U}}, \overline{\underline c})=\underline{\theta_*}, \underline{\D_*}, \underline{\U_*}, \underline{c_*}$
+		\item $\mathring S$ is a $\underline{\D_*}$-generic sequence over $\underline{N_*}$
+		\item $\mathring \sigma ``\overline{\underline S} \subseteq \mathring S$.
+	\end{itemize}
+\end{description} 
+	\item Show that $\mathcal L_1$ is consistent, where $\sigma_1:\N \To N_1$ is $\overline \kappa(0)$-cofinal, where $\kappa(0)$ is the first measurable cardinal in $D$. To do this, use the genericity criterion, and show that $\sigma_1``\overline S$ may be used to find a $\D_1$-generic sequence over $N_1$. Namely, first obtain a diagonal Prikry sequence $S_1' \subseteq \D_1$ generic over $N_1$. Define, in $V[S_1']$, a new sequence $S_1 \subseteq \D_1$ generic over $N_1$ as follows:
+$$S_1(\kappa) = \begin{cases} S_1'(\kappa) &\text{ if } \kappa \in D_1 \setminus \sigma_1``\overline D \\
+					\sigma_1(\overline S(\overline \kappa)) &\text{ if } \kappa = \sigma_1(\overline \kappa). \end{cases}$$ 
+	\item Using the Transfer Lemma, we then have that $\mathcal L_0$ is consistent, since $k_1:N_1 \To N_0$ is a cofinal embedding and $N_1$ is almost full.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\begin{proof}[Proof sketch continued.]
+\begin{enumerate}\setcounter{enumi}{4}
+	\item Use Barwise Completeness to find a model, $\mathfrak A$, of $\mathcal L_0$. To apply Completeness, we need the admissible structure $\mathcal L_0$ is defined over to be countable. So work in $V[F]$, a generic extension collapsing the admissible structure $L_{\delta_{N_0}}(N_0)$ to be countable. This gives us a suitable diagonal Prikry sequence $S$, which is generic over $N_0$ and thus $V$, by the genericity criterion. We also get an embedding $\overset{*}\sigma = k_0 \circ \mathring{\sigma}^{\mathfrak A}: \N \To N$.
+	\item By Barwise Correctness, $\mathcal T(M)$ is consistent, where $M$ is a large enough admissible structure in $V[S]$. More precisely, the infinitary $\in$-theory $\mathcal T(\mathfrak M)$ is defined over $\mathfrak M$ as follows: 
+\begin{description}
+	\item[predicates] $\in$ 
+	\item[constants] $\dot{\sigma}, \underline x$ for $x \in \mathfrak M$
+	\item[axioms] \begin{itemize} \item $\ZFC^-$ and \textsf{Basic Axioms}.
+		\item $\dot \sigma : \overline{\underline N} \To \underline N$ elementarily
+		\item $\dot{\sigma}(\overline{\underline{\theta}}, \overline{\underline{\D}}, \overline{\underline{\U}}, \overline{\underline c})=\underline{\theta}, \underline{\D}, \underline{\U}, \underline{c}$
+		\item $\sk{\underline N}{\underline{\delta(\D)}}{\dot \sigma} = \sk{\underline N}{\underline{\delta(\D)}}{\underline \sigma}$
+		\item $\dot \sigma ``\overline{\underline S} \subseteq \underline S$.
+	\end{itemize}
+\end{description} Indeed $\overset{*}\sigma \in V[F]$ witnesses this. 
+	\item Let $\pi: \tilde M \To M$ where $\tilde M$ is countable and transitive. By Barwise Completeness, we have a model, $\tilde{\mathfrak A}$, of $\mathcal T(\tilde M)$.
+	\item Let $\sigma' =\pi \circ \dot{\sigma}^{\tilde{\mathfrak A}}$. This works! \qedhere
+\end{enumerate}
+\end{proof}
+\end{frame}
+
+
+
+
+
+\end{document}

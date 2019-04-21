@@ -8,3 +8,10 @@ DiagonalPrikry.synctex.gz
 
 *.pdf
 DiagonalPrikry-AFML.tex
+*.png
+*.log
+*.nav
+*.out
+*.snm
+*.gz
+*.toc
