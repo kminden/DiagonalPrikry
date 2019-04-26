@@ -27,7 +27,7 @@
 
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\Q}{\mathbb{Q}}
-%\newcommand{\M}{\mathbb{M}}
+\newcommand{\M}{\mathcal{M}}
 \newcommand{\Namba}{\mathbb{N}}
 \newcommand{\D}{\mathbb{D}}
 \newcommand{\N}{{\overline{N}}}
@@ -173,7 +173,7 @@
 \title{The subcompleteness of diagonal Prikry forcing}
 \author{Kaethe Minden}
 \institute[Marlboro]{\includegraphics[scale=0.16]{mc-logo.png} \\ Vermont, USA}
-\date[ASL 2019]{North American ASL Meeting \\ 20 May 2019}
+\date[ASL 2019]{Association for Symbolic Logic 2019 North American Annual Meeting \\ 20 May 2019}
 
 \begin{document}
 \begin{frame}[plain]
@@ -185,24 +185,25 @@
 
 \section{Introduction}
 \begin{frame}
-%\frametitle{Subcomplete forcing} 
-Subcomplete forcing is a class of forcing notions defined by Ronald B. Jensen. Subcomplete forcing does not add reals, but may potentially alter cofinalities to $\omega$. %Defined at some point before 2012.
+\frametitle{Subcomplete forcing} 
+Subcomplete forcings do not add reals, but may potentially alter cofinalities to $\omega$. %Defined at some point before 2012.
 \begin{block}{Examples of subcomplete forcing}
 \begin{itemize}
 	\item \textbf{Countably closed forcing}.
 	\item \textit{\textbf{Namba forcing}}, denoted by $\Namba$, a forcing notion consisting of subtrees $T \neq \emptyset$ of $\omega_2^{<\omega}$ ordered by inclusion, such that $T$ is downward closed in $\omega_2^{<\omega}$ and where each node in $T$ has $\omega_2$-many eventual successors in $T$. 
 Each condition in $\Namba$ has size $\omega_2$. Namba forcing adds a cofinal sequence $S: \omega \To \omega_2^V$ to the extension, a cofinal branch through $\omega_2^{<\omega}$.
-Under $\CH$, Namba forcing adds no new reals and is subcomplete \cite[Section 3.3]{Jensen:2012fr}. 
-	\item \textbf{Prikry forcing}, which forces a measurable cardinal to have cofinality $\omega$ while preserving cardinalities.
+Under $\CH$, Namba forcing adds no new reals and is subcomplete \cite{Jensen:2014}.
+	\item \textbf{Prikry forcing}, which forces a measurable cardinal to have cofinality $\omega$ while preserving cardinalities \cite{Jensen:2014}.
+	\item \textbf{Magidor forcing}, which collapses the cofinality of a measurable carrying a length $\omega_1$-sequence of normal ultrafilters to $\omega_1$ \cite{Fuchs:2017Magidor}.
 %	\item Certain kinds of \textbf{generalized diagonal Prikry forcing} which force a sequence of measurables to have cofinality $\omega$.
 %	\item The forcing $\mathbb P_{\textbf{A}}$, which shoots a closed set of order type $\omega_1$ through a stationary set $A \subseteq \kappa$ of $\omega$-cofinal ordinals, and is used to force $\neg \Box_\kappa$.
 	\item \color{Green} \textbf{Generalized diagonal Prikry forcing}
 \end{itemize}
 \end{block}
 \begin{itemize}
-	\item Revised countable support ($rcs$) iterations of subcomplete forcing notions.
-	\item \color{Green} Lottery sums of subcomplete forcing notions.
-	\item \color{Green} If $\P$ is subcomplete and $\pi: \P \To \Q$ is a dense embedding, then $\Q$ is subcomplete. 
+	\item Revised countable support ($rcs$) iterations of subcomplete forcings.
+	\item Lottery sums of subcomplete forcings.
+	\item If $\P$ is subcomplete and $\pi: \P \To \Q$ is a dense embedding, then $\Q$ is subcomplete. 
 \end{itemize}
 \end{frame}
 
@@ -236,48 +237,58 @@ Suppose that $\P$ is a forcing notion and $s$ is a set, with $\P, s \in H_\theta
 A forcing notion $\P$ is \emph{\textbf{subcomplete}} so long as, for any set $s$ and 
 for sufficiently large $\theta$ we have that whenever we are in \emph{the standard setup} i.e.: \begin{itemize}
 	\item $N$ is a suitable model for $\P,s$ above $\theta$;
-	\item $\sigma: \N \cong X \preccurlyeq N$ where $X$ is countable and $\N$ is full;
+	\item $\sigma: \N \cong X \prec N$ where $X$ is countable and $\N$ is full;
 	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$;
 \end{itemize}
 then we have that if $\G$ is  $\overline{\P}$-generic over $\N$ then there is a \emph{subcompleteness condition} $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
-	\item $\sigma': \N \prec N$;
+	\item $\sigma': \N \To N$;
 	\item $\sigma'(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$;
-	\item \label{item:skolemcompatibility} $\sk{N}{\delta(\P)}{\sigma'} = \Sk{N}{\delta(\P)}{X}$;
+	%\item \label{item:skolemcompatibility} $\sk{N}{\delta(\P)}{\sigma'} = \Sk{N}{\delta(\P)}{X}$;
 	\item  \label{item:sigmaprimelifts}$\sigma'``\, \G \subseteq G$.
 \end{enumerate}
-In other words and in particular, the subcompleteness condition $p$ forces that there is an embedding $\sigma'$ in the extension $V[G]$ which lifts, by (4), to an embedding $\sigma'^*:\N[\G] \prec N[G]$ in $V[G]$.
+In other words and in particular, the subcompleteness condition $p$ forces that there is an embedding $\sigma'$ in the extension $V[G]$ which lifts, by (\ref{item:sigmaprimelifts}), to an embedding $\sigma'^*:\N[\G] \prec N[G]$ in $V[G]$.
 
 We say that such a $\theta$ as above \textit{verifies the subcompleteness} of $\P$.
 
-Often we write $\delta$ instead of $\delta(\P)$ for the weight of $\P$ when there should be no confusion as to which poset $\P$ we are working with.%\footnote{See Section \ref{subsec:delta} for more on $\delta(\P)$.}
+%Often we write $\delta$ instead of $\delta(\P)$ for the weight of $\P$ when there should be no confusion as to which poset $\P$ we are working with.%\footnote{See Section \ref{subsec:delta} for more on $\delta(\P)$.}
 \end{definition}
 \end{frame}
 
 \begin{frame}
 \frametitle{Generalized Diagonal Prikry Forcing}
 \begin{definition}
-Let $D$ be an infinite discrete set of measurable cardinals, meaning a set of measurable cardinals which does not contain any of its limit points. For $\kappa \in D$ let $U(\kappa)$ be a normal measure on $\kappa$, and let $\U$ denote the sequence of the $U(\kappa)$'s.
+Let $D$ be an infinite discrete set of measurable cardinals. For $\kappa \in D$ let $\U=\seq{U(\kappa)}{\kappa \in D}$ be a sequence of normal measures.
 
-Define $\D=\D(\U)$, \emph{\textbf{generalized diagonal Prikry forcing}} from the list of measures $\U$, by taking conditions of the form  
+Define $\D=\D(\U)$, \emph{\textbf{generalized diagonal Prikry forcing}} from $\U$, by taking conditions of the form  
 $( s, A )$ satisfying the following:
 \begin{itemize}
-	\item The \textit{stem} of the condition, $s$, is a function with domain $[D]^{<\omega}$ taking each measurable cardinal $\kappa \in \dom(s)$ to some ordinal $s(\kappa) < \kappa$.
-	\item The \textit{upper part} of the condition, $A$, is a function with domain $D \setminus {\dom(s)}$ taking each measurable cardinal $\kappa \in \dom(A)$ to some measure-one set $A(\kappa) \in U(\kappa)$.
+	\item The \textit{stem}, $s$, is a function with domain $[D]^{<\omega}$ taking each measurable cardinal $\kappa \in \dom(s)$ to some ordinal $s(\kappa) < \kappa$.
+	\item The \textit{upper part}, $A$, is a function with domain $D \setminus {\dom(s)}$ taking each $\kappa \in \dom(A)$ to some measure-one set $A(\kappa) \in U(\kappa)$.
 \end{itemize}
-The extension relation on conditions in $\D$ is defined so that $( s, A ) \leq ( t, B )$ so long as 
-\begin{itemize}
-	\item $s \supseteq t$.
-	\item The points in $s$ not in $t$ come from $B$, i.e., for all $\kappa \in \dom(s) \setminus \dom(t)$, $s(\kappa) \in B(\kappa)$.
-	\item For all $\kappa \in \dom(A)$, $A(\kappa) \subseteq B(\kappa)$.
-\end{itemize}
+Let $( s, A ) \leq ( t, B )$ so long as $s \supseteq t$, for all $\kappa \in \dom(s) \setminus \dom(t)$, $s(\kappa) \in B(\kappa)$ and for all $\kappa \in \dom(A)$, $A(\kappa) \subseteq B(\kappa)$.
 If $G$ is a generic filter for $\D$, then its associated $\D$-generic sequence is \[S = S_G = \bigcup \set{ s }{ \exists A \ ( s, A ) \in G }.\qedhere\]
 \end{definition}
+\begin{block}{Genericity Criterion (Fuchs \cite{Fuchs:2005kx})} \label{fact:diagprikrymathias} Let $D$ be an infinite discrete set of measurable cardinals, with $\U$ a corresponding list of measures $\langle U(\kappa) \;|\; \kappa \in D \rangle$. Then an increasing sequence of ordinals $S = \langle S(\kappa) \;|\; \kappa \in D \rangle$ is a $\D(\U)$-generic  sequence if and only if for all $\mathcal X = \langle X_\kappa \in U(\kappa) \;|\; \kappa \in D \rangle$, the set $\{ \kappa \in D \;|\; S(\kappa) \notin X_\kappa\} \text{ is finite.}$
+\end{block}
+\end{frame}
+
+\begin{frame}
+Barwise creates an $\M$-finite predicate logic, a first order theory in which arbitrary, but $\M$-finite, disjunctions and conjunctions are allowed.
+\begin{definition} Let $\M$ be a transitive structure with potentially infinitely many predicates. A theory defined over $\M$ is $\M$-\emph{finite} so long as it is in $\M$. A theory is $\Sigma_1(\M)$, also known as \emph{$\M$-recursively enumerable} or $\M$-$re$, if the theory is $\Sigma_1$-definable, with parameters from $\M$. \end{definition}
+Of course this may be generalized to the entire usual Levy hierarchy of formulae, but only $\Sigma_1(\M)$ is needed in this paper. If $\mathcal L$ is a $\Sigma_1(\M)$-definable language or theory, the rough idea is that to check whether a sentence is in $\mathcal L$, one should imagine enumerating the formulae of $\mathcal L$ to find a sentence and a witness to it in the structure $\M$.
+
+\begin{definition} \label{def:InTheoriesAndBasicAxioms} Let $\M$ be admissible. An infinitary axiomatized theory in $\M$-finitary logic $\mathcal L=\mathcal L(\M)$, with a fixed predicate $\dot \in$ and \emph{special constants} denoted $\underline x$ for elements $x \in \M$, is called an \textit{$\in$-theory} over $\M$. The underlying axioms for these $\in$-theories will always involve $\ZFC^-$ and some basic axioms ensuring that $\dot \in$ behaves nicely; 
+the \textsf{Basic Axioms} are: \begin{itemize}
+	\item \textsf{Extensionality}
+	\item A statement positing the extensionality of $\dot \in$, which is a scheme of formulae defined for each member of $M$. For each $x \in M$,
+	$\forall v \left( v \ \dot \in\, \underline x \iff \bigdoublevee_{z \in x} v= \underline z \right).$
+\end{itemize} Here $\bigdoublevee$ denotes an infinite disjunction in the language.\end{definition}
+
+In the above definition, it should be clarified that it is possible to consider the same $\in$-theory defined over different admissible structures; if $\M, \M'$ are both admissible, then we can consider both $\mathcal L(\M)$ and $\mathcal L(\M')$. The distinction is only as to where the special constants come from. 
 \end{frame}
 
 \begin{frame}
 \frametitle{Preliminaries}
-\begin{block}{Genericity Criterion (Fuchs \cite{Fuchs:2005kx})} \label{fact:diagprikrymathias} Let $D$ be an infinite discrete set of measurable cardinals, with $\U$ a corresponding list of measures $\langle U(\kappa) \;|\; \kappa \in D \rangle$. Then an increasing sequence of ordinals $S = \langle S(\kappa) \;|\; \kappa \in D \rangle$ is a $\D(\U)$-generic  sequence if and only if for all $\mathcal X = \langle X_\kappa \in U(\kappa) \;|\; \kappa \in D \rangle$, the set $\{ \kappa \in D \;|\; S(\kappa) \notin X_\kappa\} \text{ is finite.}$
-\end{block}
 %\begin{definition} Let $\N$ and $N$ be transitive $\ZFC^-$ models. We say that an elementary embedding $\sigma: \N \prec N$ is \emph{\textbf{cofinal}} so long as for each $x \in N$ there is some $u \in \N$ such that $x \in \sigma(u)$. 
 %
 %Let $\alpha \in \N$. We say that $\sigma$ is \emph{\textbf{$\alpha$-cofinal}} so long as every such $u$ has size less than $\alpha$ as computed in $\N$. \end{definition}
@@ -288,33 +299,44 @@ If $G$ is a generic filter for $\D$, then its associated $\D$-generic sequence i
 \end{itemize}
 \end{block}
 
-\begin{block}{Transfer Lemma (Jensen)} \label{fact:Transfer} Suppose that for $M$ admissible, $\mathcal L(M)$ is a $\Sigma_1(M)$ infinitary $\in$-theory. Let $N_1$ be almost full\footnote{A transitive $\ZFC^-$ model $N$ is \emph{\textbf{almost full}} so long as $\omega \in N$ and there is a solid $\mathfrak A \models \ZFC^-$ with $N \in \wfc(\mathfrak A)$ and $N$ is regular in $\mathfrak A$.}, and suppose that $k: N_1 \To N_0$ is a cofinal elementary embedding. So long as $\mathcal L(L_{\delta_{N_1}}(N_1))$\footnote{We say that $\delta_N$ is the least $\delta$ such that $L_\delta(N)$ is admissible.} is $\Sigma_1$ over parameters $N_1, p_1, \dots, p_n \in N_1$ and $\mathcal L(L_{\delta_{N_0}}(N_0))$ is $\Sigma_1$ over parameters $N_0, k(p_1), \dots, k(p_n)$, we have that  
-if $\mathcal L(L_{\delta_{N_1}}(N_1))$ is consistent, then $\mathcal L(L_{\delta_{N_0}}(N_0))$ is consistent as well. \end{block} 
+\begin{block}{Transfer Lemma (Jensen)} \label{fact:Transfer} 
+Let $N_1$ be almost full\footnote{A transitive $\ZFC^-$ model $N$ is \emph{\textbf{almost full}} so long as $\omega \in N$ and there is a solid $\mathfrak A \models \ZFC^-$ with $N \in \wfc(\mathfrak A)$ and $N$ is regular in $\mathfrak A$.} and $k: N_1 \To N_0$ cofinally, for some structure $N_0$. Suppose that we have a $\Sigma_1(\langle N_1; \, p_1, \dots, p_n\rangle)$  $\in$-theory $\mathcal L=\mathcal L(L_{\delta_{N_1}}(N_1))$\footnote{We say that $\delta_N$ is the least $\delta$ such that $L_\delta(N)$ is admissible.}  for $p_1, \dots, p_n \in N_1$.
+
+Moreover, suppose $\mathcal L(L_{\delta_{N_0}}(N_0))$ is also defined and is a $\Sigma_1(\langle N_0; \, k(p_1), \dots, k(p_n)\rangle)$ $\in$-theory as well. 
+
+Then, 
+if $\mathcal L(L_{\delta_{N_1}}(N_1))$ is consistent, it follows that $\mathcal L(L_{\delta_{N_0}}(N_0))$ is also consistent. 
+\end{block} 
 \end{frame}
 
 \begin{frame}
 \frametitle{Generalized Diagonal Prikry Forcing is Subcomplete}
 %Maybe try to give a sketch of this argument?
 \begin{theorem} Let $D$ be an infinite discrete set of measurable cardinals. %, such that $\otp(D)$ is less than the first limit point of $D$. 
-Let $\U = \langle U(\kappa) \;|\; \kappa \in D \rangle$ be a list of measures associated to $D$. Then $\D=\D(\U)$ is subcomplete. \end{theorem}
-\begin{block}{Proof sketch.}
-In order to show that $\D$ is subcomplete, suppose we are in the standard setup: \begin{itemize}
-	\item $\D \in H_\theta \subseteq N$
+Let $\U = \seq{ U(\kappa) }{ \kappa \in D }$ be a list of measures associated to $D$. Then $\D=\D(\U)$ is subcomplete. \end{theorem}
+
+\textbf{Proof sketch:}
+
+\vspace{0.5em}
+
+In order to show that $\D$ is subcomplete, let $\theta$ be large enough and let $c$ be a set, and suppose we are in the standard setup: \begin{itemize}
+	\item $N$ is a suitable model for $\D, \U, c$ above $\theta$ 
 	\item $\sigma: \N \cong X \prec N$ where $X$ is countable and $\N$ is full
-	\item $\sigma(\overline \theta, \overline{\D}, \overline{\U}, \overline c)=\theta, \D, \U, c$ for some $c \in N$.
+	\item $\sigma(\overline \theta, \overline{\D}, \overline{\U}, \overline c)=\theta, \D, \U, c$.
 \end{itemize}
-Let $\S \subseteq \overline{\D}$ be generic over $\N$. We need to argue that there is a $\D$-generic sequence $S$ and $\sigma' \in V[S]$ such that: \begin{enumerate}
+Let $\S \subseteq \overline{\D}$ be generic over $\N$. 
+
+We need to argue that there is a $\D$-generic sequence $S$ and $\sigma' \in V[S]$ such that: \begin{enumerate}
 	\item $\sigma': \N \To N$ elementarily
 	\item $\sigma'(\overline \theta, \overline{\D}, \overline{\U}, \overline c)=\theta, \D, \U, c$
-	\item $\sk{N}{\delta(\D)}{\sigma'} = \Sk{N}{\delta(\D)}{X}$	
+	%\item $\sk{N}{\delta(\D)}{\sigma'} = \Sk{N}{\delta(\D)}{X}$	
 	\item $\sigma' `` \S \subseteq S$
 \end{enumerate}
 The proof amounts to showing that a certain infinitary $\in$-theory, $\mathcal T$, positing the existence of such an embedding $\sigma'$ is consistent.
-\end{block}
+
 \end{frame}
 
-\begin{frame}
-\begin{block}{Proof sketch continued.}
+\begin{frame}{$\D$ is subcomplete: proof sketch continued.}
 \begin{enumerate}
 	\item Let $k_0 : N_0 \cong \Sk{N}{\delta(\D)}{X}$ where $N_0$ is transitive, and set $\sigma_0 = k_0^{-1} \circ \sigma$. The embedding $\sigma_0: \N \To N_0$ is $\overline \nu$-cofinal, where $\nu=\delta^+$.
 	\item Define the infinitary $\in$-theory $\mathcal L_*$ as follows: \begin{description}
@@ -333,12 +355,10 @@ $$S_1(\kappa) = \begin{cases} S_1'(\kappa) &\text{ if } \kappa \in D_1 \setminus
 					\sigma_1(\overline S(\overline \kappa)) &\text{ if } \kappa = \sigma_1(\overline \kappa). \end{cases}$$ 
 	\item Using the Transfer Lemma, we then have that $\mathcal L_0$ is consistent, since $k_1:N_1 \To N_0$ is a cofinal embedding and $N_1$ is almost full.
 \end{enumerate}
-\end{block}
 \end{frame}
 
 
-\begin{frame}
-\begin{proof}[Proof sketch continued.]
+\begin{frame}{$\D$ is subcomplete: proof sketch continued}
 \begin{enumerate}\setcounter{enumi}{4}
 	\item Use Barwise Completeness to find a model, $\mathfrak A$, of $\mathcal L_0$. To apply Completeness, we need the admissible structure $\mathcal L_0$ is defined over to be countable. So work in $V[F]$, a generic extension collapsing the admissible structure $L_{\delta_{N_0}}(N_0)$ to be countable. This gives us a suitable diagonal Prikry sequence $S$, which is generic over $N_0$ and thus $V$, by the genericity criterion. We also get an embedding $\overset{*}\sigma = k_0 \circ \mathring{\sigma}^{\mathfrak A}: \N \To N$.
 	\item By Barwise Correctness, $\mathcal T(M)$ is consistent, where $M$ is a large enough admissible structure in $V[S]$. More precisely, the infinitary $\in$-theory $\mathcal T(\mathfrak M)$ is defined over $\mathfrak M$ as follows: 
@@ -355,11 +375,168 @@ $$S_1(\kappa) = \begin{cases} S_1'(\kappa) &\text{ if } \kappa \in D_1 \setminus
 	\item Let $\pi: \tilde M \To M$ where $\tilde M$ is countable and transitive. By Barwise Completeness, we have a model, $\tilde{\mathfrak A}$, of $\mathcal T(\tilde M)$.
 	\item Let $\sigma' =\pi \circ \dot{\sigma}^{\tilde{\mathfrak A}}$. This works! \qedhere
 \end{enumerate}
-\end{proof}
 \end{frame}
 
 
+\begin{frame}
 
+\begin{figure}[h!] 
+\begin{tikzpicture}
+\draw (-1,0)--(-1,3);
+\node [below] at (-1,0) {$\N$};
+\node at (-1,2.95) {$\frown$};
+
+\node [left] at (-1,1) {$\overline \kappa(0) \in \overline D$};
+\node at (-1,1) {-};
+\node [left] at (-1,2) {$\overline \delta$};
+\node at (-1,2) {-};
+\node [left] at (-1,2.5) {$\overline \nu$};
+\node at (-1,2.5) {-};
+
+\draw [->] (-.8,1)--(.8,2);
+\draw [->] (-.8,2)--(.8,3);
+\draw [->] (-.8,2.5)--(.8,3.5);
+
+\node [right] at (1,2) {$\kappa(0) \in D$};
+\node at (1,2) {-};
+\node [right] at (1,3) {$\delta$};
+\node at (1,3) {-};
+\node [right] at (1,3.5) {$\nu$};
+\node at (1,3.5) {-};
+
+\draw (1,0)--(1,4);
+\node [below] at (1,0) {$N$};
+\node at (1,3.95) {$\frown$};
+
+\draw [->, thick] (-.7,-0.3)--(.7,-0.3);
+\node [above] at (0,-0.3) {$\sigma$};
+\end{tikzpicture}
+\caption{Diagram depicting $\sigma$.}\label{figure:N} 
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{figure}[h!]
+\begin{tikzpicture}
+\draw (-3,0)--(-3,3);
+\node [below] at (-3,0) {$\N$};
+\node at (-3,2.95) {$\frown$};
+
+\node [left] at (-3,0.7) {$\overline \kappa(0) \in \overline D$};
+\node at (-3,0.7) {-};
+\node [left] at (-3,2) {$\overline \delta$};
+\node at (-3,2) {-};
+\node [left] at (-3,2.5) {$\overline \nu$};
+\node at (-3,2.5) {-};
+
+\draw [->] (-2.8,0.7)--(0.8,2.2);
+\draw [->] (-2.8,2)--(0.8,3.6);
+%\draw [->] (-2.8,2.5)--(0.8,4.5);
+
+\node at (1,2.2) {-};
+
+\node at (1,3.6) {-};
+\node [above left] at (1,4.2) {$\nu_0$};
+\node at (1,4.2) {$\bullet$};
+
+\draw (1,0) -- (1,5.5);
+\node [below] at (1,0) {$N_0$};
+\node at (1,5.45) {$\frown$};
+
+\draw [->] (1.2,2.2)--(2.8,2.2);
+\draw [->] (1.2,3.6)--(2.8,3.6);
+\draw [->] (-2.8,2.5)--(2.8,5);
+
+\node [right] at (3,2.2) {$\kappa(0) \in D$};
+\node at (3,2.2) {-};
+\node [right] at (3,3.6) {$\delta$};
+\node at (3,3.6) {-};
+\node [right] at (3,5) {$\nu$};
+\node at (3,5) {-};
+
+\draw (3,0)--(3,6);
+\node [below] at (3,0) {$N$};
+\node at (3,5.95) {$\frown$};
+
+\draw [->, thick] (-2.7,-0.3)--(0.7,-0.3);
+\draw [->, thick] (1.3, -0.3)--(2.7,-0.3);
+\node [above] at (-1,-0.3) {$\sigma_0$};
+\node [above] at (2,-0.3) {$k_0$};
+\draw[->,thick] (-2.75,-0.4) to [out = -30, in =-150] node[above]{$\sigma$} (2.9, -0.5);
+\end{tikzpicture}
+ \caption{Diagram depicting the liftup $\langle N_0, \sigma_0\rangle$.} \label{figure:N0N}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}[h!] 
+\begin{tikzpicture}
+\draw (-3,0)--(-3,3);
+\node [below] at (-3,0) {$\N$};
+\node at (-3,2.95) {$\frown$};
+
+\node [left] at (-3,0.4) {$\overline \kappa(0) \in \overline D$};
+\node at (-3,0.4) {-};
+\node [left] at (-3,2) {$\overline \delta$};
+\node at (-3,2) {-};
+\node [left] at (-3,2.5) {$\overline \nu$};
+\node at (-3,2.5) {-};
+
+\draw [->] (-2.8,0.4)--(1.3,2);
+
+\draw (0,0)--(0,5.3);
+\node [below] at (0,0) {$N_1$};
+\node at (0,5.25) {$\frown$};
+\node at (0,1.5) {$\bullet$};
+\node [above left] at (0,1.5) {$\kappa_1(0) \in D_1$};
+
+\draw [->] (-2.8,2)--(1.3,3.8);
+
+\draw (1.5,0) -- (1.5,5.7);
+\node [below] at (1.5,0) {$N_0$};
+\node at (1.5,5.65) {$\frown$};
+\node at (1.5,2) {-};
+\node at (1.5,3.8) {-};
+\node [above left] at (1.5,4.4) {$\nu_0$};
+\node at (1.5,4.4) {$\bullet$};
+
+\draw [->] (1.7,2)--(2.8,2);
+\draw [->] (1.7,3.8)--(2.8,3.8);
+
+\draw [->] (-2.8,2.5)--(2.8,5);
+
+\node [right] at (3,2) {$\kappa(0) \in D$};
+\node at (3,2) {-};
+\node [right] at (3,3.8) {$\delta$};
+\node at (3,3.8) {-};
+\node [right] at (3,5) {$\nu$};
+\node at (3,5) {-};
+
+\draw (3,0)--(3,6);
+\node [below] at (3,0) {$N$};
+\node at (3,5.95) {$\frown$};
+
+\draw [->, thick] (-2.7,-0.3)--(-0.3,-0.3);
+\draw [->, thick] (0.3, -0.3)--(1.2,-0.3);
+\draw [->, thick] (1.8, -0.3)--(2.7,-0.3);
+\draw[->, thick] (-2.8,-0.4) to  [out=-30, in=-145] node[above]{$\sigma_0$} (1.3,-0.5);
+\draw[->,thick] (-2.9,-0.5) to [out = -50, in =-140] node[above]{$\sigma$} (2.9, -0.5);
+
+\node [above] at (-1.5,-0.3) {$\sigma_1$};
+\node [above] at (0.75,-0.3) {$k_1$};
+\node [above] at (2.25, -0.3) {$k_0$};
+\end{tikzpicture}\label{figure:N1N0N} \caption{Diagram depicting the liftups $\langle N_0, \sigma_0\rangle$ and $\langle N_1, \sigma_1\rangle$.}
+\end{figure} 
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Bibliography}
+\bibliographystyle{amsalpha}
+\bibliography{../ApplicationStuff/CV-RS-Pubs-Refs-extra/BIB}
+\end{frame}
 
 
 \end{document}

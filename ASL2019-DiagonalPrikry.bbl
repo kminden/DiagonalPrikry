@@ -1,0 +1,24 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{Fuc17}
+
+\bibitem[Fuc05]{Fuchs:2005kx}
+Gunter Fuchs, \emph{A characterization of generalized {P}rikry sequences},
+  Archive for Mathematical Logic (2005), no.~44, 935--971.
+
+\bibitem[Fuc17]{Fuchs:2017Magidor}
+\bysame, \emph{The subcompleteness of {M}agidor forcing}, Jun 2017.
+
+\bibitem[Jen14]{Jensen:2014}
+Ronald~B. Jensen, \emph{{Subcomplete Forcing and {$\mathcal L$}-Forcing}},
+  {{E}-recursion, forcing and {$C^*$}-algebras} (Chitat Chong, Qi~Feng,
+  Theodore~A. Slaman, W.~Hugh Woodin, and Yue Yang, eds.), Lecture Notes
+  Series, Institute for Mathematical Sciences, National University of
+  Singapore, World Scientific, 2014, pp.~83--182.
+
+\end{thebibliography}
