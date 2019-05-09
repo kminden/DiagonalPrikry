@@ -244,7 +244,7 @@ for sufficiently large $\theta$ we have that whenever we are in \emph{the standa
 then we have that if $\G$ is  $\overline{\P}$-generic over $\N$ then there is a condition $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
 	\item $\sigma': \N \To N$;
 	\item $\sigma'(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$;
-	%\item \label{item:skolemcompatibility} $\sk{N}{\delta(\P)}{\sigma'} = \Sk{N}{\delta(\P)}{X}$;
+	\item \label{item:skolemcompatibility} $\sk{N}{|\D|}{\sigma'} = \Sk{N}{|\D|}{X}$; $\textcolor{ForestGreen}{\bigstar}$
 	\item  \label{item:sigmaprimelifts}$\sigma'``\, \G \subseteq G$.
 \end{enumerate}
 Thus $p$ forces that there is an embedding $\sigma'$ in the extension $V[G]$ which lifts, by (\ref{item:sigmaprimelifts}), to an embedding $\sigma'^*:\N[\G] \To N[G]$ in $V[G]$.
@@ -288,18 +288,14 @@ In the above definition, it should be clarified that it is possible to consider 
 
 \begin{frame}
 \frametitle{Transferring Consistency via Cofinal Embeddings}
-%\begin{definition} Let $\N$ and $N$ be transitive $\ZFC^-$ models. We say that an elementary embedding $\sigma: \N \prec N$ is \emph{\textbf{cofinal}} so long as for each $x \in N$ there is some $u \in \N$ such that $x \in \sigma(u)$. 
-%
-%Let $\alpha \in \N$. We say that $\sigma$ is \emph{\textbf{$\alpha$-cofinal}} so long as every such $u$ has size less than $\alpha$ as computed in $\N$. \end{definition}
-
-\begin{block}{Cofinal Embeddings} \label{lem:liftupchar} Suppose we have an elementary embedding $\sigma: \N \To N$. \begin{itemize}
-	\item We may say that $\sigma$ is \textbf{cofinal} so long as elements of $N$ are of the form $\sigma(f)(\beta)$ for some $f: \gamma \To \N$ where $\beta < \sigma(\gamma)$.
-	\item We say that $\sigma$ is \textbf{$\alpha$-cofinal} so long as every such $\gamma$ as above satisfy $\gamma < \alpha$. 
+\begin{block}{Cofinal Embeddings} \label{lem:liftupchar} Suppose we have an elementary embedding $\sigma_{*}: \N \To N_*$. \begin{itemize}
+	\item We may say that $\sigma_*$ is \textbf{cofinal} so long as elements of $N_*$ are of the form $\sigma_*(f)(\beta)$ for some $f: \gamma \To \N$ where $\beta < \sigma(\gamma)$.
+	\item We say that $\sigma_*$ is \textbf{$\alpha$-cofinal} so long as every such $\gamma$ as above satisfy $\gamma < \alpha$. 
 \end{itemize}
 \end{block}
 
 \begin{block}{Transfer Lemma (Jensen)} \label{fact:Transfer} 
-Let $N_1$ be almost full\footnote{A transitive $\ZFC^-$ model $N$ is \emph{\textbf{almost full}} so long as $\omega \in N$ and there is a solid $\mathfrak A \models \ZFC^-$ with $N \in \wfc(\mathfrak A)$ and $N$ is regular in $\mathfrak A$.} and $k: N_1 \To N_0$ cofinally, for some structure $N_0$. Suppose that we have a $\Sigma_1(\langle N_1; \, p_1, \dots, p_n\rangle)$  $\in$-theory $\mathcal L=\mathcal L(L_{\delta_{N_1}}(N_1))$\footnote{We say that $\delta_N$ is the least $\delta$ such that $L_\delta(N)$ is admissible.}  for $p_1, \dots, p_n \in N_1$.
+Let $N_1$ be almost full\footnote{A transitive $\ZFC^-$ model $N$ is \emph{\textbf{almost full}} so long as $\omega \in N$ and there is a solid $\mathfrak A \models \ZFC^-$ with $N \in \wfc(\mathfrak A)$ and $N$ is regular in $\mathfrak A$.} and $k: N_1 \To N_0$ be cofinal for some structure $N_0$. Suppose that we have a $\Sigma_1(\langle N_1; \, p_1, \dots, p_n\rangle)$  $\in$-theory $\mathcal L=\mathcal L(L_{\delta_{N_1}}(N_1))$\footnote{We say that $\delta_N$ is the least $\delta$ such that $L_\delta(N)$ is admissible.}  for $p_1, \dots, p_n \in N_1$.
 
 Moreover, suppose $\mathcal L(L_{\delta_{N_0}}(N_0))$ makes sense as a $\Sigma_1(\langle N_0; \, k(p_1), \dots, k(p_n)\rangle)$ $\in$-theory as well. 
 
@@ -310,7 +306,6 @@ if $\mathcal L(L_{\delta_{N_1}}(N_1))$ is consistent, it follows that $\mathcal 
 
 \begin{frame}
 \frametitle{Generalized Diagonal Prikry Forcing is Subcomplete}
-%Maybe try to give a sketch of this argument?
 \begin{theorem} Let $D$ be an infinite discrete set of measurable cardinals. %, such that $\otp(D)$ is less than the first limit point of $D$. 
 Let $\U = \seq{ U(\kappa) }{ \kappa \in D }$ be a list of measures associated to $D$. Then $\D=\D(\U)$ is subcomplete. \end{theorem}
 
@@ -327,47 +322,47 @@ Let $\S \subseteq \overline{\D}$ be generic over $\N$.
 We need to argue that there is a $\D$-generic sequence $S$ and $\sigma' \in V[S]$ such that: \begin{itemize}
 	\item $\sigma': \N \To N$ elementarily
 	\item $\sigma'(\overline \theta, \overline{\D}, \overline{\U}, \overline c)=\theta, \D, \U, c$
-	%\item $\sk{N}{\delta(\D)}{\sigma'} = \Sk{N}{\delta(\D)}{X}$	
+	\item $\sk{N}{\delta(\D)}{\sigma'} = \Sk{N}{\delta(\D)}{X}$	
 	\item $\sigma' `` \S \subseteq S$
 \end{itemize}
 The proof amounts to showing that a certain infinitary $\in$-theory, $\mathcal T$, positing the existence of such an embedding $\sigma'$, is consistent.
 \end{frame}
 
-\begin{frame}
-\begin{figure}[h!] 
-\begin{tikzpicture}
-\draw (-1,0)--(-1,3);
-\node [below] at (-1,0) {$\N$};
-\node at (-1,2.95) {$\frown$};
-
-\node [left] at (-1,1) {$\overline \kappa(0) \in \overline D$};
-\node at (-1,1) {-};
-\node [left] at (-1,2) {$\overline \rho$};
-\node at (-1,2) {-};
-\node [left] at (-1,2.5) {$\overline \nu$};
-\node at (-1,2.5) {-};
-
-\draw [->] (-.8,1)--(.8,2);
-\draw [->] (-.8,2)--(.8,3);
-\draw [->] (-.8,2.5)--(.8,3.5);
-
-\node [right] at (1,2) {$\kappa(0) \in D$};
-\node at (1,2) {-};
-\node [right] at (1,3) {$\rho$};
-\node at (1,3) {-};
-\node [right] at (1,3.5) {$\nu$};
-\node at (1,3.5) {-};
-
-\draw (1,0)--(1,4);
-\node [below] at (1,0) {$N$};
-\node at (1,3.95) {$\frown$};
-
-\draw [->, thick] (-.7,-0.3)--(.7,-0.3);
-\node [above] at (0,-0.3) {$\sigma$};
-\end{tikzpicture}
-\caption{Diagram depicting $\sigma$.}\label{figure:N} 
-\end{figure}
-\end{frame}
+%\begin{frame}
+%\begin{figure}[h!] 
+%\begin{tikzpicture}
+%\draw (-1,0)--(-1,3);
+%\node [below] at (-1,0) {$\N$};
+%\node at (-1,2.95) {$\frown$};
+%
+%\node [left] at (-1,1) {$\overline \kappa(0) \in \overline D$};
+%\node at (-1,1) {-};
+%\node [left] at (-1,2) {$\overline \rho$};
+%\node at (-1,2) {-};
+%\node [left] at (-1,2.5) {$\overline \nu$};
+%\node at (-1,2.5) {-};
+%
+%\draw [->] (-.8,1)--(.8,2);
+%\draw [->] (-.8,2)--(.8,3);
+%\draw [->] (-.8,2.5)--(.8,3.5);
+%
+%\node [right] at (1,2) {$\kappa(0) \in D$};
+%\node at (1,2) {-};
+%\node [right] at (1,3) {$\rho$};
+%\node at (1,3) {-};
+%\node [right] at (1,3.5) {$\nu$};
+%\node at (1,3.5) {-};
+%
+%\draw (1,0)--(1,4);
+%\node [below] at (1,0) {$N$};
+%\node at (1,3.95) {$\frown$};
+%
+%\draw [->, thick] (-.7,-0.3)--(.7,-0.3);
+%\node [above] at (0,-0.3) {$\sigma$};
+%\end{tikzpicture}
+%\caption{Diagram depicting $\sigma$.}\label{figure:N} 
+%\end{figure}
+%\end{frame}
 
 \begin{frame}
 \begin{enumerate} 
@@ -443,31 +438,13 @@ The proof amounts to showing that a certain infinitary $\in$-theory, $\mathcal T
 	\item Show that $\mathcal L_1$ is consistent, where $\sigma_1:\N \To N_1$ is $\overline \kappa(0)$-cofinal. To do this, use the genericity criterion, and show that $\sigma_1``\overline S$ may be used to find a $\D_1$-generic sequence over $N_1$. Namely, first obtain a diagonal Prikry sequence $S_1' \subseteq \D_1$ generic over $N_1$. Define, in $V[S_1']$, a new sequence $S_1 \subseteq \D_1$ generic over $N_1$ as follows:
 $$S_1(\kappa) = \begin{cases} S_1'(\kappa) &\text{ if } \kappa \in D_1 \setminus \sigma_1``\overline D \\
 					\sigma_1(\overline S(\overline \kappa)) &\text{ if } \kappa = \sigma_1(\overline \kappa). \end{cases}$$ 
-	\item Using the Transfer Lemma, we then have that $\mathcal L_0$ is consistent, since $k_1:N_1 \To N_0$ is a cofinal embedding and $N_1$ is almost full.
 \end{enumerate}
 \end{frame}
-
-
-\begin{frame}{$\D$ is subcomplete: proof sketch continued}
-\begin{enumerate}\setcounter{enumi}{4}
-	\item Use Barwise Completeness to find a model, $\mathfrak A$, of $\mathcal L_0$. To do so, we need the admissible structure $\mathcal L_0$ is defined over to be countable. So work in $V[F]$, a generic extension collapsing the admissible structure $L_{\delta_{N_0}}(N_0)$ to be countable. This gives us a suitable diagonal Prikry sequence $S$, which is generic over $N_0$ and thus $V$, by the genericity criterion. We also get an embedding $\overset{*}\sigma = k_0 \circ \mathring{\sigma}^{\mathfrak A}: \N \To N$.
-	\item By Barwise Correctness, $\mathcal T(\mathcal M)$ is consistent, where $\mathcal M$ is a large enough admissible structure in $V[S]$. More precisely, the infinitary $\in$-theory $\mathcal T(\mathcal M)$ is defined over $\mathcal M$ as follows: 
-\begin{description}
-	\item[predicates] $\in$ 
-	\item[constants] $\dot{\sigma}, \underline x$ for $x \in \mathcal M$
-	\item[axioms] \begin{itemize} \item $\ZFC^-$ and \textbf{Basic Axioms}.
-		\item $\dot \sigma : \overline{\underline N} \To \underline N$ elementarily
-		\item $\dot{\sigma}(\overline{\underline{\theta}}, \overline{\underline{\D}}, \overline{\underline{\U}}, \overline{\underline c})=\underline{\theta}, \underline{\D}, \underline{\U}, \underline{c}$
-		\item $\dot \sigma ``\overline{\underline S} \subseteq \underline S$.
-	\end{itemize}
-\end{description} Indeed $\overset{*}\sigma \in V[F]$ witnesses this. 
-	\item Let $\pi: \tilde{\mathcal M} \To \mathcal M$ where $\tilde{\mathcal M}$ is countable and transitive. By Barwise Completeness, we have a model, $\tilde{\mathfrak A}$, of $\mathcal T(\tilde{\mathcal M})$.
-	\item Let $\sigma' =\pi \circ \dot{\sigma}^{\tilde{\mathfrak A}}$. This works! \qedhere
-\end{enumerate}
-\end{frame}
-
 
 \begin{frame}
+\begin{enumerate} \setcounter{enumi}{3}
+	\item Using the Transfer Lemma, we then have that $\mathcal L_0$ is consistent, since $k_1:N_1 \To N_0$ is a cofinal embedding and $N_1$ is almost full.
+	\end{enumerate}
 \begin{figure}[h!] 
 \begin{tikzpicture}
 \draw (-3,0)--(-3,3);
@@ -524,9 +501,32 @@ $$S_1(\kappa) = \begin{cases} S_1'(\kappa) &\text{ if } \kappa \in D_1 \setminus
 \node [above] at (-1.5,-0.3) {$\sigma_1$};
 \node [above] at (0.75,-0.3) {$k_1$};
 \node [above] at (2.25, -0.3) {$k_0$};
-\end{tikzpicture}\label{figure:N1N0N} \caption{Diagram depicting the liftups $\langle N_0, \sigma_0\rangle$ and $\langle N_1, \sigma_1\rangle$.}
+\end{tikzpicture}
+%\label{figure:N1N0N} \caption{Diagram depicting the liftups $\langle N_0, \sigma_0\rangle$ and $\langle N_1, \sigma_1\rangle$.}
 \end{figure} 
 \end{frame}
+
+
+\begin{frame}
+\begin{enumerate}\setcounter{enumi}{4}
+	\item Use Barwise Completeness to find a model, $\mathfrak A$, of $\mathcal L_0$. To do so, we need the admissible structure $\mathcal L_0$ is defined over to be countable. So work in $V[F]$, a generic extension collapsing the admissible structure $L_{\delta_{N_0}}(N_0)$ to be countable. This gives us a suitable diagonal Prikry sequence $S$, which is generic over $N_0$ and thus $V$, by the genericity criterion. We also get an embedding $\overset{*}\sigma = k_0 \circ \mathring{\sigma}^{\mathfrak A}: \N \To N$.
+	\item By Barwise Correctness, $\mathcal T(\mathcal M)$ is consistent, where $\mathcal M$ is a large enough admissible structure in $V[S]$. More precisely, the infinitary $\in$-theory $\mathcal T(\mathcal M)$ is defined over $\mathcal M$ as follows: 
+\begin{description}
+	\item[predicates] $\in$ 
+	\item[constants] $\dot{\sigma}, \underline x$ for $x \in \mathcal M$
+	\item[axioms] \begin{itemize} \item $\ZFC^-$ and \textbf{Basic Axioms}.
+		\item $\dot \sigma : \overline{\underline N} \To \underline N$ elementarily
+		\item $\dot{\sigma}(\overline{\underline{\theta}}, \overline{\underline{\D}}, \overline{\underline{\U}}, \overline{\underline c})=\underline{\theta}, \underline{\D}, \underline{\U}, \underline{c}$
+		\item $\dot \sigma ``\overline{\underline S} \subseteq \underline S$.
+	\end{itemize}
+\end{description} Indeed $\overset{*}\sigma \in V[F]$ witnesses this. 
+	\item Let $\pi: \tilde{\mathcal M} \To \mathcal M$ where $\tilde{\mathcal M}$ is countable and transitive. By Barwise Completeness, we have a model, $\tilde{\mathfrak A}$, of $\mathcal T(\tilde{\mathcal M})$.
+	\item Let $\sigma' =\pi \circ \dot{\sigma}^{\tilde{\mathfrak A}}$. This works! \qedhere
+\end{enumerate}
+\end{frame}
+
+
+
 
 
 \begin{frame}
