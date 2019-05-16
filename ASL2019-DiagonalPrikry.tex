@@ -238,14 +238,15 @@ In order to define subcomplete forcing, we first define the notion of complete f
 %Roughly speaking, complete forcings posit that below some condition, generics for countable substructures extend to generics for the larger structure.
 \begin{definition}
 A forcing notion $\P$ is \emph{\textbf{complete}} so long as, for any set $s$ and for sufficiently large $\theta$ we have that whenever we are in the standard setup, i.e. $N$ is a suitable model for $\P,s$ above $\theta$ and: \begin{itemize}
-	\item $\sigma: \N \cong X \prec N$ where $X$ is countable and $\N$ is transitive
+	\item $\sigma: \N \cong X \prec N$ where $X$ is countable and $\N$ is transitive;
+	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$;
 \end{itemize}
 then, if $\overline G$ is $\overline{\P}$-generic over $\N$, there is a condition $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, 
 \begin{itemize}
 	\item $\sigma ``\, \G \subseteq G$. 
 \end{itemize}
 
-In particular, this means $p$ forces that $\sigma$ lifts to an elementary embedding $$\sigma^*:\overline N[\G] \To N[G].$$
+In particular, this means $p$ forces that $\sigma$ lifts to an elementary embedding $\sigma^*:\overline N[\G] \To N[G].$
 \end{definition}
 
 %\frametitle{Complete forcing}
