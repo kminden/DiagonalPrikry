@@ -194,17 +194,17 @@ Subcomplete forcings do not add reals.
 	\item \textbf{Countably closed forcing}.
 	\item \textit{\textbf{Namba forcing}}, which adds an $\omega$-cofinal sequence to $\omega_2$, under $\CH$ \cite{Jensen:2014}.
 	\item \textbf{Prikry forcing}, which forces a measurable cardinal to have cofinality $\omega$ while preserving cardinalities \cite{Jensen:2014}.
-	\item \textbf{Magidor forcing}, which collapses the cofinality of a measurable carrying a length $\omega_1$-sequence of normal ultrafilters to $\omega_1$ \cite{Fuchs:2017Magidor}.
+	\item \textbf{Magidor forcing}, which collapses the cofinality of a measurable carrying a Mitchell-increasing $\omega_1$-sequence of normal ultrafilters to $\omega_1$ \cite{Fuchs:2017Magidor}.
 %	\item Certain kinds of \textbf{generalized diagonal Prikry forcing} which force a sequence of measurables to have cofinality $\omega$.
 %	\item The forcing $\mathbb P_{\textbf{A}}$, which shoots a closed set of order type $\omega_1$ through a stationary set $A \subseteq \kappa$ of $\omega$-cofinal ordinals, and is used to force $\neg \Box_\kappa$.
 	\item \color{Green} \textbf{Generalized Prikry forcing} as defined by Fuchs (\cite{Fuchs:2005kx}).
 \end{itemize}
 \end{block}
-\begin{itemize}
-	\item Revised countable support ($rcs$) iterations of subcomplete forcings are subcomplete.
+%\begin{itemize}
+	Revised countable support ($rcs$) iterations of subcomplete forcings are subcomplete.
 	%\item Lottery sums of subcomplete forcings are subcomplete.
 	%\item If $\P$ is subcomplete and $\pi: \P \To \Q$ is a dense embedding, then $\Q$ is subcomplete. 
-\end{itemize}
+%\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -388,7 +388,7 @@ Barwise introduced the syntax and model theory for infinitary, but ``$M$-finitar
 %\begin{definition} Let $\M$ be a transitive structure with potentially infinitely many predicates. A theory is $\Sigma_1(\M)$, also known as \emph{$\M$-recursively enumerable} or $\M$-$re$, if the theory is $\Sigma_1$-definable, with parameters from $\M$. \end{definition}
 %If $\mathcal L$ is a $\Sigma_1(\M)$-definable language or theory, the rough idea is that to check whether a sentence is in $\mathcal L$, one should imagine enumerating the formulae of $\mathcal L$ to find a sentence and a witness to it in the structure $\M$.
 %
-\begin{definition}[$\in$-theory] Let $\M$ be admissible. An infinitary axiomatized theory $\mathcal L=\mathcal L(\M)$, with a fixed predicate $\dot \in$ for the \emph{special constants} denoted $\underline x$ for elements $x \in \M$, is called an \textit{$\in$-theory} over $\M$. The underlying axioms for these $\in$-theories will always involve $\ZFC^-$ and some \textbf{Basic Axioms} ensuring that $\dot \in$ behaves nicely. \end{definition}
+\begin{definition}[$\in$-theory] Let $\M$ be admissible. An infinitary axiomatized theory $\mathcal L=\mathcal L(\M)$, with a fixed predicate $\dot \in$ and \emph{special constants} denoted $\underline x$ for elements $x \in \M$, is called an \textit{$\in$-theory} over $\M$. The underlying axioms for these $\in$-theories will always involve $\ZFC^-$ and some \textbf{Basic Axioms} ensuring that $\dot \in$ behaves nicely. \end{definition}
 
 In the above definition, it should be clarified that it is possible to consider the same $\in$-theory defined over different admissible structures; if $\M, \M'$ are both admissible, then we can consider both $\mathcal L(\M)$ and $\mathcal L(\M')$. The distinction is only as to where the special constants come from. 
 
@@ -574,7 +574,7 @@ $$S_1(\kappa) = \begin{cases} S_1'(\kappa) &\text{ if } \kappa \in D_1 \setminus
 \begin{frame}
 If a $\Sigma_1$ $\in$-theory over an admissible structure $\M$ is consistent then it is still consistent in a forcing extension collapsing $\M$ to be countable - since the theory is $\M$-finitary.
 \begin{enumerate}\setcounter{enumi}{4}
-	\item Work in $V[F]$, a generic extension collapsing the admissible structure $\mathcal M_0$ to be countable. By Barwise Completeness, this gives us a model of $\mathcal L(\M_0)$ which grants the existence of a diagonal Prikry sequence $S$ generic over $N_0$ and thus $V$, by the genericity criterion. We also get an embedding $\overset{*}\sigma: \N \To N$. This $\overset{*}\sigma$ is in $V[F]$ however, not in $V[S]$.
+	\item Work in $V[F]$, a generic extension collapsing the admissible structure $\mathcal M_0$ to be countable. By Barwise Completeness, this gives us a model of $\mathcal L(\M_0)$ which grants the existence of a diagonal Prikry sequence $S$ generic over $N_0$ and thus $V$, by the genericity criterion. We also get an embedding $\overset{*}\sigma: \N \To N$. This $\overset{*}\sigma$ is in $V[F]$ however, not in $V[S]\subset V[F]$.
 	\item By Barwise Correctness, $\mathcal T(\mathcal M)$ is consistent, where $\mathcal M$ is a large enough admissible structure in $V[S]$. More precisely, the infinitary $\in$-theory $\mathcal T(\mathcal M)$ is defined over $\mathcal M$ as follows: 
 \begin{description}
 	\item[predicates] $\in$ 
