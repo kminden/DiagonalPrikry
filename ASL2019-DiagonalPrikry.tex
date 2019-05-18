@@ -231,13 +231,15 @@ How subcompleteness fits in with other forcing classes which preserve stationary
 %Suppose that $\P$ is a forcing notion and $s$ is a set, with $\P, s \in H_\theta$, where $\theta$ is sufficiently large. Instead of just working with $H_\theta$ and its well order, the models used for defining subcompleteness will have the form $L_\tau[A] \supseteq H_\theta$ where $L_\tau[A] \models \ZFC^-$ such that $\tau>\theta$ is a (possibly singular) cardinal, and $A \subseteq \tau$. Write $N$ is a \emph{\textbf{suitable model}} for $\P,s$ above $\theta$ for this, with $N=L_\tau[A]$.
 %\end{frame}
 \begin{frame}{Definition of Completeness}
-Suppose that $\P$ is a forcing notion and $s$ is a set, with $\P, s \in H_\theta$, where $\theta$ is sufficiently large. Instead of just working with $H_\theta$ and its well order, the models used for defining completeness and subcompleteness have the form $L_\tau[A] \supseteq H_\theta$ where $L_\tau[A] \models \ZFC^-$ with $\tau>\theta$ a (possibly singular) cardinal and $A \subseteq \tau$. Say $N$ is a \emph{\textbf{suitable model}} for $\P,s$ above $\theta$ if $N=L_\tau[A]$ in such a situation.
+In order to define subcomplete forcing, we first define the notion of complete forcing. 
 
-In order to define subcomplete forcing, we first define the notion of complete forcing.
+\vspace{1em}
+
+Suppose that $\P$ is a forcing notion and $s$ is a set, with $\P, s \in H_\theta$, where $\theta$ is sufficiently large. Instead of just working with $H_\theta$ and its well order, the models used for defining completeness and subcompleteness have the form $L_\tau[A] \supseteq H_\theta$ where $L_\tau[A] \models \ZFC^-$ with $\tau>\theta$. Say $N$ is a \emph{\textbf{suitable model}} for $\P,s$ above $\theta$ if $N=L_\tau[A]$ in such a situation.
 %which turns out to be equivalent to countably closed forcings. The definiton of subcomplete forcing is a tweaking of this definition.
 %Roughly speaking, complete forcings posit that below some condition, generics for countable substructures extend to generics for the larger structure.
 \begin{definition}
-A forcing notion $\P$ is \emph{\textbf{complete}} so long as, for any set $s$ and for sufficiently large $\theta$ we have that whenever we are in the standard setup, i.e. $N$ is a suitable model for $\P,s$ above $\theta$ and: \begin{itemize}
+A forcing notion $\P$ is \emph{\textbf{complete}} so long as, for any set $s$ and for sufficiently large $\theta$ we have that whenever $N$ is a suitable model for $\P,s$ above $\theta$ and: \begin{itemize}
 	\item $\sigma: \N \cong X \prec N$ where $X$ is countable and $\N$ is transitive;
 	\item $\sigma(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$;
 \end{itemize}
@@ -295,10 +297,10 @@ for sufficiently large $\theta$ we have that whenever we are in \emph{the standa
 then we have that if $\G$ is  $\overline{\P}$-generic over $\N$ then there is a condition $p \in \P$ such that whenever $G \ni p$ is $\P$-generic, there is $\sigma' \in V[G]$ satisfying: \begin{enumerate}
 	\item $\sigma': \N \To N$;
 	\item $\sigma'(\overline \theta, \overline{\P}, \overline s)=\theta, \P, s$;
-	\item \label{item:skolemcompatibility} $\sk{N}{|\D|}{\sigma'} = \Sk{N}{|\D|}{X}$; $\textcolor{ForestGreen}{\bigstar}$
+	\item \label{item:skolemcompatibility} $\sk{N}{|\P|}{\sigma'} = \Sk{N}{|\P|}{X}$; $\textcolor{ForestGreen}{\bigstar}$
 	\item  \label{item:sigmaprimelifts}$\sigma'``\, \G \subseteq G$.
 \end{enumerate}
-Thus $p$ forces that there is an embedding $\sigma'$ in the extension $V[G]$ which lifts, by (\ref{item:sigmaprimelifts}), to an embedding $\sigma'^*:\N[\G] \To N[G]$ in $V[G]$.
+Thus $p$ forces that there is an embedding $\sigma'$ in the extension $V[G]$ which lifts to an embedding $\sigma'^*:\N[\G] \To N[G]$ in $V[G]$.
 %We say that such a $\theta$ as above \textit{verifies the subcompleteness} of $\P$.
 %Often we write $\delta$ instead of $\delta(\P)$ for the weight of $\P$ when there should be no confusion as to which poset $\P$ we are working with.%\footnote{See Section \ref{subsec:delta} for more on $\delta(\P)$.}
 \end{definition}
@@ -343,7 +345,7 @@ We need to argue that there is a $\D$-generic sequence $S$ and $\sigma' \in V[S]
 	\item $\sk{N}{|\D|}{\sigma'} = \Sk{N}{|\D|}{X}$	
 	\item $\sigma' `` \S \subseteq S$
 \end{itemize}
-The proof amounts to showing that a certain infinitary $\in$-theory, $\mathcal T$, positing the existence of such an embedding $\sigma'$, is consistent.
+The proof amounts to showing that certain infinitary theories, $\mathcal L$ and $\mathcal L'$, positing the existence of such a generic sequence $S$ and such an embedding $\sigma'$, are consistent.
 \end{frame}
 
 %\begin{frame}
@@ -383,31 +385,37 @@ The proof amounts to showing that a certain infinitary $\in$-theory, $\mathcal T
 %\end{frame}
 
 \begin{frame}{Barwise Theory}
-\begin{definition} A transitive structure $\M$ is \emph{admissible} if it models the axioms of \textsf{Kripke-Platek Set Theory} (\textsf{KP}) which consists of the axioms of \textsf{Empty Set}, \textsf{Pairing}, \textsf{Union}, $\Sigma_0$-\textsf{Collection}, and $\Sigma_0$-\textsf{Separation}. \end{definition}
+\begin{definition} A transitive structure $\M$ is \textbf{admissible} if it models the axioms of \textsf{Kripke-Platek Set Theory} (\textsf{KP}) which consists of the axioms of \textsf{Empty Set}, \textsf{Pairing}, \textsf{Union}, $\Sigma_0$-\textsf{Collection}, and $\Sigma_0$-\textsf{Separation}. \end{definition}
 
 Barwise introduced the syntax and model theory for infinitary, but ``$M$-finitary," languages on admissible structures. The basic idea is to perform standard first order logic, replacing ``finite" (as in finite sentences and formulas and proofs) with ``in the admissible structure $\mathcal M$."
-%\begin{definition} Let $\M$ be a transitive structure with potentially infinitely many predicates. A theory is $\Sigma_1(\M)$, also known as \emph{$\M$-recursively enumerable} or $\M$-$re$, if the theory is $\Sigma_1$-definable, with parameters from $\M$. \end{definition}
+
 %If $\mathcal L$ is a $\Sigma_1(\M)$-definable language or theory, the rough idea is that to check whether a sentence is in $\mathcal L$, one should imagine enumerating the formulae of $\mathcal L$ to find a sentence and a witness to it in the structure $\M$.
 %
-\begin{definition}[$\in$-theory] Let $\M$ be admissible. An infinitary axiomatized theory $\mathcal L=\mathcal L(\M)$, with a fixed predicate $\dot \in$ and \emph{special constants} denoted $\underline x$ for elements $x \in \M$, is called an \textit{$\in$-theory} over $\M$. The underlying axioms for these $\in$-theories will always involve $\ZFC^-$ and some \textbf{Basic Axioms} ensuring that $\dot \in$ behaves nicely. \end{definition}
+\begin{definition}[$\in$-theory] Let $\M$ be admissible. An infinitary axiomatized theory $\mathcal L=\mathcal L(\M)$, with a fixed predicate $\dot \in$ and \textbf{special constants} denoted $\underline x$ for elements $x \in \M$, is called an \textbf{$\in$-theory} over $\M$. The underlying axioms for these $\in$-theories will always involve $\ZFC^-$ and some \textbf{Basic Axioms} ensuring that $\dot \in$ behaves nicely. \end{definition}
 
-In the above definition, it should be clarified that it is possible to consider the same $\in$-theory defined over different admissible structures; if $\M, \M'$ are both admissible, then we can consider both $\mathcal L(\M)$ and $\mathcal L(\M')$. The distinction is only as to where the special constants come from. 
+\begin{definition} Let $M$ be a transitive structure with potentially infinitely many predicates. A theory is $\Sigma_1(M)$ if the theory is $\Sigma_1$-definable, with parameters from $M$. \end{definition}
+%In the above definition, it should be clarified that it is possible to consider the same $\in$-theory defined over different admissible structures; if $\M, \M'$ are both admissible, then we can consider both $\mathcal L(\M)$ and $\mathcal L(\M')$. The distinction is only as to where the special constants come from. 
 
+Barwise Completeness essentially says that consistent $\Sigma_1(\M)$ $\in$-theories satisfying $\textsf{ZF}^-$ over countable admissible structures $\M$ have models.
 \end{frame}
 
 
-\begin{frame} %\frametitle{Transferring Consistency via Cofinal Embeddings}
+\begin{frame} \frametitle{Transferring consistency}
 
-Recall that we have an elementary embedding $\sigma:\N \To N$. Let $\alpha > \omega$ be a regular cardinal in $\N$. 
+Recall that we have an elementary embedding $\sigma:\N \To N$. 
 
-\begin{definition}
+Let $\alpha > \omega$ be a regular cardinal in $\N$. 
+
+\vspace{1em}
+
+%\begin{definition}
 By a \textbf{transitive liftup} of $\sigma$ up to $\alpha$ we mean a pair $\langle N_* , \sigma_* \rangle$ such that 
 \begin{itemize} 
 	\item $N_*$ is transitive;
 	\item $\sigma_*:\N \To N_*$ is an \textbf{$\alpha$-cofinal embedding}, meaning elements of $N^*$ are of the form $\sigma_*(f)(\beta)$ for some $f: \gamma \To \N$ where $\beta < \sigma(\gamma)$ and $\gamma<\alpha$;
 	\item $\sigma_* \upharpoonright H_{\alpha}^{\N}= \sigma \upharpoonright H_{\alpha}^{\N}$. 
 \end{itemize}
-\end{definition}
+%\end{definition}
 
 \begin{block}{Interpolation (Jensen)}
 \begin{enumerate}
@@ -419,8 +427,9 @@ By a \textbf{transitive liftup} of $\sigma$ up to $\alpha$ we mean a pair $\lang
 \begin{block}{Transfer (Jensen)}
 Suppose we are in the following situation:
 \begin{enumerate}
-	\item $N_1$ and $N_0$ are both liftups of $\sigma$ with $k_1: N_1 \To N_0$
-	\item We have a $\Sigma_1$  $\in$-theory $\mathcal L$ defined over the least-rank admissible structures over $N_0$ and $N_1$ (say $\mathcal M_0$ and $\mathcal M_1$ respectively).
+	\item $N_1$ and $N_0$ are both liftups of $\sigma$ with factor embedding $k: N_1 \To N_0$;
+	\item We have a $\in$-theory $\mathcal L$ defined over the least-rank admissible structures over $N_0$ and $N_1$ (say $\mathcal M_0$ and $\mathcal M_1$ respectively);
+	\item $\mathcal L(\M_1)$ is $\Sigma_1(\langle N_1, \vec{p}\rangle)$ and $\mathcal L(\M_0)$ is $\Sigma_1(\langle N_0, k(\vec p) \rangle)$.
 \end{enumerate}
 Then, 
 if $\mathcal L(\mathcal M_1)$ is consistent, it follows that $\mathcal L(\mathcal M_0)$ is also consistent. 
@@ -488,28 +497,8 @@ if $\mathcal L(\mathcal M_1)$ is consistent, it follows that $\mathcal L(\mathca
 
 \begin{frame}
 \begin{enumerate} \setcounter{enumi}{1}
-	\item Define the infinitary $\in$-theory $\mathcal L(\mathcal M_*)$ as follows: \begin{description}
-	\item[predicates] $\in$ 
-	\item[constants] $\mathring{\sigma}, \mathring S, \underline x$ for $x \in \mathcal M_*$
-	%\item[parameters] $N_*$ and $\theta_*, \mu_*, \D_*, \U_*, \lambda_*, D_*, c_* \in N_*$
-	\item[axioms] \begin{itemize} \item $\ZFC^-$ and \textbf{Basic Axioms}
-		\item $\mathring \sigma : \underline \N \To \underline{N_*}$ is a $\underline{\overline \kappa(0)}$--cofinal embedding
-		\item $\mathring{\sigma}(\overline{\underline{\theta}}, \overline{\underline{\D}}, \overline{\underline{\U}}, \overline{\underline c})=\underline{\theta_*}, \underline{\D_*}, \underline{\U_*}, \underline{c_*}$
-		\item $\mathring S$ is a $\underline{\D_*}$-generic sequence over $\underline{N_*}$
-		\item $\mathring \sigma ``\overline{\underline S} \subseteq \mathring S$.
-	\end{itemize}
-\end{description} 
-	\item By interpolation, we have a liftup $\langle N_1, \sigma_1\rangle$ of $\sigma$ up to $\overline \kappa(0)$. 
-	\item $\mathcal L(\M_1)$ is consistent, since it has a model. To see this, use the genericity criterion, and show that $\sigma_1``\overline S$ may be used to find a $\D_1$-generic sequence over $N_1$. Namely, first obtain a diagonal Prikry sequence $S_1' \subseteq \D_1$ generic over $N_1$. Define, in $V[S_1']$, a new sequence $S_1 \subseteq \D_1$ generic over $N_1$ as follows:
-$$S_1(\kappa) = \begin{cases} S_1'(\kappa) &\text{ if } \kappa \in D_1 \setminus \sigma_1``\overline D \\
-					\sigma_1(\overline S(\overline \kappa)) &\text{ if } \kappa = \sigma_1(\overline \kappa). \end{cases}$$ 
+	\item By Interpolation, we have a liftup $\langle N_1, \sigma_1\rangle$ of $\sigma$ up to $\overline \kappa(0)$. 
 \end{enumerate}
-\end{frame}
-
-\begin{frame}
-\begin{enumerate} \setcounter{enumi}{3}
-	\item Using Transfer, we then have that $\mathcal L(\M_0)$ is consistent.
-	\end{enumerate}
 \begin{figure}[h!] 
 \begin{tikzpicture}
 \draw (-3,0)--(-3,3);
@@ -564,19 +553,39 @@ $$S_1(\kappa) = \begin{cases} S_1'(\kappa) &\text{ if } \kappa \in D_1 \setminus
 \draw[->,thick] (-2.9,-0.5) to [out = -50, in =-140] node[above]{$\sigma$} (2.9, -0.5);
 
 \node [above] at (-1.5,-0.3) {$\sigma_1$};
-\node [above] at (0.75,-0.3) {$k_1$};
+\node [above] at (0.75,-0.3) {$k$};
 \node [above] at (2.25, -0.3) {$k_0$};
 \end{tikzpicture}
 %\label{figure:N1N0N} \caption{Diagram depicting the liftups $\langle N_0, \sigma_0\rangle$ and $\langle N_1, \sigma_1\rangle$.}
 \end{figure} 
 \end{frame}
 
+\begin{frame}
+\begin{enumerate} \setcounter{enumi}{4}
+	\item Define the infinitary $\in$-theory $\mathcal L(\mathcal M_*)$ as follows: \begin{description}
+	\item[predicates] $\in$ 
+	\item[constants] $\mathring{\sigma}, \mathring S, \underline x$ for $x \in \mathcal M_*$
+	%\item[parameters] $N_*$ and $\theta_*, \mu_*, \D_*, \U_*, \lambda_*, D_*, c_* \in N_*$
+	\item[axioms] \begin{itemize} \item $\ZFC^-$ and \textbf{Basic Axioms}
+		\item $\mathring \sigma : \underline \N \To \underline{N_*}$ is a $\underline{\overline \kappa(0)}$--cofinal embedding
+		\item $\mathring{\sigma}(\overline{\underline{\theta}}, \overline{\underline{\D}}, \overline{\underline{\U}}, \overline{\underline c})=\underline{\theta_*}, \underline{\D_*}, \underline{\U_*}, \underline{c_*}$
+		\item $\mathring S$ is a $\underline{\D_*}$-generic sequence over $\underline{N_*}$
+		\item $\mathring \sigma ``\overline{\underline S} \subseteq \mathring S$.
+	\end{itemize}
+\end{description} 
+	\item $\mathcal L(\M_1)$ is consistent: To see this, use the genericity criterion and the $\overline{\kappa}(0)$-cofinality to see that $\sigma_1``\overline S$ may be used to find a $\D_1$-generic sequence over $N_1$. Namely, first obtain a diagonal Prikry sequence $S_1' \subseteq \D_1$ generic over $N_1$. Define, in $V[S_1']$, a new sequence $S_1 \subseteq \D_1$ generic over $N_1$ as follows:
+$$S_1(\kappa) = \begin{cases} S_1'(\kappa) &\text{ if } \kappa \in D_1 \setminus \sigma_1``\overline D \\
+					\sigma_1(\overline S(\overline \kappa)) &\text{ if } \kappa = \sigma_1(\overline \kappa). \end{cases}$$ 
+	\item Using Transfer, we then have that $\mathcal L(\M_0)$ is consistent.						
+	\end{enumerate}
+\end{frame}
+
 
 \begin{frame}
-If a $\Sigma_1$ $\in$-theory over an admissible structure $\M$ is consistent then it is still consistent in a forcing extension collapsing $\M$ to be countable - since the theory is $\M$-finitary.
-\begin{enumerate}\setcounter{enumi}{4}
-	\item Work in $V[F]$, a generic extension collapsing the admissible structure $\mathcal M_0$ to be countable. By Barwise Completeness, this gives us a model of $\mathcal L(\M_0)$ which grants the existence of a diagonal Prikry sequence $S$ generic over $N_0$ and thus $V$, by the genericity criterion. We also get an embedding $\overset{*}\sigma: \N \To N$. This $\overset{*}\sigma$ is in $V[F]$ however, not in $V[S]\subset V[F]$.
-	\item By Barwise Correctness, $\mathcal T(\mathcal M)$ is consistent, where $\mathcal M$ is a large enough admissible structure in $V[S]$. More precisely, the infinitary $\in$-theory $\mathcal T(\mathcal M)$ is defined over $\mathcal M$ as follows: 
+%If a $\Sigma_1$ $\in$-theory over an admissible structure $\M$ is consistent then it is still consistent in a forcing extension collapsing $\M$ to be countable - since the theory is $\M$-finitary.
+\begin{enumerate}\setcounter{enumi}{5}
+	\item Work in $V[F]$, a generic extension collapsing the admissible structure $\mathcal M_0$ to be countable. By Barwise Completeness, this gives us a model of $\mathcal L(\M_0)$ which grants the existence of a diagonal Prikry sequence $S$ generic over $N_0$ and thus $V$, by the genericity criterion. We also get an embedding $\overset{*}\sigma: \N \To N$. This $\overset{*}\sigma$ is in $V[F]$ however, not in $V[S]\subseteq V[F]$.
+	\item Let $\mathcal M$ be a large enough admissible structure in $V[S]$, define $\mathcal L'(\mathcal M)$ as follows: 
 \begin{description}
 	\item[predicates] $\in$ 
 	\item[constants] $\dot{\sigma}, \underline x$ for $x \in \mathcal M$
@@ -586,8 +595,9 @@ If a $\Sigma_1$ $\in$-theory over an admissible structure $\M$ is consistent the
 		\item $\sk{\underline N}{\underline \rho}{\dot{\sigma}} = \sk{\underline N}{\underline \rho}{\underline \sigma}$
 		\item $\dot \sigma ``\overline{\underline S} \subseteq \underline S$.
 	\end{itemize}
-\end{description} Indeed $\overset{*}\sigma \in V[F]$ witnesses this. 
-	\item Let $\pi: \tilde{\mathcal M} \To \mathcal M$ where $\tilde{\mathcal M}$ is countable and transitive. $\mathcal T(\tilde{\mathcal \M})$ is consistent since inconsistencies could be pushed up via $\pi$. Thus by Barwise Completeness, we have a model, $\tilde{\mathfrak A}$, of $\mathcal T(\tilde{\mathcal M})$.
+\end{description}
+	\item By Barwise Correctness, $\mathcal L'(\mathcal M)$ is consistent, indeed $\overset{*}\sigma \in V[F]$ witnesses this. 
+	\item Let $\pi: \tilde{\mathcal M} \To \mathcal M$ where $\tilde{\mathcal M}$ is countable and transitive. $\mathcal L'(\tilde{\mathcal \M})$ is consistent since inconsistencies could be pushed up via $\pi$. Thus by Barwise Completeness, we have a model, $\tilde{\mathfrak A}$, of $\mathcal L'(\tilde{\mathcal M})$.
 	\item Let $\sigma' =\pi \circ \dot{\sigma}^{\tilde{\mathfrak A}}$. This works! \qedhere
 \end{enumerate}
 \end{frame}
